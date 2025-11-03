@@ -1,0 +1,68 @@
+---
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import Sidebar from './Sidebar.astro';
+
+interface Props {
+	showSidebar?: boolean;
+}
+
+const { showSidebar = true } = Astro.props;
+---
+
+<div>
+	<Header />
+	{showSidebar ? (
+		<div class="page-wrapper">
+			<main class="main-content">
+				<slot />
+			</main>
+			<aside class="sidebar-wrapper">
+				<Sidebar />
+			</aside>
+		</div>
+	) : (
+		<main class="full-width">
+			<slot />
+		</main>
+	)}
+	<Footer />
+</div>
+
+<style>
+	.page-wrapper {
+		max-width: 1200px;
+		margin: 0 auto;
+		display: flex;
+		gap: 2em;
+		padding: 1em 1em 2em;
+	}
+	
+	.main-content {
+		flex: 1;
+		min-width: 0;
+		padding: 0;
+		margin: 0;
+		width: 100%;
+		max-width: 100%;
+	}
+	
+	.sidebar-wrapper {
+		width: 300px;
+		flex-shrink: 0;
+	}
+	
+	.full-width {
+		width: 100%;
+		max-width: 100%;
+	}
+	
+	@media (max-width: 960px) {
+		.page-wrapper {
+			flex-direction: column;
+		}
+		.sidebar-wrapper {
+			width: 100%;
+		}
+	}
+</style>
