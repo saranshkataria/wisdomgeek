@@ -185,7 +185,7 @@ const { title, description, pubDate, updatedDate, heroImage, categories, prevPos
 						{categories && categories.length > 0 && (
 							<div class="categories">
 								{categories.map((category) => (
-									<a href={`/category/${category}/`} class="category-tag">
+									<a href={`/category/${category.toLowerCase()}/`} class="category-tag">
 										{category}
 									</a>
 								))}
