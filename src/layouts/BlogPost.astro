@@ -12,7 +12,7 @@ type Props = CollectionEntry<'blog'>['data'] & {
 	relatedPosts?: CollectionEntry<'blog'>[];
 };
 
-const { title, description, pubDate, updatedDate, heroImage, prevPost, nextPost, relatedPosts } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, categories, prevPost, nextPost, relatedPosts } = Astro.props;
 ---
 
 <html lang="en">
@@ -55,6 +55,28 @@ const { title, description, pubDate, updatedDate, heroImage, prevPost, nextPost,
 			}
 			.last-updated-on {
 				font-style: italic;
+			}
+			.categories {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5em;
+				margin-bottom: 1em;
+				justify-content: center;
+			}
+			.category-tag {
+				display: inline-block;
+				padding: 0.25em 0.75em;
+				background-color: var(--accent);
+				color: white;
+				border-radius: 4px;
+				text-decoration: none;
+				font-size: 0.875rem;
+				font-weight: 500;
+				transition: all 0.2s ease;
+			}
+			.category-tag:hover {
+				opacity: 0.8;
+				transform: translateY(-2px);
 			}
 			.post-navigation {
 				width: 720px;
@@ -160,6 +182,15 @@ const { title, description, pubDate, updatedDate, heroImage, prevPost, nextPost,
 							}
 						</div>
 						<h1>{title}</h1>
+						{categories && categories.length > 0 && (
+							<div class="categories">
+								{categories.map((category) => (
+									<a href={`/category/${category}/`} class="category-tag">
+										{category}
+									</a>
+								))}
+							</div>
+						)}
 						<hr />
 					</div>
 					<slot />
