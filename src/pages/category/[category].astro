@@ -6,6 +6,27 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 
+// Helper function to decode HTML entities
+function decodeHtmlEntities(text: string): string {
+	const entities: Record<string, string> = {
+		'&#46;': '.',
+		'&amp;': '&',
+		'&lt;': '<',
+		'&gt;': '>',
+		'&quot;': '"',
+		'&#39;': "'",
+		'&nbsp;': ' ',
+		'&#8217;': "'",
+		'&#8220;': '"',
+		'&#8221;': '"',
+		'&#8230;': '...',
+		'&#8211;': '–',
+		'&#8212;': '—',
+	};
+	
+	return text.replace(/&[#\w]+;/g, (entity) => entities[entity] || entity);
+}
+
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
 	
@@ -148,7 +169,7 @@ const description = `All blog posts categorized under ${category}`;
 						)}
 						<div class="post-card-content">
 							<h2 class="post-card-title">{post.data.title}</h2>
-							<p class="post-card-description">{post.data.description}</p>
+							<p class="post-card-description">{decodeHtmlEntities(post.data.description)}</p>
 							<div class="post-card-meta">
 								<FormattedDate date={post.data.pubDate} />
 								{post.data.categories && post.data.categories.length > 0 && (
