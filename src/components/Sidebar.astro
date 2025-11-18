@@ -51,18 +51,18 @@ const recentPosts = posts
 						)}
 						<div class="recent-post-content">
 							<h4 class="recent-post-title">{post.data.title}</h4>
-							<div class="recent-post-meta">
-								{post.data.categories && post.data.categories.length > 0 && (
-									<span class="recent-post-category">
-										{post.data.categories[0]}
-									</span>
-								)}
-								<span class="recent-post-date">
-									<FormattedDate date={post.data.pubDate} />
-								</span>
-							</div>
 						</div>
 					</a>
+					<div class="recent-post-meta">
+						{post.data.categories && post.data.categories.length > 0 && (
+							<a href={`/${post.data.categories[0].toLowerCase()}/`} class="recent-post-category">
+								{post.data.categories[0]}
+							</a>
+						)}
+						<span class="recent-post-date">
+							<FormattedDate date={post.data.pubDate} />
+						</span>
+					</div>
 				</div>
 			))}
 		</div>
@@ -74,7 +74,7 @@ const recentPosts = posts
 		<ul class="category-list">
 			{sortedCategories.map(([category, count]) => (
 				<li>
-					<a href={`/category/${category}/`}>
+					<a href={`/${category}/`}>
 						<span class="category-name">{category}</span>
 						<span class="category-count">({count})</span>
 					</a>
@@ -256,7 +256,6 @@ const recentPosts = posts
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		gap: 0.5em;
 	}
 
 	.recent-post-title {
@@ -277,6 +276,7 @@ const recentPosts = posts
 		flex-direction: column;
 		gap: 0.25em;
 		font-size: 0.75rem;
+		margin-top: 0.5em;
 	}
 
 	.recent-post-category {
@@ -288,6 +288,7 @@ const recentPosts = posts
 		font-weight: 500;
 		text-transform: capitalize;
 		width: fit-content;
+		text-decoration: none;
 	}
 
 	.recent-post-date {
