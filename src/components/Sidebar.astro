@@ -39,8 +39,8 @@ const recentPosts = posts
 		<div class="recent-posts">
 			{recentPosts.map((post) => (
 				<div class="recent-post">
-					<a href={`/${post.id}/`} class="recent-post-link">
-						{post.data.heroImage && (
+					{post.data.heroImage && (
+						<a href={`/${post.id}/`}>
 							<Image 
 								width={80} 
 								height={80} 
@@ -48,20 +48,22 @@ const recentPosts = posts
 								alt={post.data.title}
 								class="recent-post-thumbnail"
 							/>
-						)}
-						<div class="recent-post-content">
+						</a>
+					)}
+					<div class="recent-post-content">
+						<a href={`/${post.id}/`} class="recent-post-title-link">
 							<h4 class="recent-post-title">{post.data.title}</h4>
+						</a>
+						<div class="recent-post-meta">
+							{post.data.categories && post.data.categories.length > 0 && (
+								<a href={`/${post.data.categories[0].toLowerCase()}/`} class="recent-post-category">
+									{post.data.categories[0]}
+								</a>
+							)}
+							<span class="recent-post-date">
+								<FormattedDate date={post.data.pubDate} />
+							</span>
 						</div>
-					</a>
-					<div class="recent-post-meta">
-						{post.data.categories && post.data.categories.length > 0 && (
-							<a href={`/${post.data.categories[0].toLowerCase()}/`} class="recent-post-category">
-								{post.data.categories[0]}
-							</a>
-						)}
-						<span class="recent-post-date">
-							<FormattedDate date={post.data.pubDate} />
-						</span>
 					</div>
 				</div>
 			))}
@@ -224,6 +226,9 @@ const recentPosts = posts
 	.recent-post {
 		padding-bottom: 1.25em;
 		border-bottom: 1px solid rgb(var(--gray-light));
+		display: flex;
+		gap: 1em;
+		align-items: flex-start;
 	}
 
 	.recent-post:last-child {
@@ -231,19 +236,7 @@ const recentPosts = posts
 		padding-bottom: 0;
 	}
 
-	.recent-post-link {
-		display: flex;
-		gap: 1em;
-		text-decoration: none;
-		color: rgb(var(--gray-dark));
-		transition: all 0.2s ease;
-	}
-
-	.recent-post-link:hover {
-		transform: translateX(2px);
-	}
-
-	.recent-post-link :global(.recent-post-thumbnail) {
+	.recent-post :global(.recent-post-thumbnail) {
 		width: 80px;
 		height: 80px;
 		object-fit: cover;
@@ -251,11 +244,16 @@ const recentPosts = posts
 		flex-shrink: 0;
 	}
 
+	.recent-post-title-link {
+		text-decoration: none;
+		color: inherit;
+	}
+
 	.recent-post-content {
 		flex: 1;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
+		gap: 0.5em;
 	}
 
 	.recent-post-title {
@@ -267,7 +265,7 @@ const recentPosts = posts
 		transition: color 0.2s ease;
 	}
 
-	.recent-post-link:hover .recent-post-title {
+	.recent-post-title-link:hover .recent-post-title {
 		color: var(--accent);
 	}
 
@@ -276,7 +274,6 @@ const recentPosts = posts
 		flex-direction: column;
 		gap: 0.25em;
 		font-size: 0.75rem;
-		margin-top: 0.5em;
 	}
 
 	.recent-post-category {
