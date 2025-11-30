@@ -215,21 +215,45 @@ async function fetchWordPressPosts() {
       // Download inline images and update content
       let processedContent = cleanContent;
       const imageMatches = [...processedContent.matchAll(/!\[([^\]]*)\]\((https?:\/\/[^)]+)\)/g)];
-      let imageCounter = 1;
+      const downloadedImages = new Map(); // Track downloaded images to avoid duplicates
       
       for (const match of imageMatches) {
         const [fullMatch, altText, imageUrl] = match;
+        
+        // Skip if already downloaded
+        if (downloadedImages.has(imageUrl)) {
+          processedContent = processedContent.replace(fullMatch, `![${altText}](./${downloadedImages.get(imageUrl)})`);
+          continue;
+        }
+        
         try {
-          const imageExtension = path.extname(new URL(imageUrl).pathname) || '.jpg';
-          const localImageFilename = `image-${imageCounter}${imageExtension}`;
-          const localImagePath = path.join(postDir, localImageFilename);
+          // Extract original filename from URL
+          const urlPath = new URL(imageUrl).pathname;
+          const originalFilename = path.basename(urlPath);
+          const imageExtension = path.extname(originalFilename) || '.jpg';
+          
+          // Use original filename, sanitize it for filesystem
+          let localImageFilename = originalFilename.replace(/[^a-z0-9.-]/gi, '-').toLowerCase();
+          
+          // Ensure unique filename if it already exists
+          let counter = 1;
+          let finalFilename = localImageFilename;
+          while (fs.existsSync(path.join(postDir, finalFilename))) {
+            const nameWithoutExt = path.basename(localImageFilename, imageExtension);
+            finalFilename = `${nameWithoutExt}-${counter}${imageExtension}`;
+            counter++;
+          }
+          
+          const localImagePath = path.join(postDir, finalFilename);
           
           // Download the inline image
           await downloadImage(imageUrl, localImagePath);
           
+          // Track downloaded image
+          downloadedImages.set(imageUrl, finalFilename);
+          
           // Replace the URL with local path
-          processedContent = processedContent.replace(fullMatch, `![${altText}](./${localImageFilename})`);
-          imageCounter++;
+          processedContent = processedContent.replace(fullMatch, `![${altText}](./${finalFilename})`);
         } catch (error) {
           console.warn(`Failed to download inline image for ${categoryPath}/${postSlug}: ${error.message}`);
           // Keep the original URL if download fails
