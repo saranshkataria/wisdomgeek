@@ -145,8 +145,7 @@ export function buildCategoryTree(posts: any[]): Map<string, CategoryNode> {
 export function sortCategoryTree(tree: Map<string, CategoryNode>): CategoryNode[] {
 	return Array.from(tree.values())
 		.sort((a, b) => {
-			// Sort by count descending, then alphabetically
-			if (b.count !== a.count) return b.count - a.count;
+			// Sort alphabetically
 			return a.name.localeCompare(b.name);
 		})
 		.map(node => ({
