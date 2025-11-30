@@ -1,33 +1,13 @@
 ---
 import { Image } from 'astro:assets';
 import FormattedDate from './FormattedDate.astro';
+import { decodeHtmlEntities } from '../lib/utils';
 
 interface Props {
 	posts: any[];
 }
 
 const { posts } = Astro.props;
-
-// Helper function to decode HTML entities
-function decodeHtmlEntities(text: string): string {
-	const entities: Record<string, string> = {
-		'&#46;': '.',
-		'&amp;': '&',
-		'&lt;': '<',
-		'&gt;': '>',
-		'&quot;': '"',
-		'&#39;': "'",
-		'&nbsp;': ' ',
-		'&#8217;': "'",
-		'&#8220;': '"',
-		'&#8221;': '"',
-		'&#8230;': '...',
-		'&#8211;': '–',
-		'&#8212;': '—',
-	};
-	
-	return text.replace(/&[#\w]+;/g, (entity) => entities[entity] || entity);
-}
 ---
 
 <ul>

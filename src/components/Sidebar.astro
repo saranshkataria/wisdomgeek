@@ -2,23 +2,13 @@
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import FormattedDate from './FormattedDate.astro';
+import { buildCategoryTree, sortCategoryTree } from '../lib/utils';
 
 const posts = await getCollection('blog');
 
-// Build category map with post counts
-const categoryMap = new Map<string, number>();
-posts.forEach(post => {
-	if (post.data.categories) {
-		post.data.categories.forEach(category => {
-			const categoryLower = category.toLowerCase();
-			categoryMap.set(categoryLower, (categoryMap.get(categoryLower) || 0) + 1);
-		});
-	}
-});
-
-// Sort categories by post count (descending)
-const sortedCategories = Array.from(categoryMap.entries())
-	.sort((a, b) => b[1] - a[1]);
+// Build hierarchical category tree from posts
+const categoryTree = buildCategoryTree(posts);
+const sortedCategoryTree = sortCategoryTree(categoryTree);
 
 // Get featured posts
 const featuredPosts = posts
@@ -74,12 +64,36 @@ const recentPosts = posts
 	<div class="sidebar-section">
 		<h3>Categories</h3>
 		<ul class="category-list">
-			{sortedCategories.map(([category, count]) => (
+			{sortedCategoryTree.map((category) => (
 				<li>
-					<a href={`/${category}/`}>
-						<span class="category-name">{category}</span>
-						<span class="category-count">({count})</span>
+					<a href={`/${category.path}/`}>
+						<span class="category-name">{category.name}</span>
+						<span class="category-count">({category.count})</span>
 					</a>
+					{category.children.size > 0 && (
+						<ul class="category-sublist">
+							{sortCategoryTree(category.children).map((subCategory) => (
+								<li>
+									<a href={`/${subCategory.path}/`}>
+										<span class="category-name">{subCategory.name}</span>
+										<span class="category-count">({subCategory.count})</span>
+									</a>
+									{subCategory.children.size > 0 && (
+										<ul class="category-sublist">
+											{sortCategoryTree(subCategory.children).map((subSubCategory) => (
+												<li>
+													<a href={`/${subSubCategory.path}/`}>
+														<span class="category-name">{subSubCategory.name}</span>
+														<span class="category-count">({subSubCategory.count})</span>
+													</a>
+												</li>
+											))}
+										</ul>
+									)}
+								</li>
+							))}
+						</ul>
+					)}
 				</li>
 			))}
 		</ul>
@@ -146,6 +160,17 @@ const recentPosts = posts
 		margin-bottom: 0.75em;
 	}
 
+	.category-sublist {
+		list-style: none;
+		margin: 0.5em 0 0 0;
+		padding-left: 1.25em;
+		border-left: 2px solid rgb(var(--gray-light));
+	}
+
+	.category-sublist li {
+		margin-bottom: 0.5em;
+	}
+
 	.category-list a {
 		display: flex;
 		justify-content: space-between;
@@ -163,9 +188,13 @@ const recentPosts = posts
 		padding-left: 1em;
 	}
 
+	.category-sublist a {
+		padding: 0.35em 0.5em;
+		font-size: 0.95em;
+	}
+
 	.category-name {
 		font-weight: 500;
-		text-transform: capitalize;
 	}
 
 	.category-count {
