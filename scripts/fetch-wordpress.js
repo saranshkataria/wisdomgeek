@@ -159,9 +159,44 @@ async function fetchWordPressPosts() {
       const cleanContent = convertHtmlToMarkdown(post.content.rendered);
       const cleanExcerpt = convertHtmlToMarkdown(post.excerpt.rendered);
 
-      // Get categories - WordPress stores them hierarchically
+      // Get categories with hierarchy - WordPress stores them with parent information
       const categories = post._embedded?.['wp:term']?.[0] || [];
-      const categoryNames = categories.map(cat => cat.name);
+      
+      // Build complete category hierarchy
+      const categoryHierarchy = [];
+      const categoryObjects = [];
+      
+      for (const cat of categories) {
+        categoryObjects.push({
+          id: cat.id,
+          name: cat.name,
+          slug: cat.slug,
+          parent: cat.parent || null
+        });
+      }
+      
+      // Build hierarchy by checking parent relationships
+      const buildCategoryPath = (catId, allCats) => {
+        const cat = allCats.find(c => c.id === catId);
+        if (!cat) return [];
+        
+        const path = [cat.name];
+        if (cat.parent) {
+          const parentPath = buildCategoryPath(cat.parent, allCats);
+          return [...parentPath, ...path];
+        }
+        return path;
+      };
+      
+      // Get all unique category paths
+      const allCategoryPaths = categoryObjects.map(cat => buildCategoryPath(cat.id, categoryObjects));
+      
+      // Use the longest path as the primary category hierarchy
+      const primaryCategoryPath = allCategoryPaths.sort((a, b) => b.length - a.length)[0] || ['General'];
+      
+      // Also collect all category names (flat list)
+      const categoryNames = categoryObjects.map(cat => cat.name);
+      
       const primaryCategory = categoryNames[0] || 'general';
       
       // Build nested category path from most specific to least specific
@@ -274,7 +309,7 @@ title: '${post.title.rendered.replace(/'/g, "''")}'
 description: '${cleanExcerpt.replace(/'/g, "''")}'
 pubDate: '${formattedDate}'
 heroImage: '${heroImage}'
-categories: ${JSON.stringify(categoryNames)}
+categories: ${JSON.stringify(primaryCategoryPath)}
 ---
 
 ${processedContent}
