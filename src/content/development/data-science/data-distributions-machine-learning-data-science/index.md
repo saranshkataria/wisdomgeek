@@ -4,6 +4,7 @@ description: 'Data distributions lie at the heart of all the machine learning al
 pubDate: 'Oct 13, 2020'
 heroImage: './hero.png'
 categories: ["Data Science","Machine Learning"]
+categoryHierarchy: ["Development","Data Science"]
 ---
 
 Data distributions lie at the heart of all the machine learning algorithms and data science techniques. A machine learning algorithm is only as good as the data it gets. Hence, it is important to fully understand the data and data distributions before we build our models. Consequently, explore and understand its shape, size, nature, and relevance. Figuring out such details about the data helps us make informed decisions. It can help us figure out which algorithm to use. Which data pre-processing techniques to employ. How is the new data likely to impact the existing one. The list is practically endless. In this article, we will try and understand one such aspect – the shape of the data. 

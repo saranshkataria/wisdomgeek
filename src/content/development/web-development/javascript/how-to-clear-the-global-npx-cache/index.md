@@ -4,6 +4,7 @@ description: 'I have been using npx a lot lately, especially whenever I want to 
 pubDate: 'Jun 02, 2024'
 heroImage: './hero.png'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 I have been using npx a lot lately, especially whenever I want to use a CLI tool. It is an excellent alternative to installing packages globally since it installs them in a temporary cache instead. 

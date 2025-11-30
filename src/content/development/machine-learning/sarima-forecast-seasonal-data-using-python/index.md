@@ -4,6 +4,7 @@ description: 'In this article, we explore the world of time series and how to im
 pubDate: 'Jul 20, 2020'
 heroImage: './hero.jpg'
 categories: ["Machine Learning"]
+categoryHierarchy: ["Development","Machine Learning"]
 ---
 
 In this article, we explore the world of time series and how to implement the SARIMA model to forecast seasonal data using python. SARIMA is a widely used technique in time series analysis to predict future values based on historical data having a seasonal component. For example, the sales of electronic appliances during the holiday season. The weather forecast over several years. For this article, we will use the AQI dataset of different cities in India available on [Kaggle](https://www.kaggle.com/rohanrao/air-quality-data-in-india), to predict the future AQI levels.

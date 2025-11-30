@@ -4,6 +4,7 @@ description: 'While automating some parts of my development workflow, I was wond
 pubDate: 'Oct 10, 2021'
 heroImage: './hero.png'
 categories: ["Development"]
+categoryHierarchy: ["Development"]
 ---
 
 While automating some parts of my development workflow, I was wondering if there was a way of opening a browser with DevTools open by default. This would save me a few clicks and small tweaks like this are always helpful.

@@ -4,6 +4,7 @@ description: 'Do you feel that every day of your corporate life turns out to be 
 pubDate: 'Mar 17, 2016'
 heroImage: './hero.jpg'
 categories: ["Fitness","Life Tips","Motivation"]
+categoryHierarchy: ["Self Help","Fitness"]
 ---
 
 Do you feel that every day of your corporate life turns out to be a misery? At the end of the day, when you get to bed, you feel terrible about your life because of work? And getting on that weighing scale in the morning is a nightmare? I cannot agree more. The lifestyle that the corporate world builds up, just takes away our general motivation in life day by day. Most of it has to do with our health, but we very often skip fitness as a list of a to do, which never gets checked even for a day. Fitness has more to do with the lifestyle than the work that we are subjected to in the offices. And staying fit at work is not an easy task either.

@@ -4,6 +4,7 @@ description: 'I recently tried to use __dirname inside a ES module. It turns 
 pubDate: 'Feb 15, 2024'
 heroImage: './hero.jpg'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 I recently tried to use `__dirname` inside a ES module. It turns out, that I cannot. It throws an error. So let us see how To Fix ReferenceError: __dirname is not defined.

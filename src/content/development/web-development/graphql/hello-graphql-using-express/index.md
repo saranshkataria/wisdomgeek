@@ -4,6 +4,7 @@ description: 'GraphQL is a query language and a runtime for data querying over a
 pubDate: 'Jun 09, 2017'
 heroImage: './hero.png'
 categories: ["GraphQL"]
+categoryHierarchy: ["Development","Web Development","Graphql"]
 ---
 
 GraphQL is a query language and a runtime for data querying over an API. It is something that you put in between your front-end application and a backend data service. The first question that comes across in people's mind is that we already have REST, what problem can then GraphQL possibly solve? The value of GraphQL can be understood when one starts looking into the shortcomings of REST.

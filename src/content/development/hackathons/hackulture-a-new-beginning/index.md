@@ -4,6 +4,7 @@ description: 'There are times when you have an idea and you go crazy thinking ab
 pubDate: 'Jun 21, 2015'
 heroImage: ''
 categories: ["Hackathons"]
+categoryHierarchy: ["Development","Hackathons"]
 ---
 
 [![hackulture](./hackulture.jpg)](https://wisdomgeek.com/wp-content/uploads/2015/06/hackulture.jpg)

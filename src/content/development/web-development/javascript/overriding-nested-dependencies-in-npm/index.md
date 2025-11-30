@@ -4,6 +4,7 @@ description: 'Whenever we install a particular package, it is common to come acr
 pubDate: 'Jan 18, 2022'
 heroImage: './hero.jpeg'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 Whenever we install a particular package, it is common to come across a problem with a dependency's dependency. With the release of npm 8.3, an overrides attribute has been added to solve this problem and allow overriding of nested dependencies in NPM.

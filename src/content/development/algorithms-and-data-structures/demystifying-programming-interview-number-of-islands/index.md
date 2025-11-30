@@ -4,6 +4,7 @@ description: 'If you are reading this post right now, chances are high that you 
 pubDate: 'Nov 02, 2020'
 heroImage: './hero.jpg'
 categories: ["Algorithms and Data Structures"]
+categoryHierarchy: ["Development","Algorithms And Data Structures"]
 ---
 
 If you are reading this post right now, chances are high that you are not looking for the number of islands in the Pacific Ocean. But you are planning to appear for a programming interview in the future and/or you have appeared for a coding interview in the past.

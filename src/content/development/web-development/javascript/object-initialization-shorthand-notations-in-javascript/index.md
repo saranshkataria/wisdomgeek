@@ -4,6 +4,7 @@ description: 'I was recently working on a project in which I was trying to use a
 pubDate: 'Feb 02, 2021'
 heroImage: './hero.png'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 I was recently working on a project in which I was trying to use a shorthand notation for destructuring assignment of a variable. I was researching different ways of getting a specific scenario to work. And while doing that research, I found that ES2015 had added 3 new object initialization shorthand notations that I had not known existed. And so I decided to share these with everyone.

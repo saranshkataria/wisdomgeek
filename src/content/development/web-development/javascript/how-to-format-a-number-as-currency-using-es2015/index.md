@@ -4,6 +4,7 @@ description: 'The process to format a number as currency can be a tedious task. 
 pubDate: 'Mar 04, 2021'
 heroImage: './hero.jpg'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 The process to format a number as currency can be a tedious task. It feels like a small task, but the number of lines and the edge cases can keep on increasing when considering factors such as internationalization and different formatting standards. Luckily, ES2015 introduced an internationalization API which can make the process to format a number as currency super easy.

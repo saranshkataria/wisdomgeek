@@ -4,6 +4,7 @@ description: 'Gatsby has become fairly popular in the last couple of years and i
 pubDate: 'May 10, 2020'
 heroImage: './hero.jpg'
 categories: ["TypeScript"]
+categoryHierarchy: ["Development","Web Development","Typescript"]
 ---
 
 Gatsby has become fairly popular in the last couple of years and it has starting becoming the go to static site generator for a lot of projects. The smooth developer experience and the warm community has enriched the adoption even more. TypeScript has had a similar growth curve and has risen to popularity too.

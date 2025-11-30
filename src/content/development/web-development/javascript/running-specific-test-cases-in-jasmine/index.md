@@ -4,6 +4,7 @@ description: 'I recently was working on writing end-to-end test cases using prot
 pubDate: 'Nov 20, 2017'
 heroImage: './hero.jpg'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 I recently was working on writing end-to-end test cases using protractor on a project. Everything was working fine until the number of test cases increased significantly, and running the complete set of test cases took too much time. It was a pain to even think of running the e2e command since I knew it would take 10 minutes at least to get to a specific test.

@@ -4,6 +4,7 @@ description: 'Promises have not been a new concept in the javascript community. 
 pubDate: 'Dec 03, 2019'
 heroImage: './hero.jpeg'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 Promises have not been a new concept in the javascript community. They have existed in the ecosystem for a long time. JavaScript promises existed even before they were officially made a part of the ECMAScript spec in ES6. These initial implementations of JavaScript promise were in the form of framework level implementations but were standardized as part of the ES6 specification.

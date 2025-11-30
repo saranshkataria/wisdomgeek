@@ -4,6 +4,7 @@ description: 'Businesses these days are generating and consuming a huge amount o
 pubDate: 'Jan 05, 2021'
 heroImage: './hero.jpg'
 categories: ["Data Science","Machine Learning"]
+categoryHierarchy: ["Development","Data Science"]
 ---
 
 Businesses these days are generating and consuming a huge amount of data. This data varies in variety, volume, velocity, and veracity (4Vs of big data). Consequently, this trend has led to organizations' rapid adoption of different AI and ML tools and techniques. Hence, converting a business problem to a machine learning problem has started becoming a challenging task. It is crucial to understand that not all business problems can be solved through ML. And for situations where an ML solution could be used, it may not always be appropriate to do so. In cases where an ML solution would be appropriate, understanding the underlying business drivers will help you more clearly define and articulate the technical solution.

@@ -4,6 +4,7 @@ description: 'Curiosity is the reason why most of the breakthrough discoveries a
 pubDate: 'Dec 29, 2020'
 heroImage: './hero.png'
 categories: ["Life Tips"]
+categoryHierarchy: ["Self Help","Life Tips"]
 ---
 
 Curiosity is the reason why most of the breakthrough discoveries and remarkable inventions have happened throughout history. In the absence of curiosity, there would not have been an impulse to seek new information or experiences. Exploring possibilities is what defines human nature and thus curiosity is an integral part of us. But as we grow older, we become more passive and start limiting ourselves to newer ideas. Thus, we need to cultivate a process and this post talks about how to develop curiosity and make the most out of it.

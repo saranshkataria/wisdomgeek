@@ -4,6 +4,7 @@ description: 'With the recent roll out of end to end encryption by Whatsapp, the
 pubDate: 'Apr 07, 2016'
 heroImage: './hero.jpeg'
 categories: ["Privacy"]
+categoryHierarchy: ["General","Privacy"]
 ---
 
 With the recent roll out of end to end encryption by Whatsapp, the largest messaging service, everyone has been talking about it. The FBI vs Apple battle over privacy debate is a minor one if one sees the implementation of end to end encryption in an online messaging application. There are a ton of companies that brag about their services are encrypted. What this means is that the messages being sent using the communication platform are secure and hackers cannot read them if they somehow manage to get in the middle of the two people communicating. That is, even if someone gets access to the channel being used by the people communicating, for example your network administrator (or any other person who has access to your network, commonly known as man in the middle attack), they cannot read the contents of the message being sent.

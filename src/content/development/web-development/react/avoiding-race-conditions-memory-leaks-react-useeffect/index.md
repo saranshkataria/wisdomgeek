@@ -4,6 +4,7 @@ description: 'Let us take a look at an implementation of getting data from an AP
 pubDate: 'Feb 08, 2021'
 heroImage: './hero.jpg'
 categories: ["React"]
+categoryHierarchy: ["Development","Web Development","React"]
 ---
 
 Let us take a look at an implementation of getting data from an API request and see if there is any possibility of race conditions happening in this component:

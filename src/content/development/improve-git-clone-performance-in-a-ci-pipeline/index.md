@@ -4,6 +4,7 @@ description: 'Have you felt particularly annoyed by the time it takes to clone a
 pubDate: 'Mar 19, 2024'
 heroImage: './hero.png'
 categories: ["Development"]
+categoryHierarchy: ["Development"]
 ---
 
 Have you felt particularly annoyed by the time it takes to clone a large repository, especially one with a huge commit history? This post will discuss a simple but powerful technique to significantly improve git clone performance.

@@ -4,6 +4,7 @@ description: 'When creating a GraphQL server with relational data, we want to re
 pubDate: 'Dec 08, 2020'
 heroImage: './hero.png'
 categories: ["GraphQL"]
+categoryHierarchy: ["Development","Web Development","Graphql"]
 ---
 
 When creating a GraphQL server with relational data, we want to return the data in a hierarchical format with those relationships in a single query. After all, that is where GraphQL comes in handy, right? Let us look into how we can do this using nested queries in GraphQL.

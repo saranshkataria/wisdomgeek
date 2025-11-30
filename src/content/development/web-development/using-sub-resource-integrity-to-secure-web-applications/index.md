@@ -4,6 +4,7 @@ description: 'Sub Resource Integrity (SRI) is a security feature that can be use
 pubDate: 'Jul 08, 2021'
 heroImage: './hero.jpeg'
 categories: ["Web Development"]
+categoryHierarchy: ["Development","Web Development"]
 ---
 
 Sub Resource Integrity (SRI) is a security feature that can be used to validate that the resources that the browser is fetching have not been manipulated.

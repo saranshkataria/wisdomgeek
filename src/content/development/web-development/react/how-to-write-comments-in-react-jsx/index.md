@@ -4,6 +4,7 @@ description: 'I was recently trying to comment out some logic inside my JSX to a
 pubDate: 'Oct 15, 2022'
 heroImage: './hero.png'
 categories: ["React"]
+categoryHierarchy: ["Development","Web Development","React"]
 ---
 
 I was recently trying to comment out some logic inside my JSX to add context about what a potentially complex logic. I then realized that comments in JSX are weird. So, how to write comments in React (JSX)?

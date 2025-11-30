@@ -4,6 +4,7 @@ description: 'We are all used to using the script tag to load external JavaScrip
 pubDate: 'Aug 15, 2021'
 heroImage: './hero.png'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 We are all used to using the script tag to load external JavaScript files in our HTML. Traditionally, the only workaround for having the scripts load after the HTML has been loaded was to move the script tags towards the end of the body. But JavaScript has come a long way since then. Attributes such as defer and async have been added to the specification in ES2015 that allow more granular control of how JavaScript gets loaded.

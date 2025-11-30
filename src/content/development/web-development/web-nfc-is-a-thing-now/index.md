@@ -4,6 +4,7 @@ description: 'NFC or Near Field Communication is a short-range wireless technolo
 pubDate: 'Aug 06, 2021'
 heroImage: './hero.png'
 categories: ["Web Development"]
+categoryHierarchy: ["Development","Web Development"]
 ---
 
 NFC or Near Field Communication is a short-range wireless technology that allows devices at a distance of less than 10cm to communicate. It is mostly useful when interacting with NFC tags. Web NFC became a thing very recently with Google announcing support for it in Chrome for Android.

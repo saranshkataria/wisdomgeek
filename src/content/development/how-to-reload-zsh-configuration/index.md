@@ -4,6 +4,7 @@ description: 'I have been using zsh for quite some time now and learned somethin
 pubDate: 'Sep 26, 2023'
 heroImage: './hero.png'
 categories: ["Development"]
+categoryHierarchy: ["Development"]
 ---
 
 I have been using zsh for quite some time now and learned something new while setting up some commands today. I was trying to reload zsh configuration after making some changes. I knew it was a source command but did not remember the complete one. So I googled and found that there is a new way to do it now too.

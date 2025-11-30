@@ -4,6 +4,7 @@ description: 'When we start building a Python project that goes beyond simple sc
 pubDate: 'Feb 23, 2021'
 heroImage: './hero.jpg'
 categories: ["Python"]
+categoryHierarchy: ["Development","Web Development","Python"]
 ---
 
 When we start building a Python project that goes beyond simple scripts, we tend to start using third-party dependencies. When working on a larger project, we need to think about managing these dependencies in an efficient manner. And when installing dependencies, we always want to be inside virtual environments. It helps keep things nice and clean. It also helps avoid messing up our Python environment.

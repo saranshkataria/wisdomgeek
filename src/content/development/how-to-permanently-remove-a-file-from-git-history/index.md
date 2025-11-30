@@ -4,6 +4,7 @@ description: 'We all make mistakes sometimes. Pushing files that contain some se
 pubDate: 'Nov 12, 2021'
 heroImage: './hero.jpg'
 categories: ["Development"]
+categoryHierarchy: ["Development"]
 ---
 
 We all make mistakes sometimes. Pushing files that contain some secrets or sensitive information to a Git repository is fairly common. And even if we revert the commit, it would still be present in the Git history of the project. In such cases, where we want to permanently remove a file from Git history, we need to perform a couple of steps.

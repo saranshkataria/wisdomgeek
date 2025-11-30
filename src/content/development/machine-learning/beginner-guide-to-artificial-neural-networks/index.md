@@ -4,6 +4,7 @@ description: 'In this article, We would like to talk to you about artificial neu
 pubDate: 'Jun 06, 2020'
 heroImage: './hero.png'
 categories: ["Machine Learning"]
+categoryHierarchy: ["Development","Machine Learning"]
 ---
 
 In this article, We would like to talk to you about artificial neural networks. Yes, you read it right. We will try and understand what are artificial neural networks. What are its different types? And finally what type of neural network suits which situation. The idea is simple – I want to explain artificial neural networks in the simplest language possible so that even those who do not have a background in data science and machine learning are able to relate and make sense out of the information. I promise to use as little technical terminology as possible.

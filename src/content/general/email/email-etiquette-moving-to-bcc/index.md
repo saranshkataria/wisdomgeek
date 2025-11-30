@@ -4,6 +4,7 @@ description: 'We use email every day and most of the times the BCC is a crafty l
 pubDate: 'Oct 20, 2016'
 heroImage: './hero.jpg'
 categories: ["Email"]
+categoryHierarchy: ["General","Email"]
 ---
 
 We use email every day and most of the times the BCC is a crafty little feature that we rarely use. Usually, it is for confirmation emails for events to multiple people, or something similar. The only other time I have personally used it was when I had to send assignments for evaluation to some higher authority and a few friends as well. I did not want the authority to know about the friends getting it as well.

@@ -4,6 +4,7 @@ description: 'Node 17 introduced OpenSSL v3.0, which brought in some breaking ch
 pubDate: 'Oct 17, 2023'
 heroImage: './hero.jpg'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 Node 17 introduced OpenSSL v3.0, which brought in some breaking changes, and the "Error: error:0308010C:digital envelope routines::unsupported" is a result of one such change. It can be solved by passing in a "–openssl-legacy-provider" flag when running the application.

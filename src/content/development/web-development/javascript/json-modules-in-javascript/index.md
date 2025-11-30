@@ -4,6 +4,7 @@ description: 'ES Modules were introduced in ES2015. The import and export keywor
 pubDate: 'Dec 08, 2021'
 heroImage: './hero.png'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 ES Modules were introduced in ES2015. The import and export keywords by default are only applicable to JavaScript code. But there is a new proposal to allow it to be used for JSON modules in JavaScript.

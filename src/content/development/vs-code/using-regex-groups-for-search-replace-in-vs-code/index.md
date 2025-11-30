@@ -4,6 +4,7 @@ description: 'VS Code has a nifty tool for doing search and replace using RegEx,
 pubDate: 'Feb 29, 2024'
 heroImage: ''
 categories: ["VS Code"]
+categoryHierarchy: ["Development","Vs Code"]
 ---
 
 VS Code has a nifty tool for doing search and replace using RegEx, which I prefer using whenever doing bulk updates. It has saved me quite a few times while refactoring across multiple files. Let us look at how search & replace using RegEx groups works in Visual Studio Code.

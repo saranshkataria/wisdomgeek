@@ -4,6 +4,7 @@ description: 'If you have been writing class components for a while, you might b
 pubDate: 'Dec 15, 2020'
 heroImage: './hero.jpg'
 categories: ["React"]
+categoryHierarchy: ["Development","Web Development","React"]
 ---
 
 If you have been writing class components for a while, you might be familiar with the callback functionality that the setState function provides. setState allows a second parameter to be passed to it as a callback. The callback function is invoked whenever the state of the function gets updated. 

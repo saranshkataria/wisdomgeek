@@ -4,6 +4,7 @@ description: 'A simple yes or no can be a life-changing event considering the co
 pubDate: 'May 20, 2015'
 heroImage: './hero.jpg'
 categories: ["Featured","People"]
+categoryHierarchy: ["Self Help","People"]
 ---
 
 A simple yes or no can be a life-changing event considering the context it is used in. People often tend to overlook the complexity of a few simple terms and this is true for all aspects of life. We keep looking for more challenging things and ignore the small ones. In this post, I am citing a few examples, which will help you in selecting the right people to talk to. These are not guidelines or tips on how to do small talk or how to converse better. Rather it is my opinion on how to choose people you should talk to. If you are wondering why does that matter, I’ll quote a famous dialogue: “You are average of the five people you spend your most time with.”

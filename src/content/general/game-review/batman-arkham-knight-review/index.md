@@ -4,6 +4,7 @@ description: 'Hey gamers, it''s time for a game review! The Arkham Series is one
 pubDate: 'Sep 06, 2015'
 heroImage: './hero.jpg'
 categories: ["Game Review"]
+categoryHierarchy: ["General","Game Review"]
 ---
 
 Hey gamers, it's time for a game review! The Arkham Series is one of the most epic game series till date. Why? Because BATMAN! That is way more than enough for a reason. Who doesn't want to adorn the black cape and be a vigilante?

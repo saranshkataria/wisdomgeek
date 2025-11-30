@@ -4,6 +4,7 @@ description: 'Let us suppose we had an HTML element which had an ::after propert
 pubDate: 'Nov 21, 2021'
 heroImage: './hero.png'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 Let us suppose we had an HTML element which had an ::after property assigned to it. We are going to be retrieving the content value of ::after or ::before of this element using JavaScript. For the following element:

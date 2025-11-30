@@ -4,6 +4,7 @@ description: 'Let us all face it. It is 2017 and many of us are still fighting o
 pubDate: 'Mar 14, 2017'
 heroImage: './hero.jpg'
 categories: ["Programming"]
+categoryHierarchy: ["Development","Programming"]
 ---
 
 Let us all face it. It is 2017 and many of us are still fighting over tabs versus spaces! And nobody cares what code style you use, the main concern is that you should be having one across your project. And the fact that it should be consistent across your project. It is your code, so you define the rules. And anyone contributing to it will adhere to them. Tabs versus spaces should be handled by your editor and that is where EditorConfig files come in. All you do is drop a `.editorconfig` file in your project. In this file, you put some lines which define your configuration for the current project, and the editor applies these settings for this project only.

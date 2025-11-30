@@ -4,6 +4,7 @@ description: 'Note: If you are interested in seeing the implementation of this u
 pubDate: 'Mar 02, 2017'
 heroImage: './hero.jpg'
 categories: ["Android Development"]
+categoryHierarchy: ["Development","Android Development"]
 ---
 
 Note: If you are interested in seeing the implementation of this using retrofit, refer to our other post about [Using Retrofit 2 for parsing JSON in Android](https://www.wisdomgeek.com/development/android-development/retrofit-2-parsing-json-android/).

@@ -4,6 +4,7 @@ description: 'In this article, we will go through some of the most commonly used
 pubDate: 'Dec 22, 2020'
 heroImage: './hero.jpg'
 categories: ["Machine Learning"]
+categoryHierarchy: ["Development","Machine Learning"]
 ---
 
 In this article, we will go through some of the most commonly used open-source AI tools available in the market. This is not an exhaustive list. But it serves as a good starting point for anyone trying to venture into machine learning or artificial intelligence. Since these are open-source AI tools, one can easily experiment with the codebase. It can also help you understand the logic behind many machine learning algorithms.

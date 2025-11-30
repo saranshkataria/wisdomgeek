@@ -4,6 +4,7 @@ description: 'I recently ran into the error "Cannot find module &#8216;fs'' or i
 pubDate: 'Jan 24, 2024'
 heroImage: './hero.png'
 categories: ["TypeScript"]
+categoryHierarchy: ["Development","Web Development","Typescript"]
 ---
 
 I recently ran into the error "`Cannot find module 'fs' or its corresponding type declarations.ts(2307)`" while I was using VSCode and I was searching for a fix.

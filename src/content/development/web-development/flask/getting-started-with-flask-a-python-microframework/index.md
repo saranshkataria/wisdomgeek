@@ -4,6 +4,7 @@ description: 'Flask is a python framework for writing web applications. It is a 
 pubDate: 'Feb 25, 2021'
 heroImage: './hero.png'
 categories: ["Flask"]
+categoryHierarchy: ["Development","Web Development","Flask"]
 ---
 
 Flask is a python framework for writing web applications. It is a microframework, which as the name suggests, is a small, clean, and simple to use framework. It comes with a minimal set of features, which sounds like a strange choice at first. So why would we choose Flask if it does a minimal amount of things? Flask is

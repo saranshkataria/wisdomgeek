@@ -4,6 +4,7 @@ description: 'Array grouping is a fairly common operation in any project. Until 
 pubDate: 'Dec 29, 2021'
 heroImage: './hero.png'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 Array grouping is a fairly common operation in any project. Until recently, we had to either write our own implementation or use third-party libraries when wanting to GroupBy on an array of objects in JavaScript.

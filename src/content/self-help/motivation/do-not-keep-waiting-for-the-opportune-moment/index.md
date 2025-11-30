@@ -4,6 +4,7 @@ description: 'You probably will have heard the two statements Be patient, it tak
 pubDate: 'May 09, 2015'
 heroImage: './hero.jpg'
 categories: ["Motivation"]
+categoryHierarchy: ["Self Help","Motivation"]
 ---
 
 You probably will have heard the two statements

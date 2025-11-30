@@ -4,6 +4,7 @@ description: 'Building advanced layout designs using CSS is a troublesome proces
 pubDate: 'Dec 11, 2017'
 heroImage: './hero.jpg'
 categories: ["Web Development"]
+categoryHierarchy: ["Development","Web Development"]
 ---
 
 Building advanced layout designs using CSS is a troublesome process. Anyone who has ever worked on CSS has faced this challenge. At times, even the simplest div may not always position itself correctly, looking so messy and untidy – just like kitten litters. And right when you manage to perfect the layout, your luck kicks you in the behind, with someone shouting at you: "Hey! Why is your site so cluttered on mobile? Did you not do it correctly?".

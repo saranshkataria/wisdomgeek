@@ -4,6 +4,7 @@ description: 'The Typescript team recently announced its road map. Interestingly
 pubDate: 'Mar 19, 2019'
 heroImage: './hero.png'
 categories: ["Web Development"]
+categoryHierarchy: ["Development","Web Development"]
 ---
 
 The Typescript team recently [announced](https://eslint.org/blog/2019/01/future-typescript-eslint) its road map. Interestingly, they have decided to not focus on TSLint any more and focus their efforts on ESLint for Typescript linting instead. This is a great thing for the community overall since ESLint becomes the defacto linting tool going forward. In this post, we will set up ESLint for Typescript.

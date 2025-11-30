@@ -4,6 +4,7 @@ description: 'Lists are often ignored by most people on Twitter. Twitter lists c
 pubDate: 'Nov 30, 2015'
 heroImage: './hero.jpg'
 categories: ["Twitter"]
+categoryHierarchy: ["General","Twitter"]
 ---
 
 Lists are often ignored by most people on Twitter. Twitter lists can be a great way to organize your contacts. More often than not, they are not used for that purpose.

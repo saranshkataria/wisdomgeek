@@ -4,6 +4,7 @@ description: 'React fragments were a feature released in React 16.2. They have b
 pubDate: 'Jul 15, 2021'
 heroImage: './hero.jpg'
 categories: ["React"]
+categoryHierarchy: ["Development","Web Development","React"]
 ---
 
 React fragments were a feature released in React 16.2. They have been around for a while now but have been a relatively lesser used feature. Let us explore the what and why the feature exists.

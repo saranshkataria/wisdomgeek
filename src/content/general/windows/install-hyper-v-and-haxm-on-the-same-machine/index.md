@@ -4,6 +4,7 @@ description: 'If you are into mobile application development and wanted to insta
 pubDate: 'Jul 19, 2015'
 heroImage: './hero.png'
 categories: ["Windows"]
+categoryHierarchy: ["General","Windows"]
 ---
 
 If you are into mobile application development and wanted to install both Hyper-V (Microsoft's hardware virtualization component) and HAXM (Intel's Hardware Execution Manager) on the same machine, chances are you probably faced an error on installing the second one after installing one. And who likes working on slow emulators when you can give them adrenaline shots using virtualization? Even though your computer supports virtualization, you might get an error saying you need to enable hardware assisted virtualization.

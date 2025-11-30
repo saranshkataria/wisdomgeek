@@ -4,6 +4,7 @@ description: 'Most people have, at some point, thought of using a blog vs using 
 pubDate: 'Apr 21, 2016'
 heroImage: './hero.png'
 categories: ["Blogging"]
+categoryHierarchy: ["Blogging"]
 ---
 
 Most people have, at some point, thought of using a blog vs using a publishing platform such as Medium or LinkedIn. The platforms, have a higher reach since they are dedicated places where in people come for the sole purpose of reading. Hence a there are chances of increasing your readership if posts are directly published to Medium, LinkedIn, Reddit, Quora or any other similar website. But the next question that comes in the minds of people who have a dedicated blog is that a post on these platforms cannot be monetized. You cannot prompt people to join your mailing list using pop ups, nor can you show your own advertisements and earn revenue. And the other thought that pops into the mind of a blogger immediately after this is that duplicate content will lead to negative SEO effects if one cross posts between these platforms and their own blogs.

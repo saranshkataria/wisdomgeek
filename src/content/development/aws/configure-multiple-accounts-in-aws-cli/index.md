@@ -4,6 +4,7 @@ description: 'AWS CLI is a great tool for doing anything related to AWS. We can 
 pubDate: 'Feb 19, 2021'
 heroImage: './hero.png'
 categories: ["AWS"]
+categoryHierarchy: ["Development","Aws"]
 ---
 
 AWS CLI is a great tool for doing anything related to AWS. We can configure our access key for an account using an access key ID and a secret access key. But what if we want to use multiple accounts on the same computer? If we are working on multiple AWS projects, or have different IAM roles for different projects?

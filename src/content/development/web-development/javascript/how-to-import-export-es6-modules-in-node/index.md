@@ -4,6 +4,7 @@ description: 'If you have been following the javascript ecosystem for a while, y
 pubDate: 'Jun 19, 2018'
 heroImage: './hero.jpg'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 If you have been following the javascript ecosystem for a while, you already know that even though ES6 modules are a thing, you still cannot import/export ES6 modules in node.js as of today.

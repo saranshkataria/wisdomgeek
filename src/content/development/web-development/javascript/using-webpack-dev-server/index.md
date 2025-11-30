@@ -4,6 +4,7 @@ description: 'If you have been doing front-end development recently, the chances
 pubDate: 'Jul 04, 2017'
 heroImage: './hero.jpg'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 If you have been doing front-end development recently, the chances are that you would have heard about Webpack multiple times. In fact, most of the starter kits are built using Webpack Dev Server. The implementation and configuration are hidden by wrappers above it so that the developer continues working on the application and does not have to worry about how to serve the files. If you are unaware of Webpack, you can read more about it and the config file in my post which gives an [Introduction to Webpack](https://www.wisdomgeek.com/web-development/webpack-introduction/). Webpack Dev Server spins up a nodeJS server with some additional functionalities that help you as a developer working on your front end. So it provides us with all the features of Webpack plus a development server which serves our files over HTTP and functionalities such as watch mode, live reloading and hot module replacement which makes our lives easier as a developer.

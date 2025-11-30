@@ -4,6 +4,7 @@ description: 'We have previously written about parsing JSON in Android without u
 pubDate: 'Jul 22, 2019'
 heroImage: './hero.jpeg'
 categories: ["Android Development"]
+categoryHierarchy: ["Development","Android Development"]
 ---
 
 We have previously written about parsing JSON in Android without using any libraries in this [post](https://www.wisdomgeek.com/development/android-development/json-parsing-in-android-tutorial/). In this one, we will use a library (Retrofit) for doing the same.

@@ -4,6 +4,7 @@ description: 'ES6 introduced the set data structure in JavaScript. But sets are 
 pubDate: 'Nov 26, 2022'
 heroImage: './hero.png'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 ES6 introduced the set data structure in JavaScript. But sets are not ordered abstract data structures. So there is no .sort() property available on them. To sort a Set in JavaScript, we need to convert it into an array first.

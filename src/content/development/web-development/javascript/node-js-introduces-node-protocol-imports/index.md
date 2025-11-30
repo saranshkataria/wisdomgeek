@@ -4,6 +4,7 @@ description: 'Node.js recently introduced a node: protocol for built-in modules.
 pubDate: 'Dec 23, 2021'
 heroImage: './hero.jpg'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 Node.js recently introduced a node: protocol for built-in modules. Built-in node modules can now be imported by prefixing the node: protocol prefix.

@@ -4,6 +4,7 @@ description: 'Manually copy-pasting the output of a terminal command with a mous
 pubDate: 'May 15, 2024'
 heroImage: './hero.png'
 categories: ["Development"]
+categoryHierarchy: ["Development"]
 ---
 
 Manually copy-pasting the output of a terminal command with a mouse/trackpad feels tedious. It is more convenient to use commands to do so. And we can save the effort by using the built-in commands.

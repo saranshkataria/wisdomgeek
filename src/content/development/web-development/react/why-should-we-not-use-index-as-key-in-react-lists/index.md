@@ -4,6 +4,7 @@ description: 'When working with React, developers often come across the need to 
 pubDate: 'Jan 22, 2024'
 heroImage: './hero.png'
 categories: ["React"]
+categoryHierarchy: ["Development","Web Development","React"]
 ---
 
 When working with React, developers often come across the need to render lists of items efficiently. Every item in a list needs to have a key prop assigned to it. It is essential for enabling React to track changes made to these items. Using array indexes as these keys is a common error made by beginners. Let us discuss why we should not use array index as key in React lists. We will also go into what alternatives exist and can be used for better performance and consistency.

@@ -4,6 +4,7 @@ description: 'Once we start exploring TypeScript, we start using interfaces and 
 pubDate: 'May 13, 2021'
 heroImage: './hero.jpg'
 categories: ["TypeScript"]
+categoryHierarchy: ["Development","Web Development","Typescript"]
 ---
 
 Once we start exploring TypeScript, we start using interfaces and types without really understanding the differences between them. I am guilty of doing that as well. It is simple to get started with them and keep using them. But, at some point, it becomes important to know the difference between interface and type.

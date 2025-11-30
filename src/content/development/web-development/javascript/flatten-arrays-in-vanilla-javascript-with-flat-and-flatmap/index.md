@@ -4,6 +4,7 @@ description: 'ES2019 introduced two methods on the array prototype that would ma
 pubDate: 'Jan 05, 2022'
 heroImage: './hero.jpeg'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 ES2019 introduced two methods on the array prototype that would make life so much simpler for developers. These are flat() and flatmap() which help in flattening arrays.

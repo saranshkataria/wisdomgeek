@@ -4,6 +4,7 @@ description: 'As developers, we always want to be more productive. And who does 
 pubDate: 'Feb 11, 2021'
 heroImage: './hero.jpg'
 categories: ["Programming"]
+categoryHierarchy: ["Development","Programming"]
 ---
 
 As developers, we always want to be more productive. And who does not like to write more code using a lesser number of keystrokes? Code snippets provide is with exactly that. Let us dive deeper into Visual Studio Code snippets in detail in this post.

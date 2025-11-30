@@ -4,6 +4,7 @@ description: 'React hooks have been around for quite some time. They have been w
 pubDate: 'Aug 25, 2020'
 heroImage: './hero.jpg'
 categories: ["React"]
+categoryHierarchy: ["Development","Web Development","React"]
 ---
 
 React hooks have been around for quite some time. They have been widely adopted by the React community since then and have started becoming the defacto for newer React applications.

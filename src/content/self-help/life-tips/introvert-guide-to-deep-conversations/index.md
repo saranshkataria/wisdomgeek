@@ -4,6 +4,7 @@ description: 'Throughout school, I was a bookworm and an introvert. “Socializi
 pubDate: 'Jun 25, 2020'
 heroImage: './hero.jpeg'
 categories: ["Life Tips","People"]
+categoryHierarchy: ["Self Help","Life Tips"]
 ---
 
 Throughout school, I was a bookworm and an introvert. “Socializing” was not my cup of tea. I was never really sure about how to drive any deep conversations or connect with another person. As an introvert, every time I tried doing so, my self-doubt and social anxiety would creep in. I felt as if I might sound extremely weird, boring, or that the other person might judge me. These thoughts kept me from freely opening up about myself. 

@@ -4,6 +4,7 @@ description: 'When installing a package using npm, you might encounter the "erro
 pubDate: 'Oct 19, 2023'
 heroImage: './hero.jpeg'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 When installing a package using npm, you might encounter the "error: cannot find module semver" error. 

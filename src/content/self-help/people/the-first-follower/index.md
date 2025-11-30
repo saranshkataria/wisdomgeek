@@ -4,6 +4,7 @@ description: 'Sometimes in life, you sit down with yourself and introspect on al
 pubDate: 'Feb 27, 2016'
 heroImage: './hero.jpg'
 categories: ["People"]
+categoryHierarchy: ["Self Help","People"]
 ---
 
 Sometimes in life, you sit down with yourself and introspect on all that has happened in the past. And you get to the realization that a lot of what has been done in the past was not only because of your own efforts. There were always people present who believed in you and there in lies the key. I am no great personality. But every time I did do something remotely spectacular, I always had someone besides me, next in line, ready to help me out if I needed assistance. And as much of a lunatic I am, I have been a lucky person when it comes to such occasions. I am referring to these people as first followers with respect to the talk I am sharing below, but in my case a first follower has always been a friend who I knew I could trust.

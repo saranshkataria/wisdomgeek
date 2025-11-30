@@ -4,6 +4,7 @@ description: 'Someone recently reached out to me and asked how am I able to writ
 pubDate: 'Jun 24, 2021'
 heroImage: './hero.jpg'
 categories: ["Life Tips"]
+categoryHierarchy: ["Self Help","Life Tips"]
 ---
 
 Someone recently reached out to me and asked how am I able to write consistently. Her exact words were: "how do you even begin to write if you don’t mind me asking? I’ve been working on it but I have impostor syndrome and suck at writing." And at that point, all I could think of was, impostor syndrome has become a popular term to sling around the web these days. I believe most people have beginner syndrome instead.

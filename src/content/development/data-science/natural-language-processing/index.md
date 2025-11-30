@@ -4,6 +4,7 @@ description: 'Natural Language Processing has gained a lot of popularity owing t
 pubDate: 'Nov 24, 2020'
 heroImage: './hero.jpg'
 categories: ["Data Science","Machine Learning"]
+categoryHierarchy: ["Development","Data Science"]
 ---
 
 Natural Language Processing has gained a lot of popularity owing to an exponential increase in unstructured data generation. Here are some fun data to give you context – 

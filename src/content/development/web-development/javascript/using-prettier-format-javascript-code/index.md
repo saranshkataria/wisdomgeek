@@ -4,6 +4,7 @@ description: 'If you have been programming for a while, you would be familiar wi
 pubDate: 'Feb 15, 2018'
 heroImage: './hero.png'
 categories: ["Featured","JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 If you have been programming for a while, you would be familiar with the hassles of writing clean code and maintaining consistency across a project on some specific code style guidelines. Even if you spend a few days making everything consistent, some other developer might check-in their changes or disable some flag to quickly get their code in.

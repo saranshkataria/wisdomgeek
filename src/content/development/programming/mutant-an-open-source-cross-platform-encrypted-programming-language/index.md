@@ -4,6 +4,7 @@ description: 'Mutant is an open-source, cross-platform, compiled, garbage collec
 pubDate: 'Apr 01, 2021'
 heroImage: './hero.jpeg'
 categories: ["Programming"]
+categoryHierarchy: ["Development","Programming"]
 ---
 
 Mutant is an open-source, cross-platform, compiled, garbage collected, encrypted programming language that wants to make secure programming and security research more accessible. The target audience for mutant is students, security researchers, and reverse engineers.

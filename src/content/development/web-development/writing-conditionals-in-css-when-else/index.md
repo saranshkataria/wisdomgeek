@@ -4,6 +4,7 @@ description: 'CSS already has had conditionals in the form of @media queries or 
 pubDate: 'Nov 24, 2021'
 heroImage: './hero.jpeg'
 categories: ["Web Development"]
+categoryHierarchy: ["Development","Web Development"]
 ---
 
 CSS already has had conditionals in the form of @media queries or @support queries to selectively apply styling to the document. But there is a new proposal called when/else which takes it to a different level.

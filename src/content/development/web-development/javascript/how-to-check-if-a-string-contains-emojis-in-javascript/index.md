@@ -4,6 +4,7 @@ description: 'If you have user-generated content in your web application, chance
 pubDate: 'Dec 01, 2021'
 heroImage: './hero.png'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 If you have user-generated content in your web application, chances are you have to deal with strings containing emojis. Since emojis are stored as Unicode, chances are that we want to detect these in our code and then render them accordingly. This article discusses how we can check if a string contains emojis in JavaScript.

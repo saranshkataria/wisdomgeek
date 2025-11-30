@@ -4,6 +4,7 @@ description: 'The groupBy method is one of the reasons people use lodash in thei
 pubDate: 'Oct 01, 2020'
 heroImage: './hero.png'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 The groupBy method is one of the reasons people use [lodash](https://lodash.com/) in their project. In this blog post, we will write our own version of groupBy using reduce and vanilla JavaScript.

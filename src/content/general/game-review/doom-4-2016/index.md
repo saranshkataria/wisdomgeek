@@ -4,6 +4,7 @@ description: 'It has been a while since I did a game review. Unfortunately, I di
 pubDate: 'Jun 15, 2016'
 heroImage: './hero.jpg'
 categories: ["Game Review"]
+categoryHierarchy: ["General","Game Review"]
 ---
 
 It has been a while since I did a game review. Unfortunately, I did not get the opportunity to play any game that I wanted to review. But DOOM 4 was one game I definitely wanted to write about! So here is a review about the new Doom.

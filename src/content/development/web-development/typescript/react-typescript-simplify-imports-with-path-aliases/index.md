@@ -4,6 +4,7 @@ description: 'As codebases grow larger and more complex in structure, imports ca
 pubDate: 'Jan 27, 2024'
 heroImage: './hero.png'
 categories: ["TypeScript"]
+categoryHierarchy: ["Development","Web Development","Typescript"]
 ---
 
 As codebases grow larger and more complex in structure, imports can become unmanageable. As more directories are added, imports become intricately long and obscure clarity. Fortunately, we can simplify imports with path aliases.

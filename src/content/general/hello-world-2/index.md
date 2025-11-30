@@ -4,6 +4,7 @@ description: 'This blog post might come as a surprise to many since I have not w
 pubDate: 'Apr 06, 2015'
 heroImage: './hero.png'
 categories: ["General"]
+categoryHierarchy: ["General"]
 ---
 
 This blog post might come as a surprise to many since I have not written anything for a while now, and such has been life since joining the corporate world. But I recently realized that writing things used to help bring clarity inside my head. So, I have decided to get back to blogging.

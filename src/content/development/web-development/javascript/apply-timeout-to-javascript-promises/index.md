@@ -4,6 +4,7 @@ description: 'JavaScript promises do not have any time associated with them. We 
 pubDate: 'Jun 10, 2021'
 heroImage: './hero.jpeg'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 JavaScript promises do not have any time associated with them. We can use a .then() function and wait until the promise is resolved or rejected. We can even await it, and either of those works if the async task finishes in a reasonable amount of time. But in the case when the task is potentially taking a long time, we might want to let the user know. We want to apply timeout to JavaScript promises in such scenarios.

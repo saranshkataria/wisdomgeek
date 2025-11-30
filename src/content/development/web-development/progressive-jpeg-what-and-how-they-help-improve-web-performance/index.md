@@ -4,6 +4,7 @@ description: 'A progressive JPEG image is a JPEG image that is encoded in a diff
 pubDate: 'Jul 31, 2021'
 heroImage: './hero.jpg'
 categories: ["Web Development"]
+categoryHierarchy: ["Development","Web Development"]
 ---
 
 A progressive JPEG image is a JPEG image that is encoded in a different manner than a baseline JPEG. It loads in waves until a clear picture is loaded. This can improve the performance of a website as the image appears to be loading faster.

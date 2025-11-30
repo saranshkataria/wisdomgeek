@@ -4,6 +4,7 @@ description: 'Building upon our React hooks introduction from our previous post 
 pubDate: 'Sep 01, 2020'
 heroImage: './hero.png'
 categories: ["React"]
+categoryHierarchy: ["Development","Web Development","React"]
 ---
 
 Building upon our React hooks introduction from our previous post on [understanding React hooks (useState and useEffect)](https://www.wisdomgeek.com/development/web-development/react/react-hooks-and-local-storage-lets-build-a-todo-app/), we will look at the useReducer hook in this post. useReducer hook can be an alternative to useState (in fact, useState uses useReducer internally). Before getting into how to use the useReducer hook, we should understand what is meant by a reducer.

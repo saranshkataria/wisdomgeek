@@ -4,6 +4,7 @@ description: 'If you are a javascript developer, chances are you would have hear
 pubDate: 'Mar 21, 2018'
 heroImage: './hero.png'
 categories: ["GraphQL"]
+categoryHierarchy: ["Development","Web Development","Graphql"]
 ---
 
 If you are a javascript developer, chances are you would have heard about React, Relay, and GraphQL recently.

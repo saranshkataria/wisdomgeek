@@ -4,6 +4,7 @@ description: 'Over the past few months, I found a new use of the pictures that I
 pubDate: 'Aug 17, 2021'
 heroImage: './hero.png'
 categories: ["General"]
+categoryHierarchy: ["General"]
 ---
 
 Over the past few months, I found a new use of the pictures that I have clicked while hiking. I started using them as Zoom virtual backgrounds. If you are anything like me and take a lot of pictures, it can be hard to decide which one looks good. And then I decided to use them all, on different days. Sadly, Zoom does not have this as a built-in feature. And being a Software developer, I had to automate the process of choosing a random Zoom virtual background every day.

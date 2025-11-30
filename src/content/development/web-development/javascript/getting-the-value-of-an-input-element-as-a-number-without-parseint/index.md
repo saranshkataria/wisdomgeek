@@ -4,6 +4,7 @@ description: 'Every once in a while, you come across something and you think, ho
 pubDate: 'Oct 26, 2022'
 heroImage: './hero.jpeg'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 Every once in a while, you come across something and you think, how did I not know this earlier? `valueAsNumber` is that thing for me. Whenever we need the value of an `HTMLInputElement`, we go to `e.target.value`. But getting the value of an input element as a number can be done without parseInt or parsing it.

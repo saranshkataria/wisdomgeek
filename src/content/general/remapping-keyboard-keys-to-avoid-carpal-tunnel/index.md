@@ -4,6 +4,7 @@ description: 'I am terrible at optimizing my keyboard layout for anything. But o
 pubDate: 'Nov 10, 2024'
 heroImage: './hero.png'
 categories: ["General"]
+categoryHierarchy: ["General"]
 ---
 
 I am terrible at optimizing my keyboard layout for anything. But off lately, my little finger has started hurting a little and I have been spent some time to investigate why that was happening.

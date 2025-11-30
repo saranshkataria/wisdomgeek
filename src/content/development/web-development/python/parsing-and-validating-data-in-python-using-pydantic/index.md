@@ -4,6 +4,7 @@ description: 'The introduction of type hinting opened the gates for many great n
 pubDate: 'Mar 23, 2021'
 heroImage: './hero.png'
 categories: ["Python"]
+categoryHierarchy: ["Development","Web Development","Python"]
 ---
 
 The introduction of type hinting opened the gates for many great new features in Python. And data validation and parsing became easier to do with the use of type hints. Pydantic is one such package that enforces type hints at runtime. It throws errors, allowing developers to catch invalid data.

@@ -4,6 +4,7 @@ description: 'The rest and spread operator have changed the way I do a lot of th
 pubDate: 'Oct 17, 2019'
 heroImage: './hero.png'
 categories: ["Development","JavaScript","Web Development"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 The rest and spread operator have changed the way I do a lot of things in JavaScript and I have started using the three dots for a lot of tasks I do. I have become a big fan of the syntax and I will be sharing some of the numerous applications of the spread operator in this post. But before we dive into the applications, here's a quick refresher of what these operators do:

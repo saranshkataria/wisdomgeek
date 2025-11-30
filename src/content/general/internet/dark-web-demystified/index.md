@@ -4,6 +4,7 @@ description: 'You probably would have heard about the term dark web or deep web 
 pubDate: 'Jan 27, 2016'
 heroImage: './hero.jpg'
 categories: ["Internet"]
+categoryHierarchy: ["General","Internet"]
 ---
 
 You probably would have heard about the term dark web or deep web while browsing. And might be curious as to what it actually is and if it is safe at all. The World Wide Web, which is an integral part of our lives as of now, is just like an iceberg. The part of the iceberg above the water, which is well visible to us, is the normal web, that we access and use everyday. Everything on this "normal web" can be indexed by search engines like Google, Yahoo and Bing. However, this part of the web is just about 4% of the entire world wide web in existence.

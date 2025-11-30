@@ -4,6 +4,7 @@ description: 'Object destructuring is a powerful ES 6 feature that can help deve
 pubDate: 'Mar 28, 2024'
 heroImage: './hero.png'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 Object destructuring is a powerful ES 6 feature that can help developers write cleaner code. It allows us to extract properties from a JavaScript object into variables.

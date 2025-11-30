@@ -4,6 +4,7 @@ description: 'As you might know, I have been diving into setting up a boilerplat
 pubDate: 'Apr 09, 2019'
 heroImage: './hero.png'
 categories: ["Web Development"]
+categoryHierarchy: ["Development","Web Development"]
 ---
 
 As you might know, I have been diving into setting up a boilerplate for a TypeScript project with React. And what good is a project without a unit testing framework? So I will go through the process of setting up Jest with TypeScript and Babel in this post.

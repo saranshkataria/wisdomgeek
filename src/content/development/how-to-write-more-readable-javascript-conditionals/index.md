@@ -4,6 +4,7 @@ description: 'One of the practices of clean code is to make it more readable. An
 pubDate: 'Oct 04, 2022'
 heroImage: './hero.png'
 categories: ["Development"]
+categoryHierarchy: ["Development"]
 ---
 
 One of the practices of clean code is to make it more readable. And a fairly common use case in code bases is conditionals. I recently came across a way of writing more readable JavaScript conditionals and thought of sharing it with everyone.

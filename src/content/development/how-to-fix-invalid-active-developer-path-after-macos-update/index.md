@@ -4,6 +4,7 @@ description: 'If you are here, then you are getting an "invalid active developer
 pubDate: 'Nov 01, 2022'
 heroImage: './hero.png'
 categories: ["Development"]
+categoryHierarchy: ["Development"]
 ---
 
 If you are here, then you are getting an "invalid active developer path" error on running commands in the terminal after a MacOS update. To be exact, the error would be:

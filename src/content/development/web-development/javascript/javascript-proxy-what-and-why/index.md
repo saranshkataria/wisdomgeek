@@ -4,6 +4,7 @@ description: 'EcmaScript 2015 introduced yet another feature that has not been u
 pubDate: 'Feb 16, 2021'
 heroImage: './hero.png'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 EcmaScript 2015 introduced yet another feature that has not been used widely yet. A JavaScript proxy allows us to wrap an existing object with a layer. The layer can provide us with capabilities such as the interception of attributes and methods. And this can be done even if the properties do not exist!

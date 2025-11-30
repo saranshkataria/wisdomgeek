@@ -4,6 +4,7 @@ description: 'There are two ways to remove a property from a JavaScript object: 
 pubDate: 'Aug 29, 2021'
 heroImage: './hero.jpg'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 There are two ways to remove a property from a JavaScript object: one is the mutable way of doing it by using the delete operator. And the second one is the immutable way of doing it by using [object restructuring](https://www.wisdomgeek.com/development/web-development/rest-and-spread-operator-three-dots-that-changed-javascript/). Let us go through each of these:

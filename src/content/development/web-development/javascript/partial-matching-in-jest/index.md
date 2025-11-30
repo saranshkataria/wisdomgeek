@@ -4,6 +4,7 @@ description: 'Jest has the ability to check for partial matches on arrays and ob
 pubDate: 'Oct 25, 2023'
 heroImage: './hero.jpg'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 Jest has the ability to check for partial matches on arrays and objects. Let us see how to do partial matching in Jest.

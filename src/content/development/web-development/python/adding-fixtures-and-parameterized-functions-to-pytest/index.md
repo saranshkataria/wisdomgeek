@@ -4,6 +4,7 @@ description: 'As we discussed in our post on getting started with Pytest, the fr
 pubDate: 'Mar 11, 2021'
 heroImage: './hero.png'
 categories: ["Python"]
+categoryHierarchy: ["Development","Web Development","Python"]
 ---
 
 As we discussed in our post on [getting started with Pytest](https://www.wisdomgeek.com/development/web-development/python/testing-python-applications-using-pytest/), the framework allows us to reuse tests by using test fixtures and parameterized functions. In this post, we will learn how to do so.

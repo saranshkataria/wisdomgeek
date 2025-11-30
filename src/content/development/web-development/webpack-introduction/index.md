@@ -4,6 +4,7 @@ description: 'Before coming to the discussion about Webpack, let us first discus
 pubDate: 'Jan 12, 2017'
 heroImage: './hero.png'
 categories: ["Web Development"]
+categoryHierarchy: ["Development","Web Development"]
 ---
 
 Before coming to the discussion about Webpack, let us first discuss how web development has evolved over the past few years and why we even need a build tool for something like Javascript.

@@ -4,6 +4,7 @@ description: 'Most of you would already be aware that javascript is an implement
 pubDate: 'May 12, 2016'
 heroImage: './hero.jpg'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 Most of you would already be aware that javascript is an implementation of ECMAScript (ES). ES is the standardized language specification, and javascript is the dialect or the implementation. After the ES5 standardization in 2009, there were no updates to it. And since then, javascript has evolved a lot. It is no longer a scripting language that runs on the client side. Nor is it restricted to the web. It goes further beyond. Hence there arose a need for adding more features to vanilla javascript. And it had to be done in a way that all browsers implemented all these changes. So, documentation for ecmascript 6 or ES2015 (code named Harmony) was started in mid 2014. It introduces a comprehensive amount of new syntax to the language and can be considered as one of the biggest changes to javascript (Except for ES4, which was abandoned).

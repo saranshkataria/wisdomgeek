@@ -4,6 +4,7 @@ description: 'As dark themes have become popular across the web and across opera
 pubDate: 'Mar 02, 2022'
 heroImage: './hero.png'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 As dark themes have become popular across the web and across operating systems, we might want to check the user's operating system preference when they visit our website. This way, we can initialize our website accordingly after detecting their dark mode preference.

@@ -4,6 +4,7 @@ description: 'This is the second post in the Demystifying Programming Interview 
 pubDate: 'Jan 07, 2021'
 heroImage: './hero.png'
 categories: ["Algorithms and Data Structures"]
+categoryHierarchy: ["Development","Algorithms And Data Structures"]
 ---
 
 This is the second post in the Demystifying Programming Interview series, which aims at helping students and professionals who are planning to appear for programming interviews. If you are new to this series, you can check out the first post about [the number of islands problem](https://www.wisdomgeek.com/development/algorithms-and-data-structures/demystifying-programming-interview-number-of-islands/). We will solve the Palindromic Substrings problem on [Leetcode](https://leetcode.com/problems/palindromic-substrings/), which asks to count the palindromic substrings in a given input string. While doing that, we will also learn how to optimize the brute force solution to arrive at the optimal one.

@@ -4,6 +4,7 @@ description: 'I have been playing a lot with CSS these days, and then I came acr
 pubDate: 'Sep 02, 2015'
 heroImage: './hero.png'
 categories: ["Web Development"]
+categoryHierarchy: ["Development","Web Development"]
 ---
 
 I have been playing a lot with CSS these days, and then I came across the concepts of using variables inside it. I came to know of two ways to do so, SASS and LESS. I was eager to try both out but it was only possible one at a time. So I chose SASS first, since a couple of friends of mine suggested it to be better, and that SASS compiles into CSS on the server side as opposed to the client side in LESS (using javascript). Also I saw Bootstrap v4 dumping LESS for SASS. So, that made the choice pretty much obvious. In this post, I will cover the very basics of SASS, not dwelling into any code since most people are not using a pre-processor for CSS, so a need for its use needs to be understood first.

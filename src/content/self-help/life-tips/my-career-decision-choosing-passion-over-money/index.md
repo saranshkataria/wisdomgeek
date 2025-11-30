@@ -4,6 +4,7 @@ description: 'As you might know, I recently switched jobs. In my long journey of
 pubDate: 'Mar 25, 2021'
 heroImage: './hero.jpg'
 categories: ["Life Tips"]
+categoryHierarchy: ["Self Help","Life Tips"]
 ---
 
 As you might know, I recently switched jobs. In my long journey of finding a new one, there was a moment where I was offered way more money than I had anticipated for a role that I was not as passionate about. I wish I could say that it was an easy no for me. But it was not. I wanted to say no. But instead, I kept asking myself, "Am I really going to do this?". I even talked to quite a few close friends about that decision. Everybody, including my parents, told me that I was insane to decline that offer. But I did it anyway. I ended up choosing passion over money.

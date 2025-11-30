@@ -4,6 +4,7 @@ description: 'TypeScript is way more powerful than I give it credit for. I recen
 pubDate: 'Feb 05, 2024'
 heroImage: './hero.png'
 categories: ["TypeScript"]
+categoryHierarchy: ["Development","Web Development","Typescript"]
 ---
 
 TypeScript is way more powerful than I give it credit for. I recently learned about creating new TypeScript types using template literal types, and I was pretty surprised to know that TypeScript can do that.

@@ -4,6 +4,7 @@ description: 'CSS now includes a :has selector that allows us to apply styles on
 pubDate: 'Nov 12, 2022'
 heroImage: './hero.png'
 categories: ["Web Development"]
+categoryHierarchy: ["Development","Web Development"]
 ---
 
 CSS now includes a :has selector that allows us to apply styles on the basis of what is happening inside an element. Often referred to as a parent seletor, the :has() function allows us to achieve this and more.

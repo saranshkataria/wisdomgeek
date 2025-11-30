@@ -4,6 +4,7 @@ description: 'The need to verify and notify the user if the Caps Lock key is on 
 pubDate: 'Feb 11, 2024'
 heroImage: './hero.png'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 The need to verify and notify the user if the Caps Lock key is on is fairly common. It is particularly significant when constructing password inputs because users do not realize they are typing with their caps lock on. Let us see how to detect caps lock with JavaScript to do so.

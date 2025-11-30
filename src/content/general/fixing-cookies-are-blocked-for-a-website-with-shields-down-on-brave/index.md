@@ -4,6 +4,7 @@ description: 'I recently switched completely to the Brave browser and have set a
 pubDate: 'Jul 14, 2024'
 heroImage: './hero.jpg'
 categories: ["General"]
+categoryHierarchy: ["General"]
 ---
 
 I recently switched completely to the Brave browser and have set ad blocking to aggressive mode because ads were still showing on some websites. This however, broke my WordPress website since it relies on cookies.

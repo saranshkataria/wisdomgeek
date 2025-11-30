@@ -4,6 +4,7 @@ description: 'If you have been using React for a while, you are familiar with ho
 pubDate: 'May 25, 2021'
 heroImage: './hero.png'
 categories: ["React"]
+categoryHierarchy: ["Development","Web Development","React"]
 ---
 
 If you have been using React for a while, you are familiar with how state update works. There are a lot of internal optimizations that React makes for faster rendering. One of the implementation details of the React internals is that it checks whether the given state object has actually changed or not. But the behavior of assigning a new object/array trips up newcomers. Let us understand why React needs a new copy of an object/array when assigning state.

@@ -4,6 +4,7 @@ description: 'You might have already made the choice among Grunt Vs Gulp Vs npm 
 pubDate: 'Jan 12, 2016'
 heroImage: './hero.png'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 You might have already made the choice among Grunt Vs Gulp Vs npm already. Or you might be totally confused what all these are. All these are automation tools used during or after development.

@@ -162,62 +162,52 @@ async function fetchWordPressPosts() {
       // Get categories with hierarchy - WordPress stores them with parent information
       const categories = post._embedded?.['wp:term']?.[0] || [];
       
-      // Build complete category hierarchy
-      const categoryHierarchy = [];
-      const categoryObjects = [];
-      
-      for (const cat of categories) {
-        categoryObjects.push({
-          id: cat.id,
-          name: cat.name,
-          slug: cat.slug,
-          parent: cat.parent || null
-        });
-      }
-      
-      // Build hierarchy by checking parent relationships
-      const buildCategoryPath = (catId, allCats) => {
-        const cat = allCats.find(c => c.id === catId);
-        if (!cat) return [];
-        
-        const path = [cat.name];
-        if (cat.parent) {
-          const parentPath = buildCategoryPath(cat.parent, allCats);
-          return [...parentPath, ...path];
-        }
-        return path;
-      };
-      
-      // Get all unique category paths
-      const allCategoryPaths = categoryObjects.map(cat => buildCategoryPath(cat.id, categoryObjects));
-      
-      // Use the longest path as the primary category hierarchy
-      const primaryCategoryPath = allCategoryPaths.sort((a, b) => b.length - a.length)[0] || ['General'];
-      
-      // Also collect all category names (flat list)
-      const categoryNames = categoryObjects.map(cat => cat.name);
-      
-      const primaryCategory = categoryNames[0] || 'general';
-      
-      // Build nested category path from most specific to least specific
-      // WordPress returns categories with parent-child relationships
-      const categorySlugs = categories.map(cat => cat.slug);
-      
-      // Get the full category path by checking the WordPress API link structure
-      // The most specific category is typically first, but we need to build the hierarchy
+      // Find the category with the deepest hierarchy (for folder structure)
+      // and collect all category names
       let categoryPath = 'general';
+      let primaryCategoryPath = ['General'];
+      const allCategoryNames = [];
+      
       if (categories.length > 0) {
-        // WordPress link contains the full path, extract it
-        const categoryLink = categories[0].link || '';
+        // Find the category with the longest path (deepest hierarchy)
+        let deepestCategory = categories[0];
+        let maxDepth = 0;
+        
+        for (const cat of categories) {
+          const link = cat.link || '';
+          const linkMatch = link.match(/https?:\/\/[^\/]+\/(.+?)\/$/);
+          if (linkMatch) {
+            const depth = linkMatch[1].split('/').length;
+            if (depth > maxDepth) {
+              maxDepth = depth;
+              deepestCategory = cat;
+            }
+          }
+          // Collect all category names
+          allCategoryNames.push(cat.name);
+        }
+        
+        // Use the deepest category for the folder structure
+        const categoryLink = deepestCategory.link || '';
         const linkMatch = categoryLink.match(/https?:\/\/[^\/]+\/(.+?)\/$/);
         if (linkMatch) {
           categoryPath = linkMatch[1].toLowerCase();
         } else {
           // Fallback: just use the slug
-          categoryPath = (categorySlugs[0] || 'general').toLowerCase();
+          categoryPath = (deepestCategory.slug || 'general').toLowerCase();
         }
+        
+        // Convert the path to a hierarchy array
+        // e.g., "development/web-development/javascript" -> ["Development", "Web Development", "JavaScript"]
+        const pathParts = categoryPath.split('/');
+        primaryCategoryPath = pathParts.map(part => {
+          // Convert slug to title case
+          return part.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+        });
       }
-
+      
+      const primaryCategory = categoryPath.split('/')[0] || 'general';
+      
       // Create post directory with nested category structure (lowercase slug)
       const postSlug = post.slug.toLowerCase();
       const postDir = path.join(CONTENT_DIR, categoryPath, postSlug);
@@ -309,7 +299,8 @@ title: '${post.title.rendered.replace(/'/g, "''")}'
 description: '${cleanExcerpt.replace(/'/g, "''")}'
 pubDate: '${formattedDate}'
 heroImage: '${heroImage}'
-categories: ${JSON.stringify(primaryCategoryPath)}
+categories: ${JSON.stringify(allCategoryNames)}
+categoryHierarchy: ${JSON.stringify(primaryCategoryPath)}
 ---
 
 ${processedContent}

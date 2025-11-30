@@ -4,6 +4,7 @@ description: 'React 16.6 was released a couple of days and and it brings a coupl
 pubDate: 'Oct 26, 2018'
 heroImage: './hero.png'
 categories: ["React"]
+categoryHierarchy: ["Development","Web Development","React"]
 ---
 
 React 16.6 was released a couple of days and and it brings a couple of new features.

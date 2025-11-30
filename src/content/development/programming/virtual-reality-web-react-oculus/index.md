@@ -4,6 +4,7 @@ description: 'At Oculus Connect 3, Oculus, the virtual reality giant, announced
 pubDate: 'Jan 03, 2017'
 heroImage: './hero.jpg'
 categories: ["Programming"]
+categoryHierarchy: ["Development","Programming"]
 ---
 
 At Oculus Connect 3, [Oculus](https://www.oculus.com/), the virtual reality giant, announced that they are working on something pretty awesome regarding virtual reality! They like to call it as “WebVR” ie. Virtual Reality for the Web! This certainly is something which should excite a virtual reality developer.* *Though it is worth mentioning that this is currently in preview mode and [not many browsers support it](https://github.com/facebookincubator/react-vr#will-my-web-browser-support-my-vr-headset). But it does give us a glimpse of how the APIs would look like down the line. Another interesting thing to note is that these APIs can be seamlessly used with VR devices, and they promise a seamless frame rate of 60 fps on the Web. This could very well be the future of the web, and might also define how we scroll and view immersive content. Both Oculus and Facebook have vested interests in that section.

@@ -4,6 +4,7 @@ description: 'I have been blogging for quite some time now, and there have been 
 pubDate: 'Jun 02, 2016'
 heroImage: './hero.jpg'
 categories: ["Blogging"]
+categoryHierarchy: ["Blogging"]
 ---
 
 I have been blogging for quite some time now, and there have been times wherein I have written posts without doing any keyword research at all. And there have been times when I kept staring wildly at the Google keyword planner tool to suggest me a good keyword for my article. Though I do not use the AdWords keyword tool extensively, I have made mistakes using it. And anyone who is not doing keyword research at all should start using one of the many keyword tools out there to start reaping the benefits of organic search traffic. And in this post, I will share my experience about the mistake I made while doing keyword research. Though I am going to talk with respect to Google AdWords keyword planner specifically, this implies to all keyword tools out there.

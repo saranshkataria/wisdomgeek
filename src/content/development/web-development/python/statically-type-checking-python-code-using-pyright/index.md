@@ -4,6 +4,7 @@ description: 'With the introduction of type hinting in Python 3.5, static typing
 pubDate: 'Mar 16, 2021'
 heroImage: './hero.png'
 categories: ["Python"]
+categoryHierarchy: ["Development","Web Development","Python"]
 ---
 
 With the introduction of type hinting in Python 3.5, static typing and checking Python codes has started to gain popularity. While MyPy was the first tool to do static type checking of Python code, many other frameworks have been built after it. Pyright is one such tool built by Microsoft and is the one that we will be discussing in this post.

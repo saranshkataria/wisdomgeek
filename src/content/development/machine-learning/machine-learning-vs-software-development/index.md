@@ -4,6 +4,7 @@ description: 'There has been a rapid advancement in technology and machine learn
 pubDate: 'Sep 09, 2020'
 heroImage: './hero.jpg'
 categories: ["Development","Machine Learning"]
+categoryHierarchy: ["Development","Machine Learning"]
 ---
 
 There has been a rapid advancement in technology and machine learning in the past decade. This has been accompanied by accelerated and innovative growth in the field of cloud computing. For example, Google introduced TPUs which are now available through Google Colab. And one can use it to experiment and explore the world of Artificial Intelligence and Machine Learning. With state-of-the-art hardware at one's disposal, model building has become a very easy task. Consequently, these advancements have aided many software developers to get acquainted with the field of machine learning. Having worked in the software industry myself, I personally feel the layers of abstraction that are provided through machine learning libraries make the process of model building very easy, fast, and intuitive. However, there are quite a few machine learning misconceptions that have become popular among software developers.

@@ -4,6 +4,7 @@ description: 'Data Science and storytelling are inseparable. And the bridge betw
 pubDate: 'Aug 11, 2020'
 heroImage: './hero.jpg'
 categories: ["Data Science"]
+categoryHierarchy: ["Development","Data Science"]
 ---
 
 Data Science and storytelling are inseparable. And the bridge between the two is data.

@@ -4,6 +4,7 @@ description: 'TypeScript provides some built-in utility types that help facilita
 pubDate: 'May 20, 2021'
 heroImage: './hero.jpg'
 categories: ["TypeScript"]
+categoryHierarchy: ["Development","Web Development","Typescript"]
 ---
 
 TypeScript provides some built-in utility types that help facilitate transformations of types from one form to another.

@@ -4,6 +4,7 @@ description: 'Zombie processes are usually a pain to figure out. More often than
 pubDate: 'Mar 10, 2022'
 heroImage: './hero.png'
 categories: ["Development"]
+categoryHierarchy: ["Development"]
 ---
 
 Zombie processes are usually a pain to figure out. More often than not, I end up googling about how to kill a process on a port using the command line. It can be done using the activity monitor as well, but that is a time-consuming process.

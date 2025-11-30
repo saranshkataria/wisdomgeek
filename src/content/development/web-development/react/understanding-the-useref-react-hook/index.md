@@ -4,6 +4,7 @@ description: 'Continuing our React hooks series, we will learn about the useRef 
 pubDate: 'Jan 21, 2021'
 heroImage: './hero.jpg'
 categories: ["React"]
+categoryHierarchy: ["Development","Web Development","React"]
 ---
 
 Continuing our [React hooks](https://www.wisdomgeek.com/tag/react-hooks/) series, we will learn about the useRef React hook in this blog post.

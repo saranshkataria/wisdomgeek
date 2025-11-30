@@ -4,6 +4,7 @@ description: 'If I had asked a web developer a few years ago about using a build
 pubDate: 'Jul 28, 2016'
 heroImage: './hero.jpg'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 If I had asked a web developer a few years ago about using a build tool for their web project, the developer would have mocked me for even thinking about using a javascript build tool. It is a common notion that Javascript is not compiled and is interpreted by the browser. Hence, there was no need for having any javascript build tool. In cross-platform languages such as Java or .Net the code is converted into an intermediate form first which then gets converted to native machine code based on the operating system and the run-time environment. Unlike those languages, Javascript does not have these hassles and gets executed in the browser. So the idea of having a javascript build can sound mostly ridiculous. And thus the popular Javascript build tools did not exist up to a certain point in time.

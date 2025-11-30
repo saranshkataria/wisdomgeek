@@ -4,6 +4,7 @@ description: 'The web is and probably always be an ever-evolving platform. Even 
 pubDate: 'Jun 18, 2019'
 heroImage: './hero.jpeg'
 categories: ["Web Development"]
+categoryHierarchy: ["Development","Web Development"]
 ---
 
 The web is and probably always be an ever-evolving platform. Even though most of us have a decent internet connection these days, it is not the case for everyone in the world. Even if you have a nice internet, it might be flaky if you are traveling. Such situations can often lead to bad user experience for websites.  This was the problem that Google was trying to tackle when they came up with the concept of Progressive Web Applications. PWAs  brought in the concept of a service worker.

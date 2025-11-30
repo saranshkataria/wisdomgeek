@@ -4,6 +4,7 @@ description: 'In this react hooks series, we have already explored the react hoo
 pubDate: 'Sep 15, 2020'
 heroImage: './hero.jpg'
 categories: ["React"]
+categoryHierarchy: ["Development","Web Development","React"]
 ---
 
 In this react hooks series, we have already explored the react hooks [useState, useEffect](https://www.wisdomgeek.com/development/web-development/react/react-hooks-and-local-storage-lets-build-a-todo-app/), and [useReducer](https://www.wisdomgeek.com/development/web-development/react/understanding-the-usereducer-hook-in-react/). The next react hook we will look into is the useContext hook.

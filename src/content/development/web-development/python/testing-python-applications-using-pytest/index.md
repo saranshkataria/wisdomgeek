@@ -4,6 +4,7 @@ description: 'Testing our code brings in a variety of benefits, including buildi
 pubDate: 'Mar 09, 2021'
 heroImage: './hero.png'
 categories: ["Python"]
+categoryHierarchy: ["Development","Web Development","Python"]
 ---
 
 Testing our code brings in a variety of benefits, including building confidence in the code's functioning and having lesser regressions. Writing and maintaining tests requires some additional work, and that is why we want to leverage tools as much as we can. Python does provide inbuilt tools such as [unittest](https://docs.python.org/3/library/unittest.html) for supporting testing, but it involves writing a lot of boilerplate code. It also has a limited ability to reuse components (or fixtures in PyTest). Therefore we will be testing Python applications using Pytest instead of other tools. Pytest is the most popular tool among other alternatives as well.

@@ -4,6 +4,7 @@ description: 'JavaScript promises have been a huge catalyst for asynchronous cod
 pubDate: 'Jan 19, 2021'
 heroImage: './hero.jpg'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 JavaScript promises have been a huge catalyst for asynchronous coding in the language. They have vastly improved the performance and experience for web development. One shortcoming of native promises has been that we were not able to cancel an HTTP fetch request once it was initiated. But now there is a way to do so.

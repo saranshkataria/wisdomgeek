@@ -4,6 +4,7 @@ description: 'Having consistency and enforcing coding standards becomes very imp
 pubDate: 'Jun 05, 2021'
 heroImage: './hero.png'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 Having consistency and enforcing coding standards becomes very important as an application scales. It becomes important to automate the process to ensure quality standards and make the application maintainable. ESLint and Prettier can be used to define these standards, but we also need a tool to enforce them. Husky provides that functionality by providing pre-commit git hooks that can be configured per our needs.

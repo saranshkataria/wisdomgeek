@@ -4,6 +4,7 @@ description: 'As our application scales to multiple users, we need to start thin
 pubDate: 'Jan 26, 2021'
 heroImage: './hero.png'
 categories: ["Software Architecture"]
+categoryHierarchy: ["Development","Software Architecture"]
 ---
 
 As our application scales to multiple users, we need to start thinking about scaling our servers and applications with it. Load balancing is the activity of effectively distributing traffic load across multiple servers.

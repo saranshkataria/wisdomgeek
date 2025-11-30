@@ -4,6 +4,7 @@ description: 'Ordered lists have been an important part of web design for quite 
 pubDate: 'Aug 31, 2021'
 heroImage: './hero.jpeg'
 categories: ["Web Development"]
+categoryHierarchy: ["Development","Web Development"]
 ---
 
 Ordered lists have been an important part of web design for quite a while now. If we needed more control over the appearance of numbers, we had to add more HTML and/or JavaScript to do so until now. Counters in CSS save us much of that trouble.

@@ -4,6 +4,7 @@ description: 'Our posture is one issue that we all know exists, but we tend to i
 pubDate: 'Jul 01, 2016'
 heroImage: './hero.jpg'
 categories: ["Fitness"]
+categoryHierarchy: ["Self Help","Fitness"]
 ---
 
 Our posture is one issue that we all know exists, but we tend to ignore it. Most of us slouch in front of our computers the whole day. And we all are aware of the fact that sitting straight for long hours puts stress on our spine. But we still tend to neglect it and keep working. Just because we have a lot of things to do on the internet. This has become so prominent, that you can see hunchback listed as one of the prominent problems around. The internet era has made us so used to sitting in front of our keyboards, that we really need to observe our bad body posture and also find an exercise to help improve posture.

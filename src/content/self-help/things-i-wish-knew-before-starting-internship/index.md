@@ -4,6 +4,7 @@ description: 'Hello readers, it has been a long time since I last wrote anything
 pubDate: 'May 19, 2020'
 heroImage: './hero.png'
 categories: ["Self Help"]
+categoryHierarchy: ["Self Help"]
 ---
 
 Hello readers, it has been a long time since I last wrote anything. My last article about [motivation](https://www.wisdomgeek.com/self-help/motivation/motivation-needs-help/) was written 1 year, 8 months, and 5 days to be precise. A fairly long hibernation one would say, and well, I have to admit – I did not feel as motivated to focus on writing. But as they say – “let bygones be bygones”. I am here again (hopefully more regularly this time around). And this time, I would like to share with you what I feel has shaped me the most in the past 1 year, 8 months, and 5 days – My summer INTERNSHIP.

@@ -4,6 +4,7 @@ description: 'One of the most popular questions from inexperienced programmers i
 pubDate: 'May 19, 2016'
 heroImage: './hero.jpg'
 categories: ["Programming"]
+categoryHierarchy: ["Development","Programming"]
 ---
 
 One of the most popular questions from inexperienced programmers is about the quest of becoming a good programmer. Aspiring programmers are often found cutting corners and not following some of the basics of good programming. As my first blog post ever, it would make sense to write about the most basic etiquettes of programming. If an aspiring programmer starts following these, they will find a very clear distinction between good and bad code. And this would help a newbie programmer give their code base a professional look and feeling.

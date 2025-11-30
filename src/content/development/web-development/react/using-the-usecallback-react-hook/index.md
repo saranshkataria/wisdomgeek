@@ -4,6 +4,7 @@ description: 'The useCallback React hook is a useful hook that can help in optim
 pubDate: 'Jan 28, 2021'
 heroImage: './hero.png'
 categories: ["React"]
+categoryHierarchy: ["Development","Web Development","React"]
 ---
 
 The useCallback React hook is a useful hook that can help in optimizing the rendering performance of our functional React components. It is used to memoize functions which means it caches the return value of a function given a set of input parameters.

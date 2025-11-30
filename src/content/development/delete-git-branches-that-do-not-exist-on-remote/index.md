@@ -4,6 +4,7 @@ description: 'After working on a project for a while, there will come a time whe
 pubDate: 'Dec 23, 2023'
 heroImage: './hero.png'
 categories: ["Development"]
+categoryHierarchy: ["Development"]
 ---
 
 After working on a project for a while, there will come a time when we will end up with a lot of local branches that have been merged on remote but still exist on our local machine. To delete git branches that do not exist on remote, we can perform the following steps:

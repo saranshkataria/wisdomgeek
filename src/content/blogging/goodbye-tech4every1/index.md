@@ -4,6 +4,7 @@ description: 'It all started somewhere in August 2011. Me and Somin Wadhwa, a f
 pubDate: 'Aug 17, 2015'
 heroImage: './hero.jpg'
 categories: ["Blogging"]
+categoryHierarchy: ["Blogging"]
 ---
 
 It all started somewhere in August 2011. Me and Somin Wadhwa, a friend who lives nearby, started it since we found it difficult to find applications for Symbian online and we knew people had the same problem as well. So we started a Facebook page for it and posting things. But a couple of weeks later, there was evident news that Symbian is dead, android was taking over it. So we closed the Facebook page, but I still had a knack for creating a page. So I started a Facebook page named Tech4every1, where-in I posted random things about technology and even news. I was this time accompanied by Dhananjay Sarsonia, a college friend. We both wrote posts on the Facebook page and started even making notes so that they were accessible for reading by everyone and they did not have to search through the posts on the page.

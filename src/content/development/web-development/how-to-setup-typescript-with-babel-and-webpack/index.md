@@ -4,6 +4,7 @@ description: 'After seeing a lot of projects making the move to Typescript, I re
 pubDate: 'Feb 12, 2019'
 heroImage: './hero.jpg'
 categories: ["Featured","Web Development"]
+categoryHierarchy: ["Development","Web Development"]
 ---
 
 After seeing a lot of projects making the move to Typescript, I recently started to give it a shot as well. For people who are not aware of typescript, it is a wrapper over javascript which has built-in support for types. We get static checking for our code as well as better intellisense for the editor.

@@ -4,6 +4,7 @@ description: 'When a user has to select some text on a website, they have to dra
 pubDate: 'Oct 22, 2021'
 heroImage: './hero.png'
 categories: ["Web Development"]
+categoryHierarchy: ["Development","Web Development"]
 ---
 
 When a user has to select some text on a website, they have to drag and hold their mouse, or use double-click it. Sometimes, there are some samples that we know that the user is going to copy for sure. A use case for this can be code samples. The user-select CSS property can help do exactly just that.

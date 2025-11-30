@@ -4,6 +4,7 @@ description: 'CSS in JS is a fairly controversial topic depending on who you tal
 pubDate: 'Jul 02, 2019'
 heroImage: './hero.png'
 categories: ["React"]
+categoryHierarchy: ["Development","Web Development","React"]
 ---
 
 CSS in JS is a fairly controversial topic depending on who you talk to. What it gives you is the ability to do is write all your styling in javascript instead of creating a separate CSS file. I really like CSS in JS because it solves some of the major challenges for me like scoping, conditional and dynamic styles, re-usability and maintainability (deleting styles with confidence). There are ways to solve this without using CSS in JS, but it is a concept that I have started playing with because of the challenges mentioned before. There are a ton of CSS in JS libraries as well, but after doing some research I chose Emotion js over the others. The major reason being it's small size and it being relatively faster than some of the alternatives. So I will go on and talk about how to use emotion js in your project in this post.

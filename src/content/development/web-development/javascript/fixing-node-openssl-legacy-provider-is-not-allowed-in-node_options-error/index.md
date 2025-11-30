@@ -4,6 +4,7 @@ description: 'I recently ran into the "node: –openssl-legacy-provider is not a
 pubDate: 'Oct 13, 2023'
 heroImage: './hero.jpg'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 I recently ran into the "node: –openssl-legacy-provider is not allowed in node_options" error while working with Node 17. It occurs when the `NODE_OPTIONS` environment variable is set with the value –openssl-legacy-provider. I had set that value for another project I tried recently, which conflicted with this project.

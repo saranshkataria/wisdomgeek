@@ -4,6 +4,7 @@ description: 'I have been running Facebook Developer Circle Delhi, NCR for the p
 pubDate: 'Sep 11, 2018'
 heroImage: './hero.jpg'
 categories: ["Community Management","Featured"]
+categoryHierarchy: ["Community Management"]
 ---
 
 I have been running [Facebook Developer Circle Delhi, NCR](https://www.facebook.com/groups/DevCDelhiNCR/) for the past 2.5 years.

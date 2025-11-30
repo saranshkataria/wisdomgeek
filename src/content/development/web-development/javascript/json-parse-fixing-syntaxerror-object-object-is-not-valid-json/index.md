@@ -4,6 +4,7 @@ description: 'SyntaxError: "[object Object]" is not valid JSON: usually happens 
 pubDate: 'Oct 22, 2023'
 heroImage: './hero.png'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 SyntaxError: "[object Object]" is not valid JSON: usually happens when the value being passed to JSON.parse is not a string value.

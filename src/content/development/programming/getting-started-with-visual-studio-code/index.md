@@ -4,6 +4,7 @@ description: 'Visual Studio Code is the latest cross platform editor by Microsof
 pubDate: 'Dec 19, 2015'
 heroImage: './hero.png'
 categories: ["Programming"]
+categoryHierarchy: ["Development","Programming"]
 ---
 
 Visual Studio Code is the latest cross platform editor by Microsoft and I started looking into it since I wanted a fast editor which provided me Intellisense similar to what Visual Studio provides. At first I thought it is an IDE, but it is not. It is a code optimized editor, and I am not disappointed at all by its features. To get started, you can download Visual Studio Code from [code.visualstudio.com](https://code.visualstudio.com). You can then explore the editor's various functionalities such as

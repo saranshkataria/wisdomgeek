@@ -4,6 +4,7 @@ description: 'Creating a globally unique identifier has always been a necessity 
 pubDate: 'Sep 30, 2021'
 heroImage: './hero.png'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 Creating a globally unique identifier has always been a necessity in all programming languages and for some reason, JavaScript never had a way of doing it in the default spec. But that is changing now with the crypto API. We can now create a UUID in JavaScript.

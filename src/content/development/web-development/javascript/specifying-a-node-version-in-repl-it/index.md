@@ -4,6 +4,7 @@ description: 'I was recently trying to use a later version of Node on Repl.it. I
 pubDate: 'Sep 13, 2021'
 heroImage: './hero.png'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 I was recently trying to use a later version of Node on Repl.it. I wanted to use a package that supported ES Modules, and the default version did not have support for it. So I wanted to use the latest node version in Repl.it. And found that there was no direct way of doing so. But it is still possible with a few custom steps.

@@ -4,6 +4,7 @@ description: 'Since npm is an open platform, anyone can publish packages to it. 
 pubDate: 'Apr 04, 2017'
 heroImage: './hero.jpg'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 Since npm is an open platform, anyone can publish packages to it. And thus the security impact of using npm in an application can make some people paranoid. Since a lot of projects today are written using node, node.js security should become an important part of your workflow. [Node security platform](https://nodesecurity.io/) is one such tool that provides a method to check the npm packages that you have installed for known vulnerabilities. You can also use retire.js but a security scanner from node would be preferred by most.

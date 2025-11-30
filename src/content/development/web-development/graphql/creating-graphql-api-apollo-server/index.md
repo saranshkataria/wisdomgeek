@@ -4,6 +4,7 @@ description: 'One of the many complaints about the GraphQL ecosystem is that the
 pubDate: 'Dec 02, 2020'
 heroImage: './hero.png'
 categories: ["GraphQL"]
+categoryHierarchy: ["Development","Web Development","Graphql"]
 ---
 
 One of the many complaints about the GraphQL ecosystem is that there is a lot of indirection around what packages to use to create a GraphQL application. Even after selecting one, there is a lot of boilerplate code that one must create to make a GraphQL server work. While that is true, it does not have to be complicated. In this post, we will use Apollo Server to create the simplest possible GraphQL Server.

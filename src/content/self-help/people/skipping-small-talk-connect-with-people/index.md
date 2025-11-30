@@ -4,6 +4,7 @@ description: 'We are living in a width world and not a depth world, mostly havi
 pubDate: 'Sep 08, 2016'
 heroImage: './hero.jpg'
 categories: ["People"]
+categoryHierarchy: ["Self Help","People"]
 ---
 
 We are living in a width world and not a depth world, mostly having shallow conversations with everyone around us. Most of the non-family relationships that we have right now started with a small talk. Being an introvert, I know how boring small talk can be at times. But that is the way we usually connect with people. And it does not have to be so. While most of the conversations we have are usually small talk, by doing so we are missing on the real conversations that matter in life. We almost always end up not talking about the bigger things in life that matter.

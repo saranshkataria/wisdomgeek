@@ -4,6 +4,7 @@ description: 'Writing conditional expressions is pretty easy to do. But there is
 pubDate: 'Mar 30, 2021'
 heroImage: './hero.png'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 Writing conditional expressions is pretty easy to do. But there is room for improvement in the way we have been doing it. And with the flexibility that JavaScript provides, we can replace conditionals with clean code by using some good practices. And it can lead to more maintainable code. Let us take a look at writing better conditional expressions in this post.

@@ -4,6 +4,7 @@ description: 'I have already written a detailed post about my experiences as a c
 pubDate: 'Jan 08, 2019'
 heroImage: './hero.jpg'
 categories: ["Community Management"]
+categoryHierarchy: ["Community Management"]
 ---
 
 I have already written a detailed post about my [experiences as a community manager](https://www.wisdomgeek.com/community-management/lessons-learnt-from-scaling-facebook-developer-community/) in the past. It was a generic one containing some interesting insights life pro tips as well. However, in trying to make it generic, I omitted some community management tips that I wanted to share.

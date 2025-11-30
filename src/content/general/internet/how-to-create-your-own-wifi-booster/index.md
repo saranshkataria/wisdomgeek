@@ -4,6 +4,7 @@ description: 'One of the most frequent question asked when it comes to WiFi is i
 pubDate: 'May 31, 2015'
 heroImage: ''
 categories: ["Internet"]
+categoryHierarchy: ["General","Internet"]
 ---
 
 [![1280px-Wi-Fi_Logo.svg[1]](https://wisdomgeek.com/wp-content/uploads/2015/05/1280px-Wi-Fi_Logo.svg1_-1024x657.png)](https://wisdomgeek.com/wp-content/uploads/2015/05/1280px-Wi-Fi_Logo.svg1_.png)

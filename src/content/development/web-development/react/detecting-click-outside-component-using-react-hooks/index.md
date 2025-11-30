@@ -4,6 +4,7 @@ description: 'If you have tried developing your own dropdown, modal, or popover 
 pubDate: 'Nov 10, 2020'
 heroImage: './hero.jpg'
 categories: ["React"]
+categoryHierarchy: ["Development","Web Development","React"]
 ---
 
 If you have tried developing your own dropdown, modal, or popover in React, you would have come across this. "How do I detect a click outside my react component so that I can close it?" Detecting click outside component is luckily is not that difficult. This post will use react hooks to implement this functionality.

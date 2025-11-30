@@ -4,6 +4,7 @@ description: 'Remember the earlier versions of React that used to batch multiple
 pubDate: 'Jan 13, 2022'
 heroImage: './hero.jpeg'
 categories: ["React"]
+categoryHierarchy: ["Development","Web Development","React"]
 ---
 
 Remember the earlier versions of React that used to batch multiple state updates inside event handlers such as click or change to avoid multiple re-renders? React 18 has added automatic batching for all use cases to improve that performance optimization even further.

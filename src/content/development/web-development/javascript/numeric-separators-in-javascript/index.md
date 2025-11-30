@@ -4,6 +4,7 @@ description: 'Writing performant code is not enough as a developer. We need to e
 pubDate: 'Jun 16, 2021'
 heroImage: './hero.jpg'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 Writing performant code is not enough as a developer. We need to ensure that it is readable as well. And it is rare that an API change in a language introduces readability. Numeric Separators are one such rare change.

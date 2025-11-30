@@ -4,6 +4,7 @@ description: 'Everyone quickly jumped to Windows 10 considering it was a free up
 pubDate: 'Oct 26, 2015'
 heroImage: './hero.jpg'
 categories: ["Windows"]
+categoryHierarchy: ["General","Windows"]
 ---
 
 Everyone quickly jumped to Windows 10 considering it was a free upgrade and most of the response for the operating system has been good in comparison to what it was for the previous editions of Windows. But I personally found it to be a bit slow or maybe it was the fact that I ran Windows 10 on a machine which had lower RAM than the one which had Windows 7. Either ways, I was looking for ways to speed it up and I found a way to disable the animations in the operating system.

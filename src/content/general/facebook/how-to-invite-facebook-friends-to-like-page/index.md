@@ -4,6 +4,7 @@ description: 'I recently created the Facebook page for Wisdom Geek. And obviousl
 pubDate: 'Apr 25, 2015'
 heroImage: './hero.jpg'
 categories: ["Facebook"]
+categoryHierarchy: ["General","Facebook"]
 ---
 
 I recently created the Facebook page for Wisdom Geek. And obviously, the first step was going to be inviting all my Facebook friends to like the page! But lazy me wanted to keep the trouble of clicking invite manually away and having done so successfully via VB script and javascript in the past, this time, was not going to be any different. I googled the script and found that Facebook keeps changing the tag name of the links it creates in order to avoid people from automating this process. So instead of just putting the code to invite all friends on Facebook, I will explain how javascript works and what the code is doing. So that you can use it at any point in the future even if Facebook changes the classes and tag names. I am explaining the technique and what the code means so that you can easily do it on your own next time.

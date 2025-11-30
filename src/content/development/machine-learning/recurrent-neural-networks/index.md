@@ -4,6 +4,7 @@ description: 'In this article, we will explore recurrent neural networks. For al
 pubDate: 'Oct 27, 2020'
 heroImage: './hero.jpg'
 categories: ["Machine Learning"]
+categoryHierarchy: ["Development","Machine Learning"]
 ---
 
 In this article, we will explore recurrent neural networks. For all the readers who are not versed with the concept of neural networks, I will recommend that you go through one of our previous articles and get a basic understanding of [how a neural network works](https://www.wisdomgeek.com/development/machine-learning/beginner-guide-to-artificial-neural-networks/).

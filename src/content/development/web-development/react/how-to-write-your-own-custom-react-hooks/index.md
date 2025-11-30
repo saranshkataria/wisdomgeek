@@ -4,6 +4,7 @@ description: 'If you have been using react for a while, chances are you have com
 pubDate: 'Jan 12, 2021'
 heroImage: './hero.png'
 categories: ["React"]
+categoryHierarchy: ["Development","Web Development","React"]
 ---
 
 If you have been using react for a while, chances are you have come across the need to extract some logic into a reusable function. And with React hooks coming into the picture, doing this has become a walk in the park. We can write our own custom react hooks to abstract complex logic in a function and reuse it across components.

@@ -4,6 +4,7 @@ description: 'For as long as anyone can remember, deep copying in JavaScript was
 pubDate: 'Aug 23, 2022'
 heroImage: './hero.webp'
 categories: ["JavaScript"]
+categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
 
 For as long as anyone can remember, deep copying in JavaScript was not a built-in feature and we had to resort to libraries or workarounds to create a deep copy of a JavaScript value.

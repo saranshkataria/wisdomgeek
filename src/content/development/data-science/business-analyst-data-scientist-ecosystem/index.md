@@ -4,6 +4,7 @@ description: 'Confused between business analyst or data scientist? Does a busine
 pubDate: 'May 25, 2020'
 heroImage: './hero.png'
 categories: ["Data Science"]
+categoryHierarchy: ["Development","Data Science"]
 ---
 
 Hello readers! Keeping up with the promise of being regular, I am back with another article. In case you missed reading my article about [tips for an internship](https://www.wisdomgeek.com/self-help/things-i-wish-knew-before-starting-internship/), I would recommend you check it out as well. Through this article, I intend to share my two cents about the entire **"business analyst/data** scientist" ecosystem, and the learnings thereof. Or simply put – these are some of the insights I derived after working closely in the said ecosystem.

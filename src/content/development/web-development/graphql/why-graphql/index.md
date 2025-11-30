@@ -4,6 +4,7 @@ description: 'Developing APIs for the web has never been an easy task for develo
 pubDate: 'Jun 02, 2020'
 heroImage: './hero.png'
 categories: ["GraphQL"]
+categoryHierarchy: ["Development","Web Development","Graphql"]
 ---
 
 Developing APIs for the web has never been an easy task for developers.  REST has been the defacto standard for designing web APIs for the last decade. Considering REST's wild popularity, the first question that pops into anyone's head when they start reading about GraphQL is: Why GraphQL? Why do we need GraphQL when developers are already well versed with RESTful architecture?
