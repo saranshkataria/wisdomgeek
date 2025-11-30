@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const SITE_URL = 'https://www.wisdomgeek.com';
-const PER_PAGE = 5;
+const PER_PAGE = 100;
 const CONTENT_DIR = path.join(__dirname, '../src/content');
 
 async function downloadImage(url, outputPath) {
@@ -107,20 +107,49 @@ async function fetchWordPressPosts() {
   console.log(`Fetching posts from ${SITE_URL}`);
 
   try {
-    const response = await fetch(
-      `${SITE_URL}/wp-json/wp/v2/posts?per_page=${PER_PAGE}&_embed`
-    );
+    let page = 1;
+    let allPosts = [];
+    let hasMorePosts = true;
 
-    if (!response.ok) {
-      throw new Error(`Failed to fetch posts: ${response.statusText}`);
+    // Fetch all pages of posts
+    while (hasMorePosts) {
+      console.log(`Fetching page ${page}...`);
+      const response = await fetch(
+        `${SITE_URL}/wp-json/wp/v2/posts?per_page=${PER_PAGE}&page=${page}&_embed`
+      );
+
+      if (!response.ok) {
+        if (response.status === 400) {
+          // No more posts available
+          hasMorePosts = false;
+          break;
+        }
+        throw new Error(`Failed to fetch posts: ${response.statusText}`);
+      }
+
+      const posts = await response.json();
+      
+      if (posts.length === 0) {
+        hasMorePosts = false;
+        break;
+      }
+
+      allPosts = allPosts.concat(posts);
+      console.log(`Fetched ${posts.length} posts from page ${page} (total: ${allPosts.length})`);
+
+      // Check if there are more pages
+      const totalPages = response.headers.get('X-WP-TotalPages');
+      if (totalPages && page >= parseInt(totalPages)) {
+        hasMorePosts = false;
+      } else {
+        page++;
+      }
     }
 
-    const posts = await response.json();
-
-    console.log(`Fetched ${posts.length} posts from WordPress`);
+    console.log(`\nTotal posts fetched: ${allPosts.length}`);
 
     // Process each post
-    for (const post of posts) {
+    for (const post of allPosts) {
       const cleanContent = convertHtmlToMarkdown(post.content.rendered);
       const cleanExcerpt = convertHtmlToMarkdown(post.excerpt.rendered);
 
