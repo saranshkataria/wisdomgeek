@@ -32,6 +32,12 @@ function convertHtmlToMarkdown(html) {
     return match;
   });
   
+  // Convert images to markdown - do this before removing other HTML tags
+  content = content.replace(/<img[^>]*src=["']([^"']*)["'][^>]*alt=["']([^"']*)["'][^>]*>/gi, '![$2]($1)');
+  content = content.replace(/<img[^>]*alt=["']([^"']*)["'][^>]*src=["']([^"']*)["'][^>]*>/gi, '![$1]($2)');
+  // Handle images without alt text
+  content = content.replace(/<img[^>]*src=["']([^"']*)["'][^>]*>/gi, '![]($1)');
+  
   // Convert code blocks (pre + code tags) to markdown code blocks
   content = content.replace(/<pre[^>]*>\s*<code[^>]*>([\s\S]*?)<\/code>\s*<\/pre>/gi, (match, code) => {
     // Decode HTML entities in code
@@ -206,6 +212,30 @@ async function fetchWordPressPosts() {
         }
       }
 
+      // Download inline images and update content
+      let processedContent = cleanContent;
+      const imageMatches = [...processedContent.matchAll(/!\[([^\]]*)\]\((https?:\/\/[^)]+)\)/g)];
+      let imageCounter = 1;
+      
+      for (const match of imageMatches) {
+        const [fullMatch, altText, imageUrl] = match;
+        try {
+          const imageExtension = path.extname(new URL(imageUrl).pathname) || '.jpg';
+          const localImageFilename = `image-${imageCounter}${imageExtension}`;
+          const localImagePath = path.join(postDir, localImageFilename);
+          
+          // Download the inline image
+          await downloadImage(imageUrl, localImagePath);
+          
+          // Replace the URL with local path
+          processedContent = processedContent.replace(fullMatch, `![${altText}](./${localImageFilename})`);
+          imageCounter++;
+        } catch (error) {
+          console.warn(`Failed to download inline image for ${categoryPath}/${postSlug}: ${error.message}`);
+          // Keep the original URL if download fails
+        }
+      }
+
       // Format date for frontmatter
       const pubDate = new Date(post.date);
       const formattedDate = pubDate.toLocaleDateString('en-US', {
@@ -223,7 +253,7 @@ heroImage: '${heroImage}'
 categories: ${JSON.stringify(categoryNames)}
 ---
 
-${cleanContent}
+${processedContent}
 `;
 
       // Write markdown file as index.md in the post directory
