@@ -1,0 +1,193 @@
+---
+import type { Page } from 'astro';
+
+interface Props {
+	page: Page;
+}
+
+const { page } = Astro.props;
+
+// Calculate which page numbers to show (current ±2, minimum 5 pages)
+const currentPage = page.currentPage;
+const lastPage = page.lastPage;
+const range = 2;
+
+// Calculate the ideal start and end based on current page
+let startPage = Math.max(1, currentPage - range);
+let endPage = Math.min(lastPage, currentPage + range);
+
+// Ensure we always show at least 5 pages (or all pages if less than 5)
+const minPagesToShow = Math.min(5, lastPage);
+const currentPagesCount = endPage - startPage + 1;
+
+if (currentPagesCount < minPagesToShow) {
+	const diff = minPagesToShow - currentPagesCount;
+	// Try to expand both sides
+	if (startPage === 1) {
+		endPage = Math.min(lastPage, endPage + diff);
+	} else if (endPage === lastPage) {
+		startPage = Math.max(1, startPage - diff);
+	}
+}
+
+const showPages: number[] = [];
+for (let i = startPage; i <= endPage; i++) {
+	showPages.push(i);
+}
+
+// Determine if we need "First" and "Last" buttons
+const showFirst = startPage > 1;
+const showLast = endPage < lastPage;
+const showLeftDots = startPage > 2;
+const showRightDots = endPage < lastPage - 1;
+---
+
+{page.lastPage > 1 && (
+	<nav class="pagination" aria-label="Pagination">
+		<div class="pagination-info">
+			<svg class="document-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor">
+				<path d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm64 236c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12v8zm0-64c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12v8zm0-72v8c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12zm96-114.1v6.1H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z"/>
+			</svg>
+			<span>Page {currentPage} of {lastPage}</span>
+		</div>
+
+		<div class="page-numbers">
+			<!-- First button -->
+			{showFirst && (
+				currentPage === 1 ? (
+					<span class="page-number current" aria-current="page">1</span>
+				) : (
+					<a href="/" class="page-number" aria-label="Go to first page">1</a>
+				)
+			)}
+
+			<!-- Show dots if there's a gap after first page -->
+			{showLeftDots && <span class="page-dots">...</span>}
+
+			<!-- Page numbers (current ±2, minimum 5 shown) -->
+			{showPages.map((num) => (
+				// Skip first page if already shown
+				(num === 1 && showFirst) ? null :
+				// Skip last page if will be shown separately
+				(num === lastPage && showLast) ? null :
+				num === currentPage ? (
+					<span class="page-number current" aria-current="page">{num}</span>
+				) : (
+					<a
+						href={num === 1 ? '/' : `/page/${num}`}
+						class="page-number"
+						aria-label={`Go to page ${num}`}
+					>
+						{num}
+					</a>
+				)
+			))}
+
+			<!-- Show dots if there's a gap before last page -->
+			{showRightDots && <span class="page-dots">...</span>}
+
+			<!-- Last page button -->
+			{showLast && (
+				currentPage === lastPage ? (
+					<span class="page-number current" aria-current="page">{lastPage}</span>
+				) : (
+					<a
+						href={`/page/${lastPage}`}
+						class="page-number"
+						aria-label={`Go to page ${lastPage}`}
+					>
+						{lastPage}
+					</a>
+				)
+			)}
+		</div>
+	</nav>
+)}
+
+<style>
+	.pagination {
+		margin-top: 3rem;
+		padding-top: 2rem;
+		border-top: 1px solid rgb(var(--gray-light));
+	}
+
+	.pagination-info {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.document-icon {
+		width: 1.25rem;
+		height: 1.25rem;
+		color: rgb(var(--gray));
+		flex-shrink: 0;
+	}
+
+	.pagination-info span {
+		color: rgb(var(--gray-dark));
+		font-size: 0.95rem;
+	}
+
+	.page-numbers {
+		display: flex;
+		justify-content: center;
+		gap: 0.5rem;
+		flex-wrap: wrap;
+	}
+
+	.page-number {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 2.5rem;
+		height: 2.5rem;
+		padding: 0 0.5rem;
+		border: 1px solid rgb(var(--gray-light));
+		border-radius: 4px;
+		text-decoration: none;
+		color: rgb(var(--black));
+		transition: all 0.2s ease;
+		background-color: rgb(var(--gray-light));
+	}
+
+	.page-number:hover:not(.current) {
+		border-color: var(--accent);
+		color: var(--accent);
+		background-color: white;
+	}
+
+	.page-number.current {
+		background-color: var(--accent);
+		color: white;
+		border-color: var(--accent);
+		font-weight: 600;
+	}
+
+	.page-dots {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 2.5rem;
+		height: 2.5rem;
+		color: rgb(var(--gray));
+	}
+
+	@media (max-width: 720px) {
+		.pagination {
+			margin-top: 2rem;
+		}
+
+		.page-numbers {
+			gap: 0.25rem;
+		}
+
+		.page-number {
+			min-width: 2rem;
+			height: 2rem;
+			font-size: 0.9rem;
+		}
+	}
+</style>

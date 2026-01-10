@@ -1,13 +1,35 @@
 ---
+import type { Page } from 'astro';
 import { getCollection } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import PageLayout from '../components/PageLayout.astro';
 import PostGrid from '../components/PostGrid.astro';
+import Pagination from '../components/Pagination.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+
+const pageSize = 8;
+const totalPages = Math.ceil(posts.length / pageSize);
+
+const page: Page = {
+	data: posts.slice(0, pageSize),
+	start: 0,
+	end: Math.min(pageSize, posts.length),
+	size: pageSize,
+	total: posts.length,
+	currentPage: 1,
+	lastPage: totalPages,
+	url: {
+		current: '/',
+		prev: undefined,
+		next: totalPages > 1 ? '/page/2' : undefined,
+		first: '/',
+		last: `/page/${totalPages}`,
+	},
+};
 ---
 
 <!doctype html>
@@ -42,7 +64,8 @@ const posts = (await getCollection('blog')).sort(
 	<body>
 		<PageLayout>
 			<section>
-				<PostGrid posts={posts} />
+				<PostGrid posts={page.data} />
+				<Pagination page={page} />
 			</section>
 		</PageLayout>
 	</body>

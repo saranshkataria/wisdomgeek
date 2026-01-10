@@ -1,0 +1,87 @@
+---
+import type { GetStaticPaths, Page } from 'astro';
+import { getCollection } from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import PageLayout from '../../components/PageLayout.astro';
+import PostGrid from '../../components/PostGrid.astro';
+import Pagination from '../../components/Pagination.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+
+export const getStaticPaths = (async () => {
+	const posts = (await getCollection('blog')).sort(
+		(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+	);
+
+	const pageSize = 8;
+	const totalPages = Math.ceil(posts.length / pageSize);
+
+	return Array.from({ length: totalPages }, (_, i) => {
+		const pageNum = i + 1;
+		const start = i * pageSize;
+		const end = start + pageSize;
+
+		return {
+			params: { page: String(pageNum) },
+			props: {
+				page: {
+					data: posts.slice(start, end),
+					start,
+					end: Math.min(end, posts.length),
+					size: pageSize,
+					total: posts.length,
+					currentPage: pageNum,
+					lastPage: totalPages,
+					url: {
+						current: `/page/${pageNum}`,
+						prev: pageNum > 1 ? (pageNum === 2 ? '/' : `/page/${pageNum - 1}`) : undefined,
+						next: pageNum < totalPages ? `/page/${pageNum + 1}` : undefined,
+						first: '/',
+						last: `/page/${totalPages}`,
+					},
+				} satisfies Page,
+			},
+		};
+	});
+}) satisfies GetStaticPaths;
+
+const page = Astro.props.page as Page;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			main {
+				width: 960px;
+			}
+			ul li:first-child {
+				width: 100%;
+				margin-bottom: 1rem;
+				text-align: center;
+			}
+			ul li:first-child img {
+				width: 100%;
+			}
+			ul li:first-child .title {
+				font-size: 2.369rem;
+			}
+			@media (max-width: 720px) {
+				ul li:first-child {
+					margin-bottom: 0;
+				}
+				ul li:first-child .title {
+					font-size: 1.563em;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<PageLayout>
+			<section>
+				<PostGrid posts={page.data} />
+				<Pagination page={page} />
+			</section>
+		</PageLayout>
+	</body>
+</html>
