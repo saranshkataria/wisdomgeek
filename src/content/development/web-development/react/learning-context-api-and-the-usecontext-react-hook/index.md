@@ -2,6 +2,7 @@
 title: 'Learning context API and the useContext React hook'
 description: 'In this react hooks series, we have already explored the react hooks useState, useEffect, and useReducer. The next react hook we will look into is the useContext hook. As we saw while building our sample application, we had to lift the state up to our root component in order to&#46;&#46;&#46;'
 pubDate: 'Sep 15, 2020'
+updatedDate: 'Oct 11, 2023'
 heroImage: './hero.jpg'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]

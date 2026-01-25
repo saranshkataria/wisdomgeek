@@ -2,6 +2,7 @@
 title: 'Flatten Arrays in Vanilla JavaScript with flat() and flatMap()'
 description: 'ES2019 introduced two methods on the array prototype that would make life so much simpler for developers. These are flat() and flatmap() which help in flattening arrays. Array.prototype.flat() As the name suggests, the flat() method returns a new array with elements of the subarray flattened into it, that is the&#46;&#46;&#46;'
 pubDate: 'Jan 05, 2022'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpeg'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

@@ -2,6 +2,7 @@
 title: 'Fix Cannot find module &#8216;fs&#8217; or its corresponding type declarations.ts(2307)'
 description: 'I recently ran into the error "Cannot find module &#8216;fs'' or its corresponding type declarations.ts(2307)" while I was using VSCode and I was searching for a fix. Turns out all I needed to do was to add the definition file for node types in my project. After that, reloading the&#46;&#46;&#46;'
 pubDate: 'Jan 24, 2024'
+updatedDate: 'Jan 24, 2024'
 heroImage: './hero.png'
 categories: ["TypeScript"]
 categoryHierarchy: ["Development","Web Development","Typescript"]

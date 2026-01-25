@@ -2,6 +2,7 @@
 title: 'How to setup GatsbyJS starter with TypeScript and ESLint'
 description: 'Gatsby has become fairly popular in the last couple of years and it has starting becoming the go to static site generator for a lot of projects. The smooth developer experience and the warm community has enriched the adoption even more. TypeScript has had a similar growth curve and has&#46;&#46;&#46;'
 pubDate: 'May 10, 2020'
+updatedDate: 'Oct 15, 2023'
 heroImage: './hero.jpg'
 categories: ["TypeScript"]
 categoryHierarchy: ["Development","Web Development","Typescript"]

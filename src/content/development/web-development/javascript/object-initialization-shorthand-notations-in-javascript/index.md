@@ -2,6 +2,7 @@
 title: 'Object initialization shorthand notations in JavaScript'
 description: 'I was recently working on a project in which I was trying to use a shorthand notation for destructuring assignment of a variable. I was researching different ways of getting a specific scenario to work. And while doing that research, I found that ES2015 had added 3 new object initialization&#46;&#46;&#46;'
 pubDate: 'Feb 02, 2021'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

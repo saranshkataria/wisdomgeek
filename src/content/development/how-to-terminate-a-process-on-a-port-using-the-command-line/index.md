@@ -2,6 +2,7 @@
 title: 'How to kill a process on a port using the command line'
 description: 'Zombie processes are usually a pain to figure out. More often than not, I end up googling about how to kill a process on a port using the command line. It can be done using the activity monitor as well, but that is a time-consuming process. There are ways of&#46;&#46;&#46;'
 pubDate: 'Mar 10, 2022'
+updatedDate: 'Oct 25, 2023'
 heroImage: './hero.png'
 categories: ["Development"]
 categoryHierarchy: ["Development"]

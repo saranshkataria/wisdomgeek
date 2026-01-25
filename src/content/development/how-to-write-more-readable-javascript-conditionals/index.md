@@ -2,6 +2,7 @@
 title: 'How to write more readable JavaScript conditionals'
 description: 'One of the practices of clean code is to make it more readable. And a fairly common use case in code bases is conditionals. I recently came across a way of writing more readable JavaScript conditionals and thought of sharing it with everyone. Consider the following conditional: The mind takes&#46;&#46;&#46;'
 pubDate: 'Oct 04, 2022'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 categories: ["Development"]
 categoryHierarchy: ["Development"]

@@ -2,6 +2,7 @@
 title: 'Webpack: An Introduction'
 description: 'Before coming to the discussion about Webpack, let us first discuss how web development has evolved over the past few years and why we even need a build tool for something like Javascript. The problem with loading javascript files The only way to load javascript in an HTML document is&#46;&#46;&#46;'
 pubDate: 'Jan 12, 2017'
+updatedDate: 'Oct 15, 2023'
 heroImage: './hero.png'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]

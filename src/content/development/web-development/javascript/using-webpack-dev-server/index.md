@@ -2,6 +2,7 @@
 title: 'Using Webpack Dev Server'
 description: 'If you have been doing front-end development recently, the chances are that you would have heard about Webpack multiple times. In fact, most of the starter kits are built using Webpack Dev Server. The implementation and configuration are hidden by wrappers above it so that the developer continues working on&#46;&#46;&#46;'
 pubDate: 'Jul 04, 2017'
+updatedDate: 'Oct 15, 2023'
 heroImage: './hero.jpg'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

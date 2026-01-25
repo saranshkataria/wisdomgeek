@@ -2,6 +2,7 @@
 title: 'Using Sub Resource Integrity to secure web applications'
 description: 'Sub Resource Integrity (SRI) is a security feature that can be used to validate that the resources that the browser is fetching have not been manipulated. But why do you need it? Remember that script tag that you keep throwing at random places in your code? What if someone got&#46;&#46;&#46;'
 pubDate: 'Jul 08, 2021'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpeg'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]
@@ -77,6 +78,6 @@ const compiler = webpack({
 
 All major browsers (no, IE is not included in that list) support SRI. It does not break in IE though, so it is definitely a must-have tool to avoid security risks.
 
-![](./image-1024x425.png)
+![](./image-1024x425-1.png)
 
 And that is all you need to know about Sub Resource Integrity and how to use it!

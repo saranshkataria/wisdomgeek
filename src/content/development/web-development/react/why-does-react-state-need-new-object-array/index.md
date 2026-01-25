@@ -2,6 +2,7 @@
 title: 'Why does React state need a new object/array?'
 description: 'If you have been using React for a while, you are familiar with how state update works. There are a lot of internal optimizations that React makes for faster rendering. One of the implementation details of the React internals is that it checks whether the given state object has actually&#46;&#46;&#46;'
 pubDate: 'May 25, 2021'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]

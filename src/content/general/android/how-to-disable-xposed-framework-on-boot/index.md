@@ -2,6 +2,7 @@
 title: 'How to disable Xposed Framework on boot'
 description: 'I recently installed an Xposed module on my One Plus One running Lollipop only to figure out that it went into a bootloop. The module was incompatible with the alpha version of Xposed framework installed and I was stuck on the android startup screen with nowhere to go. (For those of&#46;&#46;&#46;'
 pubDate: 'Apr 26, 2015'
+updatedDate: 'Apr 26, 2015'
 heroImage: './hero.png'
 categories: ["Android"]
 categoryHierarchy: ["General","Android"]

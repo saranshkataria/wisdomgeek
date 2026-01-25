@@ -2,6 +2,7 @@
 title: 'Using Prettier to format your JavaScript code'
 description: 'If you have been programming for a while, you would be familiar with the hassles of writing clean code and maintaining consistency across a project on some specific code style guidelines. Even if you spend a few days making everything consistent, some other developer might check-in their changes or disable some&#46;&#46;&#46;'
 pubDate: 'Feb 15, 2018'
+updatedDate: 'Oct 15, 2023'
 heroImage: './hero.png'
 categories: ["Featured","JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
@@ -36,7 +37,7 @@ foo(
 
 If you want to take it for a spin, use the [playground](https://prettier.io/playground) to play with it. To sum it up:
 
-![](./why-prettier-1024x302.png)
+![](./why-prettier-1024x302-1.png)
 
 ## But I already have ESLint!
 

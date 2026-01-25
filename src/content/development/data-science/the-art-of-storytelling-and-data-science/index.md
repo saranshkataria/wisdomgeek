@@ -2,6 +2,7 @@
 title: 'The art of Storytelling and Data Science'
 description: 'Data Science and storytelling are inseparable. And the bridge between the two is data. I had talked about storytelling in my article about Business Analyst/Data Scientist learnings but thought it would be better to elaborate more about the storytelling part. Imagine you are a data science executive in an organization.&#46;&#46;&#46;'
 pubDate: 'Aug 11, 2020'
+updatedDate: 'Aug 11, 2020'
 heroImage: './hero.jpg'
 categories: ["Data Science"]
 categoryHierarchy: ["Development","Data Science"]

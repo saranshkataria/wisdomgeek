@@ -2,6 +2,7 @@
 title: 'JavaScript Promise combinators: race, all, allSettled, any'
 description: 'Promises have not been a new concept in the javascript community. They have existed in the ecosystem for a long time. JavaScript promises existed even before they were officially made a part of the ECMAScript spec in ES6. These initial implementations of JavaScript promise were in the form of framework&#46;&#46;&#46;'
 pubDate: 'Dec 03, 2019'
+updatedDate: 'Oct 15, 2023'
 heroImage: './hero.jpeg'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

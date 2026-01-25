@@ -2,6 +2,7 @@
 title: 'Should I cross post between Medium, LinkedIn and my website?'
 description: 'Most people have, at some point, thought of using a blog vs using a publishing platform such as Medium or LinkedIn. The platforms, have a higher reach since they are dedicated places where in people come for the sole purpose of reading. Hence a there are chances of increasing your&#46;&#46;&#46;'
 pubDate: 'Apr 21, 2016'
+updatedDate: 'Apr 21, 2016'
 heroImage: './hero.png'
 categories: ["Blogging"]
 categoryHierarchy: ["Blogging"]

@@ -2,6 +2,7 @@
 title: 'Script to change Zoom virtual background every day'
 description: 'Over the past few months, I found a new use of the pictures that I have clicked while hiking. I started using them as Zoom virtual backgrounds. If you are anything like me and take a lot of pictures, it can be hard to decide which one looks good. And&#46;&#46;&#46;'
 pubDate: 'Aug 17, 2021'
+updatedDate: 'Oct 09, 2023'
 heroImage: './hero.png'
 categories: ["General"]
 categoryHierarchy: ["General"]

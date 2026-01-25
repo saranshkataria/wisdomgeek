@@ -2,6 +2,7 @@
 title: '5 tips to help you stay fit in a corporate lifestyle'
 description: 'Do you feel that every day of your corporate life turns out to be a misery? At the end of the day, when you get to bed, you feel terrible about your life because of work? And getting on that weighing scale in the morning is a nightmare? I cannot agree more. The lifestyle that&#46;&#46;&#46;'
 pubDate: 'Mar 17, 2016'
+updatedDate: 'Mar 17, 2016'
 heroImage: './hero.jpg'
 categories: ["Fitness","Life Tips","Motivation"]
 categoryHierarchy: ["Self Help","Fitness"]

@@ -2,6 +2,7 @@
 title: 'Visual Studio Code Snippets: Boost productivity with shortcuts'
 description: 'As developers, we always want to be more productive. And who does not like to write more code using a lesser number of keystrokes? Code snippets provide is with exactly that. Let us dive deeper into Visual Studio Code snippets in detail in this post. Code snippets refer to common&#46;&#46;&#46;'
 pubDate: 'Feb 11, 2021'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpg'
 categories: ["Programming"]
 categoryHierarchy: ["Development","Programming"]
@@ -17,7 +18,7 @@ The next step in that evolution was Auto Hot Keys, which were keyboard combinati
 
 ## Visual Studio Code snippets
 
-![](./visual-studio-code-snippets.gif)
+![](./visual-studio-code-snippets-1.gif)
 
 Visual Studio Code snippets go a bit further than just pasting the code at the current pointer location. Before talking about the fancy stuff, let us first see how to create a Visual Studio Code snippet.
 

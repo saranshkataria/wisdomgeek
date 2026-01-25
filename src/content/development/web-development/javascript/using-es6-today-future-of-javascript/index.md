@@ -2,6 +2,7 @@
 title: 'Using ES6 today: The future of javascript has arrived'
 description: 'Most of you would already be aware that javascript is an implementation of ECMAScript (ES). ES is the standardized language specification, and javascript is the dialect or the implementation. After the ES5 standardization in 2009, there were no updates to it. And since then, javascript has evolved a lot. It&#46;&#46;&#46;'
 pubDate: 'May 12, 2016'
+updatedDate: 'May 12, 2016'
 heroImage: './hero.jpg'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
@@ -11,7 +12,7 @@ Most of you would already be aware that javascript is an implementation of ECMAS
 
 Although ES7 is in draft status as of the time of writing this blog post, browsers are yet to implement all features of ES6. What is taking so long is the fact that the specification introduces a large amount of features  and new syntax to the language. And backwards compatibility needs to be maintained as well. Plus the ability to run everywhere and the dynamic nature of the language make implementing es6 a challenging task.
 
-![es6 roadmap](./shippedesfeatures1.png)
+![es6 roadmap](./shippedesfeatures1-1.png)
 
 The key features introduced in Ecmascript 6 are:
 

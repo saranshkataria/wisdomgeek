@@ -2,6 +2,7 @@
 title: 'Node.js 20.6 adds built-in support for .env files'
 description: 'Node.js 20.6 added built-in support for the .env file. This is an excellent addition to the platform and gives us the ability to load environment variables from .env files directly without using third-party packages. While it is great to see first-class support, some caveats remain. Let us look at how it works. Assuming that&#46;&#46;&#46;'
 pubDate: 'Apr 10, 2024'
+updatedDate: 'Apr 17, 2024'
 heroImage: './hero.png'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

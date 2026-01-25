@@ -2,6 +2,7 @@
 title: 'Using React.memo() in React 16.6'
 description: 'React 16.6 was released a couple of days and and it brings a couple of new features. One of these is React.lazy() which is something that requires a separate post in itself along with React Suspense. The other one, which we will talk about in this post is React.memo(). What&#46;&#46;&#46;'
 pubDate: 'Oct 26, 2018'
+updatedDate: 'Oct 15, 2023'
 heroImage: './hero.png'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]
@@ -60,7 +61,7 @@ On creating a memoized component using React.memo() from the Greeting component,
 
 This can be verified from the console logs, which show the log only once for the Memo component and multiple ones for the Greeting component:
 
-![React-memo-demo](./react-memo-demo.png)
+![React-memo-demo](./react-memo-demo-1.png)
 
 And that is all you need to know about the new React.memo. Go ahead and start creating functional pure components! No need for classes anymore
 

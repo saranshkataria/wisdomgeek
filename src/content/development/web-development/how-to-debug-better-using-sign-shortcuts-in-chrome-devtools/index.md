@@ -2,6 +2,7 @@
 title: 'How to debug better using $ sign shortcuts in Chrome devtools'
 description: 'Chrome devtools has a collection of utilities that can be used to perform common debugging tasks and make our life easier. The $ sign shortcuts are one such set of utilities. Let us see how to debug better using these $ sign shortcuts in Chrome devtools. $_ Typing in $_ in&#46;&#46;&#46;'
 pubDate: 'Sep 08, 2022'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpeg'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]
@@ -27,7 +28,7 @@ Chrome devtools stores historical references to the last five DOM elements that 
 
 Here is what this looks like:
 
-![](./dollar-sign-debugging.gif)
+![](./dollar-sign-debugging-1.gif)
 
 ## $(selector [, startNode]) aka alias for the query selector function
 

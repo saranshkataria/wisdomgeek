@@ -2,6 +2,7 @@
 title: 'Overcoming Procrastination and The Akrasia Effect'
 description: 'We all know what we should be doing right now. But we don''t want to! That is procrastination in a nutshell. Everything will be fine. I''ll finish it tomorrow. I still have plenty of time. These are famous lines used by every procrastinator. And even though we do end up&#46;&#46;&#46;'
 pubDate: 'Sep 22, 2020'
+updatedDate: 'Sep 22, 2020'
 heroImage: './hero.jpg'
 categories: ["Productivity"]
 categoryHierarchy: ["Self Help","Productivity"]

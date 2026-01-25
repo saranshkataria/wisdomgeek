@@ -2,6 +2,7 @@
 title: 'Business Analyst/Data Scientist  Ecosystem &#8211; My 2 Cents'
 description: 'Confused between business analyst or data scientist? Does a business analyst build machine learning models? How much should a data scientist know? In this article, we try to find the answer and end this mystery.'
 pubDate: 'May 25, 2020'
+updatedDate: 'May 25, 2020'
 heroImage: './hero.png'
 categories: ["Data Science"]
 categoryHierarchy: ["Development","Data Science"]

@@ -2,6 +2,7 @@
 title: 'React TypeScript: Simplify Imports with Path Aliases'
 description: 'As codebases grow larger and more complex in structure, imports can become unmanageable. As more directories are added, imports become intricately long and obscure clarity. Fortunately, we can simplify imports with path aliases. The problem The following is a fairly common occurrence in a large project: This can be burdensome&#46;&#46;&#46;'
 pubDate: 'Jan 27, 2024'
+updatedDate: 'Jan 27, 2024'
 heroImage: './hero.png'
 categories: ["TypeScript"]
 categoryHierarchy: ["Development","Web Development","Typescript"]

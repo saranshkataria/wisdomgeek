@@ -2,6 +2,7 @@
 title: 'JavaScript: Split string and keep the separators'
 description: 'String.prototype.split() is a valuable method to split strings based on a delimiter. There often comes a scenario when we want to split a string and keep the separators in the result. The same JavaScript method provides a way to do so. Before we get into that, for people who are&#46;&#46;&#46;'
 pubDate: 'Feb 01, 2022'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

@@ -2,6 +2,7 @@
 title: 'Use redux-like middleware for useReducer in React'
 description: 'If you have used Redux before, you would be aware of the concept of middlewares. Now that useReducer has become a commonly used react hook, we might want to replicate the idea of middleware for the useReducer hook as well. If you do not know about middlewares, middlewares are functions&#46;&#46;&#46;'
 pubDate: 'Jan 14, 2021'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]

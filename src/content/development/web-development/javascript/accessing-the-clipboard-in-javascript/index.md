@@ -2,6 +2,7 @@
 title: 'Accessing the clipboard in JavaScript'
 description: 'Developers are probably the laziest people on the planet. And of all the things, copy-paste is our favorite keyboard shortcut. But what is better than hitting ctrl + c? Having a button do the copying for you! And that is now possible using an asynchronous version of the clipboard API&#46;&#46;&#46;'
 pubDate: 'Sep 08, 2021'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
@@ -11,7 +12,7 @@ Developers are probably the laziest people on the planet. And of all the things,
 
 You would have probably come across this while copying code off of a website, or an API key, or copying links from Google Drive:
 
-![](./image-1024x198.png)
+![](./image-1024x198-1.png)
 
 ## The clipboard API
 

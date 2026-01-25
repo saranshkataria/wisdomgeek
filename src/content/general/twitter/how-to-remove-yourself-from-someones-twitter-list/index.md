@@ -2,6 +2,7 @@
 title: 'How to remove yourself from someone&#8217;s twitter list'
 description: 'Lists are often ignored by most people on Twitter. Twitter lists can be a great way to organize your contacts. More often than not, they are not used for that purpose. Someone recently added me to a Twitter list which was not appropriate for my account. There was no way&#46;&#46;&#46;'
 pubDate: 'Nov 30, 2015'
+updatedDate: 'Nov 30, 2015'
 heroImage: './hero.jpg'
 categories: ["Twitter"]
 categoryHierarchy: ["General","Twitter"]
@@ -13,7 +14,7 @@ Someone recently added me to a Twitter list which was not appropriate for my acc
 
 To know which lists you are subscribed to, you can simply go to your profile on the web, and click lists in the menu that shows on clicking your profile picture towards the right of your top bar. A page shows up wherein it shows tabs named "subscribed to" and "Member of".
 
-[![twitter lists](./twitter-lists-1024x493.png)](https://wisdomgeek.com/wp-content/uploads/2015/11/twitter-lists.png)
+[![twitter lists](./twitter-lists-1024x493-1.png)](https://wisdomgeek.com/wp-content/uploads/2015/11/twitter-lists.png)
 
 ## The steps to remove yourself from another person's Twitter list are pretty simple:
 

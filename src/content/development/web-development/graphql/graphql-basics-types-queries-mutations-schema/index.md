@@ -2,6 +2,7 @@
 title: 'GraphQL Basics: Types, Queries, Mutations, and Schema'
 description: 'Once you get a grasp of what GraphQL is, and why it is important, you also realize that it is a different design process. And before diving into the implementation, it is important that we understand the GraphQL basics, the various terminologies that come with it. If you are just&#46;&#46;&#46;'
 pubDate: 'Jul 15, 2020'
+updatedDate: 'Oct 11, 2023'
 heroImage: './hero.jpg'
 categories: ["GraphQL"]
 categoryHierarchy: ["Development","Web Development","Graphql"]

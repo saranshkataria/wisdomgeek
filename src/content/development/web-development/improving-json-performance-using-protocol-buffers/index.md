@@ -2,6 +2,7 @@
 title: 'Beating JSON performance using Protocol Buffers'
 description: 'Protocol buffers or Protobuf, is a binary format that was created by Google to serialize structured data that is transferred among services. Before we get into what protocol buffers are, let us first look into JSON. JSON clearly has great advantages when it comes to being a data interchange format&#46;&#46;&#46;'
 pubDate: 'Oct 20, 2020'
+updatedDate: 'Oct 11, 2023'
 heroImage: './hero.png'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]

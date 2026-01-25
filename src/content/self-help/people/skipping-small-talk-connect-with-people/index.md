@@ -2,6 +2,7 @@
 title: 'Skipping small talk to connect with people'
 description: 'We are living in a width world and not a depth world, mostly having shallow conversations with everyone around us. Most of the non-family relationships that we have right now started with a small talk. Being an introvert, I know how boring small talk can be at times. But that is the&#46;&#46;&#46;'
 pubDate: 'Sep 08, 2016'
+updatedDate: 'Sep 08, 2016'
 heroImage: './hero.jpg'
 categories: ["People"]
 categoryHierarchy: ["Self Help","People"]

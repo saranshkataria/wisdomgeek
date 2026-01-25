@@ -2,6 +2,7 @@
 title: 'Goodbye Tech4every1'
 description: 'It all started somewhere in August 2011. Me and Somin Wadhwa, a friend who lives nearby, started it since we found it difficult to find applications for Symbian online and we knew people had the same problem as well. So we started a Facebook page for it and posting things. But&#46;&#46;&#46;'
 pubDate: 'Aug 17, 2015'
+updatedDate: 'Aug 17, 2015'
 heroImage: './hero.jpg'
 categories: ["Blogging"]
 categoryHierarchy: ["Blogging"]

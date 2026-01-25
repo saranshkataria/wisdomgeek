@@ -2,6 +2,7 @@
 title: 'Machine Learning Misconceptions That Software Developers Have'
 description: 'There has been a rapid advancement in technology and machine learning in the past decade. This has been accompanied by accelerated and innovative growth in the field of cloud computing. For example, Google introduced TPUs which are now available through Google Colab. And one can use it to experiment and&#46;&#46;&#46;'
 pubDate: 'Sep 09, 2020'
+updatedDate: 'Sep 09, 2020'
 heroImage: './hero.jpg'
 categories: ["Development","Machine Learning"]
 categoryHierarchy: ["Development","Machine Learning"]
@@ -35,7 +36,7 @@ You are absolutely right, but –
 
 Have a look at a piece of text from one of the best books in machine learning. Its called – "Pattern Recognition and Machine Learning" by Christopher Bishop. 
 
-![](./screenshot-2020-08-28-at-11.48.16-pm.png)
+![](./screenshot-2020-08-28-at-11.48.16-pm-1.png)
 
 If you look closely, there are no APIs/code in this. Leave aside this piece of calculation, there is no use of any code in this entire book. And nobody can argue that this book is not about machine learning. Remember, ML is mathematics, APIs are just its abstracted implementation. 
 

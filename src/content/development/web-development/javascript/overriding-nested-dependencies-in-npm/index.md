@@ -2,6 +2,7 @@
 title: 'Overriding nested dependencies in NPM'
 description: 'Whenever we install a particular package, it is common to come across a problem with a dependency''s dependency. With the release of npm 8.3, an overrides attribute has been added to solve this problem and allow overriding of nested dependencies in NPM. The problem Let us say your project depends&#46;&#46;&#46;'
 pubDate: 'Jan 18, 2022'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpeg'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

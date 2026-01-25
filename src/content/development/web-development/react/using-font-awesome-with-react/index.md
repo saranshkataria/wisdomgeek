@@ -2,6 +2,7 @@
 title: 'Using Font Awesome with React'
 description: 'Font Awesome is a great resource to use various types of icons in your project including well-known social media icons and a lot more. It can be used with any front-end library. In this post, we are going to be using Font Awesome with React. Set up The first step&#46;&#46;&#46;'
 pubDate: 'Oct 22, 2022'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.webp'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]

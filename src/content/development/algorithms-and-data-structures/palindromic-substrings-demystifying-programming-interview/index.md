@@ -2,6 +2,7 @@
 title: 'Palindromic Substrings: Demystifying Programming Interview'
 description: 'This is the second post in the Demystifying Programming Interview series, which aims at helping students and professionals who are planning to appear for programming interviews. If you are new to this series, you can check out the first post about the number of islands problem. We will solve the&#46;&#46;&#46;'
 pubDate: 'Jan 07, 2021'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 categories: ["Algorithms and Data Structures"]
 categoryHierarchy: ["Development","Algorithms And Data Structures"]
@@ -31,11 +32,11 @@ The critical question to ask when trying to optimize any solution is: Are we doi
 
 For the remainder of this post, we will be using the following string to analyze and solve the palindromic substring problem.
 
-![palindromic substring problem visualization 1](./palindromic-substring-problem-visualization.png)
+![palindromic substring problem visualization 1](./palindromic-substring-problem-visualization-10.png)
 
 Let us say that the brute force solution is analyzing the substring “nanas” and finding out whether it is a palindrome.
 
-![palindromic substring problem visualization 1](./palindromic-substring-problem-visualization-1.png)
+![palindromic substring problem visualization 1](./palindromic-substring-problem-visualization-1-1.png)
 
 After that, let us analyze the substring formed by including a character on the left and right of “nanas.” The new substring to be analyzed will be “ananasr.” Since “nanas” is at the center of “ananasr” and we know that “nanas” is NOT a palindrome. Therefore we can be certain that “ananasr” is not a palindrome either.
 
@@ -55,13 +56,13 @@ Now let us look at the string “yellowbananasrock” that we have been using so
 
 Let us look at ‘y’ which is the first pivot of the string “yellowbananasrock”.
 
-![palindromic substring problem visualization 2](./palindromic-substring-problem-visualization-2.png)
+![palindromic substring problem visualization 2](./palindromic-substring-problem-visualization-2-1.png)
 
 The first substring with ‘y’ as its center is “y,” which is also a palindrome trivially as it has a length of 1. The left edge and the window's right edge are both at ‘y’ at the moment. Since the window's left edge is already at the left boundary of the string, we cannot expand this window centered at ‘y’ further even though we can expand on the right side. In other words, we don’t have any other substrings that are centered at ‘y’.
 
 We now move to the next pivot which is “ye”.
 
-![palindromic substring problem visualization 3](./palindromic-substring-problem-visualization-3.png)
+![palindromic substring problem visualization 3](./palindromic-substring-problem-visualization-3-1.png)
 
 The first substring that is centered at the pivot “ye” is “ye” itself. Since ‘y’ is not equal to ‘e,’ “ye” isn’t a palindromic substring. Therefore we will not expand the window pivoted at “ye” to look at the other substrings.
 
@@ -69,31 +70,31 @@ The next pivots that would be analyzed in order by the algorithm would be: &#821
 
 Let’s look at a more interesting pivot now: “ll.” Like the previous examples, the first substring pivoted at “ll” is “ll” itself.
 
-![palindromic substring problem visualization 4](./palindromic-substring-problem-visualization-4.png)
+![palindromic substring problem visualization 4](./palindromic-substring-problem-visualization-4-1.png)
 
 Since “ll” is a palindrome, we will try to expand the window towards left and right to obtain the next substring pivoted at “ll.” The next substring, thus obtained, would be “ello.”
 
-![palindromic substring problem visualization 5](./palindromic-substring-problem-visualization-5.png)
+![palindromic substring problem visualization 5](./palindromic-substring-problem-visualization-5-1.png)
 
 Since, ‘e’ is not equal to ‘o’, “ello” is not a palindrome, and we stop expanding the window pivoted at “ll” and move to the next pivot.
 
 Moving on to a more interesting pivot: ‘a’ (index 9). Since “a” itself is a palindrome (trivially), we proceed to expand the window centered at ‘a’. 
 
-![palindromic substring problem visualization 6](./palindromic-substring-problem-visualization-6.png)
+![palindromic substring problem visualization 6](./palindromic-substring-problem-visualization-6-1.png)
 
 As we move the left and right edges of the window, we obtain the substring “nan.” Since the characters at the edges of the window are equal and the substring at the center is also a palindrome, we know that “nan” is also a palindrome.
 
-![palindromic substring problem visualization 7](./palindromic-substring-problem-visualization-7.png)
+![palindromic substring problem visualization 7](./palindromic-substring-problem-visualization-7-1.png)
 
 We can now expand the window further and obtain the new substring: “anana”.
 
-![palindromic substring problem visualization 8](./palindromic-substring-problem-visualization-8.png)
+![palindromic substring problem visualization 8](./palindromic-substring-problem-visualization-8-1.png)
 
 Just like before, both the characters on the boundary of the window are equal. Since the previous substring was a palindrome, we can conclude that “anana” is also a palindrome.
 
 As we expand the window again, we obtain the substring: “bananas”.
 
-![palindromic substring problem visualization 9](./palindromic-substring-problem-visualization-9.png)
+![palindromic substring problem visualization 9](./palindromic-substring-problem-visualization-9-1.png)
 
 ‘b’ is not equal to ‘s.’ We know that “bananas” is not a palindrome, and thus we can stop expanding this window further and move to the next pivot.
 

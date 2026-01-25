@@ -2,6 +2,7 @@
 title: 'Numeric Separators in JavaScript'
 description: 'Writing performant code is not enough as a developer. We need to ensure that it is readable as well. And it is rare that an API change in a language introduces readability. Numeric Separators are one such rare change. Why numeric Separators? Reading this takes a few seconds: Counting the&#46;&#46;&#46;'
 pubDate: 'Jun 16, 2021'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpg'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

@@ -2,6 +2,7 @@
 title: 'Parsing JSON in Android Tutorial'
 description: 'Note: If you are interested in seeing the implementation of this using retrofit, refer to our other post about Using Retrofit 2 for parsing JSON in Android. I recently got back to developing native Android applications after a long time and the first task of any large-scale application begins with&#46;&#46;&#46;'
 pubDate: 'Mar 02, 2017'
+updatedDate: 'Oct 15, 2023'
 heroImage: './hero.jpg'
 categories: ["Android Development"]
 categoryHierarchy: ["Development","Android Development"]
@@ -77,6 +78,6 @@ Here HttpHelper is the class we created for getting the server response by makin
 
 The program that we wrote above, when hooked into an async task and rendered on a list view, looks like the following:
 
-![JSON Paring in Android](./json-paring-in-android.png)
+![JSON Paring in Android](./json-paring-in-android-1.png)
 
 There are other ways you can do parsing of a JSON in android. Libraries like gson, retrofit, or you can also use jackson's streaming API exist which do the work of parsing JSON strings to POJO's if the keys match the variable names created inside the classes. I can write a detailed post about those as well if needed. Let me know in comments if you want one or if you are facing any issues in the sample written here.

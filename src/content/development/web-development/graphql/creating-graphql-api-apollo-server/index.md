@@ -2,6 +2,7 @@
 title: 'Creating a GraphQL API with Apollo Server'
 description: 'One of the many complaints about the GraphQL ecosystem is that there is a lot of indirection around what packages to use to create a GraphQL application. Even after selecting one, there is a lot of boilerplate code that one must create to make a GraphQL server work. While that&#46;&#46;&#46;'
 pubDate: 'Dec 02, 2020'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 categories: ["GraphQL"]
 categoryHierarchy: ["Development","Web Development","Graphql"]
@@ -153,7 +154,7 @@ server.listen(4000).then(({ url }) => {
 
 If we run node server.js in the command prompt, the server should be up and running. Next, we go to localhost:4000 in our browser. We get a GraphQL playground that lets us send post commands to the server we just built. We will use this to query for our posts. IntelliSense can be used here to create our query. Upon execution of the query, we will get our hardcoded posts from the server.
 
-![apollo server query response](./apollo-server-query-response-1024x333.png)
+![apollo server query response](./apollo-server-query-response-1024x333-1.png)
 
 ## Implementing Mutations
 
@@ -186,7 +187,7 @@ const resolvers = {
 
 We can then invoke the mutation in our playground after running the server and get the updated value back.
 
-![apollo server mutation response](./apollo-server-mutation-response-1024x275.png)
+![apollo server mutation response](./apollo-server-mutation-response-1024x275-1.png)
 
 The final code for our working server thus becomes:
 

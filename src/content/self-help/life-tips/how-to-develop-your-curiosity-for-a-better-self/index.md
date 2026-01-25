@@ -2,6 +2,7 @@
 title: 'How to develop your curiosity for a better self?'
 description: 'Curiosity is the reason why most of the breakthrough discoveries and remarkable inventions have happened throughout history. In the absence of curiosity, there would not have been an impulse to seek new information or experiences. Exploring possibilities is what defines human nature and thus curiosity is an integral part of&#46;&#46;&#46;'
 pubDate: 'Dec 29, 2020'
+updatedDate: 'Dec 29, 2020'
 heroImage: './hero.png'
 categories: ["Life Tips"]
 categoryHierarchy: ["Self Help","Life Tips"]

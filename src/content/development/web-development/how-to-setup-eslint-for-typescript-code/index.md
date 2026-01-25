@@ -2,6 +2,7 @@
 title: 'How to setup ESLint for Typescript code'
 description: 'The Typescript team recently announced its road map. Interestingly, they have decided to not focus on TSLint any more and focus their efforts on ESLint for Typescript linting instead. This is a great thing for the community overall since ESLint becomes the defacto linting tool going forward. In this post,&#46;&#46;&#46;'
 pubDate: 'Mar 19, 2019'
+updatedDate: 'Oct 15, 2023'
 heroImage: './hero.png'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]

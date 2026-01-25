@@ -2,6 +2,7 @@
 title: 'How React, Relay, and GraphQL fit together'
 description: 'If you are a javascript developer, chances are you would have heard about React, Relay, and GraphQL recently. And if you are a react developer who has been happily using redux for a while now, the very first question that comes to mind is why another set of technologies? Why should I&#46;&#46;&#46;'
 pubDate: 'Mar 21, 2018'
+updatedDate: 'Oct 15, 2023'
 heroImage: './hero.png'
 categories: ["GraphQL"]
 categoryHierarchy: ["Development","Web Development","Graphql"]
@@ -75,7 +76,7 @@ The root component then makes a single request to the server and gets a batched 
 
 ## Putting it all together: React, Relay, and GraphQL
 
-![React, Relay, and GraphQL](./react-relay-and-graphql-architecture-1024x512.png)
+![React, Relay, and GraphQL](./react-relay-and-graphql-architecture-1024x512-1.png)
 
 Just like react fostered the idea of a declarative API for front-end code, Relay and GraphQL apply the same concepts for data fetching and mutation.
 

@@ -2,6 +2,7 @@
 title: 'Testing Python applications using Pytest'
 description: 'Testing our code brings in a variety of benefits, including building confidence in the code''s functioning and having lesser regressions. Writing and maintaining tests requires some additional work, and that is why we want to leverage tools as much as we can. Python does provide inbuilt tools such as unittest&#46;&#46;&#46;'
 pubDate: 'Mar 09, 2021'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 categories: ["Python"]
 categoryHierarchy: ["Development","Web Development","Python"]
@@ -114,7 +115,7 @@ And we can run our test using the command:
 pytest
 ```
 
-![pytest add test](./pytest-add-test-1024x757.png)
+![pytest add test](./pytest-add-test-1024x757-1.png)
 
 Similarly, we can write a test for our subtract method as well.
 

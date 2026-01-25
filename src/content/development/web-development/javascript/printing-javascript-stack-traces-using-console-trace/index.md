@@ -2,6 +2,7 @@
 title: 'Printing JavaScript stack traces using console.trace'
 description: 'The console object in JavaScript has a lot more useful functions than the most frequently used console.log method. Debugging errors and finding execution flow can be a lot easier by making use of the console.trace method. It allows us to print the current stack trace where the method was called.&#46;&#46;&#46;'
 pubDate: 'Jan 26, 2022'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

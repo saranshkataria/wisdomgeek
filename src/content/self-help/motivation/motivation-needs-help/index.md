@@ -2,6 +2,7 @@
 title: 'Motivation Needs Help'
 description: '"Not today, I will do it tomorrow." Sounds familiar? More often than not, we all find ourselves stuck in this situation. It is either the lack of motivation to go for the kill or disinterest in general. We find ourselves worn down along the journey we once wished to conquer&#46;&#46;&#46;'
 pubDate: 'Aug 28, 2017'
+updatedDate: 'Aug 28, 2017'
 heroImage: './hero.jpg'
 categories: ["Motivation"]
 categoryHierarchy: ["Self Help","Motivation"]

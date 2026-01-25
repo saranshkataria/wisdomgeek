@@ -2,6 +2,7 @@
 title: 'Natural Language Processing &#8211; A 30,000 feet view'
 description: 'Natural Language Processing has gained a lot of popularity owing to an exponential increase in unstructured data generation. Here are some fun data to give you context – The world sees 682 million tweets per day There exists 1.2 million new data producing social media users each day Up to&#46;&#46;&#46;'
 pubDate: 'Nov 24, 2020'
+updatedDate: 'Jan 18, 2022'
 heroImage: './hero.jpg'
 categories: ["Data Science","Machine Learning"]
 categoryHierarchy: ["Development","Data Science"]

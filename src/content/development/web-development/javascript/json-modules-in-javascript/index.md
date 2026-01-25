@@ -2,6 +2,7 @@
 title: 'JSON Modules in JavaScript'
 description: 'ES Modules were introduced in ES2015. The import and export keywords by default are only applicable to JavaScript code. But there is a new proposal to allow it to be used for JSON modules in JavaScript. It is convenient to keep some configuration inside a JSON file and import that.&#46;&#46;&#46;'
 pubDate: 'Dec 08, 2021'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

@@ -2,6 +2,7 @@
 title: 'How to use a Service Worker to create Progressive Web Applications?'
 description: 'The web is and probably always be an ever-evolving platform. Even though most of us have a decent internet connection these days, it is not the case for everyone in the world. Even if you have a nice internet, it might be flaky if you are traveling. Such situations can&#46;&#46;&#46;'
 pubDate: 'Jun 18, 2019'
+updatedDate: 'Oct 15, 2023'
 heroImage: './hero.jpeg'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]

@@ -2,6 +2,7 @@
 title: 'Debugging CSS scroll using one simple style'
 description: 'I have been doing a lot of complicated front-end work off lately and that always brings me back to the class conundrum of which element was adding a horizontal/vertical scroll to my page/elements. Debugging CSS scroll is a pain that I have felt too many times now and I always&#46;&#46;&#46;'
 pubDate: 'Nov 18, 2022'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.webp'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]

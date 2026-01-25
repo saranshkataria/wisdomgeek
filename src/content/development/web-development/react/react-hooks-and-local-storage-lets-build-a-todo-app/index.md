@@ -2,6 +2,7 @@
 title: 'React Hooks and Local Storage: Let&#8217;s build a ToDo app'
 description: 'React hooks have been around for quite some time. They have been widely adopted by the React community since then and have started becoming the defacto for newer React applications. A react hook allows developers to hook into React features. React hooks allow building components by using functions instead of&#46;&#46;&#46;'
 pubDate: 'Aug 25, 2020'
+updatedDate: 'Oct 11, 2023'
 heroImage: './hero.jpg'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]

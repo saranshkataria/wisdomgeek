@@ -2,6 +2,7 @@
 title: 'Improve git clone performance in a CI pipeline'
 description: 'Have you felt particularly annoyed by the time it takes to clone a large repository, especially one with a huge commit history? This post will discuss a simple but powerful technique to significantly improve git clone performance. The solution is called shallow cloning, which uses the –depth=1 flag with git&#46;&#46;&#46;'
 pubDate: 'Mar 19, 2024'
+updatedDate: 'Mar 19, 2024'
 heroImage: './hero.png'
 categories: ["Development"]
 categoryHierarchy: ["Development"]

@@ -2,6 +2,7 @@
 title: 'Adding fixtures and parameterized functions to PyTest'
 description: 'As we discussed in our post on getting started with Pytest, the framework allows us to reuse tests by using test fixtures and parameterized functions. In this post, we will learn how to do so. We will build on the simple calculator example that we discussed in the previous post&#46;&#46;&#46;'
 pubDate: 'Mar 11, 2021'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 categories: ["Python"]
 categoryHierarchy: ["Development","Web Development","Python"]

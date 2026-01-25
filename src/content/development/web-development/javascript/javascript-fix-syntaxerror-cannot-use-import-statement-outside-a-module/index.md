@@ -2,6 +2,7 @@
 title: 'JavaScript: fix &#8220;SyntaxError: cannot use import statement outside a module&#8221;'
 description: 'I recently was working with a third-party library. I ran into the error "Uncaught SyntaxError: cannot use import statement outside a module" when I tried to import a function from the package. Let us look into why it occurred and how I fixed it. Why is this happening? The error&#46;&#46;&#46;'
 pubDate: 'Oct 09, 2023'
+updatedDate: 'Oct 12, 2023'
 heroImage: './hero.png'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

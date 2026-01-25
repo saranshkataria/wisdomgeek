@@ -2,6 +2,7 @@
 title: 'Configure multiple accounts in AWS CLI'
 description: 'AWS CLI is a great tool for doing anything related to AWS. We can configure our access key for an account using an access key ID and a secret access key. But what if we want to use multiple accounts on the same computer? If we are working on multiple&#46;&#46;&#46;'
 pubDate: 'Feb 19, 2021'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 categories: ["AWS"]
 categoryHierarchy: ["Development","Aws"]

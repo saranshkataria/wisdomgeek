@@ -2,6 +2,7 @@
 title: 'Using utility types for transforming TypeScript types'
 description: 'TypeScript provides some built-in utility types that help facilitate transformations of types from one form to another. These utilities are available globally. They can be quite handy in various situations. TypeScript generics Before understanding the TypeScript utility types, it is important to understand type aliases and generics. You can create&#46;&#46;&#46;'
 pubDate: 'May 20, 2021'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpg'
 categories: ["TypeScript"]
 categoryHierarchy: ["Development","Web Development","Typescript"]

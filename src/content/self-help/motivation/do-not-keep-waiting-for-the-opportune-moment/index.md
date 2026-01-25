@@ -2,6 +2,7 @@
 title: 'Do not keep waiting for the opportune moment'
 description: 'You probably will have heard the two statements Be patient, it takes time for everything to get in place. Do not keep waiting for the opportune moment. Now every quote has a counter quote, and this can become confusing at times. Patience is definitely a good trait to have, but you&#46;&#46;&#46;'
 pubDate: 'May 09, 2015'
+updatedDate: 'Nov 01, 2022'
 heroImage: './hero.jpg'
 categories: ["Motivation"]
 categoryHierarchy: ["Self Help","Motivation"]

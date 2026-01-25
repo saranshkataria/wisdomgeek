@@ -2,6 +2,7 @@
 title: 'Detecting dark mode preference using JavaScript'
 description: 'As dark themes have become popular across the web and across operating systems, we might want to check the user''s operating system preference when they visit our website. This way, we can initialize our website accordingly after detecting their dark mode preference. We can make use of the prefers-color-scheme media&#46;&#46;&#46;'
 pubDate: 'Mar 02, 2022'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

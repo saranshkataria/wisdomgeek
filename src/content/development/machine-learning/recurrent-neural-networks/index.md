@@ -2,6 +2,7 @@
 title: 'Recurrent Neural Networks'
 description: 'In this article, we will explore recurrent neural networks. For all the readers who are not versed with the concept of neural networks, I will recommend that you go through one of our previous articles and get a basic understanding of how a neural network works. Disclaimer – The concepts&#46;&#46;&#46;'
 pubDate: 'Oct 27, 2020'
+updatedDate: 'Oct 27, 2020'
 heroImage: './hero.jpg'
 categories: ["Machine Learning"]
 categoryHierarchy: ["Development","Machine Learning"]
@@ -35,11 +36,11 @@ This section of the article assumes that you are familiar with the working of a 
 
 A basic RNN has the following schema.
 
-![Recurrent Neural Networks](./rnn-1.png)Recurrent Neural Network Schema
+![Recurrent Neural Networks](./rnn-1-1.png)Recurrent Neural Network Schema
 
 If we unroll the RNN, it will look something like this – 
 
-![Recurrent Neural Networks](./unfoldedrnn-2.png)Unfolded Recurrent Network
+![Recurrent Neural Networks](./unfoldedrnn-2-1.png)Unfolded Recurrent Network
 
 **Side Note** – Almost all the illustrations on the internet have a horizontal view of unfolded RNNs. While trying to understand the concept behind RNNs, I had a tough time visualizing the network in my head. Hence, I made this illustration for the sake of simplicity for all of you. Hope it helps!
 
@@ -54,7 +55,7 @@ One important thing to notice is that each input in the above RNN produces an ou
 
 By now, we hope that you are familiar with the basic functioning of a recurrent neural networks. Now, let us deep dive into some mathematics behind it. For simplicity, we will consider one node in the neural network. The preceding and following nodes follow the same principle and hence, can be extrapolated.
 
-![Recurrent Neural Networks](./rnn-1-4.png)A single node in a recurrent neural network
+![Recurrent Neural Networks](./rnn-1-4-1.png)A single node in a recurrent neural network
 
 Following are the meanings of the notations used above – 
 

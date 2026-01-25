@@ -2,6 +2,7 @@
 title: 'Javascript build tools: Why do we need one?'
 description: 'If I had asked a web developer a few years ago about using a build tool for their web project, the developer would have mocked me for even thinking about using a javascript build tool. It is a common notion that Javascript is not compiled and is interpreted by the&#46;&#46;&#46;'
 pubDate: 'Jul 28, 2016'
+updatedDate: 'Jul 28, 2016'
 heroImage: './hero.jpg'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

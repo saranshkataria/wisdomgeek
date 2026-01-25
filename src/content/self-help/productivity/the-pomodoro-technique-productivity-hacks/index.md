@@ -2,6 +2,7 @@
 title: 'The Pomodoro Technique: Productivity hacks'
 description: 'The irony of time management productivity tips is that the people who need them the most do not realize that they do. There are too many productivity tips out there but the Pomodoro technique is probably the most discussed and used one. The reason for its popularity is that it&#46;&#46;&#46;'
 pubDate: 'Jul 21, 2021'
+updatedDate: 'Jul 21, 2021'
 heroImage: './hero.jpg'
 categories: ["Productivity"]
 categoryHierarchy: ["Self Help","Productivity"]

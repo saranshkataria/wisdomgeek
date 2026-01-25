@@ -2,6 +2,7 @@
 title: 'How To Get The Hash of A File In Node.js'
 description: 'While working on a project, I wanted to do an integrity check of a file that I was referencing. So, I needed to know how to get the hash of a file in Node.js. And this post is about that. We will use the fs and crypto modules that are available in&#46;&#46;&#46;'
 pubDate: 'Apr 25, 2024'
+updatedDate: 'Jul 14, 2024'
 heroImage: './hero.png'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

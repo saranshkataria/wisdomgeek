@@ -2,6 +2,7 @@
 title: 'How To Fix ReferenceError: __dirname is not defined'
 description: 'I recently tried to use __dirname inside a ES module. It turns out, that I cannot. It throws an error. So let us see how To Fix ReferenceError: __dirname is not defined. For people who do not know what it is, let us first discuss what __dirname is. __dirname is a global variable in Node.js&#46;&#46;&#46;'
 pubDate: 'Feb 15, 2024'
+updatedDate: 'Feb 15, 2024'
 heroImage: './hero.jpg'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

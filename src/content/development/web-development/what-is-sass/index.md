@@ -2,6 +2,7 @@
 title: 'What is SASS and why you should use it'
 description: 'I have been playing a lot with CSS these days, and then I came across the concepts of using variables inside it. I came to know of two ways to do so, SASS and LESS. I was eager to try both out but it was only possible one at a&#46;&#46;&#46;'
 pubDate: 'Sep 02, 2015'
+updatedDate: 'Sep 02, 2015'
 heroImage: './hero.png'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]

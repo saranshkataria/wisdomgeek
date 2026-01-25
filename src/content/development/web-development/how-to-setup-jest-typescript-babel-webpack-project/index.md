@@ -2,6 +2,7 @@
 title: 'How to setup Jest in a TypeScript, Babel and Webpack project'
 description: 'As you might know, I have been diving into setting up a boilerplate for a TypeScript project with React. And what good is a project without a unit testing framework? So I will go through the process of setting up Jest with TypeScript and Babel in this post. If you&#46;&#46;&#46;'
 pubDate: 'Apr 09, 2019'
+updatedDate: 'Oct 15, 2023'
 heroImage: './hero.png'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]

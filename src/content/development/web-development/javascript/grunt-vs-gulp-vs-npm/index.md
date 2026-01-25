@@ -2,6 +2,7 @@
 title: 'Grunt Vs Gulp Vs npm: Javascript build wars'
 description: 'You might have already made the choice among Grunt Vs Gulp Vs npm already. Or you might be totally confused what all these are. All these are automation tools used during or after development. Some people might be confused that why do we even need a build process for javascript?&#46;&#46;&#46;'
 pubDate: 'Jan 12, 2016'
+updatedDate: 'Jan 12, 2016'
 heroImage: './hero.png'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

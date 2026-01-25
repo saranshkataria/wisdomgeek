@@ -2,6 +2,7 @@
 title: 'My career decision: choosing passion over money'
 description: 'As you might know, I recently switched jobs. In my long journey of finding a new one, there was a moment where I was offered way more money than I had anticipated for a role that I was not as passionate about. I wish I could say that it was&#46;&#46;&#46;'
 pubDate: 'Mar 25, 2021'
+updatedDate: 'Mar 25, 2021'
 heroImage: './hero.jpg'
 categories: ["Life Tips"]
 categoryHierarchy: ["Self Help","Life Tips"]

@@ -2,12 +2,13 @@
 title: 'Hackulture: A new beginning'
 description: 'There are times when you have an idea and you go crazy thinking about it, you wish to implement it but you have no clue on how to proceed. Hackulture is one such initiative, which is currently going through the same phase of not knowing how it will get implemented&#46;&#46;&#46;'
 pubDate: 'Jun 21, 2015'
+updatedDate: 'Jun 21, 2015'
 heroImage: ''
 categories: ["Hackathons"]
 categoryHierarchy: ["Development","Hackathons"]
 ---
 
-[![hackulture](./hackulture.jpg)](https://wisdomgeek.com/wp-content/uploads/2015/06/hackulture.jpg)
+[![hackulture](./hackulture-1.jpg)](https://wisdomgeek.com/wp-content/uploads/2015/06/hackulture.jpg)
 
 There are times when you have an idea and you go crazy thinking about it, you wish to implement it but you have no clue on how to proceed. Hackulture is one such initiative, which is currently going through the same phase of not knowing how it will get implemented but once it does, it will be a platform for helping others implement their ideas.
 

@@ -293,11 +293,20 @@ async function fetchWordPressPosts() {
         day: '2-digit'
       });
 
+      // Format modified date for frontmatter (used for sitemap lastmod)
+      const modifiedDate = new Date(post.modified);
+      const formattedModifiedDate = modifiedDate.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: '2-digit'
+      });
+
       // Create markdown content
       const markdown = `---
 title: '${post.title.rendered.replace(/'/g, "''")}'
 description: '${cleanExcerpt.replace(/'/g, "''")}'
 pubDate: '${formattedDate}'
+updatedDate: '${formattedModifiedDate}'
 heroImage: '${heroImage}'
 categories: ${JSON.stringify(allCategoryNames)}
 categoryHierarchy: ${JSON.stringify(primaryCategoryPath)}

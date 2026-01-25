@@ -2,6 +2,7 @@
 title: 'React fragments: What and Why'
 description: 'React fragments were a feature released in React 16.2. They have been around for a while now but have been a relatively lesser used feature. Let us explore the what and why the feature exists. What are React Fragments? React fragments are a syntactic addition to React that allow wrapping&#46;&#46;&#46;'
 pubDate: 'Jul 15, 2021'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpg'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]

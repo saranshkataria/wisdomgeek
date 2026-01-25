@@ -2,6 +2,7 @@
 title: 'Specifying a node version in Repl.it'
 description: 'I was recently trying to use a later version of Node on Repl.it. I wanted to use a package that supported ES Modules, and the default version did not have support for it. So I wanted to use the latest node version in Repl.it. And found that there was no&#46;&#46;&#46;'
 pubDate: 'Sep 13, 2021'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
@@ -13,7 +14,7 @@ I was recently trying to use a later version of Node on Repl.it. I wanted to use
 
 Repl.it allows specifying the node.js version as part of the package.json itself. But it does not use the installed version by default when running the script. But before we get to that, we need to install our node version in repl.it. To do so, we go to the package.json and add the version we want. Or we could have used the package manager interface to do so:
 
-![installing custom node version in repl.it](./screen-shot-2021-09-12-at-7.46.10-pm-1024x378.png)
+![installing custom node version in repl.it](./screen-shot-2021-09-12-at-7.46.10-pm-1024x378-1.png)
 
 ## Configuring Repl.it
 

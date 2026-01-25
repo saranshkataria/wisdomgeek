@@ -2,6 +2,7 @@
 title: 'Mutant: An open-source, cross-platform, encrypted programming language'
 description: 'Mutant is an open-source, cross-platform, compiled, garbage collected, encrypted programming language that wants to make secure programming and security research more accessible. The target audience for mutant is students, security researchers, and reverse engineers. The aim is to provide an accessible, secure system for programming & security research. And it&#46;&#46;&#46;'
 pubDate: 'Apr 01, 2021'
+updatedDate: 'Apr 01, 2021'
 heroImage: './hero.jpeg'
 categories: ["Programming"]
 categoryHierarchy: ["Development","Programming"]

@@ -2,6 +2,7 @@
 title: 'How to unit-test a private (non-exported) function in JavaScript'
 description: 'When writing unit-tests for JavaScript modules, we often encounter a dilemma wherein the module has some private functions that have not been exported. Testing a function that has been exported is easy since it can be imported in the unit testing framework, and the functionality can be tested. But how&#46;&#46;&#46;'
 pubDate: 'Nov 19, 2020'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpeg'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

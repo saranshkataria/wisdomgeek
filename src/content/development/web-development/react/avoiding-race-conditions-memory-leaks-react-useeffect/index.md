@@ -2,6 +2,7 @@
 title: 'Avoiding race conditions and memory leaks in React useEffect'
 description: 'Let us take a look at an implementation of getting data from an API request and see if there is any possibility of race conditions happening in this component: We have specified an empty array as a dependency to the useEffect React hook. So we have ensured that the fetch&#46;&#46;&#46;'
 pubDate: 'Feb 08, 2021'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpg'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]

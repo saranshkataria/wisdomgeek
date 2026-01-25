@@ -2,6 +2,7 @@
 title: 'Moving to BCC: an email etiquette you must know'
 description: 'We use email every day and most of the times the BCC is a crafty little feature that we rarely use. Usually, it is for confirmation emails for events to multiple people, or something similar. The only other time I have personally used it was when I had to send&#46;&#46;&#46;'
 pubDate: 'Oct 20, 2016'
+updatedDate: 'Oct 20, 2016'
 heroImage: './hero.jpg'
 categories: ["Email"]
 categoryHierarchy: ["General","Email"]

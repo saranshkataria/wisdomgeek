@@ -2,6 +2,7 @@
 title: 'Object destructuring in TypeScript'
 description: 'Object destructuring is a powerful ES 6 feature that can help developers write cleaner code. It allows us to extract properties from a JavaScript object into variables. If you are unfamiliar with it, read our post about object destructuring to know more about what is possible using it. When it&#46;&#46;&#46;'
 pubDate: 'Mar 28, 2024'
+updatedDate: 'Mar 28, 2024'
 heroImage: './hero.png'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

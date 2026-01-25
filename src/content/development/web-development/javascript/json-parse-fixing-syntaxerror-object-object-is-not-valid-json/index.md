@@ -2,6 +2,7 @@
 title: 'JSON.parse(): Fixing &#8216;SyntaxError: &#8220;[object Object]&#8221; is not valid JSON&#8217;'
 description: 'SyntaxError: "[object Object]" is not valid JSON: usually happens when the value being passed to JSON.parse is not a string value. Let''s see how we can fix it. Scenario 1: The value is already an object Since the value being passed to JSON.parse is already an object, we don''t need&#46;&#46;&#46;'
 pubDate: 'Oct 22, 2023'
+updatedDate: 'Oct 22, 2023'
 heroImage: './hero.png'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

@@ -2,6 +2,7 @@
 title: 'Using the optional chaining operator in JavaScript'
 description: 'Every now and then, you come across a JavaScript feature that vastly changes the way you write it. Destructuring, arrow functions, modules have been some of those features for me. Optional chaining is going to be the next one on that list for me. Optional Chaining is in stage 4&#46;&#46;&#46;'
 pubDate: 'Mar 18, 2021'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpg'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

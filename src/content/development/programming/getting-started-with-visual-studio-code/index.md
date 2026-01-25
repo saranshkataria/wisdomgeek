@@ -2,6 +2,7 @@
 title: 'Getting started with Visual Studio Code'
 description: 'Visual Studio Code is the latest cross platform editor by Microsoft and I started looking into it since I wanted a fast editor which provided me Intellisense similar to what Visual Studio provides. At first I thought it is an IDE, but it is not. It is a code optimized&#46;&#46;&#46;'
 pubDate: 'Dec 19, 2015'
+updatedDate: 'Dec 19, 2015'
 heroImage: './hero.png'
 categories: ["Programming"]
 categoryHierarchy: ["Development","Programming"]
@@ -29,7 +30,7 @@ If you come from Visual Studio background, and expect a csproj or xproj file whi
 
 Here's what the editor looks like:
 
-![visual studio code](./visual-studio-code-1024x552.png)
+![visual studio code](./visual-studio-code-1024x552-1.png)
 
 The command palette can be opened using Ctrl + Shift + P and is one of the most used features in case you forget other keyboard shortcuts. The Viewbar on the left has 4 icons.
 

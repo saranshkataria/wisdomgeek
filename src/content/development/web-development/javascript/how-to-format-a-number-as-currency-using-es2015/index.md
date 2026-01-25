@@ -2,6 +2,7 @@
 title: 'How to format a Number as Currency using ES2015'
 description: 'The process to format a number as currency can be a tedious task. It feels like a small task, but the number of lines and the edge cases can keep on increasing when considering factors such as internationalization and different formatting standards. Luckily, ES2015 introduced an internationalization API which can&#46;&#46;&#46;'
 pubDate: 'Mar 04, 2021'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpg'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
@@ -144,6 +145,6 @@ console.log(euroGerman.format(price)); // 1.000.000,05 €
 
 Here is the browser compatibility if you want to see for yourself if you should use the internationalization API or not:
 
-![caniuse internationalization API javascript currency format number](./caniuse-internationalization.png)
+![caniuse internationalization API javascript currency format number](./caniuse-internationalization-1.png)
 
 And that is all you need to know about how to format a number as currency using ECMAScript. If you have any questions, feel free to drop a comment below.

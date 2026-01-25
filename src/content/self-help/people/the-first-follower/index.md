@@ -2,6 +2,7 @@
 title: 'The first follower'
 description: 'Sometimes in life, you sit down with yourself and introspect on all that has happened in the past. And you get to the realization that a lot of what has been done in the past was not only because of your own efforts. There were always people present who believed in you&#46;&#46;&#46;'
 pubDate: 'Feb 27, 2016'
+updatedDate: 'Feb 27, 2016'
 heroImage: './hero.jpg'
 categories: ["People"]
 categoryHierarchy: ["Self Help","People"]

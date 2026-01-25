@@ -2,6 +2,7 @@
 title: 'Fixing &#8220;error: cannot find module semver&#8221; error in Node.js'
 description: 'When installing a package using npm, you might encounter the "error: cannot find module semver" error. The error is caused because of a corrupted package-lock.json or yarn.lock. The most common reason for this is a change in the node version. Fixing "error: cannot find module semver" The fix is a&#46;&#46;&#46;'
 pubDate: 'Oct 19, 2023'
+updatedDate: 'Oct 23, 2023'
 heroImage: './hero.jpeg'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

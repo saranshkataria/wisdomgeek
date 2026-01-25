@@ -2,6 +2,7 @@
 title: 'The new Logical Assignment Operators in JavaScript'
 description: 'The latest version of ECMAScript introduced three new logical assignment operators: nullish, AND, and OR operators. These are supported from Firefox 79 onwards, Chrome 85 onwards, and naturally there is no IE support but since Edge is now chromium based, it is available there too. They are not available in&#46;&#46;&#46;'
 pubDate: 'Oct 08, 2020'
+updatedDate: 'Oct 11, 2023'
 heroImage: './hero.png'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

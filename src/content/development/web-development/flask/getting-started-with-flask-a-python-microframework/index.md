@@ -2,6 +2,7 @@
 title: 'Getting started with Flask: a Python microframework'
 description: 'Flask is a python framework for writing web applications. It is a microframework, which as the name suggests, is a small, clean, and simple to use framework. It comes with a minimal set of features, which sounds like a strange choice at first. So why would we choose Flask if&#46;&#46;&#46;'
 pubDate: 'Feb 25, 2021'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 categories: ["Flask"]
 categoryHierarchy: ["Development","Web Development","Flask"]

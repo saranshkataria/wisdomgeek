@@ -2,6 +2,7 @@
 title: 'Copy/Pasting output from the terminal'
 description: 'Manually copy-pasting the output of a terminal command with a mouse/trackpad feels tedious. It is more convenient to use commands to do so. And we can save the effort by using the built-in commands. Mac We can use pbcopy and pbpaste to copy and paste from the Mac terminal. We can pipe the&#46;&#46;&#46;'
 pubDate: 'May 15, 2024'
+updatedDate: 'May 15, 2024'
 heroImage: './hero.png'
 categories: ["Development"]
 categoryHierarchy: ["Development"]

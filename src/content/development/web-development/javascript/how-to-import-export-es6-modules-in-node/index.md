@@ -2,6 +2,7 @@
 title: 'How to import/export ES6 modules in Node'
 description: 'If you have been following the javascript ecosystem for a while, you already know that even though ES6 modules are a thing, you still cannot import/export ES6 modules in node.js as of today. Node 10 experimental flag for importing/exporting ES6 modules in Node Though Node 10 has added an experimental&#46;&#46;&#46;'
 pubDate: 'Jun 19, 2018'
+updatedDate: 'Oct 15, 2023'
 heroImage: './hero.jpg'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

@@ -2,6 +2,7 @@
 title: 'How to convert a React component to an image'
 description: 'Sometimes you want to give the users the ability to download a part of the web application as an image. In that case, you want a way to convert a React component to an image. And it can be straightforward by using a third-party NPM package called html2canvas. Let us&#46;&#46;&#46;'
 pubDate: 'Sep 27, 2021'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpeg'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]

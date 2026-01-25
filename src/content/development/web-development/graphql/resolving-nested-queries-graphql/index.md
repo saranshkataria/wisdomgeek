@@ -2,6 +2,7 @@
 title: 'Resolving nested queries in GraphQL'
 description: 'When creating a GraphQL server with relational data, we want to return the data in a hierarchical format with those relationships in a single query. After all, that is where GraphQL comes in handy, right? Let us look into how we can do this using nested queries in GraphQL. This&#46;&#46;&#46;'
 pubDate: 'Dec 08, 2020'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 categories: ["GraphQL"]
 categoryHierarchy: ["Development","Web Development","Graphql"]
@@ -216,7 +217,7 @@ server.listen(4000).then(({ url }) => {
 
 When we run the query now, we get our desired output:
 
-![nested queries in graphql](./nested-queries-in-graphql-1024x415.png)
+![nested queries in graphql](./nested-queries-in-graphql-1024x415-1.png)
 
 The first function to be invoked is the authors resolver function since that is what the query asks for. It returns the id, name, and title for all the authors. In our case, we have only one, and that is returned.
 

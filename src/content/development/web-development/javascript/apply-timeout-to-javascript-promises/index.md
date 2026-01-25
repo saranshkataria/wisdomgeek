@@ -2,6 +2,7 @@
 title: 'Apply timeout to JavaScript Promises'
 description: 'JavaScript promises do not have any time associated with them. We can use a .then() function and wait until the promise is resolved or rejected. We can even await it, and either of those works if the async task finishes in a reasonable amount of time. But in the case&#46;&#46;&#46;'
 pubDate: 'Jun 10, 2021'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpeg'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

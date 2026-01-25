@@ -2,6 +2,7 @@
 title: 'How to easily build good habits: 4 tips backed by research'
 description: 'The best way to move forward towards achieving our dreams is to commit to them. And habits are the compound interest of self-improvement. But who wants a huge to-do list that we do not even look at it? Does anyone have a better way of doing it? Yes, commitments and&#46;&#46;&#46;'
 pubDate: 'Feb 04, 2021'
+updatedDate: 'Feb 04, 2021'
 heroImage: './hero.jpg'
 categories: ["Productivity"]
 categoryHierarchy: ["Self Help","Productivity"]

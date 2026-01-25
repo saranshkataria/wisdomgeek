@@ -2,6 +2,7 @@
 title: 'Partial Matching in Jest'
 description: 'Jest has the ability to check for partial matches on arrays and objects. Let us see how to do partial matching in Jest. expect has powerful matcher methods for partial matching, and they can also be combined with the tohavebeencalledwith method. Matching objects partially using expect.objectContaining When trying only to&#46;&#46;&#46;'
 pubDate: 'Oct 25, 2023'
+updatedDate: 'Oct 25, 2023'
 heroImage: './hero.jpg'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

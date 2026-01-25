@@ -2,6 +2,7 @@
 title: 'How to keep the screen awake using JavaScript'
 description: 'Some new features in JavaScript are great to see, and the wake lock API is one of those. It allows us to interact with the host system and can help the developer instruct the operating system to keep the screen awake using JavaScript! This can be particularly useful for cases&#46;&#46;&#46;'
 pubDate: 'Mar 05, 2024'
+updatedDate: 'Mar 05, 2024'
 heroImage: './hero.webp'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

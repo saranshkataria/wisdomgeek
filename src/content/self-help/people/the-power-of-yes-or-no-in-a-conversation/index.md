@@ -2,6 +2,7 @@
 title: 'The power of yes or no in a conversation'
 description: 'A simple yes or no can be a life-changing event considering the context it is used in. People often tend to overlook the complexity of a few simple terms and this is true for all aspects of life. We keep looking for more challenging things and ignore the small ones.&#46;&#46;&#46;'
 pubDate: 'May 20, 2015'
+updatedDate: 'May 20, 2015'
 heroImage: './hero.jpg'
 categories: ["Featured","People"]
 categoryHierarchy: ["Self Help","People"]

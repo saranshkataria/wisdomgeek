@@ -2,6 +2,7 @@
 title: 'Creating new TypeScript types using template literal types'
 description: 'TypeScript is way more powerful than I give it credit for. I recently learned about creating new TypeScript types using template literal types, and I was pretty surprised to know that TypeScript can do that. Let us assume we wanted to create a type for the CSS properties margin and&#46;&#46;&#46;'
 pubDate: 'Feb 05, 2024'
+updatedDate: 'Feb 05, 2024'
 heroImage: './hero.png'
 categories: ["TypeScript"]
 categoryHierarchy: ["Development","Web Development","Typescript"]

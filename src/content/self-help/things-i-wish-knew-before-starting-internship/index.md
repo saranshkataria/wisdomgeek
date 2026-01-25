@@ -2,6 +2,7 @@
 title: '4 Things I Wish I Knew Before Starting My Internship'
 description: 'Hello readers, it has been a long time since I last wrote anything. My last article about motivation was written 1 year, 8 months, and 5 days to be precise. A fairly long hibernation one would say, and well, I have to admit – I did not feel as motivated&#46;&#46;&#46;'
 pubDate: 'May 19, 2020'
+updatedDate: 'May 19, 2020'
 heroImage: './hero.png'
 categories: ["Self Help"]
 categoryHierarchy: ["Self Help"]

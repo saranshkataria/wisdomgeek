@@ -2,6 +2,7 @@
 title: 'Retrieving content value of ::after or ::before in JavaScript'
 description: 'Let us suppose we had an HTML element which had an ::after property assigned to it. We are going to be retrieving the content value of ::after or ::before of this element using JavaScript. For the following element: If we needed a way of retrieving content value of ::after in&#46;&#46;&#46;'
 pubDate: 'Nov 21, 2021'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

@@ -2,6 +2,7 @@
 title: 'Chrome devtools: Using logpoints for logging messages directly'
 description: 'When it comes to debugging JavaScript in Chrome devtools, there are two different camps: the console.log fans and the debugger/breakpoint maximalist. I often switch between the two depending on what problem I am tackling. There is a third option that is kind of in the middle. Logpoints provide us with&#46;&#46;&#46;'
 pubDate: 'Mar 24, 2022'
+updatedDate: 'Mar 24, 2022'
 heroImage: './hero.webp'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

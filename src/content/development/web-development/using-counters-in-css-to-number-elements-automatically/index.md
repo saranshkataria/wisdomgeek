@@ -2,6 +2,7 @@
 title: 'Using counters in CSS to number elements automatically'
 description: 'Ordered lists have been an important part of web design for quite a while now. If we needed more control over the appearance of numbers, we had to add more HTML and/or JavaScript to do so until now. Counters in CSS save us much of that trouble. Challenges with ol&#46;&#46;&#46;'
 pubDate: 'Aug 31, 2021'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpeg'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]
@@ -87,7 +88,7 @@ counter-increment: list-number 10;
 
 Browser support for counters is pretty good too:
 
-![](./image-1024x331.png)
+![](./image-1024x331-1.png)
 
 So we can start counters in CSS without much hassle.
 

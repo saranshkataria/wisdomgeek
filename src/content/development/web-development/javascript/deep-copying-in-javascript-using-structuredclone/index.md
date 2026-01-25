@@ -2,6 +2,7 @@
 title: 'Deep copying in JavaScript using structuredClone'
 description: 'For as long as anyone can remember, deep copying in JavaScript was not a built-in feature and we had to resort to libraries or workarounds to create a deep copy of a JavaScript value. That has changed now. The platform now offers a built-in function that does deep copying for&#46;&#46;&#46;'
 pubDate: 'Aug 23, 2022'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.webp'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

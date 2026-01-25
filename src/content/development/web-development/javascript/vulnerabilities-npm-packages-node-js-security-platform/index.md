@@ -2,6 +2,7 @@
 title: 'Finding vulnerabilities in NPM packages using node.js security platform'
 description: 'Since npm is an open platform, anyone can publish packages to it. And thus the security impact of using npm in an application can make some people paranoid. Since a lot of projects today are written using node, node.js security should become an important part of your workflow. Node security platform is&#46;&#46;&#46;'
 pubDate: 'Apr 04, 2017'
+updatedDate: 'Apr 04, 2017'
 heroImage: './hero.jpg'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
@@ -21,6 +22,6 @@ This step can be integrated as a build step in your project. The integration ens
 
 When you make node.js security scanning project a part of the build process, you also get the advantages of not having to install node security project globally. So, whatever you choose out of the three above options, do ensure that you do include the security check for vulnerabilities at some point in your build/development process since it is easy to forget to do it manually. Node Security Project is free for open source projects, and the first private repository. Beyond that, they charge 1$ per month per private repository. Integration in GitHub gives messages like this:
 
-![node.js securyty platform github fail](./node.js-securyty-platform-github-fail-300x81.png) ![node.js securyty platform github success](./node.js-securyty-platform-github-success-300x81.png)
+![node.js securyty platform github fail](./node.js-securyty-platform-github-fail-300x81-1.png) ![node.js securyty platform github success](./node.js-securyty-platform-github-success-300x81-1.png)
 
 So go and integrate node.js security check in your project right now. And save yourself the hassle of being vulnerable!

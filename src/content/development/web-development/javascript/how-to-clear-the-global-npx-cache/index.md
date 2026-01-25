@@ -2,6 +2,7 @@
 title: 'How to clear the global npx cache'
 description: 'I have been using npx a lot lately, especially whenever I want to use a CLI tool. It is an excellent alternative to installing packages globally since it installs them in a temporary cache instead. Even though it is installed in a temporary location, I figured it is a good&#46;&#46;&#46;'
 pubDate: 'Jun 02, 2024'
+updatedDate: 'Jun 02, 2024'
 heroImage: './hero.png'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

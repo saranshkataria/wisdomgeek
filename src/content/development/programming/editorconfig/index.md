@@ -2,6 +2,7 @@
 title: 'Why you should be using an EditorConfig file in your project'
 description: 'Let us all face it. It is 2017 and many of us are still fighting over tabs versus spaces! And nobody cares what code style you use, the main concern is that you should be having one across your project. And the fact that it should be consistent across your&#46;&#46;&#46;'
 pubDate: 'Mar 14, 2017'
+updatedDate: 'Oct 15, 2023'
 heroImage: './hero.jpg'
 categories: ["Programming"]
 categoryHierarchy: ["Development","Programming"]

@@ -2,6 +2,7 @@
 title: 'CSS :has a parent selector now'
 description: 'CSS now includes a :has selector that allows us to apply styles on the basis of what is happening inside an element. Often referred to as a parent seletor, the :has() function allows us to achieve this and more. Let us take a look at this relative selector. It only&#46;&#46;&#46;'
 pubDate: 'Nov 12, 2022'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]

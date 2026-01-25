@@ -2,6 +2,7 @@
 title: 'Using async/await in ExpressJs'
 description: 'If you have not been living under a rock for the past few years, you probably have heard of async/await. It has been one of the interesting additions to EcmaScript. It makes control flow easier to understand and read and also allows to write concise, maintainable code. If you need&#46;&#46;&#46;'
 pubDate: 'Aug 06, 2020'
+updatedDate: 'Oct 11, 2023'
 heroImage: './hero.jpeg'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]

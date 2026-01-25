@@ -2,6 +2,7 @@
 title: 'Detecting element causing CSS overflow'
 description: 'CSS overflows are an annoyance that keep showing up once in a while and are really hard to debug. Unwanted and unexpected scrollbars can lead to hours of inspecting the DOM to figure out what element is causing the issue and clicking random elements in the Chrome dev tools until&#46;&#46;&#46;'
 pubDate: 'Oct 13, 2021'
+updatedDate: 'Feb 10, 2025'
 heroImage: './hero.png'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]

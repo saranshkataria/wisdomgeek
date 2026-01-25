@@ -2,6 +2,7 @@
 title: 'Fixing cookies are blocked for a website with shields down on Brave'
 description: 'I recently switched completely to the Brave browser and have set ad blocking to aggressive mode because ads were still showing on some websites. This however, broke my WordPress website since it relies on cookies. I thought just taking the shields down for the website would be enough but WordPress&#46;&#46;&#46;'
 pubDate: 'Jul 14, 2024'
+updatedDate: 'Aug 17, 2024'
 heroImage: './hero.jpg'
 categories: ["General"]
 categoryHierarchy: ["General"]

@@ -2,6 +2,7 @@
 title: 'An Introvert&#8217;s Guide to Deep Conversations'
 description: 'Throughout school, I was a bookworm and an introvert. “Socializing” was not my cup of tea. I was never really sure about how to drive any deep conversations or connect with another person. As an introvert, every time I tried doing so, my self-doubt and social anxiety would creep in.&#46;&#46;&#46;'
 pubDate: 'Jun 25, 2020'
+updatedDate: 'Jun 25, 2020'
 heroImage: './hero.jpeg'
 categories: ["Life Tips","People"]
 categoryHierarchy: ["Self Help","Life Tips"]

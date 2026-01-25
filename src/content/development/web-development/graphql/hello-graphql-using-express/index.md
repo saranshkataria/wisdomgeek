@@ -2,6 +2,7 @@
 title: 'Hello GraphQL using Express'
 description: 'GraphQL is a query language and a runtime for data querying over an API. It is something that you put in between your front-end application and a backend data service. The first question that comes across in people''s mind is that we already have REST, what problem can then GraphQL&#46;&#46;&#46;'
 pubDate: 'Jun 09, 2017'
+updatedDate: 'Oct 15, 2023'
 heroImage: './hero.png'
 categories: ["GraphQL"]
 categoryHierarchy: ["Development","Web Development","Graphql"]
@@ -70,7 +71,7 @@ To use GraphQL over HTTP, GraphQL operations are written in documents on the cli
 
 The output can be seen using a GUI called graphiql, and will look like the following:
 
-[![graphql hello world](./graphql-hello-world.png)](https://www.wisdomgeek.com/wp-content/uploads/2017/06/graphql-hello-world.png)
+[![graphql hello world](./graphql-hello-world-1.png)](https://www.wisdomgeek.com/wp-content/uploads/2017/06/graphql-hello-world.png)
 
 On the left is the query that we have sent to the server, and in the right pane is the response received.
 

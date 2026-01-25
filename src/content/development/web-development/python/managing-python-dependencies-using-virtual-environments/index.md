@@ -2,6 +2,7 @@
 title: 'Managing Python dependencies using Virtual Environments'
 description: 'When we start building a Python project that goes beyond simple scripts, we tend to start using third-party dependencies. When working on a larger project, we need to think about managing these dependencies in an efficient manner. And when installing dependencies, we always want to be inside virtual environments. It&#46;&#46;&#46;'
 pubDate: 'Feb 23, 2021'
+updatedDate: 'Feb 23, 2021'
 heroImage: './hero.jpg'
 categories: ["Python"]
 categoryHierarchy: ["Development","Web Development","Python"]

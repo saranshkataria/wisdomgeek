@@ -2,6 +2,7 @@
 title: 'Understanding the useRef React hook'
 description: 'Continuing our React hooks series, we will learn about the useRef React hook in this blog post. The useRef React hook is useful in the following two situations: Before we see these advantages of the hook, let us first understand what the hook is and what it does. What is&#46;&#46;&#46;'
 pubDate: 'Jan 21, 2021'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpg'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]

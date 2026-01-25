@@ -2,6 +2,7 @@
 title: 'Using GroupBy on an array of objects in JavaScript'
 description: 'Array grouping is a fairly common operation in any project. Until recently, we had to either write our own implementation or use third-party libraries when wanting to GroupBy on an array of objects in JavaScript. That will soon no longer be needed since a native implementation has been introduced in&#46;&#46;&#46;'
 pubDate: 'Dec 29, 2021'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

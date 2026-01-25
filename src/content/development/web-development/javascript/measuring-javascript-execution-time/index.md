@@ -2,6 +2,7 @@
 title: 'Measuring JavaScript execution time'
 description: 'When it comes to performance of applications, measuring performance becomes important. For anything to be optimized, it must be measured first, optimized, and measured again to capture gains. Measuring JavaScript execution time thus becomes one of these steps. Modern browsers and the Node.js platform provide various API''s to measure code&#46;&#46;&#46;'
 pubDate: 'Jul 01, 2021'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpg'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

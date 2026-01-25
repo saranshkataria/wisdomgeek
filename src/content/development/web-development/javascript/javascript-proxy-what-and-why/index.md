@@ -2,6 +2,7 @@
 title: 'JavaScript Proxy: What and Why?'
 description: 'EcmaScript 2015 introduced yet another feature that has not been used widely yet. A JavaScript proxy allows us to wrap an existing object with a layer. The layer can provide us with capabilities such as the interception of attributes and methods. And this can be done even if the properties&#46;&#46;&#46;'
 pubDate: 'Feb 16, 2021'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

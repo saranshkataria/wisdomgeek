@@ -2,6 +2,7 @@
 title: 'Optimizing JavaScript loading with defer and async attributes'
 description: 'We are all used to using the script tag to load external JavaScript files in our HTML. Traditionally, the only workaround for having the scripts load after the HTML has been loaded was to move the script tags towards the end of the body. But JavaScript has come a long&#46;&#46;&#46;'
 pubDate: 'Aug 15, 2021'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
@@ -45,7 +46,7 @@ The defer tag is similar to the async tag in the sense that it allows the parall
 
 Here is a graphic to help visualize the different processes:
 
-![JavaScript defer and async](./1-ko9l3yd2uwksxatm15fgdw.png)
+![JavaScript defer and async](./1-ko9l3yd2uwksxatm15fgdw-1.png)
 
 Most of the time defer is the preferred option because it reduces page load time the most. It does not execute until the DOM is ready, and follows the script order. So you get more control about the script's execution as well.
 

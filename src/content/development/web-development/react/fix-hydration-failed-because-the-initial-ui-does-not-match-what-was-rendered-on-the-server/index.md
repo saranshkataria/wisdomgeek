@@ -2,6 +2,7 @@
 title: 'Fix: Hydration failed because the initial UI does not match what was rendered on the server'
 description: 'Within a React or Next.js app, if you encounter the error "Hydration failed because the initial UI does not match what was rendered on the server", there could be a few reasons for it. Let us look at all the possible reasons and potential fixes for the error. Potential issues&#46;&#46;&#46;'
 pubDate: 'Mar 12, 2024'
+updatedDate: 'Mar 12, 2024'
 heroImage: './hero.png'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]

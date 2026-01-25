@@ -2,6 +2,7 @@
 title: 'Installing Intel-based packages using Homebrew on the M1 Mac'
 description: 'I recently got the new Apple Silicon Mac (aka the M1 mac), which means having to deal with the pain points of buying the first generation of something product. Though things are slowly improving, there are still many gotchas when it comes to using the first generation of a product.&#46;&#46;&#46;'
 pubDate: 'Mar 03, 2021'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpg'
 categories: ["Development"]
 categoryHierarchy: ["Development"]

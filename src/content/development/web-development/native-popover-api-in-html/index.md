@@ -2,6 +2,7 @@
 title: 'Native popover API in HTML'
 description: 'Popovers have been a problem that was typically solved by using a third-party solution. But that is no longer the case. We now have a native popover API in HTML supported by all browsers (Firefox added preview browser support on 16th April 2024 in version 125). Let us take a&#46;&#46;&#46;'
 pubDate: 'Apr 18, 2024'
+updatedDate: 'Apr 18, 2024'
 heroImage: './hero.png'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]

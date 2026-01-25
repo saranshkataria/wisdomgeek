@@ -2,6 +2,7 @@
 title: 'Rest and Spread operator: Three dots that changed JavaScript'
 description: 'The rest and spread operator have changed the way I do a lot of things in JavaScript and I have started using the three dots for a lot of tasks I do. I have become a big fan of the syntax and I will be sharing some of the numerous&#46;&#46;&#46;'
 pubDate: 'Oct 17, 2019'
+updatedDate: 'Oct 15, 2023'
 heroImage: './hero.png'
 categories: ["Development","JavaScript","Web Development"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

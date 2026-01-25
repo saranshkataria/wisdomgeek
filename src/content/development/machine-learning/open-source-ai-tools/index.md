@@ -2,6 +2,7 @@
 title: 'Open-Source AI Tools'
 description: 'In this article, we will go through some of the most commonly used open-source AI tools available in the market. This is not an exhaustive list. But it serves as a good starting point for anyone trying to venture into machine learning or artificial intelligence. Since these are open-source AI&#46;&#46;&#46;'
 pubDate: 'Dec 22, 2020'
+updatedDate: 'Dec 22, 2020'
 heroImage: './hero.jpg'
 categories: ["Machine Learning"]
 categoryHierarchy: ["Development","Machine Learning"]

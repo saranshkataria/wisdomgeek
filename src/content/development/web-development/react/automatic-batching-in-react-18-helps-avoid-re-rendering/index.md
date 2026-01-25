@@ -2,6 +2,7 @@
 title: 'Automatic batching in React 18 helps avoid re-rendering'
 description: 'Remember the earlier versions of React that used to batch multiple state updates inside event handlers such as click or change to avoid multiple re-renders? React 18 has added automatic batching for all use cases to improve that performance optimization even further. With React 18, state updates in event handlers,&#46;&#46;&#46;'
 pubDate: 'Jan 13, 2022'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpeg'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]

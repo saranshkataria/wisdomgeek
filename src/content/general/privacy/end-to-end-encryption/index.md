@@ -2,6 +2,7 @@
 title: 'What is end to end encryption?'
 description: 'With the recent roll out of end to end encryption by Whatsapp, the largest messaging service, everyone has been talking about it. The FBI vs Apple battle over privacy debate is a minor one if one sees the implementation of end to end encryption in an online messaging application. There&#46;&#46;&#46;'
 pubDate: 'Apr 07, 2016'
+updatedDate: 'Apr 07, 2016'
 heroImage: './hero.jpeg'
 categories: ["Privacy"]
 categoryHierarchy: ["General","Privacy"]

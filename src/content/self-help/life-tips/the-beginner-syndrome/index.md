@@ -2,6 +2,7 @@
 title: 'The Beginner Syndrome'
 description: 'Someone recently reached out to me and asked how am I able to write consistently. Her exact words were: "how do you even begin to write if you don’t mind me asking? I’ve been working on it but I have impostor syndrome and suck at writing." And at that point,&#46;&#46;&#46;'
 pubDate: 'Jun 24, 2021'
+updatedDate: 'Jun 24, 2021'
 heroImage: './hero.jpg'
 categories: ["Life Tips"]
 categoryHierarchy: ["Self Help","Life Tips"]

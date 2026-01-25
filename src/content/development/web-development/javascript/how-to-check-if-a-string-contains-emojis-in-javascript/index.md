@@ -2,6 +2,7 @@
 title: 'How to check if a string contains emojis in JavaScript?'
 description: 'If you have user-generated content in your web application, chances are you have to deal with strings containing emojis. Since emojis are stored as Unicode, chances are that we want to detect these in our code and then render them accordingly. This article discusses how we can check if a&#46;&#46;&#46;'
 pubDate: 'Dec 01, 2021'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
@@ -25,7 +26,7 @@ emojiRegex.test('😊'); // true
 
 And it has good browser support as well:
 
-![](./screen-shot-2021-12-01-at-11.14.44-pm-1024x311.png)
+![](./screen-shot-2021-12-01-at-11.14.44-pm-1024x311-1.png)
 
 And if we wanted to do a replace, we can do:
 

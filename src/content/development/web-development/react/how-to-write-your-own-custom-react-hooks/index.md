@@ -2,6 +2,7 @@
 title: 'How to write your own custom React hooks'
 description: 'If you have been using react for a while, chances are you have come across the need to extract some logic into a reusable function. And with React hooks coming into the picture, doing this has become a walk in the park. We can write our own custom react hooks&#46;&#46;&#46;'
 pubDate: 'Jan 12, 2021'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]

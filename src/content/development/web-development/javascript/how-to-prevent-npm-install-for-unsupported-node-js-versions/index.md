@@ -2,6 +2,7 @@
 title: 'How to prevent npm install for unsupported Node.js versions'
 description: 'npm configurations allow us to do quite a lot of nifty things. One of them is to allow the project to set the Node.js version that needs to be used in order to run the project. This also provides us with the functionality to prevent npm install for unsupported Node.js&#46;&#46;&#46;'
 pubDate: 'Mar 17, 2022'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpg'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

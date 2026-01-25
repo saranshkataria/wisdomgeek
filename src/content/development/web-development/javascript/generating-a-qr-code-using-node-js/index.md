@@ -2,6 +2,7 @@
 title: 'Generating a QR code using Node.js'
 description: 'I was preparing a slide deck for a hackathon and decided to put in a QR code to allow people to connect with me. Naturally, I googled for a service and used it. It turns out that the code generated used a link that had an expiration time associated with&#46;&#46;&#46;'
 pubDate: 'Jun 12, 2024'
+updatedDate: 'Jun 12, 2024'
 heroImage: './hero.png'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

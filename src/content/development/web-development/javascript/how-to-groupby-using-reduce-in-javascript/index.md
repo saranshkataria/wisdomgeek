@@ -2,6 +2,7 @@
 title: 'How to groupby using reduce in JavaScript'
 description: 'The groupBy method is one of the reasons people use lodash in their project. In this blog post, we will write our own version of groupBy using reduce and vanilla JavaScript. What groupBy does? groupBy works on an array of items, and it groups these items together into an object&#46;&#46;&#46;'
 pubDate: 'Oct 01, 2020'
+updatedDate: 'Oct 11, 2023'
 heroImage: './hero.png'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

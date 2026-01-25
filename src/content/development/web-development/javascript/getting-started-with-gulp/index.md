@@ -2,6 +2,7 @@
 title: 'Getting started with Gulp'
 description: 'After I made my choice from the Grunt Vs Gulp Vs npm confusion I had, Gulp turned out to be my task runner for a project. And in this post, I will explain what you get with it. The first thing you need to know is that gulp uses streams&#46;&#46;&#46;'
 pubDate: 'Feb 10, 2016'
+updatedDate: 'Oct 15, 2023'
 heroImage: './hero.png'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
@@ -9,7 +10,7 @@ categoryHierarchy: ["Development","Web Development","Javascript"]
 
 After I made my choice from the [Grunt Vs Gulp Vs npm](https://wisdomgeek.com/web-development/grunt-vs-gulp-vs-npm) confusion I had, Gulp turned out to be my task runner for a project. And in this post, I will explain what you get with it. The first thing you need to know is that gulp uses streams to process files. Think of it as a plumber, which plugs in pipelines in between the input (tap) and the output (destination). It process and examine your files, and it modifies them and can alter them to a new destination as well.
 
-![gulp-streams](./gulp-streams.png)
+![gulp-streams](./gulp-streams-1.png)
 
 For using gulp, you need to know only 4 API's
 

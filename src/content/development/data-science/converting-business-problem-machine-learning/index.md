@@ -2,6 +2,7 @@
 title: 'Converting a business problem to a machine learning problem'
 description: 'Businesses these days are generating and consuming a huge amount of data. This data varies in variety, volume, velocity, and veracity (4Vs of big data). Consequently, this trend has led to organizations'' rapid adoption of different AI and ML tools and techniques. Hence, converting a business problem to a machine&#46;&#46;&#46;'
 pubDate: 'Jan 05, 2021'
+updatedDate: 'Jan 05, 2021'
 heroImage: './hero.jpg'
 categories: ["Data Science","Machine Learning"]
 categoryHierarchy: ["Development","Data Science"]

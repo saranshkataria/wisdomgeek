@@ -2,6 +2,7 @@
 title: 'Using Babel to import/export ES2015 modules in Node.js'
 description: 'Using "require" statements (commonJS syntax) in your server side code while writing "import" and "export" statements (ES2015 syntax) for your front end makes writing javascript a bit weird. The reason for not having import and export statements for modules is that node parses modules a bit differently than how they&#46;&#46;&#46;'
 pubDate: 'Aug 15, 2017'
+updatedDate: 'Oct 15, 2023'
 heroImage: './hero.png'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]

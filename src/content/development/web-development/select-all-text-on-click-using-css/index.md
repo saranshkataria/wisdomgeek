@@ -2,6 +2,7 @@
 title: 'Select all text on click using CSS'
 description: 'When a user has to select some text on a website, they have to drag and hold their mouse, or use double-click it. Sometimes, there are some samples that we know that the user is going to copy for sure. A use case for this can be code samples. The&#46;&#46;&#46;'
 pubDate: 'Oct 22, 2021'
+updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]

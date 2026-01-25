@@ -2,6 +2,7 @@
 title: 'Using Emotion js in a react project'
 description: 'CSS in JS is a fairly controversial topic depending on who you talk to. What it gives you is the ability to do is write all your styling in javascript instead of creating a separate CSS file. I really like CSS in JS because it solves some of the major&#46;&#46;&#46;'
 pubDate: 'Jul 02, 2019'
+updatedDate: 'Oct 15, 2023'
 heroImage: './hero.png'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]
