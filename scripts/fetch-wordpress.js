@@ -301,6 +301,9 @@ async function fetchWordPressPosts() {
         day: '2-digit'
       });
 
+      // Get author name from embedded data
+      const authorName = post._embedded?.author?.[0]?.name || '';
+
       // Create markdown content
       const markdown = `---
 title: '${post.title.rendered.replace(/'/g, "''")}'
@@ -308,6 +311,7 @@ description: '${cleanExcerpt.replace(/'/g, "''")}'
 pubDate: '${formattedDate}'
 updatedDate: '${formattedModifiedDate}'
 heroImage: '${heroImage}'
+author: '${authorName.replace(/'/g, "''")}'
 categories: ${JSON.stringify(allCategoryNames)}
 categoryHierarchy: ${JSON.stringify(primaryCategoryPath)}
 ---
