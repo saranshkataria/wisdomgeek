@@ -17,7 +17,7 @@ The differences between Progressive JPEG and baseline JPEG are mostly in the enc
 
 The baseline format loads one line at a time, top to bottom. whereas the progressive JPEG one appears blurry and pixelated at first and then loads into a clearer image.
 
-![Progressive JPEG](./progressive-jpeg-743x1024-2.jpg)Source: https://docs.imagekit.io/features/progressive-jpegs
+![Progressive JPEG](./progressive-jpeg-743x1024-3.jpg)Source: https://docs.imagekit.io/features/progressive-jpegs
 
 As can be seen, the user experience drastically improves with Progressive JPEGs.
 
@@ -33,7 +33,7 @@ There is also an [NPM package](https://www.npmjs.com/package/jpegtran) for it.
 
 It is also worth noting that all major browsers support Progressive JPEG:
 
-![Progressive JPEG browser support](./image-2-1024x306-2.png)
+![Progressive JPEG browser support](./image-2-1024x306-3.png)
 
 The exception, Safari, will render the image all at once. So progressive JPEGs work for Safari too, not how it works everywhere else. But at least it is not broken!
 

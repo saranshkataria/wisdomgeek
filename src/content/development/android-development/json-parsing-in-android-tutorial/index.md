@@ -79,6 +79,6 @@ Here HttpHelper is the class we created for getting the server response by makin
 
 The program that we wrote above, when hooked into an async task and rendered on a list view, looks like the following:
 
-![JSON Paring in Android](./json-paring-in-android-2.png)
+![JSON Paring in Android](./json-paring-in-android-3.png)
 
 There are other ways you can do parsing of a JSON in android. Libraries like gson, retrofit, or you can also use jackson's streaming API exist which do the work of parsing JSON strings to POJO's if the keys match the variable names created inside the classes. I can write a detailed post about those as well if needed. Let me know in comments if you want one or if you are facing any issues in the sample written here.

@@ -38,7 +38,7 @@ foo(
 
 If you want to take it for a spin, use the [playground](https://prettier.io/playground) to play with it. To sum it up:
 
-![](./why-prettier-1024x302-2.png)
+![](./why-prettier-1024x302-3.png)
 
 ## But I already have ESLint!
 

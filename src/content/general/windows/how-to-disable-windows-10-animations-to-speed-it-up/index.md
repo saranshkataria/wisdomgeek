@@ -13,10 +13,10 @@ Everyone quickly jumped to Windows 10 considering it was a free upgrade and most
 
 I am no fan of animations either, waiting for the nice touch of animations to roll in, feels more like a waste of time and might be user friendly to some people. But for me, it is a few annoying seconds added to loading something up. So if you are like me, and want the animations gone, thankfully you have the option to do so! Just go to Control Panel >  System > Advanced system Settings. In the Performance section, click on the settings button and play around with the animations you don't really want.
 
-[![windows 10 disable animations](./windows-10-disable-animations-1024x576-2.png)](https://wisdomgeek.com/wp-content/uploads/2015/10/windows-10-disable-animations.png)
+[![windows 10 disable animations](./windows-10-disable-animations-1024x576-3.png)](https://wisdomgeek.com/wp-content/uploads/2015/10/windows-10-disable-animations.png)
 
 I disabled the first few animations and it did speed up a bit of my system. You can un-check others if you don't want them as well. They are self explanatory.
 
-[![Screenshot (3)](./screenshot-3-2.png)](https://wisdomgeek.com/wp-content/uploads/2015/10/Screenshot-3.png)
+[![Screenshot (3)](./screenshot-3-3.png)](https://wisdomgeek.com/wp-content/uploads/2015/10/Screenshot-3.png)
 
 Once you are done, hit the start button and see how quickly it opens. This only helps if you are on a machine with lower RAM, if your system boasts of a huge RAM, you are better with the animations as they appeal nicely to most people.

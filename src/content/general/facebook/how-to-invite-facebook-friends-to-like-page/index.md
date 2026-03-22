@@ -19,7 +19,7 @@ I recently created the Facebook page for Wisdom Geek. And obviously, the first s
 
 - Open the console of your browser ([here](https://webmasters.stackexchange.com/questions/8525/how-to-open-the-javascript-console-in-different-browsers) is a list of keyboard shortcuts if you are unaware of how to do this).
 
-You'll get a message like this saying:[![Invite Facebook friends to like Facebook page](./screenshot-1011-2.png)](https://wisdomgeek.com/wp-content/uploads/2015/04/Screenshot-1011.png)
+You'll get a message like this saying:[![Invite Facebook friends to like Facebook page](./screenshot-1011-3.png)](https://wisdomgeek.com/wp-content/uploads/2015/04/Screenshot-1011.png)
 
 It's just a precautionary step; I have no intentions of hacking any accounts and the script presented below is merely clicking buttons for you. Anyone with a fair knowledge of javascript will be able to tell you that. If you are still skeptical, don't try it out. But a little bit of javascript knowledge won't harm you, eh?
 Paste in the script in the console:
@@ -31,7 +31,7 @@ The script explained:
 
 document.getElementsByClassName searches the whole HTML page for elements that contain the parameter passed in and returns an array of objects that match it. You then simply are iterating over these in a for loop and clicking them programmatically. So the next time you try it, and if it returns ILLEGAL or unexpected token ILLEGAL or something else (doesn't work in short), just right click and inspect element on a button. Check the class attached to the <a href=""> tag of the button and replace &#8216;_1sm' with the ending instead. And if it still is ends in &#8216;_1sm', just remove the quotes and type them in again. Many times the encoding of characters gets changed when copying quotes.
 
-[![facebook invite like](./facebbook-invite-like-2.png)](https://wisdomgeek.com/wp-content/uploads/2015/04/facebbook-invite-like.png)
+[![facebook invite like](./facebbook-invite-like-3.png)](https://wisdomgeek.com/wp-content/uploads/2015/04/facebbook-invite-like.png)
 
 That's how you can mass invite Facebook friends to like a page. And if you have any troubles let us know in comments!
 

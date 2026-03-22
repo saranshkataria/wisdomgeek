@@ -35,7 +35,7 @@ Next, we will try and understand the general structure of a neural network. Each
 2. $1
 3. $1
 
-![](./neural-network-2-2.png)                                                               **A Simple Neural Network with 1 hidden layer**
+![](./neural-network-2-3.png)                                                               **A Simple Neural Network with 1 hidden layer**
 
 ## Basic Functioning of an Artificial Neural Network
 
@@ -45,7 +45,7 @@ Neural networks take input through the input layer and pass the data to the next
 
 Consequently, for most machine learning experts, optimizing this layer is paramount. It is exactly this layer that defines the complexity, structure, and depth of the neural network. Since this layer is convoluted and complex and can vary in number, it is often called the “**Hidden Layer**”. It can have 1 or more layers of neurons (as shown in the figure below)
 
-![Artificial Neural Networks](./multilayer-nn-2.png)Neural Network with 2 Hidden Layers between the input and the output
+![Artificial Neural Networks](./multilayer-nn-3.png)Neural Network with 2 Hidden Layers between the input and the output
 
 ### Detailed Working
 
@@ -59,7 +59,7 @@ To transform the input layer into the output layer using the black box, we need 
 
 Here is a diagram for you to understand this concept better – 
 
-![Artificial Neural Networks - Black Box Concept - Computed Units](./nn-blackbox-1-2.png)Artificial Neural Networks – Black Box Concept – Computed Units
+![Artificial Neural Networks - Black Box Concept - Computed Units](./nn-blackbox-1-3.png)Artificial Neural Networks – Black Box Concept – Computed Units
 
 The 3 main components of what we called a computed unit before are – 
 
@@ -125,7 +125,7 @@ Bias is important as it helps avoid both over-fitting and under-fitting problem 
 
 Here is an illustrative neural network diagram (*because a picture speaks more than a 1000 words!*)
 
-![Artificial Neural Networks](./nn-working-2-2.png)Artificial neural network showing weights, bias and activation function
+![Artificial Neural Networks](./nn-working-2-3.png)Artificial neural network showing weights, bias and activation function
 
 #### WEIGHTS, ACTIVATION FUNCTION AND BIAS
 

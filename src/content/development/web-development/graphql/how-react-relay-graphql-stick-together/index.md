@@ -77,7 +77,7 @@ The root component then makes a single request to the server and gets a batched 
 
 ## Putting it all together: React, Relay, and GraphQL
 
-![React, Relay, and GraphQL](./react-relay-and-graphql-architecture-1024x512-2.png)
+![React, Relay, and GraphQL](./react-relay-and-graphql-architecture-1024x512-3.png)
 
 Just like react fostered the idea of a declarative API for front-end code, Relay and GraphQL apply the same concepts for data fetching and mutation.
 

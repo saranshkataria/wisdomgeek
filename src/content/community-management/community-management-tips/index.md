@@ -19,7 +19,7 @@ There is often a misconception among a lot of community managers that we should 
 
 Giveaways and handing out swags in events have become so common that people do not care about the ones that they can get easily. The worth of such swag decreases and the receivers start gifting it to friends and family because there is an abundance of it.
 
-![facebook developer community swag](./facebook-developer-community-swag-2.jpg)
+![facebook developer community swag](./facebook-developer-community-swag-3.jpg)
 
 On the other hand, if something is limited in supply, its value automatically increases. That is how the market and our psychology works! If you wish to know more about scarcity principle, you can read it [here](https://en.wikipedia.org/wiki/Scarcity_(social_psychology)).
 
@@ -33,7 +33,7 @@ This is more of a tip for the community management team than about engagement in
 
 After seeing the drop in interest of members, I knew that we needed to work on it in order to make it more effective. After much research, I decided to create a dedicated space for the agenda for that week's meeting. I started adding points that needed to be discussed, or others contributed, if they had an idea that needed discussion. If the agenda was empty on the morning of the day the meeting was scheduled for, we canceled it!
 
-![community meetings agenda](./community-meetings-agenda-1024x708-2.jpg)
+![community meetings agenda](./community-meetings-agenda-1024x708-3.jpg)
 
 Having an agenda beforehand also gave the advantage of people knowing what is going to be discussed. Sometimes with things that required research, core team members did some of that before coming to the meeting.
 
@@ -45,7 +45,7 @@ When most communities are smaller, they have their events open to everyone. Once
 
 The reason is that you lose control over the audience quality. Also, you are not sure about how many people will actually turn up since you do not have an idea of the number of people registered.
 
-![community event attendee registration](./community-event-attendee-registration-1024x683-2.jpg)
+![community event attendee registration](./community-event-attendee-registration-1024x683-3.jpg)
 
 The first thing to do is have a registration link. Next, you can gate the registrations by mentioning that only people who receive confirmation emails will get entry to the event. Even if you are hosting free events, you can limit the attendees without feeling guilty about it. Just mention in the description that we confirmation emails will be sent later. This gives you the flexibility to set a selection criterion for the attendees.
 

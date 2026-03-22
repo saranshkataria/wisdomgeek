@@ -79,6 +79,6 @@ const compiler = webpack({
 
 All major browsers (no, IE is not included in that list) support SRI. It does not break in IE though, so it is definitely a must-have tool to avoid security risks.
 
-![](./image-1024x425-2.png)
+![](./image-1024x425-3.png)
 
 And that is all you need to know about Sub Resource Integrity and how to use it!

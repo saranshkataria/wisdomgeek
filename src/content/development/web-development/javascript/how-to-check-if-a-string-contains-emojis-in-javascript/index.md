@@ -27,7 +27,7 @@ emojiRegex.test('😊'); // true
 
 And it has good browser support as well:
 
-![](./screen-shot-2021-12-01-at-11.14.44-pm-1024x311-2.png)
+![](./screen-shot-2021-12-01-at-11.14.44-pm-1024x311-3.png)
 
 And if we wanted to do a replace, we can do:
 

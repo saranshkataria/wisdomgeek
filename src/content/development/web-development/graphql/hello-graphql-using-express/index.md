@@ -72,7 +72,7 @@ To use GraphQL over HTTP, GraphQL operations are written in documents on the cli
 
 The output can be seen using a GUI called graphiql, and will look like the following:
 
-[![graphql hello world](./graphql-hello-world-2.png)](https://www.wisdomgeek.com/wp-content/uploads/2017/06/graphql-hello-world.png)
+[![graphql hello world](./graphql-hello-world-3.png)](https://www.wisdomgeek.com/wp-content/uploads/2017/06/graphql-hello-world.png)
 
 On the left is the query that we have sent to the server, and in the right pane is the response received.
 

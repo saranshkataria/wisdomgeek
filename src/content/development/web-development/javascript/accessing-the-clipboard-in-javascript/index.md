@@ -13,7 +13,7 @@ Developers are probably the laziest people on the planet. And of all the things,
 
 You would have probably come across this while copying code off of a website, or an API key, or copying links from Google Drive:
 
-![](./image-1024x198-2.png)
+![](./image-1024x198-3.png)
 
 ## The clipboard API
 

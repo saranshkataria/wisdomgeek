@@ -37,7 +37,7 @@ You are absolutely right, but –
 
 Have a look at a piece of text from one of the best books in machine learning. Its called – "Pattern Recognition and Machine Learning" by Christopher Bishop. 
 
-![](./screenshot-2020-08-28-at-11.48.16-pm-2.png)
+![](./screenshot-2020-08-28-at-11.48.16-pm-3.png)
 
 If you look closely, there are no APIs/code in this. Leave aside this piece of calculation, there is no use of any code in this entire book. And nobody can argue that this book is not about machine learning. Remember, ML is mathematics, APIs are just its abstracted implementation. 
 

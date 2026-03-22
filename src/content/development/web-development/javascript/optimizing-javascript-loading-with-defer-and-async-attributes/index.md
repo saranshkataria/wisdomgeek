@@ -47,7 +47,7 @@ The defer tag is similar to the async tag in the sense that it allows the parall
 
 Here is a graphic to help visualize the different processes:
 
-![JavaScript defer and async](./1-ko9l3yd2uwksxatm15fgdw-2.png)
+![JavaScript defer and async](./1-ko9l3yd2uwksxatm15fgdw-3.png)
 
 Most of the time defer is the preferred option because it reduces page load time the most. It does not execute until the DOM is ready, and follows the script order. So you get more control about the script's execution as well.
 

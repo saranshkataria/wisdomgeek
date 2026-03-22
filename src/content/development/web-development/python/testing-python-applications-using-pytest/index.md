@@ -116,7 +116,7 @@ And we can run our test using the command:
 pytest
 ```
 
-![pytest add test](./pytest-add-test-1024x757-2.png)
+![pytest add test](./pytest-add-test-1024x757-3.png)
 
 Similarly, we can write a test for our subtract method as well.
 
