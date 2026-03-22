@@ -66,7 +66,7 @@ from pydantic.dataclasses import dataclass
 
 And this will throw the errors:
 
-![pydantic validation errors](./pydantic-validation-errors-3.png)
+![pydantic validation errors](./pydantic-validation-errors.png)
 
 Pydantic does support type conversion. So if we pass the value &#8216;2' to an int field, it will be converted and not throw an error.
 

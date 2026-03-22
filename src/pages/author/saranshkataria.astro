@@ -32,6 +32,16 @@ const posts = (await getCollection('blog'))
 				width: 80px;
 				height: 80px;
 				border-radius: 50%;
+				object-fit: cover;
+				border: 3px solid white;
+				box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+			}
+
+			.author-avatar-fallback {
+				flex-shrink: 0;
+				width: 80px;
+				height: 80px;
+				border-radius: 50%;
 				background: linear-gradient(135deg, #c14bff, #6c5dd3);
 				display: flex;
 				align-items: center;
@@ -108,9 +118,11 @@ const posts = (await getCollection('blog'))
 		<PageLayout>
 			<section>
 				<div class="author-header">
-					<div class="author-avatar">
-						SK
-					</div>
+					{author?.avatar ? (
+						<img class="author-avatar" src={author.avatar} alt={author.name} />
+					) : (
+						<div class="author-avatar-fallback">SK</div>
+					)}
 					<div class="author-info">
 						<h1>{author?.name || SITE_AUTHOR}</h1>
 						<p>{author?.description}</p>

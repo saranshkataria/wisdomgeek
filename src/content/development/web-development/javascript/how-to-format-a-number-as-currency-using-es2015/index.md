@@ -146,6 +146,6 @@ console.log(euroGerman.format(price)); // 1.000.000,05 €
 
 Here is the browser compatibility if you want to see for yourself if you should use the internationalization API or not:
 
-![caniuse internationalization API javascript currency format number](./caniuse-internationalization-3.png)
+![caniuse internationalization API javascript currency format number](./caniuse-internationalization.png)
 
 And that is all you need to know about how to format a number as currency using ECMAScript. If you have any questions, feel free to drop a comment below.

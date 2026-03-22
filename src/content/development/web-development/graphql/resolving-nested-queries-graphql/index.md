@@ -218,7 +218,7 @@ server.listen(4000).then(({ url }) => {
 
 When we run the query now, we get our desired output:
 
-![nested queries in graphql](./nested-queries-in-graphql-1024x415-3.png)
+![nested queries in graphql](./nested-queries-in-graphql-1024x415.png)
 
 The first function to be invoked is the authors resolver function since that is what the query asks for. It returns the id, name, and title for all the authors. In our case, we have only one, and that is returned.
 

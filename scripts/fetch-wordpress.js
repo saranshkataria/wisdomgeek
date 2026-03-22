@@ -287,25 +287,13 @@ async function fetchWordPressPosts() {
           // Extract original filename from URL
           const urlPath = new URL(imageUrl).pathname;
           const originalFilename = path.basename(urlPath);
-          const imageExtension = path.extname(originalFilename) || ".jpg";
 
           // Use original filename, sanitize it for filesystem
-          let localImageFilename = originalFilename
+          const localImageFilename = originalFilename
             .replace(/[^a-z0-9.-]/gi, "-")
             .toLowerCase();
 
-          // Ensure unique filename if it already exists
-          let counter = 1;
-          let finalFilename = localImageFilename;
-          while (fs.existsSync(path.join(postDir, finalFilename))) {
-            const nameWithoutExt = path.basename(
-              localImageFilename,
-              imageExtension
-            );
-            finalFilename = `${nameWithoutExt}-${counter}${imageExtension}`;
-            counter++;
-          }
-
+          const finalFilename = localImageFilename;
           const localImagePath = path.join(postDir, finalFilename);
 
           // Download the inline image
@@ -374,6 +362,19 @@ ${processedContent}
   }
 }
 
+async function fetchAvatarAsBase64(url) {
+  if (!url) return "";
+  try {
+    const response = await fetch(url);
+    if (!response.ok) return "";
+    const buffer = await response.arrayBuffer();
+    const contentType = response.headers.get("content-type") || "image/jpeg";
+    return `data:${contentType};base64,${Buffer.from(buffer).toString("base64")}`;
+  } catch {
+    return "";
+  }
+}
+
 async function fetchWordPressAuthors() {
   try {
     const response = await fetch(
@@ -384,15 +385,19 @@ async function fetchWordPressAuthors() {
     }
     const users = await response.json();
 
-    const authors = users
-      .filter((user) => user.description)
-      .map((user) => ({
+    const authors = [];
+    for (const user of users.filter((u) => u.description)) {
+      const avatarUrl = user.avatar_urls?.["96"] || "";
+      console.log(`Fetching avatar for ${user.name}...`);
+      const avatarBase64 = await fetchAvatarAsBase64(avatarUrl);
+      authors.push({
         name: user.name,
         slug: user.slug,
         description: user.description,
         url: user.url,
-        avatar: user.avatar_urls?.["96"] || "",
-      }));
+        avatar: avatarBase64,
+      });
+    }
 
     if (!fs.existsSync(DATA_DIR)) {
       fs.mkdirSync(DATA_DIR, { recursive: true });
@@ -403,7 +408,7 @@ async function fetchWordPressAuthors() {
       JSON.stringify(authors, null, 2),
       "utf-8"
     );
-    console.log(`Saved ${authors.length} authors to src/data/authors.json`);
+    console.log(`Saved ${authors.length} authors to src/config/authors.json`);
   } catch (error) {
     console.error(`Error fetching authors: ${error}`);
     throw error;

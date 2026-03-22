@@ -47,13 +47,13 @@ We also are showing some related articles down below. So we need another GET req
 
 This finally gives us everything we need to display this page. The whole process will look something like:
 
-![](./rest-api-architecture-1-1024x368-3.jpg)
+![](./rest-api-architecture-1-1024x368.jpg)
 
 Now, if we were to fetch the same data from a GraphQL endpoint, we would not need so many HTTP requests. We will be querying a single endpoint (that would be /graphql). And we would be making a POST request to this endpoint, describing what all information we need from the server. In our case, we query for the post information, comments information, and related posts. We will be requesting these in the form of a GraphQL query.
 
 We will not get into the specifics of the GraphQL query in this post since this is more about why GraphQL and not the how. But this is what it would eventually look like:
 
-![](./graphql-api-architecture-1024x368-3.jpg)
+![](./graphql-api-architecture-1024x368.jpg)
 
 The important distinction is that instead of the server deciding what data gets sent back, the client describes what all it needs. The server then returns all of that information in a single request instead of having to make multiple requests.
 

@@ -19,7 +19,7 @@ The next step in that evolution was Auto Hot Keys, which were keyboard combinati
 
 ## Visual Studio Code snippets
 
-![](./visual-studio-code-snippets-3.gif)
+![](./visual-studio-code-snippets.gif)
 
 Visual Studio Code snippets go a bit further than just pasting the code at the current pointer location. Before talking about the fancy stuff, let us first see how to create a Visual Studio Code snippet.
 

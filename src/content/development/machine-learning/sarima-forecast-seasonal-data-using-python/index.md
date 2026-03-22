@@ -118,7 +118,7 @@ ts_month_avg.plot(figsize = (15, 6))
 plt.show()
 ```
 
-![Plot of AQI data from 2015 to 2020](./image-3.png)Plot of AQI data from 2015 to 2020
+![Plot of AQI data from 2015 to 2020](./image.png)Plot of AQI data from 2015 to 2020
 
 Voila! Our data is ready to be used.
 
@@ -142,7 +142,7 @@ fig = decomposition.plot()
 plt.show()
 ```
 
-![Time series data decomposed into trend, seasonality and residuals](./image-1-1024x448-3.png)Time series data decomposed into trend, seasonality and residuals
+![Time series data decomposed into trend, seasonality and residuals](./image-1-1024x448.png)Time series data decomposed into trend, seasonality and residuals
 
 As we can see, there is a downward trend and an annual seasonality (lag = 12) in the data. We can also verify the presence of seasonality by looking at the ACF plot. It shows spikes at lag values 12, 24, 36, and so on. Therefore the series is not stationary. We have to remove it in order to do the analysis. It will be done by **differencing** and verified using statistical tests like ADF (for trend) and OSCB (for seasonality). 
 
@@ -190,7 +190,7 @@ ts_t_adj.plot()
 print(adf_test(ts_month_avg))
 ```
 
-![SARIMA - Time Series Analysis in Python](./image-2-1024x448-3.png)Differenced data to remove trend and seasonality
+![SARIMA - Time Series Analysis in Python](./image-2-1024x448.png)Differenced data to remove trend and seasonality
 
 The trend now seems to have disappeared from the data. Running the ADG test validates the observation. The p-value is less than the critical value of 0.05. Hence we can confirm that the series is now trend stationary. 
 
@@ -248,9 +248,9 @@ from statsmodels.graphics.tsaplots import plot_acf, plot_pacf
 
 The code yeids the following – 
 
-![ACF Plot](./image-3-1024x452-3.png)ACF Plot
+![ACF Plot](./image-3-1024x452.png)ACF Plot
 
-![PACF Plot](./image-4-1024x449-3.png)PACF Plot
+![PACF Plot](./image-4-1024x449.png)PACF Plot
 
 We can see that –
 
@@ -321,13 +321,13 @@ Once we have a fitted model to the data, it is necessary to check the residual p
 
 2. $1
 
-![SARIMA - Time Series Analysis in Python](./image-5-1024x465-3.png)Residual Plot
+![SARIMA - Time Series Analysis in Python](./image-5-1024x465.png)Residual Plot
 
 As we can see from the image above, the residuals are uncorrelated and have zero mean. Hence we can say the model is fitted well.
 
 #### And the final output
 
-![Fitted SARIMA Model into the data](./image-6-3.png)Fitted Model into the data
+![Fitted SARIMA Model into the data](./image-6.png)Fitted Model into the data
 
 To evaluate the model performance, we use Root Mean Squared Error (RMSE).
 

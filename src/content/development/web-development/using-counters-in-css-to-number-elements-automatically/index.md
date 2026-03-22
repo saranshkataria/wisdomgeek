@@ -89,7 +89,7 @@ counter-increment: list-number 10;
 
 Browser support for counters is pretty good too:
 
-![](./image-1024x331-3.png)
+![](./image-1024x331.png)
 
 So we can start counters in CSS without much hassle.
 

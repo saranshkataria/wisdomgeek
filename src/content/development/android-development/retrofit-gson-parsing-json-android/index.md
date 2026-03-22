@@ -29,7 +29,7 @@ We can write the data model interface manually if we wanted to. But there are al
 
 We need to select the appropriate output file properties such as the package name, the class name that we want it to be and other properties in the right sidebar. Also, since we will be using GSON for parsing JSON in our Android application, we need to set the annotation style to GSON too. We will set a few other properties such as the ability to use double numbers, include getters and setters, and allowing additional properties. It would look like the following:
 
-![](./screenshot-5-1024x640-3.png)
+![](./screenshot-5-1024x640.png)
 
 ## **Setting up Retrofit**
 
@@ -173,6 +173,6 @@ protected void onCreate(Bundle savedInstanceState) {
 
 And that should set things up and we can now successfully run the application using our android studio project. You can refer to the completed source code [here](https://github.com/AbhiAndroidManiac/RetrofitSample). After running, you will see the application running like the following:
 
-![](./screenshot-2019-07-21-19-38-40-576x1024-3.png)
+![](./screenshot-2019-07-21-19-38-40-576x1024.png)
 
 If you have any questions, feel free to leave a comment down below.

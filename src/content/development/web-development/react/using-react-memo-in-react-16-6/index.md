@@ -62,7 +62,7 @@ On creating a memoized component using React.memo() from the Greeting component,
 
 This can be verified from the console logs, which show the log only once for the Memo component and multiple ones for the Greeting component:
 
-![React-memo-demo](./react-memo-demo-3.png)
+![React-memo-demo](./react-memo-demo.png)
 
 And that is all you need to know about the new React.memo. Go ahead and start creating functional pure components! No need for classes anymore
 

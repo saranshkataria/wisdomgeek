@@ -29,7 +29,7 @@ Chrome devtools stores historical references to the last five DOM elements that 
 
 Here is what this looks like:
 
-![](./dollar-sign-debugging-3.gif)
+![](./dollar-sign-debugging.gif)
 
 ## $(selector [, startNode]) aka alias for the query selector function
 
