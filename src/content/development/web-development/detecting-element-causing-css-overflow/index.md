@@ -4,6 +4,7 @@ description: 'CSS overflows are an annoyance that keep showing up once in a whil
 pubDate: 'Oct 13, 2021'
 updatedDate: 'Feb 10, 2025'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]
 ---

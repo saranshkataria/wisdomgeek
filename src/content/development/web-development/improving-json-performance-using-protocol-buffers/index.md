@@ -4,6 +4,7 @@ description: 'Protocol buffers or Protobuf, is a binary format that was created 
 pubDate: 'Oct 20, 2020'
 updatedDate: 'Oct 11, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]
 ---

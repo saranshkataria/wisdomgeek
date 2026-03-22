@@ -4,6 +4,7 @@ description: 'TypeScript is way more powerful than I give it credit for. I recen
 pubDate: 'Feb 05, 2024'
 updatedDate: 'Feb 05, 2024'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["TypeScript"]
 categoryHierarchy: ["Development","Web Development","Typescript"]
 ---

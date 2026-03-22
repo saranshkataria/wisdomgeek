@@ -4,6 +4,7 @@ description: 'Writing conditional expressions is pretty easy to do. But there is
 pubDate: 'Mar 30, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

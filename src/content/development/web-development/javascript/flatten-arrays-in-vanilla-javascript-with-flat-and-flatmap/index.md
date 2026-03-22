@@ -4,6 +4,7 @@ description: 'ES2019 introduced two methods on the array prototype that would ma
 pubDate: 'Jan 05, 2022'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpeg'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

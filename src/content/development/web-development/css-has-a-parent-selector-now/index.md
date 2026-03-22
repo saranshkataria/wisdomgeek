@@ -4,6 +4,7 @@ description: 'CSS now includes a :has selector that allows us to apply styles on
 pubDate: 'Nov 12, 2022'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]
 ---

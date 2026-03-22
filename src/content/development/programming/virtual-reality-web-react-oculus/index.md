@@ -4,6 +4,7 @@ description: 'At Oculus Connect 3, Oculus, the virtual reality giant, announced
 pubDate: 'Jan 03, 2017'
 updatedDate: 'Jan 03, 2017'
 heroImage: './hero.jpg'
+author: 'Wisdom Geek'
 categories: ["Programming"]
 categoryHierarchy: ["Development","Programming"]
 ---
@@ -12,7 +13,7 @@ At Oculus Connect 3, [Oculus](https://www.oculus.com/), the virtual reality gia
 
 And now that they have launched a React VR pre-Release, all the Javascript developers are going nuts! First client-side, then node.js, then Cordova, React, React-Native…. and now one can build Virtual Reality apps and games using Javascript. Such a crazy Javascript dominated world we are living in.
 
-[![Technical Stack of ReactVR by Facebook Incubator](./1-l6haisq-kydosfoemzk5xg.jpeg)](https://cdn-images-1.medium.com/max/600/1*l6HaiSQ_KYDOsfoeMZK5Xg.jpeg)Technical Stack of ReactVR
+[![Technical Stack of ReactVR by Facebook Incubator](./1-l6haisq-kydosfoemzk5xg-1.jpeg)](https://cdn-images-1.medium.com/max/600/1*l6HaiSQ_KYDOsfoeMZK5Xg.jpeg)Technical Stack of ReactVR
 
 ReactVR stands on the shoulders of the best JS libraries for 3D rendering and it has been optimised for hardware usage. These can be utilised to very easily develop virtual reality games and applications.
 

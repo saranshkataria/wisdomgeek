@@ -4,6 +4,7 @@ description: 'When it comes to debugging JavaScript in Chrome devtools, there ar
 pubDate: 'Mar 24, 2022'
 updatedDate: 'Mar 24, 2022'
 heroImage: './hero.webp'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

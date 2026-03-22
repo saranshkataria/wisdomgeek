@@ -4,6 +4,7 @@ description: 'The rest and spread operator have changed the way I do a lot of th
 pubDate: 'Oct 17, 2019'
 updatedDate: 'Oct 15, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["Development","JavaScript","Web Development"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

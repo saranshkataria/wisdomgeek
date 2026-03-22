@@ -4,6 +4,7 @@ description: 'I recently ran into the error "Cannot find module &#8216;fs'' or i
 pubDate: 'Jan 24, 2024'
 updatedDate: 'Jan 24, 2024'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["TypeScript"]
 categoryHierarchy: ["Development","Web Development","Typescript"]
 ---

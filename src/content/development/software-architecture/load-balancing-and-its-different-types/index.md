@@ -4,6 +4,7 @@ description: 'As our application scales to multiple users, we need to start thin
 pubDate: 'Jan 26, 2021'
 updatedDate: 'Jan 26, 2021'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["Software Architecture"]
 categoryHierarchy: ["Development","Software Architecture"]
 ---
@@ -16,7 +17,7 @@ This is how we achieve highly available applications that help us achieve scalin
 
 Since nobody can afford a web server overload, we scale out our backend servers to multiple machines. The aim is to have a distributed architecture and to avoid having all users connecting to a single server and choke it up. Therefore we distribute the incoming traffic by making use of a load balancer.
 
-![load balancing](./load-balancing-1024x582-1.png)
+![load balancing](./load-balancing-1024x582-2.png)
 
 The load balancer thus becomes a key component in our architecture, diverting traffic based on different techniques that we will discuss later in this post. Its main responsibility is to avoid convergence of traffic and thus avoiding choking of the system.
 
@@ -24,7 +25,7 @@ Load balancers thus become the first point of contact for the client requests.
 
 There can be multiple load balancers in a system as well. One each for various tiers of the application. This would help handle the separate application tiers more effectively and also scale them independently if needed.
 
-![load balancing multiple tiers](./load-balancing-multiple-tiers-1024x472-1.png)
+![load balancing multiple tiers](./load-balancing-multiple-tiers-1024x472-2.png)
 
 It is also important to mention that when a load balancer redirects to a particular location, it might not hit an application server. It might hit another load balancer that is implemented at a location-based cluster in a data center if we were scaling globally.
 

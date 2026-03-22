@@ -4,6 +4,7 @@ description: 'CSS already has had conditionals in the form of @media queries or 
 pubDate: 'Nov 24, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpeg'
+author: 'Saransh Kataria'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]
 ---

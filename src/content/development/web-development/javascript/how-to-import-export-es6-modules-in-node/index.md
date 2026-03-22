@@ -4,6 +4,7 @@ description: 'If you have been following the javascript ecosystem for a while, y
 pubDate: 'Jun 19, 2018'
 updatedDate: 'Oct 15, 2023'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

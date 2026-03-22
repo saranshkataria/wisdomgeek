@@ -4,13 +4,14 @@ description: 'Whenever we start thinking of making fresh starts, we tend to prep
 pubDate: 'Dec 18, 2018'
 updatedDate: 'Dec 18, 2018'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["Life Tips"]
 categoryHierarchy: ["Self Help","Life Tips"]
 ---
 
 Whenever we start thinking of making fresh starts, we tend to prepare a list of short-term goals that we want to achieve. And most of us (9 out of 10 people) end up not fulfilling our goals/resolutions. In this post, we will talk about simple tips that help you to stick to your goals.
 
-![New year resolution](./10411874-10156311204180231-4581123890600205136-n1-1.jpg)
+![New year resolution](./10411874-10156311204180231-4581123890600205136-n1-2.jpg)
 
 ## 1. Use systems instead of goals
 

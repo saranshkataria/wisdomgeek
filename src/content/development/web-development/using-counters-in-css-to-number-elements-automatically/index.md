@@ -4,6 +4,7 @@ description: 'Ordered lists have been an important part of web design for quite 
 pubDate: 'Aug 31, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpeg'
+author: 'Saransh Kataria'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]
 ---
@@ -88,7 +89,7 @@ counter-increment: list-number 10;
 
 Browser support for counters is pretty good too:
 
-![](./image-1024x331-1.png)
+![](./image-1024x331-2.png)
 
 So we can start counters in CSS without much hassle.
 

@@ -4,6 +4,7 @@ description: 'Testing our code brings in a variety of benefits, including buildi
 pubDate: 'Mar 09, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["Python"]
 categoryHierarchy: ["Development","Web Development","Python"]
 ---
@@ -115,7 +116,7 @@ And we can run our test using the command:
 pytest
 ```
 
-![pytest add test](./pytest-add-test-1024x757-1.png)
+![pytest add test](./pytest-add-test-1024x757-2.png)
 
 Similarly, we can write a test for our subtract method as well.
 

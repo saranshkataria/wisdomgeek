@@ -4,6 +4,7 @@ description: 'Developers are probably the laziest people on the planet. And of a
 pubDate: 'Sep 08, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
@@ -12,7 +13,7 @@ Developers are probably the laziest people on the planet. And of all the things,
 
 You would have probably come across this while copying code off of a website, or an API key, or copying links from Google Drive:
 
-![](./image-1024x198-1.png)
+![](./image-1024x198-2.png)
 
 ## The clipboard API
 

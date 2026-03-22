@@ -4,6 +4,7 @@ description: 'In this article, we will go through some of the most commonly used
 pubDate: 'Dec 22, 2020'
 updatedDate: 'Dec 22, 2020'
 heroImage: './hero.jpg'
+author: 'Pranshu Aggarwal'
 categories: ["Machine Learning"]
 categoryHierarchy: ["Development","Machine Learning"]
 ---

@@ -4,6 +4,7 @@ description: 'The irony of time management productivity tips is that the people 
 pubDate: 'Jul 21, 2021'
 updatedDate: 'Jul 21, 2021'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["Productivity"]
 categoryHierarchy: ["Self Help","Productivity"]
 ---

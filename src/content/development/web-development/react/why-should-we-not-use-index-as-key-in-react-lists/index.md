@@ -4,6 +4,7 @@ description: 'When working with React, developers often come across the need to 
 pubDate: 'Jan 22, 2024'
 updatedDate: 'Jul 14, 2024'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]
 ---

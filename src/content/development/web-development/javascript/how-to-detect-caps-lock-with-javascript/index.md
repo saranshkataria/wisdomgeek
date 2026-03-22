@@ -4,6 +4,7 @@ description: 'The need to verify and notify the user if the Caps Lock key is on 
 pubDate: 'Feb 11, 2024'
 updatedDate: 'Feb 11, 2024'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

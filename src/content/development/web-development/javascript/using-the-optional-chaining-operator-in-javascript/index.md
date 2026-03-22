@@ -4,6 +4,7 @@ description: 'Every now and then, you come across a JavaScript feature that vast
 pubDate: 'Mar 18, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

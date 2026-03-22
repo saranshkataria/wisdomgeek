@@ -4,6 +4,7 @@ description: 'I recently was working with a third-party library. I ran into the 
 pubDate: 'Oct 09, 2023'
 updatedDate: 'Oct 12, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

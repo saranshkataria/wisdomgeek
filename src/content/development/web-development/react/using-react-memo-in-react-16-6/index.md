@@ -4,6 +4,7 @@ description: 'React 16.6 was released a couple of days and and it brings a coupl
 pubDate: 'Oct 26, 2018'
 updatedDate: 'Oct 15, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]
 ---
@@ -61,7 +62,7 @@ On creating a memoized component using React.memo() from the Greeting component,
 
 This can be verified from the console logs, which show the log only once for the Memo component and multiple ones for the Greeting component:
 
-![React-memo-demo](./react-memo-demo-1.png)
+![React-memo-demo](./react-memo-demo-2.png)
 
 And that is all you need to know about the new React.memo. Go ahead and start creating functional pure components! No need for classes anymore
 

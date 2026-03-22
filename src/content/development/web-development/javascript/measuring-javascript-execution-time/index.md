@@ -4,6 +4,7 @@ description: 'When it comes to performance of applications, measuring performanc
 pubDate: 'Jul 01, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

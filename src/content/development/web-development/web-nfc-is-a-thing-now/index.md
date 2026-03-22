@@ -4,6 +4,7 @@ description: 'NFC or Near Field Communication is a short-range wireless technolo
 pubDate: 'Aug 06, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]
 ---

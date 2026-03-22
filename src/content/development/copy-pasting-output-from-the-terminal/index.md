@@ -4,6 +4,7 @@ description: 'Manually copy-pasting the output of a terminal command with a mous
 pubDate: 'May 15, 2024'
 updatedDate: 'May 15, 2024'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["Development"]
 categoryHierarchy: ["Development"]
 ---

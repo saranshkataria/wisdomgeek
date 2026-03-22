@@ -4,6 +4,7 @@ description: 'If you have been programming for a while, you would be familiar wi
 pubDate: 'Feb 15, 2018'
 updatedDate: 'Oct 15, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["Featured","JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
@@ -37,7 +38,7 @@ foo(
 
 If you want to take it for a spin, use the [playground](https://prettier.io/playground) to play with it. To sum it up:
 
-![](./why-prettier-1024x302-1.png)
+![](./why-prettier-1024x302-2.png)
 
 ## But I already have ESLint!
 

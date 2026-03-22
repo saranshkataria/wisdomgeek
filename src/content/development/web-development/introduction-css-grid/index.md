@@ -4,6 +4,7 @@ description: 'Building advanced layout designs using CSS is a troublesome proces
 pubDate: 'Dec 11, 2017'
 updatedDate: 'Oct 15, 2023'
 heroImage: './hero.jpg'
+author: 'Wisdom Geek'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]
 ---
@@ -18,7 +19,7 @@ You can apply styling to containers that govern how the items within them behave
 
 And now is the time for the savior to rescue us, it is time for **CSS Grid Layout**. It is likely to blow your mind. Flexbox tells us how items flow in 1-dimensional space; CSS Grids, on the other hand, tells how items flow in 2-dimensional space, and it is perfectly suited to do so. You get way more control over your layout – something which is useful in creating larger-scale layouts. It is the most powerful layout option because of its unparalleled ease and flexibility.
 
-![CSS Grid Have Want](./css-grid-havewant-1.jpg)
+![CSS Grid Have Want](./css-grid-havewant-2.jpg)
 
 The above image reflects a very complex problem to have if one was not using CSS grids, but with the CSS grid layout, it is very easy to achieve the layout shown above without any complex hierarchy of elements. Let us dive into it.
 
@@ -26,7 +27,7 @@ The above image reflects a very complex problem to have if one was not using CSS
 
 CSS Grid specifies how to define various grid lines on the grid container, but not how to size them or place the individual items. It does so by creating some virtual areas and then placing the items in them. It particularly defines the relationship between the parent grid container and its grid child items. Following is the terminology that you should be familiar with before starting to use the grid.
 
-![CSS Grid Layout](./css-grid-structure-1.jpg)
+![CSS Grid Layout](./css-grid-structure-2.jpg)
 
 The container is made up of two sets of lines – columns along the column axis, and rows which are perpendicular to the column axis. Together, they make grid tracks. As in table layout, grid cells are the intersection of grid rows and columns. They are the smallest unit of the grid in which we can place items. And finally,  grid areas are defined as any segment of the grid that is contained within four grid lines. Next, we see how to start using CSS grid in our browsers.
 
@@ -42,7 +43,7 @@ First of all, you need a container element. The container element then manages t
 }
 ```
 
-![](./css-grid-display-f-1.png)
+![](./css-grid-display-f-2.png)
 
 As can be seen above with the inline-grid property, the items in the grid do not take any more space than what is required. The above div does not look like a grid yet because we have not defined any row or column properties.
 
@@ -57,7 +58,7 @@ For defining the height and width of the grid, you have to use properties like `
 
 gives you the following arrangement:
 
-![](./css-grid-template-f-1.jpg)
+![](./css-grid-template-f-2.jpg)
 
 That is, you created a container with four columns with the first one having a width of `10em` and the remaining ones of width `5em`.
 
@@ -74,7 +75,7 @@ For placing individual items in the grid you can use grid properties – `grid-c
 
 This will place all elements having the above class at a position starting from column 3 and ending at column 4. The grid having 5 columns will look like the following in that case.
 
-![](./css-grid-placement-f-2-1.jpg)
+![](./css-grid-placement-f-2-2.jpg)
 
 ## Auto Grid
 
@@ -86,7 +87,7 @@ In the examples above, you have defined a grid by explicitly defining rows, colu
 }
 ```
 
-![](./css-grid-auto-flow-f-1.jpg)
+![](./css-grid-auto-flow-f-2.jpg)
 
 You can also mix some auto-placed items with explicitly placed ones. If you were to take an item and set placement properties to it, then all other auto-placed items will wrap around it accordingly. If you just want to change the order the items, rather than resizing it, you can use the `order` property.
 
@@ -96,7 +97,7 @@ You can also mix some auto-placed items with explicitly placed ones. If you were
 }
 ```
 
-![](./css-grid-order-f-1.jpg)
+![](./css-grid-order-f-2.jpg)
 
 This example is when we have set the order for cell 1 to be after non-placed (1) and that of cell 4 to be before non placed (-1). Hence cell 4 moves to the very beginning and cell 1 moves to the end of the grid while the remaining elements stay in between.
 
@@ -118,7 +119,7 @@ Even better is that the `grid-column-start`, `grid-column-end`, `grid-row-start
 }
 ```
 
-![](./css-grid-area-f-1.jpg)
+![](./css-grid-area-f-2.jpg)
 
 For repeated patterns, you can use repeat keyword: `*repeat(number of times you want pattern to repeat, actual pattern to repeat)*`.
 

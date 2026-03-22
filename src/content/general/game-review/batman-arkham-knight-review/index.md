@@ -4,6 +4,7 @@ description: 'Hey gamers, it''s time for a game review! The Arkham Series is one
 pubDate: 'Sep 06, 2015'
 updatedDate: 'Sep 06, 2015'
 heroImage: './hero.jpg'
+author: 'Wisdom Geek'
 categories: ["Game Review"]
 categoryHierarchy: ["General","Game Review"]
 ---
@@ -14,7 +15,7 @@ Getting back to the game review, I will focus on the latest and the last install
 
 Firstly, after the initial release, there were a lot of complaints regarding the PC version, but frankly, I was not too pesky and bought myself a copy of the PC version.
 
-[![My Rig](./my-rig1-1.png)](https://wisdomgeek.com/wp-content/uploads/2015/09/My-Rig1.png)
+[![My Rig](./my-rig1-2.png)](https://wisdomgeek.com/wp-content/uploads/2015/09/My-Rig1.png)
 
 I ran it on my laptop (Lenovo Y50-70, GTX860M 4GB GDDR5, 16GB RAM) and it ran almost like a dream, though there were a few stutters but it was playable. My framerate didn't drop below 25 but with a frame-cap of 30, I think I can live with that.
 
@@ -49,35 +50,35 @@ I kept mine locked at 30, I prefer a fixed framerate rather than a variable one,
 
 And while you are at it, here are some screenshots:
 
-The Batmobile[![Batman arkham knight batmobile](./batmanak-2015-09-06-16-30-12-50-1.bmp)](https://wisdomgeek.com/wp-content/uploads/2015/09/BatmanAK-2015-09-06-16-30-12-50.bmp)
+The Batmobile[![Batman arkham knight batmobile](./batmanak-2015-09-06-16-30-12-50-2.bmp)](https://wisdomgeek.com/wp-content/uploads/2015/09/BatmanAK-2015-09-06-16-30-12-50.bmp)
 
  
 
-Same Old Riddler [![batman arkham knight riddler](./batmanak-2015-09-06-16-31-03-74-1.bmp)](https://wisdomgeek.com/wp-content/uploads/2015/09/BatmanAK-2015-09-06-16-31-03-74.bmp)
+Same Old Riddler [![batman arkham knight riddler](./batmanak-2015-09-06-16-31-03-74-2.bmp)](https://wisdomgeek.com/wp-content/uploads/2015/09/BatmanAK-2015-09-06-16-31-03-74.bmp)
 
  
 
-Tank Battle (Mandatory)[![batman arkham knight tank battle](./batmanak-2015-09-06-17-29-13-95-1.bmp)](https://wisdomgeek.com/wp-content/uploads/2015/09/BatmanAK-2015-09-06-17-29-13-95.bmp)
+Tank Battle (Mandatory)[![batman arkham knight tank battle](./batmanak-2015-09-06-17-29-13-95-2.bmp)](https://wisdomgeek.com/wp-content/uploads/2015/09/BatmanAK-2015-09-06-17-29-13-95.bmp)
 
  
 
-Upgrades[![batman arkham knight upgrades](./batmanak-2015-09-06-17-32-22-34-1.bmp)](https://wisdomgeek.com/wp-content/uploads/2015/09/BatmanAK-2015-09-06-17-32-22-34.bmp)
+Upgrades[![batman arkham knight upgrades](./batmanak-2015-09-06-17-32-22-34-2.bmp)](https://wisdomgeek.com/wp-content/uploads/2015/09/BatmanAK-2015-09-06-17-32-22-34.bmp)
 
-Miagani Island![batman arkham knight miagani island](./batmanak-2015-09-06-17-35-36-79-1.bmp)
+Miagani Island![batman arkham knight miagani island](./batmanak-2015-09-06-17-35-36-79-2.bmp)
 
-Grapple Into Grates[![batman arkham knight New Feature In Combat](./batmanak-2015-09-06-18-06-20-92-1.bmp)](https://wisdomgeek.com/wp-content/uploads/2015/09/BatmanAK-2015-09-06-18-06-20-92.bmp)
+Grapple Into Grates[![batman arkham knight New Feature In Combat](./batmanak-2015-09-06-18-06-20-92-2.bmp)](https://wisdomgeek.com/wp-content/uploads/2015/09/BatmanAK-2015-09-06-18-06-20-92.bmp)
 
-Fear Multi-Takedown[![batman arkham knight Fear Takedown](./batmanak-2015-09-06-18-08-30-11-1.bmp)](https://wisdomgeek.com/wp-content/uploads/2015/09/BatmanAK-2015-09-06-18-08-30-11.bmp)
-
- 
+Fear Multi-Takedown[![batman arkham knight Fear Takedown](./batmanak-2015-09-06-18-08-30-11-2.bmp)](https://wisdomgeek.com/wp-content/uploads/2015/09/BatmanAK-2015-09-06-18-08-30-11.bmp)
 
  
 
  
 
-Surprise!!![![batman arkham knight Surprise!!!!](./batmanak-2015-09-06-18-10-34-59-1.bmp)](https://wisdomgeek.com/wp-content/uploads/2015/09/BatmanAK-2015-09-06-18-10-34-59.bmp)
+ 
 
-Style Bro!!![![batman arkham knight Style Bro!!!](./batmanak-2015-09-06-18-21-48-53-1.bmp)](https://wisdomgeek.com/wp-content/uploads/2015/09/BatmanAK-2015-09-06-18-21-48-53.bmp)
+Surprise!!![![batman arkham knight Surprise!!!!](./batmanak-2015-09-06-18-10-34-59-2.bmp)](https://wisdomgeek.com/wp-content/uploads/2015/09/BatmanAK-2015-09-06-18-10-34-59.bmp)
+
+Style Bro!!![![batman arkham knight Style Bro!!!](./batmanak-2015-09-06-18-21-48-53-2.bmp)](https://wisdomgeek.com/wp-content/uploads/2015/09/BatmanAK-2015-09-06-18-21-48-53.bmp)
 
  
 

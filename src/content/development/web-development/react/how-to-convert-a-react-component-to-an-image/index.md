@@ -4,6 +4,7 @@ description: 'Sometimes you want to give the users the ability to download a par
 pubDate: 'Sep 27, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpeg'
+author: 'Saransh Kataria'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]
 ---

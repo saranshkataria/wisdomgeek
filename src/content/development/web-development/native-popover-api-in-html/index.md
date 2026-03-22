@@ -4,6 +4,7 @@ description: 'Popovers have been a problem that was typically solved by using a 
 pubDate: 'Apr 18, 2024'
 updatedDate: 'Apr 18, 2024'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]
 ---

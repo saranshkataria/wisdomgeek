@@ -4,6 +4,7 @@ description: 'Natural Language Processing has gained a lot of popularity owing t
 pubDate: 'Nov 24, 2020'
 updatedDate: 'Jan 18, 2022'
 heroImage: './hero.jpg'
+author: 'Pranshu Aggarwal'
 categories: ["Data Science","Machine Learning"]
 categoryHierarchy: ["Development","Data Science"]
 ---

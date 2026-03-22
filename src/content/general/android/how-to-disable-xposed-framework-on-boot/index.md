@@ -4,6 +4,7 @@ description: 'I recently installed an Xposed module on my One Plus One running L
 pubDate: 'Apr 26, 2015'
 updatedDate: 'Apr 26, 2015'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["Android"]
 categoryHierarchy: ["General","Android"]
 ---

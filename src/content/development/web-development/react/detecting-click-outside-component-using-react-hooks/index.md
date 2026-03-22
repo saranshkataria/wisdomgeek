@@ -4,6 +4,7 @@ description: 'If you have tried developing your own dropdown, modal, or popover 
 pubDate: 'Nov 10, 2020'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]
 ---

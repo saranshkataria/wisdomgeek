@@ -4,6 +4,7 @@ description: 'Sub Resource Integrity (SRI) is a security feature that can be use
 pubDate: 'Jul 08, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpeg'
+author: 'Saransh Kataria'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]
 ---
@@ -78,6 +79,6 @@ const compiler = webpack({
 
 All major browsers (no, IE is not included in that list) support SRI. It does not break in IE though, so it is definitely a must-have tool to avoid security risks.
 
-![](./image-1024x425-1.png)
+![](./image-1024x425-2.png)
 
 And that is all you need to know about Sub Resource Integrity and how to use it!

@@ -4,6 +4,7 @@ description: 'Confused between business analyst or data scientist? Does a busine
 pubDate: 'May 25, 2020'
 updatedDate: 'May 25, 2020'
 heroImage: './hero.png'
+author: 'Pranshu Aggarwal'
 categories: ["Data Science"]
 categoryHierarchy: ["Development","Data Science"]
 ---

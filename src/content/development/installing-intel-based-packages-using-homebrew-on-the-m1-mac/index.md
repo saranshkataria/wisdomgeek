@@ -4,6 +4,7 @@ description: 'I recently got the new Apple Silicon Mac (aka the M1 mac), which m
 pubDate: 'Mar 03, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["Development"]
 categoryHierarchy: ["Development"]
 ---

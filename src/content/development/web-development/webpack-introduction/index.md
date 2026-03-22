@@ -4,6 +4,7 @@ description: 'Before coming to the discussion about Webpack, let us first discus
 pubDate: 'Jan 12, 2017'
 updatedDate: 'Oct 15, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]
 ---

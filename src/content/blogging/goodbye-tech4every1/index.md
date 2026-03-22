@@ -4,6 +4,7 @@ description: 'It all started somewhere in August 2011. Me and Somin Wadhwa, a f
 pubDate: 'Aug 17, 2015'
 updatedDate: 'Aug 17, 2015'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["Blogging"]
 categoryHierarchy: ["Blogging"]
 ---

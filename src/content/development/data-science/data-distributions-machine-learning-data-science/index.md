@@ -4,6 +4,7 @@ description: 'Data distributions lie at the heart of all the machine learning al
 pubDate: 'Oct 13, 2020'
 updatedDate: 'Oct 13, 2020'
 heroImage: './hero.png'
+author: 'Pranshu Aggarwal'
 categories: ["Data Science","Machine Learning"]
 categoryHierarchy: ["Development","Data Science"]
 ---
@@ -42,7 +43,7 @@ The Poisson distribution is a discrete probability distribution. It is useful in
 
 It is mathematically denoted by the following formula – 
 
-![Data Distribution](./screenshot-2020-10-05-at-11.42.02-am-1024x216-1.png)Poisson Distribution Function
+![Data Distribution](./screenshot-2020-10-05-at-11.42.02-am-1024x216-2.png)Poisson Distribution Function
 
 where λ is the average frequency of success in the given time interval.
 
@@ -58,11 +59,11 @@ For example, a business has been selling an average of 500 items in August for t
 
 This kind of data distribution is every data scientists' and statisticians' dream. It is a probability distribution curve that is symmetric about the mean. The values closer to mean implies that they occur more frequently. The values farther off from the mean taper off gradually in both the directions. 
 
-![Data Distributions](./normal-1.png)*Normally Distributed Data With Different Means and Standard Deviation*
+![Data Distributions](./normal-2.png)*Normally Distributed Data With Different Means and Standard Deviation*
 
 The probability density function for a normal curve is given by the formula –
 
-![](./screenshot-2020-10-13-at-3.00.55-pm-1.png)Normal Distribution Formula
+![](./screenshot-2020-10-13-at-3.00.55-pm-2.png)Normal Distribution Formula
 
 where **μ** is the mean,  σ is the standard deviation. Normal distribution curve is also known as bell curve. One of the most commonly used empirical rules for a normal distribution is – 
 

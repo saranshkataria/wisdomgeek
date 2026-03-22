@@ -4,6 +4,7 @@ description: 'With the introduction of type hinting in Python 3.5, static typing
 pubDate: 'Mar 16, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["Python"]
 categoryHierarchy: ["Development","Web Development","Python"]
 ---

@@ -4,6 +4,7 @@ description: 'I recently ran into the "node: –openssl-legacy-provider is not a
 pubDate: 'Oct 13, 2023'
 updatedDate: 'Oct 17, 2023'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

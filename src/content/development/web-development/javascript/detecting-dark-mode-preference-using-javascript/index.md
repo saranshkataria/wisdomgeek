@@ -4,6 +4,7 @@ description: 'As dark themes have become popular across the web and across opera
 pubDate: 'Mar 02, 2022'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

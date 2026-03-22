@@ -4,6 +4,7 @@ description: 'The best way to move forward towards achieving our dreams is to co
 pubDate: 'Feb 04, 2021'
 updatedDate: 'Feb 04, 2021'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["Productivity"]
 categoryHierarchy: ["Self Help","Productivity"]
 ---

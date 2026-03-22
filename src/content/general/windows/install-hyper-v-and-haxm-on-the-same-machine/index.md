@@ -4,6 +4,7 @@ description: 'If you are into mobile application development and wanted to insta
 pubDate: 'Jul 19, 2015'
 updatedDate: 'Jul 19, 2015'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["Windows"]
 categoryHierarchy: ["General","Windows"]
 ---
@@ -14,7 +15,7 @@ In my case, the error shown every time I installed HAXM was:
 
 HAXM cannot be installed until VT-x is enabled
 
-[![Intel HAXM installation error - This computer does not support Intel Virtualization Technology (VT-x)](./irju31-1.png)](https://wisdomgeek.com/wp-content/uploads/2015/05/IRJU31.png)
+[![Intel HAXM installation error - This computer does not support Intel Virtualization Technology (VT-x)](./irju31-2.png)](https://wisdomgeek.com/wp-content/uploads/2015/05/IRJU31.png)
 
  
 
@@ -34,7 +35,7 @@ Put in the command
 
 bcdedit /copy {current} /d "Windows with hypervisor"
 
-This step copies your current boot entry into a new one with a different name. You can name this profile to whatever you wish to, this is just the display name in the booting up section.[![cmd disable hyervisor](./image11-1.png)](https://wisdomgeek.com/wp-content/uploads/2015/05/image11.png)
+This step copies your current boot entry into a new one with a different name. You can name this profile to whatever you wish to, this is just the display name in the booting up section.[![cmd disable hyervisor](./image11-2.png)](https://wisdomgeek.com/wp-content/uploads/2015/05/image11.png)
 You can then type in the next command as
 
 bcdedit /set "{current}" hypervisorlaunchtype off

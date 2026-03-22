@@ -4,6 +4,7 @@ description: 'We all make mistakes sometimes. Pushing files that contain some se
 pubDate: 'Nov 12, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["Development"]
 categoryHierarchy: ["Development"]
 ---

@@ -4,6 +4,7 @@ description: 'As codebases grow larger and more complex in structure, imports ca
 pubDate: 'Jan 27, 2024'
 updatedDate: 'Jan 27, 2024'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["TypeScript"]
 categoryHierarchy: ["Development","Web Development","Typescript"]
 ---

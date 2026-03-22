@@ -4,6 +4,7 @@ description: 'If you have not been living under a rock for the past few years, y
 pubDate: 'Aug 06, 2020'
 updatedDate: 'Oct 11, 2023'
 heroImage: './hero.jpeg'
+author: 'Saransh Kataria'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]
 ---

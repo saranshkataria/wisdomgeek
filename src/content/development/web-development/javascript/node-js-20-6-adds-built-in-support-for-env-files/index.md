@@ -4,6 +4,7 @@ description: 'Node.js 20.6 added built-in support for the .env file. This is an 
 pubDate: 'Apr 10, 2024'
 updatedDate: 'Apr 17, 2024'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

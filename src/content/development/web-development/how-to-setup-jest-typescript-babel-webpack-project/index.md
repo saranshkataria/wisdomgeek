@@ -4,6 +4,7 @@ description: 'As you might know, I have been diving into setting up a boilerplat
 pubDate: 'Apr 09, 2019'
 updatedDate: 'Oct 15, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]
 ---

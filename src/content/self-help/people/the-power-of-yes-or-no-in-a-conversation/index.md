@@ -4,6 +4,7 @@ description: 'A simple yes or no can be a life-changing event considering the co
 pubDate: 'May 20, 2015'
 updatedDate: 'May 20, 2015'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["Featured","People"]
 categoryHierarchy: ["Self Help","People"]
 ---

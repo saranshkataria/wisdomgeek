@@ -4,6 +4,7 @@ description: 'I have been using zsh for quite some time now and learned somethin
 pubDate: 'Sep 26, 2023'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["Development"]
 categoryHierarchy: ["Development"]
 ---

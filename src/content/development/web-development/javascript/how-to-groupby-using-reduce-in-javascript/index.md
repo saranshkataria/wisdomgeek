@@ -4,6 +4,7 @@ description: 'The groupBy method is one of the reasons people use lodash in thei
 pubDate: 'Oct 01, 2020'
 updatedDate: 'Oct 11, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

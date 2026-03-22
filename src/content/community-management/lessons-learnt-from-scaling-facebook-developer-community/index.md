@@ -4,6 +4,7 @@ description: 'I have been running Facebook Developer Circle Delhi, NCR for the p
 pubDate: 'Sep 11, 2018'
 updatedDate: 'Sep 11, 2018'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["Community Management","Featured"]
 categoryHierarchy: ["Community Management"]
 ---
@@ -22,7 +23,7 @@ With the inception of developer circle, we wanted to address both of these. We w
 
 Having technical discussions in a Facebook group was difficult initially. People did not see Facebook as a platform for having those discussions. But eventually, it did start happening because of the ease of using a Facebook group. Here are some insights about the activity in the group for the past 60 days:
 
-![fbdevc delhi insights](./fbdevc-insights-1024x875-1.png)
+![fbdevc delhi insights](./fbdevc-insights-1024x875-2.png)
 
 And for the offline piece, we have had around 40 meetups in the past 2.5 years.
 
@@ -94,7 +95,7 @@ Also, if you **break down larger tasks in terms of logical steps** to make the t
 
 Focussing on quality was something that we had planned for from the beginning itself. It began with keeping a check on the members that were getting added to the group. We carefully vetted the profiles that were requesting permission to be added to the group. We checked if they were developers or at least were beginners and were interested in things related to development. This was a pretty tiring and a thankless task, but eventually, we reaped the benefits.
 
-![fbdevc delhi request stats](./fbdevc-delhi-request-stats-1024x266-1.jpg)
+![fbdevc delhi request stats](./fbdevc-delhi-request-stats-1024x266-2.jpg)
 
 By filtering the requests initially, we were able to avoid a lot of spam in the group, have meaningful discussions which helped in better engagement in the longer run. Had we not done this filtering, we might have been at 15,000 members, but it would have reduced the quality of posts as well as increased spam posts in the group. This would have hampered the engagement in the longer run.
 
@@ -154,7 +155,7 @@ There always will be things that you would end up repeating after a while. You s
 
 We set up a questionnaire of the following 3 questions which anyone requesting the group has to answer:
 
-![member request questions](./member-request-questions-1.png)
+![member request questions](./member-request-questions-2.png)
 
 This allowed us to filter requests faster since we did not have to go through people's profiles anymore to know if they were a developer or not.
 - Once we started getting a lot of posts and questions related to courses and similar content, we created a Github repository for it. The community members started curating all such links and resources in the repo. This served as a central place which could be referred to whenever a beginner wanted to know about where to start from.
@@ -229,7 +230,7 @@ The point is: you are around a group of like-minded individuals. Hence you have 
 
 ## 25. The journey is 1% finished
 
-![the journey is 1% finished](./34962348-10216756214243390-4697245739808456704-n1-1.jpg)
+![the journey is 1% finished](./34962348-10216756214243390-4697245739808456704-n1-2.jpg)
 
 This is the last quote I will be taking from Facebook's mottos. I came across this quote at F8, and it has been with me since. Even though we have done some incredible work in the past 2.5 years, there is a lot more that can be done. Innovation and creativity have no dead end. **Let us keep moving forward**, bringing the world closer, one step at a time.
 

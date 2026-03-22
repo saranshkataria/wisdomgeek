@@ -4,6 +4,7 @@ description: 'After working on a project for a while, there will come a time whe
 pubDate: 'Dec 23, 2023'
 updatedDate: 'Dec 23, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["Development"]
 categoryHierarchy: ["Development"]
 ---

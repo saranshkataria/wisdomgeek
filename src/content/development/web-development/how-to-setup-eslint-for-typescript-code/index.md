@@ -4,6 +4,7 @@ description: 'The Typescript team recently announced its road map. Interestingly
 pubDate: 'Mar 19, 2019'
 updatedDate: 'Oct 15, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]
 ---

@@ -4,6 +4,7 @@ description: 'Chrome devtools has a collection of utilities that can be used to 
 pubDate: 'Sep 08, 2022'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpeg'
+author: 'Saransh Kataria'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]
 ---
@@ -28,7 +29,7 @@ Chrome devtools stores historical references to the last five DOM elements that 
 
 Here is what this looks like:
 
-![](./dollar-sign-debugging-1.gif)
+![](./dollar-sign-debugging-2.gif)
 
 ## $(selector [, startNode]) aka alias for the query selector function
 

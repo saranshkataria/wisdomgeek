@@ -4,6 +4,7 @@ description: 'Font Awesome is a great resource to use various types of icons in 
 pubDate: 'Oct 22, 2022'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.webp'
+author: 'Saransh Kataria'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]
 ---

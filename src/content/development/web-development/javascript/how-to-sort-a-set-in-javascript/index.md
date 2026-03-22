@@ -4,6 +4,7 @@ description: 'ES6 introduced the set data structure in JavaScript. But sets are 
 pubDate: 'Nov 26, 2022'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

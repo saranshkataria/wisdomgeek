@@ -4,6 +4,7 @@ description: 'Let us suppose we had an HTML element which had an ::after propert
 pubDate: 'Nov 21, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

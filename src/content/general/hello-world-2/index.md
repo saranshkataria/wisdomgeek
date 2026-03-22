@@ -4,6 +4,7 @@ description: 'This blog post might come as a surprise to many since I have not w
 pubDate: 'Apr 06, 2015'
 updatedDate: 'Apr 06, 2015'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["General"]
 categoryHierarchy: ["General"]
 ---

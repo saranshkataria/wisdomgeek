@@ -4,6 +4,7 @@ description: 'I recently tried to use __dirname inside a ES module. It turns 
 pubDate: 'Feb 15, 2024'
 updatedDate: 'Feb 15, 2024'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

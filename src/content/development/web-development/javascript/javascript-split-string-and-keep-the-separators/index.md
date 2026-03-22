@@ -4,6 +4,7 @@ description: 'String.prototype.split() is a valuable method to split strings bas
 pubDate: 'Feb 01, 2022'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

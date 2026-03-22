@@ -4,6 +4,7 @@ description: 'Building upon our React hooks introduction from our previous post 
 pubDate: 'Sep 01, 2020'
 updatedDate: 'Oct 11, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]
 ---

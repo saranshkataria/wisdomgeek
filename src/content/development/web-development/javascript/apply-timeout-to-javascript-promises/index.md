@@ -4,6 +4,7 @@ description: 'JavaScript promises do not have any time associated with them. We 
 pubDate: 'Jun 10, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpeg'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

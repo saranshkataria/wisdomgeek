@@ -4,6 +4,7 @@ description: 'The latest version of ECMAScript introduced three new logical assi
 pubDate: 'Oct 08, 2020'
 updatedDate: 'Oct 11, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

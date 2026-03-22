@@ -4,6 +4,7 @@ description: 'CSS in JS is a fairly controversial topic depending on who you tal
 pubDate: 'Jul 02, 2019'
 updatedDate: 'Oct 15, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]
 ---

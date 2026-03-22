@@ -4,6 +4,7 @@ description: 'You might have already made the choice among Grunt Vs Gulp Vs npm 
 pubDate: 'Jan 12, 2016'
 updatedDate: 'Jan 12, 2016'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

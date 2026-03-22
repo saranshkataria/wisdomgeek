@@ -4,6 +4,7 @@ description: 'After seeing a lot of projects making the move to Typescript, I re
 pubDate: 'Feb 12, 2019'
 updatedDate: 'Oct 15, 2023'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["Featured","Web Development"]
 categoryHierarchy: ["Development","Web Development"]
 ---

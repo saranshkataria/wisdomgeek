@@ -4,6 +4,7 @@ description: 'I am terrible at optimizing my keyboard layout for anything. But o
 pubDate: 'Nov 10, 2024'
 updatedDate: 'Nov 10, 2024'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["General"]
 categoryHierarchy: ["General"]
 ---

@@ -4,6 +4,7 @@ description: 'We use email every day and most of the times the BCC is a crafty l
 pubDate: 'Oct 20, 2016'
 updatedDate: 'Oct 20, 2016'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["Email"]
 categoryHierarchy: ["General","Email"]
 ---

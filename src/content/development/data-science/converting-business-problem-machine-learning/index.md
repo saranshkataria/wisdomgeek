@@ -4,6 +4,7 @@ description: 'Businesses these days are generating and consuming a huge amount o
 pubDate: 'Jan 05, 2021'
 updatedDate: 'Jan 05, 2021'
 heroImage: './hero.jpg'
+author: 'Pranshu Aggarwal'
 categories: ["Data Science","Machine Learning"]
 categoryHierarchy: ["Development","Data Science"]
 ---

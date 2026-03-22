@@ -4,6 +4,7 @@ description: 'Do you feel that every day of your corporate life turns out to be 
 pubDate: 'Mar 17, 2016'
 updatedDate: 'Mar 17, 2016'
 heroImage: './hero.jpg'
+author: 'Wisdom Geek'
 categories: ["Fitness","Life Tips","Motivation"]
 categoryHierarchy: ["Self Help","Fitness"]
 ---

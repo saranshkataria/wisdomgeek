@@ -4,6 +4,7 @@ description: 'Promises have not been a new concept in the javascript community. 
 pubDate: 'Dec 03, 2019'
 updatedDate: 'Oct 15, 2023'
 heroImage: './hero.jpeg'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

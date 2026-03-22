@@ -4,6 +4,7 @@ description: 'If you have been writing class components for a while, you might b
 pubDate: 'Dec 15, 2020'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]
 ---

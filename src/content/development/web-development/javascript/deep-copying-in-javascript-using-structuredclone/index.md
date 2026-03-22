@@ -4,6 +4,7 @@ description: 'For as long as anyone can remember, deep copying in JavaScript was
 pubDate: 'Aug 23, 2022'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.webp'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

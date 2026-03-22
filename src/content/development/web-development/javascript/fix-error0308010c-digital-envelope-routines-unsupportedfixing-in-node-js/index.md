@@ -4,6 +4,7 @@ description: 'Node 17 introduced OpenSSL v3.0, which brought in some breaking ch
 pubDate: 'Oct 17, 2023'
 updatedDate: 'Oct 23, 2023'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

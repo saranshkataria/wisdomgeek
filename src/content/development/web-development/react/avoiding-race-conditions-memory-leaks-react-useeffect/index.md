@@ -4,6 +4,7 @@ description: 'Let us take a look at an implementation of getting data from an AP
 pubDate: 'Feb 08, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]
 ---

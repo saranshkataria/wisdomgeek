@@ -4,6 +4,7 @@ description: 'One of the most frequent question asked when it comes to WiFi is i
 pubDate: 'May 31, 2015'
 updatedDate: 'May 31, 2015'
 heroImage: ''
+author: 'Saransh Kataria'
 categories: ["Internet"]
 categoryHierarchy: ["General","Internet"]
 ---
@@ -44,11 +45,11 @@ The following materials are required:
 
 This is the cheapest method out there but it is one that works! I have been personally using this for the past 6 months. It gives about a 10-12% boost to your WiFi strength. When I checked for the signal strength with and without the DIY method, here are the results, before applying:
 
-[![wifi booster diy results](./screenshot-2015-05-30-10-31-411-169x300-1.png)](https://wisdomgeek.com/wp-content/uploads/2015/05/Screenshot_2015-05-30-10-31-411.png)
+[![wifi booster diy results](./screenshot-2015-05-30-10-31-411-169x300-2.png)](https://wisdomgeek.com/wp-content/uploads/2015/05/Screenshot_2015-05-30-10-31-411.png)
 
 After Applying:
 
-[![wifi booster diy results](./screenshot-2015-05-30-10-33-441-169x300-1.png)](https://wisdomgeek.com/wp-content/uploads/2015/05/Screenshot_2015-05-30-10-33-441.png)
+[![wifi booster diy results](./screenshot-2015-05-30-10-33-441-169x300-2.png)](https://wisdomgeek.com/wp-content/uploads/2015/05/Screenshot_2015-05-30-10-33-441.png)
 
 You can also use a tin can or some other material to achieve the same and if you are still not satisfied, get a better router or buy a repeater.
 

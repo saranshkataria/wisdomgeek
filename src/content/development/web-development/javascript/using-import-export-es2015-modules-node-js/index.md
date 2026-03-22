@@ -4,6 +4,7 @@ description: 'Using "require" statements (commonJS syntax) in your server side c
 pubDate: 'Aug 15, 2017'
 updatedDate: 'Oct 15, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

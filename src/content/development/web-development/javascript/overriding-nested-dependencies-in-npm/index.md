@@ -4,6 +4,7 @@ description: 'Whenever we install a particular package, it is common to come acr
 pubDate: 'Jan 18, 2022'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpeg'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

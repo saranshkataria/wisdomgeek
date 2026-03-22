@@ -4,6 +4,7 @@ description: 'If you have user-generated content in your web application, chance
 pubDate: 'Dec 01, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
@@ -26,7 +27,7 @@ emojiRegex.test('😊'); // true
 
 And it has good browser support as well:
 
-![](./screen-shot-2021-12-01-at-11.14.44-pm-1024x311-1.png)
+![](./screen-shot-2021-12-01-at-11.14.44-pm-1024x311-2.png)
 
 And if we wanted to do a replace, we can do:
 

@@ -4,6 +4,7 @@ description: 'As you might know, I recently switched jobs. In my long journey of
 pubDate: 'Mar 25, 2021'
 updatedDate: 'Mar 25, 2021'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["Life Tips"]
 categoryHierarchy: ["Self Help","Life Tips"]
 ---

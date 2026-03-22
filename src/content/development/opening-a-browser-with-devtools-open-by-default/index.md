@@ -4,6 +4,7 @@ description: 'While automating some parts of my development workflow, I was wond
 pubDate: 'Oct 10, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["Development"]
 categoryHierarchy: ["Development"]
 ---

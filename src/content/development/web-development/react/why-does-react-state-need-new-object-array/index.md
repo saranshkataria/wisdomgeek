@@ -4,6 +4,7 @@ description: 'If you have been using React for a while, you are familiar with ho
 pubDate: 'May 25, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]
 ---

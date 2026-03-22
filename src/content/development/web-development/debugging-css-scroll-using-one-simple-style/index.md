@@ -4,6 +4,7 @@ description: 'I have been doing a lot of complicated front-end work off lately a
 pubDate: 'Nov 18, 2022'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.webp'
+author: 'Saransh Kataria'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]
 ---

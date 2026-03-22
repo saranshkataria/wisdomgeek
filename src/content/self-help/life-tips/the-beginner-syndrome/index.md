@@ -4,6 +4,7 @@ description: 'Someone recently reached out to me and asked how am I able to writ
 pubDate: 'Jun 24, 2021'
 updatedDate: 'Jun 24, 2021'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["Life Tips"]
 categoryHierarchy: ["Self Help","Life Tips"]
 ---

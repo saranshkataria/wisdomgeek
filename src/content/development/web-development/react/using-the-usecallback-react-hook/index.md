@@ -4,6 +4,7 @@ description: 'The useCallback React hook is a useful hook that can help in optim
 pubDate: 'Jan 28, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]
 ---

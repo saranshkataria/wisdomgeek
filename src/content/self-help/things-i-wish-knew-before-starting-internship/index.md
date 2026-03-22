@@ -4,6 +4,7 @@ description: 'Hello readers, it has been a long time since I last wrote anything
 pubDate: 'May 19, 2020'
 updatedDate: 'May 19, 2020'
 heroImage: './hero.png'
+author: 'Pranshu Aggarwal'
 categories: ["Self Help"]
 categoryHierarchy: ["Self Help"]
 ---

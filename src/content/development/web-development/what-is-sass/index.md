@@ -4,6 +4,7 @@ description: 'I have been playing a lot with CSS these days, and then I came acr
 pubDate: 'Sep 02, 2015'
 updatedDate: 'Sep 02, 2015'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]
 ---

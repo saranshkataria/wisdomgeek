@@ -4,6 +4,7 @@ description: 'Sometimes in life, you sit down with yourself and introspect on al
 pubDate: 'Feb 27, 2016'
 updatedDate: 'Feb 27, 2016'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["People"]
 categoryHierarchy: ["Self Help","People"]
 ---

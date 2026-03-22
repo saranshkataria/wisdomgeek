@@ -4,6 +4,7 @@ description: 'With the recent roll out of end to end encryption by Whatsapp, the
 pubDate: 'Apr 07, 2016'
 updatedDate: 'Apr 07, 2016'
 heroImage: './hero.jpeg'
+author: 'Saransh Kataria'
 categories: ["Privacy"]
 categoryHierarchy: ["General","Privacy"]
 ---

@@ -4,6 +4,7 @@ description: 'Flask is a python framework for writing web applications. It is a 
 pubDate: 'Feb 25, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["Flask"]
 categoryHierarchy: ["Development","Web Development","Flask"]
 ---

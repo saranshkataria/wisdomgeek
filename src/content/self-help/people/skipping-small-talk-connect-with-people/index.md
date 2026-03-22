@@ -4,6 +4,7 @@ description: 'We are living in a width world and not a depth world, mostly havi
 pubDate: 'Sep 08, 2016'
 updatedDate: 'Sep 08, 2016'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["People"]
 categoryHierarchy: ["Self Help","People"]
 ---

@@ -4,6 +4,7 @@ description: 'Array grouping is a fairly common operation in any project. Until 
 pubDate: 'Dec 29, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

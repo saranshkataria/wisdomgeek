@@ -4,6 +4,7 @@ description: 'It has been a while since I did a game review. Unfortunately, I di
 pubDate: 'Jun 15, 2016'
 updatedDate: 'Jun 15, 2016'
 heroImage: './hero.jpg'
+author: 'Wisdom Geek'
 categories: ["Game Review"]
 categoryHierarchy: ["General","Game Review"]
 ---
@@ -76,145 +77,145 @@ So, what are you waiting for? Doom 4 is the FPS we all deserve to play after a l
 		
 		
 			
-				![DOOM 1993/2016](./bljejhp-150x150-1.jpg)
+				![DOOM 1993/2016](./bljejhp-150x150-2.jpg)
 			
 				
 				DOOM 1993/2016
 				
 			
-				![No Fall Damage](./20160615100612-1-150x150-1.jpg)
+				![No Fall Damage](./20160615100612-1-150x150-2.jpg)
 			
 				
 				No Fall Damage
 				
 			
-				![Fast Paced Combat](./20160615100636-1-150x150-1.jpg)
+				![Fast Paced Combat](./20160615100636-1-150x150-2.jpg)
 			
 				
 				Fast Paced Combat
 				
 			
-				![Glory Kill](./20160615100709-1-150x150-1.jpg)
+				![Glory Kill](./20160615100709-1-150x150-2.jpg)
 			
 				
 				Glory Kill
 				
 			
-				![Glory Kill IMP](./20160615100724-1-150x150-1.jpg)
+				![Glory Kill IMP](./20160615100724-1-150x150-2.jpg)
 			
 				
 				Glory Kill IMP
 				
 			
-				![Map](./20160615122013-1-150x150-1.jpg)
+				![Map](./20160615122013-1-150x150-2.jpg)
 			
 				
 				Map
 				
 			
-				![Weapon Upgrade](./20160615122025-1-150x150-1.jpg)
+				![Weapon Upgrade](./20160615122025-1-150x150-2.jpg)
 			
 				
 				Weapon Upgrade
 				
 			
-				![Praetor Suit Upgrade](./20160615122032-1-150x150-1.jpg)
+				![Praetor Suit Upgrade](./20160615122032-1-150x150-2.jpg)
 			
 				
 				Praetor Suit Upgrade
 				
 			
-				![Runes](./20160615122038-1-150x150-1.jpg)
+				![Runes](./20160615122038-1-150x150-2.jpg)
 			
 				
 				Runes
 				
 			
-				![The Data Log](./20160615122041-1-150x150-1.jpg)
+				![The Data Log](./20160615122041-1-150x150-2.jpg)
 			
 				
 				The Data Log
 				
 			
-				![Imp](./20160615121553-1-150x150-1.jpg)
+				![Imp](./20160615121553-1-150x150-2.jpg)
 			
 				
 				Imp
 				
 			
-				![Pinky](./20160615121740-1-150x150-1.jpg)
+				![Pinky](./20160615121740-1-150x150-2.jpg)
 			
 				
 				Pinky
 				
 			
-				![Revenant](./20160615121642-1-150x150-1.jpg)
+				![Revenant](./20160615121642-1-150x150-2.jpg)
 			
 				
 				Revenant
 				
 			
-				![Cacodemon](./20160615121713-1-150x150-1.jpg)
+				![Cacodemon](./20160615121713-1-150x150-2.jpg)
 			
 				
 				Cacodemon
 				
 			
-				![Mancubus](./20160615121651-1-150x150-1.jpg)
+				![Mancubus](./20160615121651-1-150x150-2.jpg)
 			
 				
 				Mancubus
 				
 			
-				![Hell Knight](./20160615121620-1-150x150-1.jpg)
+				![Hell Knight](./20160615121620-1-150x150-2.jpg)
 			
 				
 				Hell Knight
 				
 			
-				![Baron Of Hell](./20160615121700-1-150x150-1.jpg)
+				![Baron Of Hell](./20160615121700-1-150x150-2.jpg)
 			
 				
 				Baron Of Hell
 				
 			
-				![CyberDemon](./20160617100139-1-150x150-1.jpg)
+				![CyberDemon](./20160617100139-1-150x150-2.jpg)
 			
 				
 				CyberDemon
 				
 			
-				![Our Hero](./20160615121606-1-150x150-1.jpg)
+				![Our Hero](./20160615121606-1-150x150-2.jpg)
 			
 				
 				Our Hero
 				
 			
-				![BFG-9000](./20160615121751-1-150x150-1.jpg)
+				![BFG-9000](./20160615121751-1-150x150-2.jpg)
 			
 				
 				BFG-9000
 				
 			
-				![Super Shotgun](./20160615121728-1-150x150-1.jpg)
+				![Super Shotgun](./20160615121728-1-150x150-2.jpg)
 			
 				
 				Super Shotgun
 				
 			
-				![Chainsaw](./20160615121449-1-150x150-1.jpg)
+				![Chainsaw](./20160615121449-1-150x150-2.jpg)
 			
 				
 				Chainsaw
 				
 			
-				![Easter Egg](./20160531201334-1-150x150-1.jpg)
+				![Easter Egg](./20160531201334-1-150x150-2.jpg)
 			
 				
 				Easter Egg
 				
 			
-				![Doom Guy Collectibles](./20160615122235-1-150x150-1.jpg)
+				![Doom Guy Collectibles](./20160615122235-1-150x150-2.jpg)
 			
 				
 				Doom Guy Collectibles

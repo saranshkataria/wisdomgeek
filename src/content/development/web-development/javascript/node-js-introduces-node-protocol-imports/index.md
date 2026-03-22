@@ -4,6 +4,7 @@ description: 'Node.js recently introduced a node: protocol for built-in modules.
 pubDate: 'Dec 23, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

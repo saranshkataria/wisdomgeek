@@ -4,6 +4,7 @@ description: 'Remember the earlier versions of React that used to batch multiple
 pubDate: 'Jan 13, 2022'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpeg'
+author: 'Saransh Kataria'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]
 ---

@@ -4,6 +4,7 @@ description: 'Let us all face it. It is 2017 and many of us are still fighting o
 pubDate: 'Mar 14, 2017'
 updatedDate: 'Oct 15, 2023'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["Programming"]
 categoryHierarchy: ["Development","Programming"]
 ---

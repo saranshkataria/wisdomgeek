@@ -4,6 +4,7 @@ description: 'I was preparing a slide deck for a hackathon and decided to put in
 pubDate: 'Jun 12, 2024'
 updatedDate: 'Jun 12, 2024'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

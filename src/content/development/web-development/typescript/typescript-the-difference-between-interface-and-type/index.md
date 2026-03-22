@@ -4,6 +4,7 @@ description: 'Once we start exploring TypeScript, we start using interfaces and 
 pubDate: 'May 13, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["TypeScript"]
 categoryHierarchy: ["Development","Web Development","Typescript"]
 ---

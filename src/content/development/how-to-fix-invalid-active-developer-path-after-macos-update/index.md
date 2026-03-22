@@ -4,6 +4,7 @@ description: 'If you are here, then you are getting an "invalid active developer
 pubDate: 'Nov 01, 2022'
 updatedDate: 'Oct 19, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["Development"]
 categoryHierarchy: ["Development"]
 ---

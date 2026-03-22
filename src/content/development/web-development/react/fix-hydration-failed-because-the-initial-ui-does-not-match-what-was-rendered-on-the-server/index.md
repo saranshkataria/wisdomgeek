@@ -4,6 +4,7 @@ description: 'Within a React or Next.js app, if you encounter the error "Hydrati
 pubDate: 'Mar 12, 2024'
 updatedDate: 'Mar 12, 2024'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]
 ---

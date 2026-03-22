@@ -4,6 +4,7 @@ description: 'Writing performant code is not enough as a developer. We need to e
 pubDate: 'Jun 16, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

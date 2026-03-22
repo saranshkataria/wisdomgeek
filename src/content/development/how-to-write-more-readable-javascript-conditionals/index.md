@@ -4,6 +4,7 @@ description: 'One of the practices of clean code is to make it more readable. An
 pubDate: 'Oct 04, 2022'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["Development"]
 categoryHierarchy: ["Development"]
 ---

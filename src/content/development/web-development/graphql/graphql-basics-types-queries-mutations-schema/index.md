@@ -4,6 +4,7 @@ description: 'Once you get a grasp of what GraphQL is, and why it is important, 
 pubDate: 'Jul 15, 2020'
 updatedDate: 'Oct 11, 2023'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["GraphQL"]
 categoryHierarchy: ["Development","Web Development","Graphql"]
 ---

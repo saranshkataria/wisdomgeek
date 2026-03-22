@@ -4,6 +4,7 @@ description: 'Object destructuring is a powerful ES 6 feature that can help deve
 pubDate: 'Mar 28, 2024'
 updatedDate: 'Mar 28, 2024'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

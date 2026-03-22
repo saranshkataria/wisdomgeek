@@ -4,6 +4,7 @@ description: 'Most people have, at some point, thought of using a blog vs using 
 pubDate: 'Apr 21, 2016'
 updatedDate: 'Apr 21, 2016'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["Blogging"]
 categoryHierarchy: ["Blogging"]
 ---

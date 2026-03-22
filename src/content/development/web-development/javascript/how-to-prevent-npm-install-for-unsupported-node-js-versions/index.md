@@ -4,6 +4,7 @@ description: 'npm configurations allow us to do quite a lot of nifty things. One
 pubDate: 'Mar 17, 2022'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

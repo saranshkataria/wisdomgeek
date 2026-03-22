@@ -4,6 +4,7 @@ description: 'I recently switched completely to the Brave browser and have set a
 pubDate: 'Jul 14, 2024'
 updatedDate: 'Aug 17, 2024'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["General"]
 categoryHierarchy: ["General"]
 ---

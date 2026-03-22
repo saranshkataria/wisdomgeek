@@ -4,6 +4,7 @@ description: 'As we discussed in our post on getting started with Pytest, the fr
 pubDate: 'Mar 11, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["Python"]
 categoryHierarchy: ["Development","Web Development","Python"]
 ---

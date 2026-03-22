@@ -4,6 +4,7 @@ description: 'The web is and probably always be an ever-evolving platform. Even 
 pubDate: 'Jun 18, 2019'
 updatedDate: 'Oct 15, 2023'
 heroImage: './hero.jpeg'
+author: 'Saransh Kataria'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]
 ---

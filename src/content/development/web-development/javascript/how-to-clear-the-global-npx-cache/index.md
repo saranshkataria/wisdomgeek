@@ -4,6 +4,7 @@ description: 'I have been using npx a lot lately, especially whenever I want to 
 pubDate: 'Jun 02, 2024'
 updatedDate: 'Jun 02, 2024'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

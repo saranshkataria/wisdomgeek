@@ -4,6 +4,7 @@ description: 'While working on a project, I wanted to do an integrity check of a
 pubDate: 'Apr 25, 2024'
 updatedDate: 'Jul 14, 2024'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

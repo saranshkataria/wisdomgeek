@@ -4,6 +4,7 @@ description: 'Have you felt particularly annoyed by the time it takes to clone a
 pubDate: 'Mar 19, 2024'
 updatedDate: 'Mar 19, 2024'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["Development"]
 categoryHierarchy: ["Development"]
 ---

@@ -4,6 +4,7 @@ description: 'When writing unit-tests for JavaScript modules, we often encounter
 pubDate: 'Nov 19, 2020'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpeg'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

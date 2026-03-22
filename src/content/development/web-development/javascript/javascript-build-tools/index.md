@@ -4,6 +4,7 @@ description: 'If I had asked a web developer a few years ago about using a build
 pubDate: 'Jul 28, 2016'
 updatedDate: 'Jul 28, 2016'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

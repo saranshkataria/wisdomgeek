@@ -4,6 +4,7 @@ description: 'When a user has to select some text on a website, they have to dra
 pubDate: 'Oct 22, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]
 ---

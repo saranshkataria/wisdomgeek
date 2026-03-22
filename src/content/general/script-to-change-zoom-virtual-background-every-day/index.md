@@ -4,6 +4,7 @@ description: 'Over the past few months, I found a new use of the pictures that I
 pubDate: 'Aug 17, 2021'
 updatedDate: 'Oct 09, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["General"]
 categoryHierarchy: ["General"]
 ---

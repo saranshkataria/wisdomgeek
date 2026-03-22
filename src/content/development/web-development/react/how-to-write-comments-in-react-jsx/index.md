@@ -4,6 +4,7 @@ description: 'I was recently trying to comment out some logic inside my JSX to a
 pubDate: 'Oct 15, 2022'
 updatedDate: 'Oct 25, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]
 ---

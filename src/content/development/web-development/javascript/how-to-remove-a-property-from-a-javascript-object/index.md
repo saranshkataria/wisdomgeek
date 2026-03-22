@@ -4,6 +4,7 @@ description: 'There are two ways to remove a property from a JavaScript object: 
 pubDate: 'Aug 29, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

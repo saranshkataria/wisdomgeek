@@ -4,6 +4,7 @@ description: 'When we start building a Python project that goes beyond simple sc
 pubDate: 'Feb 23, 2021'
 updatedDate: 'Feb 23, 2021'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["Python"]
 categoryHierarchy: ["Development","Web Development","Python"]
 ---

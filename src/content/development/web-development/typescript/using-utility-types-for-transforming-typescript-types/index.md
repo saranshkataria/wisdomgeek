@@ -4,6 +4,7 @@ description: 'TypeScript provides some built-in utility types that help facilita
 pubDate: 'May 20, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["TypeScript"]
 categoryHierarchy: ["Development","Web Development","Typescript"]
 ---

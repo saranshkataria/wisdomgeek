@@ -4,6 +4,7 @@ description: 'Every once in a while, you come across something and you think, ho
 pubDate: 'Oct 26, 2022'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpeg'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

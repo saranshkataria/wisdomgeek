@@ -4,6 +4,7 @@ description: '"Not today, I will do it tomorrow." Sounds familiar? More often th
 pubDate: 'Aug 28, 2017'
 updatedDate: 'Aug 28, 2017'
 heroImage: './hero.jpg'
+author: 'Pranshu Aggarwal'
 categories: ["Motivation"]
 categoryHierarchy: ["Self Help","Motivation"]
 ---

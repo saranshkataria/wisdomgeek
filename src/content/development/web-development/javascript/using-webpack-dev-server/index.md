@@ -4,6 +4,7 @@ description: 'If you have been doing front-end development recently, the chances
 pubDate: 'Jul 04, 2017'
 updatedDate: 'Oct 15, 2023'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

@@ -4,6 +4,7 @@ description: 'As developers, we always want to be more productive. And who does 
 pubDate: 'Feb 11, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["Programming"]
 categoryHierarchy: ["Development","Programming"]
 ---
@@ -18,7 +19,7 @@ The next step in that evolution was Auto Hot Keys, which were keyboard combinati
 
 ## Visual Studio Code snippets
 
-![](./visual-studio-code-snippets-1.gif)
+![](./visual-studio-code-snippets-2.gif)
 
 Visual Studio Code snippets go a bit further than just pasting the code at the current pointer location. Before talking about the fancy stuff, let us first see how to create a Visual Studio Code snippet.
 

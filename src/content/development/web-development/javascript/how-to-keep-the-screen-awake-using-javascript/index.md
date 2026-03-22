@@ -4,6 +4,7 @@ description: 'Some new features in JavaScript are great to see, and the wake loc
 pubDate: 'Mar 05, 2024'
 updatedDate: 'Mar 05, 2024'
 heroImage: './hero.webp'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

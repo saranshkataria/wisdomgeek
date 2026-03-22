@@ -4,6 +4,7 @@ description: 'Curiosity is the reason why most of the breakthrough discoveries a
 pubDate: 'Dec 29, 2020'
 updatedDate: 'Dec 29, 2020'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["Life Tips"]
 categoryHierarchy: ["Self Help","Life Tips"]
 ---

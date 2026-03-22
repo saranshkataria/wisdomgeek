@@ -4,6 +4,7 @@ description: 'I was recently working on a project in which I was trying to use a
 pubDate: 'Feb 02, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

@@ -4,6 +4,7 @@ description: 'Continuing our React hooks series, we will learn about the useRef 
 pubDate: 'Jan 21, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]
 ---

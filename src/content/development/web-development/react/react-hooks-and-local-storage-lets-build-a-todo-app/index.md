@@ -4,6 +4,7 @@ description: 'React hooks have been around for quite some time. They have been w
 pubDate: 'Aug 25, 2020'
 updatedDate: 'Oct 11, 2023'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]
 ---

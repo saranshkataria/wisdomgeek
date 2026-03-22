@@ -4,6 +4,7 @@ description: 'JavaScript promises have been a huge catalyst for asynchronous cod
 pubDate: 'Jan 19, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

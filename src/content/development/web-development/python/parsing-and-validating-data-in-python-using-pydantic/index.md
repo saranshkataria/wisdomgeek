@@ -4,6 +4,7 @@ description: 'The introduction of type hinting opened the gates for many great n
 pubDate: 'Mar 23, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["Python"]
 categoryHierarchy: ["Development","Web Development","Python"]
 ---
@@ -65,7 +66,7 @@ from pydantic.dataclasses import dataclass
 
 And this will throw the errors:
 
-![pydantic validation errors](./pydantic-validation-errors-1.png)
+![pydantic validation errors](./pydantic-validation-errors-2.png)
 
 Pydantic does support type conversion. So if we pass the value &#8216;2' to an int field, it will be converted and not throw an error.
 

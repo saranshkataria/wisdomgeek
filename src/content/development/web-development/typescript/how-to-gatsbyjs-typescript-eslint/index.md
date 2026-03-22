@@ -4,6 +4,7 @@ description: 'Gatsby has become fairly popular in the last couple of years and i
 pubDate: 'May 10, 2020'
 updatedDate: 'Oct 15, 2023'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["TypeScript"]
 categoryHierarchy: ["Development","Web Development","Typescript"]
 ---

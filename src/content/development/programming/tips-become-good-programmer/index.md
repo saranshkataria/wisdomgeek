@@ -4,6 +4,7 @@ description: 'One of the most popular questions from inexperienced programmers i
 pubDate: 'May 19, 2016'
 updatedDate: 'May 19, 2016'
 heroImage: './hero.jpg'
+author: 'Wisdom Geek'
 categories: ["Programming"]
 categoryHierarchy: ["Development","Programming"]
 ---
@@ -14,7 +15,7 @@ Do note that this post will not cover any design patterns or any of the design p
 
 Let us start by looking at the following example:
 
-![Better Programmer 1](./ss1-959x1024-1.png)
+![Better Programmer 1](./ss1-959x1024-2.png)
 
 Here you can see a simple piece of code which searches for a number in a given list. The above mentioned code will look okay to a fresher, but a good programmer will consider it as poorly written code. Let us try and walk-through some points and apply them to the above-mentioned piece of code to make it look better.
 
@@ -22,7 +23,7 @@ Here you can see a simple piece of code which searches for a number in a given l
 
 I am pretty sure everyone knew that this was coming. This is the first thing that comes to my mind when I think about good/professional code. Code without correct indentation and spacing can never please the eyes of a good programmer. How difficult is it to press those few extra &#8216;spacebars' and &#8216;tabs'? Not much I think. but the result is significantly improved code, visually.
 
-![Better Programmer 2](./ss2-923x1024-1.png)
+![Better Programmer 2](./ss2-923x1024-2.png)
 
 Also do not be afraid to use line breaks where ever you see a line of code extending beyond the editor's screen. For example, if a function takes 10 arguments for some reason (though it should ideally never do so), then it is perfectly all right to insert line breaks after every single or two parameters. Doing so removes the need to scroll right to see the complete code block.
 
@@ -30,7 +31,7 @@ Also do not be afraid to use line breaks where ever you see a line of code exten
 
 The second most common shortcut that unprofessional programmers practice is using declarations such as &#8216;Class A', &#8216;Int x', &#8216;string s'. This is the next thing that needs to be corrected. Good programmers give proper names to variables, functions, classes, files, and pretty much everything. Name them in a way that it gives intent of what that variable is for and what purpose it is going to solve.
 
-![Better Programmer 3](./ss3-924x1024-1.png)
+![Better Programmer 3](./ss3-924x1024-2.png)
 
 Calling a Class as &#8216;Employee' with data members as &#8216;int Id' and &#8216;string name', gives a lot more context about the usage of the variable. Similarly here, changing &#8216;l' to &#8216;numberList' and &#8216;i' to &#8216;index' does the same thing, increasing readability of the code.
 
@@ -48,7 +49,7 @@ Some languages have a slight variation in naming conventions, like C# recommends
 
 While writing functions, we end up with multiple parts within a function itself. Do not hesitate to use line breaks and group code which is similar in nature. Like grouping all the declarations together and then adding a line break when all the required declarations for the functions are done.
 
-![Better Programmer 4](./ss4-924x1024-1.png)
+![Better Programmer 4](./ss4-924x1024-2.png)
 
 ## 5) File arrangement
 
@@ -78,6 +79,6 @@ I agree that few points in this post are debatable, but I personally believe tha
 
 And after all the simple efforts, this is the end result:
 
-![Better Programmer 5](./ss-final-920x1024-1.png)
+![Better Programmer 5](./ss-final-920x1024-2.png)
 
  Take your pick and let me know if you think I have missed any of the basic tips to become a good programmer and I will add them.

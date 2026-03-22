@@ -4,6 +4,7 @@ description: 'We all know what we should be doing right now. But we don''t want 
 pubDate: 'Sep 22, 2020'
 updatedDate: 'Sep 22, 2020'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["Productivity"]
 categoryHierarchy: ["Self Help","Productivity"]
 ---

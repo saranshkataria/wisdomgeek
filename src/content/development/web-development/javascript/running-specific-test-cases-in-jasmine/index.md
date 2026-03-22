@@ -4,6 +4,7 @@ description: 'I recently was working on writing end-to-end test cases using prot
 pubDate: 'Nov 20, 2017'
 updatedDate: 'Oct 25, 2023'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

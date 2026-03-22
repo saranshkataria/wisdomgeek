@@ -4,6 +4,7 @@ description: 'You probably will have heard the two statements Be patient, it tak
 pubDate: 'May 09, 2015'
 updatedDate: 'Nov 01, 2022'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["Motivation"]
 categoryHierarchy: ["Self Help","Motivation"]
 ---

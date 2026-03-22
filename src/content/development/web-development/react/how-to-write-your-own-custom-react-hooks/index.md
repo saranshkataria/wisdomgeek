@@ -4,6 +4,7 @@ description: 'If you have been using react for a while, chances are you have com
 pubDate: 'Jan 12, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]
 ---

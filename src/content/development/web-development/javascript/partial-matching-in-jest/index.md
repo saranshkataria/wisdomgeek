@@ -4,6 +4,7 @@ description: 'Jest has the ability to check for partial matches on arrays and ob
 pubDate: 'Oct 25, 2023'
 updatedDate: 'Oct 25, 2023'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---

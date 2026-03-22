@@ -4,6 +4,7 @@ description: 'Visual Studio Code is the latest cross platform editor by Microsof
 pubDate: 'Dec 19, 2015'
 updatedDate: 'Dec 19, 2015'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["Programming"]
 categoryHierarchy: ["Development","Programming"]
 ---
@@ -30,7 +31,7 @@ If you come from Visual Studio background, and expect a csproj or xproj file whi
 
 Here's what the editor looks like:
 
-![visual studio code](./visual-studio-code-1024x552-1.png)
+![visual studio code](./visual-studio-code-1024x552-2.png)
 
 The command palette can be opened using Ctrl + Shift + P and is one of the most used features in case you forget other keyboard shortcuts. The Viewbar on the left has 4 icons.
 

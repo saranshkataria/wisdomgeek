@@ -4,6 +4,7 @@ description: 'AWS CLI is a great tool for doing anything related to AWS. We can 
 pubDate: 'Feb 19, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["AWS"]
 categoryHierarchy: ["Development","Aws"]
 ---

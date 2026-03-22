@@ -4,6 +4,7 @@ description: 'Zombie processes are usually a pain to figure out. More often than
 pubDate: 'Mar 10, 2022'
 updatedDate: 'Oct 25, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["Development"]
 categoryHierarchy: ["Development"]
 ---

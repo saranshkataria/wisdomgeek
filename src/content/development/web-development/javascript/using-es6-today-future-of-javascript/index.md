@@ -4,6 +4,7 @@ description: 'Most of you would already be aware that javascript is an implement
 pubDate: 'May 12, 2016'
 updatedDate: 'May 12, 2016'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
 ---
@@ -12,7 +13,7 @@ Most of you would already be aware that javascript is an implementation of ECMAS
 
 Although ES7 is in draft status as of the time of writing this blog post, browsers are yet to implement all features of ES6. What is taking so long is the fact that the specification introduces a large amount of features  and new syntax to the language. And backwards compatibility needs to be maintained as well. Plus the ability to run everywhere and the dynamic nature of the language make implementing es6 a challenging task.
 
-![es6 roadmap](./shippedesfeatures1-1.png)
+![es6 roadmap](./shippedesfeatures1-2.png)
 
 The key features introduced in Ecmascript 6 are:
 

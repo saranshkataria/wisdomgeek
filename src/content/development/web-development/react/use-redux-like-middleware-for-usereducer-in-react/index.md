@@ -4,6 +4,7 @@ description: 'If you have used Redux before, you would be aware of the concept o
 pubDate: 'Jan 14, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
+author: 'Saransh Kataria'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]
 ---

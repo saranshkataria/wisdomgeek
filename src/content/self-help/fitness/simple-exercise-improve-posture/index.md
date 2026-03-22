@@ -4,6 +4,7 @@ description: 'Our posture is one issue that we all know exists, but we tend to i
 pubDate: 'Jul 01, 2016'
 updatedDate: 'Jul 01, 2016'
 heroImage: './hero.jpg'
+author: 'Saransh Kataria'
 categories: ["Fitness"]
 categoryHierarchy: ["Self Help","Fitness"]
 ---

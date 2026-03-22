@@ -4,6 +4,7 @@ description: 'VS Code has a nifty tool for doing search and replace using RegEx,
 pubDate: 'Feb 29, 2024'
 updatedDate: 'Feb 29, 2024'
 heroImage: ''
+author: 'Saransh Kataria'
 categories: ["VS Code"]
 categoryHierarchy: ["Development","Vs Code"]
 ---
