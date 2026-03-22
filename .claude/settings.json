@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(npx astro build)",
-      "Bash(node scripts/fetch-wordpress.js)"
+      "Bash(node scripts/fetch-wordpress.js)",
+      "WebFetch(domain:www.wisdomgeek.com)",
+      "Bash(npm run:*)"
     ]
   }
 }
