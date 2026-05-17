@@ -7,6 +7,7 @@ import Footer from "../components/Footer.astro";
 import FormattedDate from "../components/FormattedDate.astro";
 import Header from "../components/Header.astro";
 import PageLayout from "../components/PageLayout.astro";
+import ShareButtons from "../components/ShareButtons.astro";
 import { SITE_AUTHOR } from "../consts";
 import authors from "../config/authors.json";
 import { categoryToSlug } from "../lib/utils";
@@ -384,6 +385,9 @@ const encodedTitle = encodeURIComponent(title);
 
         <!-- Author Bio -->
         <AuthorBio authorName={displayAuthor} />
+
+        <!-- Share buttons -->
+        <ShareButtons url={currentUrl} title={title} />
 
         <!-- Previous/Next Navigation -->
         {
