@@ -1,0 +1,449 @@
+---
+import { Image } from 'astro:assets';
+import FormattedDate from './FormattedDate.astro';
+import { categoryToSlug } from '../lib/utils';
+import { SITE_AUTHOR } from '../consts';
+import authors from '../config/authors.json';
+
+interface Props {
+	posts: any[];
+}
+
+const { posts } = Astro.props;
+const slides = posts.slice(0, 5);
+---
+
+<section
+	class="home-carousel"
+	aria-roledescription="carousel"
+	aria-label="Most recent posts"
+	data-slide-count={slides.length}
+>
+	<button
+		class="carousel-arrow carousel-arrow-prev"
+		type="button"
+		aria-label="Previous slide"
+		data-carousel-prev
+	>
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+			<polyline points="15 18 9 12 15 6" />
+		</svg>
+	</button>
+
+	<div class="carousel-viewport">
+		<ul class="carousel-track" data-carousel-track>
+			{
+				slides.map((post, i) => {
+					const displayAuthor = post.data.author || SITE_AUTHOR;
+					const authorData = authors.find((a) => a.name === displayAuthor);
+					return (
+						<li
+							class="carousel-slide"
+							aria-roledescription="slide"
+							aria-label={`${i + 1} of ${slides.length}`}
+							aria-hidden={i === 0 ? 'false' : 'true'}
+						>
+							<article class="carousel-card">
+								<a href={`/${post.id}/`} class="carousel-card-link" aria-label={post.data.title}>
+									{post.data.heroImage ? (
+										<div class="carousel-card-image">
+											<Image width={1280} height={620} src={post.data.heroImage} alt="" />
+											<div class="carousel-card-overlay">
+												<h2>{post.data.title}</h2>
+											</div>
+										</div>
+									) : (
+										<div class="carousel-card-no-image">
+											<h2>{post.data.title}</h2>
+										</div>
+									)}
+								</a>
+								<div class="carousel-card-meta">
+									<div class="carousel-avatar-row">
+										{authorData?.avatar ? (
+											<img class="carousel-avatar" src={authorData.avatar} alt={displayAuthor} />
+										) : (
+											<div class="carousel-avatar-fallback">{displayAuthor.charAt(0)}</div>
+										)}
+									</div>
+									<div class="carousel-meta-row">
+										<span class="carousel-date">
+											<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+												<rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+												<line x1="16" y1="2" x2="16" y2="6" />
+												<line x1="8" y1="2" x2="8" y2="6" />
+												<line x1="3" y1="10" x2="21" y2="10" />
+											</svg>
+											<FormattedDate date={post.data.pubDate} />
+										</span>
+										{post.data.categories && post.data.categories.length > 0 && (
+											<a
+												href={`/${categoryToSlug(post.data.categories[0])}/`}
+												class="carousel-category"
+											>
+												{post.data.categories[0]}
+											</a>
+										)}
+									</div>
+								</div>
+							</article>
+						</li>
+					);
+				})
+			}
+		</ul>
+	</div>
+
+	<button
+		class="carousel-arrow carousel-arrow-next"
+		type="button"
+		aria-label="Next slide"
+		data-carousel-next
+	>
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+			<polyline points="9 18 15 12 9 6" />
+		</svg>
+	</button>
+
+	<div class="carousel-dots" role="tablist" aria-label="Slide indicators">
+		{
+			slides.map((_, i) => (
+				<button
+					type="button"
+					class="carousel-dot"
+					role="tab"
+					aria-label={`Go to slide ${i + 1}`}
+					aria-selected={i === 0 ? 'true' : 'false'}
+					data-carousel-dot={i}
+				/>
+			))
+		}
+	</div>
+</section>
+
+<script>
+	function initCarousel(root: HTMLElement) {
+		const track = root.querySelector<HTMLElement>('[data-carousel-track]');
+		if (!track) return;
+		const slides = Array.from(track.children) as HTMLElement[];
+		const total = slides.length;
+		if (total < 2) return;
+
+		const dots = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-carousel-dot]'));
+		const prevBtn = root.querySelector<HTMLButtonElement>('[data-carousel-prev]');
+		const nextBtn = root.querySelector<HTMLButtonElement>('[data-carousel-next]');
+
+		let current = 0;
+		const AUTO_MS = 6000;
+		let timer: number | undefined;
+
+		const update = () => {
+			track.style.transform = `translateX(-${current * 100}%)`;
+			slides.forEach((s, i) => s.setAttribute('aria-hidden', i === current ? 'false' : 'true'));
+			dots.forEach((d, i) => d.setAttribute('aria-selected', i === current ? 'true' : 'false'));
+		};
+
+		const go = (i: number) => {
+			current = (i + total) % total;
+			update();
+		};
+
+		const restart = () => {
+			if (timer) window.clearInterval(timer);
+			timer = window.setInterval(() => go(current + 1), AUTO_MS);
+		};
+
+		prevBtn?.addEventListener('click', () => {
+			go(current - 1);
+			restart();
+		});
+		nextBtn?.addEventListener('click', () => {
+			go(current + 1);
+			restart();
+		});
+		dots.forEach((d, i) =>
+			d.addEventListener('click', () => {
+				go(i);
+				restart();
+			})
+		);
+
+		root.addEventListener('mouseenter', () => {
+			if (timer) window.clearInterval(timer);
+		});
+		root.addEventListener('mouseleave', restart);
+
+		// Pause when tab is hidden to avoid running forever in the background.
+		document.addEventListener('visibilitychange', () => {
+			if (document.hidden) {
+				if (timer) window.clearInterval(timer);
+			} else {
+				restart();
+			}
+		});
+
+		restart();
+	}
+
+	document
+		.querySelectorAll<HTMLElement>('.home-carousel')
+		.forEach((el) => initCarousel(el));
+</script>
+
+<style>
+	.home-carousel {
+		position: relative;
+		margin-bottom: 2.5rem;
+	}
+
+	.carousel-viewport {
+		overflow: hidden;
+		border-radius: 20px;
+	}
+
+	.carousel-track {
+		display: flex;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		transition: transform 0.45s ease;
+		will-change: transform;
+	}
+
+	.carousel-slide {
+		flex: 0 0 100%;
+		min-width: 0;
+	}
+
+	.carousel-card {
+		background: #f0f2f5;
+		border-radius: 20px;
+		padding: 1.25em;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.carousel-card-link {
+		text-decoration: none;
+		color: inherit;
+		display: block;
+	}
+
+	.carousel-card-image {
+		position: relative;
+		border-radius: 16px;
+		overflow: hidden;
+	}
+
+	.carousel-card-image :global(img) {
+		display: block;
+		width: 100%;
+		height: auto;
+		aspect-ratio: 16 / 7;
+		object-fit: cover;
+	}
+
+	.carousel-card-image::after {
+		content: '';
+		position: absolute;
+		inset: auto 0 0 0;
+		height: 60%;
+		background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, transparent 100%);
+		pointer-events: none;
+	}
+
+	.carousel-card-overlay {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		padding: 1.75em 2em;
+		z-index: 1;
+	}
+
+	.carousel-card-overlay h2 {
+		margin: 0;
+		color: white;
+		font-size: 2rem;
+		font-weight: 700;
+		line-height: 1.2;
+		text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+	}
+
+	.carousel-card-no-image {
+		padding: 2em;
+	}
+	.carousel-card-no-image h2 {
+		margin: 0;
+		font-size: 1.75rem;
+		color: rgb(var(--black));
+	}
+
+	.carousel-card-meta {
+		position: relative;
+		padding: 0 0.25em;
+	}
+
+	.carousel-avatar-row {
+		position: relative;
+		height: 28px;
+	}
+
+	.carousel-avatar,
+	.carousel-avatar-fallback {
+		position: absolute;
+		left: 0;
+		top: -28px;
+		width: 48px;
+		height: 48px;
+		border-radius: 50%;
+		border: 3px solid white;
+		box-shadow: 0 0 0 2px #6c5dd3, 0 2px 6px rgba(0, 0, 0, 0.15);
+	}
+
+	.carousel-avatar {
+		object-fit: cover;
+	}
+
+	.carousel-avatar-fallback {
+		background: linear-gradient(135deg, #667eea, #764ba2);
+		color: white;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: 700;
+		font-size: 1.1rem;
+	}
+
+	.carousel-meta-row {
+		display: flex;
+		align-items: center;
+		gap: 1em;
+		padding-top: 0.25em;
+	}
+
+	.carousel-date {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.45em;
+		font-size: 0.9rem;
+		color: rgb(var(--gray));
+	}
+
+	.carousel-date svg {
+		width: 16px;
+		height: 16px;
+		flex-shrink: 0;
+	}
+
+	.carousel-category {
+		margin-left: auto;
+		padding: 0.4em 1.1em;
+		background: white;
+		color: #4361ee;
+		border-radius: 999px;
+		font-size: 0.85rem;
+		font-weight: 700;
+		text-decoration: none;
+		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+		transition: background 0.15s ease;
+	}
+
+	.carousel-category:hover {
+		background: #e8ebfa;
+	}
+
+	/* Arrows */
+	.carousel-arrow {
+		position: absolute;
+		top: 45%;
+		transform: translateY(-50%);
+		z-index: 2;
+		width: 44px;
+		height: 64px;
+		border: none;
+		border-radius: 10px;
+		background: #4361ee;
+		color: white;
+		cursor: pointer;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		box-shadow: 0 4px 12px rgba(67, 97, 238, 0.35);
+		transition: background 0.15s ease, transform 0.15s ease;
+	}
+
+	.carousel-arrow svg {
+		width: 22px;
+		height: 22px;
+	}
+
+	.carousel-arrow:hover {
+		background: #364fc7;
+	}
+
+	.carousel-arrow:active {
+		transform: translateY(-50%) scale(0.96);
+	}
+
+	.carousel-arrow-prev {
+		left: -22px;
+	}
+
+	.carousel-arrow-next {
+		right: -22px;
+	}
+
+	/* Dots */
+	.carousel-dots {
+		display: flex;
+		justify-content: center;
+		gap: 0.5em;
+		margin-top: 1em;
+	}
+
+	.carousel-dot {
+		width: 10px;
+		height: 10px;
+		padding: 0;
+		border: none;
+		border-radius: 50%;
+		background: rgb(var(--gray-light));
+		cursor: pointer;
+		transition: background 0.15s ease, transform 0.15s ease;
+	}
+
+	.carousel-dot[aria-selected='true'] {
+		background: #4361ee;
+		transform: scale(1.15);
+	}
+
+	.carousel-dot:hover {
+		background: #a3aed0;
+	}
+
+	@media (max-width: 720px) {
+		.carousel-card-overlay {
+			padding: 1em 1.25em;
+		}
+		.carousel-card-overlay h2 {
+			font-size: 1.15rem;
+		}
+		.carousel-card-image :global(img) {
+			aspect-ratio: 16 / 10;
+		}
+		.carousel-arrow {
+			width: 36px;
+			height: 52px;
+		}
+		.carousel-arrow-prev {
+			left: 4px;
+		}
+		.carousel-arrow-next {
+			right: 4px;
+		}
+		.carousel-meta-row {
+			gap: 0.5em;
+		}
+	}
+</style>

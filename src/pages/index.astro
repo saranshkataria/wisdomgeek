@@ -4,6 +4,7 @@ import { getCollection } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import PageLayout from '../components/PageLayout.astro';
 import PostGrid from '../components/PostGrid.astro';
+import HomeCarousel from '../components/HomeCarousel.astro';
 import Pagination from '../components/Pagination.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
@@ -44,6 +45,7 @@ const page: Page = {
 	</head>
 	<body>
 		<PageLayout>
+			<HomeCarousel posts={posts} />
 			<section>
 				<PostGrid posts={page.data} />
 				<Pagination page={page} />
