@@ -1,21 +1,33 @@
 ---
+import type { GetStaticPaths } from 'astro';
 import { getCollection } from 'astro:content';
-import BaseHead from '../../components/BaseHead.astro';
-import PageLayout from '../../components/PageLayout.astro';
-import PostGrid from '../../components/PostGrid.astro';
-import { SITE_AUTHOR, SOCIAL_LINKS } from '../../consts';
-import authors from '../../config/authors.json';
+import BaseHead from '../../../components/BaseHead.astro';
+import PageLayout from '../../../components/PageLayout.astro';
+import PostGrid from '../../../components/PostGrid.astro';
+import Pagination from '../../../components/Pagination.astro';
+import { SITE_AUTHOR, SOCIAL_LINKS } from '../../../consts';
+import authors from '../../../config/authors.json';
+import { getArchiveTitle, paginate } from '../../../lib/utils';
 
+// /author/saranshkataria/ and /author/saranshkataria/page/<n>/, as on the live site
+export const getStaticPaths = (async () => {
+	const posts = (await getCollection('blog'))
+		.filter((post) => !post.data.author || post.data.author === SITE_AUTHOR)
+		.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+	return paginate(posts, '/author/saranshkataria/').map((page) => ({
+		params: { page: page.currentPage === 1 ? undefined : `page/${page.currentPage}` },
+		props: { page },
+	}));
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
 const author = authors.find((a) => a.slug === 'saranshkataria');
-const posts = (await getCollection('blog'))
-	.filter((post) => !post.data.author || post.data.author === SITE_AUTHOR)
-	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={`${SITE_AUTHOR} | Wisdom Geek`} description={`Posts by ${SITE_AUTHOR}`} />
+		<BaseHead title={getArchiveTitle(SITE_AUTHOR, page.currentPage)} description={`Posts by ${SITE_AUTHOR}`} />
 		<style>
 			.author-header {
 				display: flex;
@@ -147,7 +159,8 @@ const posts = (await getCollection('blog'))
 				</div>
 
 				<h2 class="posts-heading">Posts by {SITE_AUTHOR}</h2>
-				<PostGrid posts={posts} />
+				<PostGrid posts={page.data} />
+				<Pagination page={page} />
 			</section>
 		</PageLayout>
 	</body>
