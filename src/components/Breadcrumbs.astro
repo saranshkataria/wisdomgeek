@@ -1,0 +1,78 @@
+---
+import { SITE_TITLE } from "../consts";
+
+interface Crumb {
+  name: string;
+  href?: string;
+}
+
+interface Props {
+  // Trail after Home; the last crumb is the current page and is not linked
+  crumbs: Crumb[];
+}
+
+const { crumbs } = Astro.props;
+const trail: Crumb[] = [{ name: "Home", href: "/" }, ...crumbs];
+
+const breadcrumbList = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: trail.map((crumb, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    // Like the live site, name the root crumb after the site
+    name: index === 0 ? SITE_TITLE : crumb.name,
+    ...(crumb.href ? { item: new URL(crumb.href, Astro.site ?? Astro.url).href } : {}),
+  })),
+};
+---
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol>
+    {trail.map((crumb, index) => (
+      <li>
+        {index > 0 && <span aria-hidden="true">›</span>}
+        {crumb.href ? (
+          <a href={crumb.href}>{crumb.name}</a>
+        ) : (
+          <span aria-current="page">{crumb.name}</span>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>
+
+<script
+  is:inline
+  type="application/ld+json"
+  set:html={JSON.stringify(breadcrumbList).replace(/</g, "\\u003c")}
+/>
+
+<style>
+  .breadcrumbs {
+    margin-bottom: 1em;
+    font-size: 0.85rem;
+    color: rgb(var(--gray));
+  }
+  .breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4em;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .breadcrumbs li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+  }
+  .breadcrumbs a {
+    color: rgb(var(--gray-dark));
+    text-decoration: none;
+  }
+  .breadcrumbs a:hover {
+    color: var(--accent);
+  }
+</style>

@@ -1,0 +1,56 @@
+---
+interface Props {
+  tags?: { name: string; slug: string }[];
+}
+
+const { tags = [] } = Astro.props;
+---
+
+{tags.length > 0 && (
+  <div class="post-tags">
+    <span class="post-tags-label">Tags:</span>
+    <ul>
+      {tags.map((tag) => (
+        <li>
+          <a href={`/tag/${tag.slug}/`} rel="tag">{tag.name}</a>
+        </li>
+      ))}
+    </ul>
+  </div>
+)}
+
+<style>
+  .post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5em;
+    margin: 0.5em 0 3em;
+    font-size: 0.85rem;
+  }
+  .post-tags-label {
+    color: rgb(var(--gray));
+    font-weight: 700;
+  }
+  .post-tags ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .post-tags a {
+    display: inline-block;
+    padding: 0.35em 1em;
+    background: #f0f2f5;
+    color: #4361ee;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .post-tags a:hover {
+    background: #e8ebfa;
+  }
+</style>
