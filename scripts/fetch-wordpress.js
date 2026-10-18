@@ -2,6 +2,8 @@
 import * as fs from "node:fs";
 import * as path from "node:path";
 import { fileURLToPath } from "node:url";
+import TurndownService from "turndown";
+import { gfm } from "@joplin/turndown-plugin-gfm";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -20,111 +22,304 @@ async function downloadImage(url, outputPath) {
 }
 
 function convertHtmlToMarkdown(html) {
-  let content = html;
+  return turndownService.turndown(removeShortcodes(html));
+}
 
-  // Remove WordPress code block plugin wrappers first (Code Block Pro, etc.)
-  // This removes the entire wrapper div and extracts just the code content
-  content = content.replace(
-    /<div[^>]*class="[^"]*code-block-pro[^"]*"[^>]*>([\s\S]*?)<\/div>/gi,
-    (match, innerContent) => {
-      // Extract the actual code from pre/code tags
-      const codeMatch = innerContent.match(
-        /<pre[^>]*>\s*<code[^>]*>([\s\S]*?)<\/code>\s*<\/pre>/i
-      );
-      if (codeMatch) {
-        return "<pre><code>" + codeMatch[1] + "</code></pre>";
-      }
-      return match;
-    }
+const hasClass = (node, name) =>
+  (node.getAttribute("class") || "").split(/\s+/).includes(name);
+
+// Code Block Pro shows the language's display name (code-block-pro's
+// defaultLanguages.json); lowercased, it is the Shiki language id except for these
+const CODE_BLOCK_PRO_LANGUAGES = {
+  "BAT (Batchfile)": "bat",
+  "C#": "csharp",
+  "C++": "cpp",
+  "F#": "fsharp",
+  "Objective-C++": "objective-cpp",
+  Plaintext: "text",
+  "Plain Text": "text",
+  "Protocol Buffers": "proto",
+};
+
+function codeBlockProLanguage(label) {
+  const language =
+    CODE_BLOCK_PRO_LANGUAGES[label] ?? label.toLowerCase().replace(/\s+/g, "-");
+  return /^[a-z][\w#+.-]*$/.test(language) ? language : "";
+}
+
+// Text of a <pre>, keeping <br> line breaks
+function preformattedText(node) {
+  return Array.from(node.childNodes, (child) => {
+    if (child.nodeType === 3) return child.nodeValue;
+    if (child.nodeName === "BR") return "\n";
+    return child.nodeType === 1 ? preformattedText(child) : "";
+  }).join("");
+}
+
+function fencedCodeBlock(code, language) {
+  // The fence must be longer than any backtick fence inside the code
+  const fenceLength = Math.max(
+    3,
+    ...Array.from(code.matchAll(/^[ \t]*(`{3,})/gm), (m) => m[1].length + 1)
   );
+  const fence = "`".repeat(fenceLength);
+  return `\n\n${fence}${language}\n${code}\n${fence}\n\n`;
+}
 
-  // Convert images to markdown - do this before removing other HTML tags
-  content = content.replace(
-    /<img[^>]*src=["']([^"']*)["'][^>]*alt=["']([^"']*)["'][^>]*>/gi,
-    "![$2]($1)"
+function embedFromUrl(url) {
+  const youtube = url.match(
+    /(?:youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/)|youtu\.be\/)([\w-]{11})/
   );
-  content = content.replace(
-    /<img[^>]*alt=["']([^"']*)["'][^>]*src=["']([^"']*)["'][^>]*>/gi,
-    "![$1]($2)"
+  const vimeo = url.match(/vimeo\.com\/(?:video\/)?(\d+)/);
+  const src = youtube
+    ? `https://www.youtube.com/embed/${youtube[1]}`
+    : vimeo && `https://player.vimeo.com/video/${vimeo[1]}`;
+  if (!src) {
+    return `[${turndownService.escape(url)}](${url.replace(/[()]/g, "\\$&")})`;
+  }
+  return `<iframe src="${src}" width="740" height="416" frameborder="0" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
+}
+
+// Caption of a <figure>, a classic [caption] box or a [gallery] item
+function captionOf(node) {
+  if (
+    node.nodeName !== "FIGURE" &&
+    !hasClass(node, "wp-caption") &&
+    !hasClass(node, "gallery-item")
+  ) {
+    return null;
+  }
+  const caption = Array.from(node.children).find(
+    (child) =>
+      child.nodeName === "FIGCAPTION" || hasClass(child, "wp-caption-text")
   );
-  // Handle images without alt text
-  content = content.replace(/<img[^>]*src=["']([^"']*)["'][^>]*>/gi, "![]($1)");
+  return caption?.textContent.trim() ? caption : null;
+}
 
-  // Convert code blocks (pre + code tags) to markdown code blocks
-  content = content.replace(
-    /<pre[^>]*>\s*<code[^>]*>([\s\S]*?)<\/code>\s*<\/pre>/gi,
-    (match, code) => {
-      // Decode HTML entities in code
-      const decodedCode = code
-        .replace(/&lt;/g, "<")
-        .replace(/&gt;/g, ">")
-        .replace(/&amp;/g, "&")
-        .replace(/&quot;/g, '"')
-        .replace(/&#39;/g, "'")
-        .replace(/&nbsp;/g, " ");
-      return "\n```\n" + decodedCode.trim() + "\n```\n";
-    }
-  );
-
-  // Convert inline code tags to markdown
-  content = content.replace(/<code[^>]*>(.*?)<\/code>/gi, "`$1`");
-
-  // Convert strong/b tags to bold
-  content = content.replace(/<(strong|b)>(.*?)<\/(strong|b)>/gi, "**$2**");
-
-  // Convert em/i tags to italic
-  content = content.replace(/<(em|i)>(.*?)<\/(em|i)>/gi, "*$2*");
-
-  // Convert links
-  content = content.replace(
-    /<a[^>]*href="([^"]*)"[^>]*>(.*?)<\/a>/gi,
-    "[$2]($1)"
-  );
-
-  // Convert headings
-  content = content.replace(/<h1[^>]*>(.*?)<\/h1>/gi, "\n# $1\n");
-  content = content.replace(/<h2[^>]*>(.*?)<\/h2>/gi, "\n## $1\n");
-  content = content.replace(/<h3[^>]*>(.*?)<\/h3>/gi, "\n### $1\n");
-  content = content.replace(/<h4[^>]*>(.*?)<\/h4>/gi, "\n#### $1\n");
-  content = content.replace(/<h5[^>]*>(.*?)<\/h5>/gi, "\n##### $1\n");
-  content = content.replace(/<h6[^>]*>(.*?)<\/h6>/gi, "\n###### $1\n");
-
-  // Convert lists
-  content = content.replace(/<ul[^>]*>([\s\S]*?)<\/ul>/gi, (match, items) => {
-    return items.replace(/<li[^>]*>(.*?)<\/li>/gi, "- $1\n");
+function isBoldRow(row) {
+  return Array.from(row.children).every((cell) => {
+    const text = cell.textContent.replace(/\s+/g, "");
+    const bold = Array.from(
+      cell.querySelectorAll("strong, b"),
+      (element) => element.textContent
+    ).join("");
+    return text !== "" && text === bold.replace(/\s+/g, "");
   });
-  content = content.replace(/<ol[^>]*>([\s\S]*?)<\/ol>/gi, (match, items) => {
-    let counter = 1;
-    return items.replace(/<li[^>]*>(.*?)<\/li>/gi, () => `${counter++}. $1\n`);
-  });
+}
 
-  // Convert paragraphs to double line breaks
-  content = content.replace(/<p[^>]*>(.*?)<\/p>/gi, "$1\n\n");
+// "*" and "**" next to punctuation only work if the other side is a space or
+// punctuation too (not in "<strong>Note:</strong>Text"); use HTML there
+function emphasis(delimiter, tag) {
+  return (content, node) => {
+    // Code spans can't contain emphasis
+    if (node.isCode) return content;
+    // Line breaks (<br>) at either end go outside the delimiters
+    const [, leading, inner, trailing] = content.match(/^(\s*)([\s\S]*?)(\s*)$/);
+    if (!inner) return content;
+    const text = node.textContent;
+    const before =
+      leading || /^\s/.test(text) ? " " : node.previousSibling?.textContent.slice(-1);
+    const after =
+      trailing || /\s$/.test(text) ? " " : node.nextSibling?.textContent[0];
+    const isWord = (char) => /[\p{L}\p{N}]/u.test(char ?? "");
+    const isPunctuation = (char) => /[\p{P}\p{S}]/u.test(char ?? "");
+    const delimitable =
+      !(isPunctuation(inner[0]) && isWord(before)) &&
+      !(isPunctuation(inner.at(-1)) && isWord(after));
+    const emphasized = delimitable
+      ? `${delimiter}${inner}${delimiter}`
+      : `<${tag}>${inner}</${tag}>`;
+    return leading + emphasized + trailing;
+  };
+}
 
-  // Convert line breaks
-  content = content.replace(/<br\s*\/?>/gi, "\n");
+const turndownService = new TurndownService({
+  headingStyle: "atx",
+  hr: "---",
+  bulletListMarker: "-",
+  codeBlockStyle: "fenced",
+  emDelimiter: "*",
+});
+// The GFM plugin keeps tables with code blocks as HTML, but only finds them
+// through this @joplin/turndown method, which plain turndown doesn't have
+turndownService.isCodeBlock = (node) => node.nodeName === "PRE";
+turndownService.use(gfm);
+turndownService.remove(["script", "style", "meta"]);
+turndownService.keep(["sub", "sup"]);
 
-  // Remove remaining HTML tags
-  content = content.replace(/<[^>]*>/g, "");
+// Turndown leaves "<" and "&" alone, but in Markdown they start inline HTML and
+// character references (text such as "code <path>" would disappear). A "!"
+// before a link would turn the link into an image, and GFM would take a closing
+// quote right after a plain URL into the URL's autolink.
+const escapeMarkdown = turndownService.escape.bind(turndownService);
+turndownService.escape = (text) =>
+  escapeMarkdown(text)
+    .replace(/</g, "\\<")
+    .replace(/&(?=#?\w+;)/g, "\\&")
+    .replace(/!$/, "\\!")
+    .replace(
+      /\bhttps?:\/\/[^\s<>”’]+(?=[”’])/g,
+      (url) => `<${url.replace(/\\(.)/g, "$1")}>`
+    );
 
-  // Decode common HTML entities
-  content = content
-    .replace(/&nbsp;/g, " ")
-    .replace(/&amp;/g, "&")
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/&quot;/g, '"')
-    .replace(/&#8217;/g, "'")
-    .replace(/&#8220;/g, '"')
-    .replace(/&#8221;/g, '"')
-    .replace(/&#8230;/g, "...")
-    .replace(/&#8211;/g, "–")
-    .replace(/&#8212;/g, "—");
+// Same as Turndown's rule, with a single space after the list marker
+turndownService.addRule("listItem", {
+  filter: "li",
+  replacement(content, node, options) {
+    const list = node.parentNode;
+    let prefix = `${options.bulletListMarker} `;
+    if (list.nodeName === "OL") {
+      const start = Number(list.getAttribute("start") || 1);
+      prefix = `${start + Array.prototype.indexOf.call(list.children, node)}. `;
+    }
+    const isParagraph = /\n$/.test(content);
+    const text = content.replace(/^\n+|\n+$/g, "") + (isParagraph ? "\n" : "");
+    return (
+      prefix +
+      text.replace(/\n/g, `\n${" ".repeat(prefix.length)}`) +
+      (node.nextSibling ? "\n" : "")
+    );
+  },
+});
 
-  // Clean up excessive whitespace
-  content = content.replace(/\n{3,}/g, "\n\n").trim();
+turndownService.addRule("emphasis", {
+  filter: ["em", "i"],
+  replacement: emphasis("*", "em"),
+});
 
-  return content;
+turndownService.addRule("strong", {
+  filter: ["strong", "b"],
+  replacement: emphasis("**", "strong"),
+});
+
+// Row breaks between [gallery] items
+turndownService.addRule("galleryBreak", {
+  filter: (node) => node.nodeName === "BR" && hasClass(node.parentNode, "gallery"),
+  replacement: () => "",
+});
+
+turndownService.addRule("preformatted", {
+  filter: "pre",
+  replacement(content, node) {
+    const [child, ...rest] = Array.from(node.children);
+    const code = child?.nodeName === "CODE" && !rest.length ? child : node;
+    const classes = [node, code].map((el) => el.getAttribute("class") ?? "");
+    const language =
+      classes.join(" ").match(/\blang(?:uage)?-([\w#+.-]+)/)?.[1] ?? "";
+    return fencedCodeBlock(preformattedText(code), language);
+  },
+});
+
+// Code Block Pro: a Shiki-highlighted <pre> plus spans for the window controls,
+// the copy button and the language name
+turndownService.addRule("codeBlockPro", {
+  filter: (node) => hasClass(node, "wp-block-kevinbatdorf-code-block-pro"),
+  replacement(content, node) {
+    const pre = node.querySelector("pre");
+    if (!pre) return content;
+    const label = Array.from(node.children).find(
+      (child) =>
+        child.nodeName === "SPAN" &&
+        !hasClass(child, "code-block-pro-copy-button") &&
+        child.textContent.trim()
+    );
+    const language = label ? codeBlockProLanguage(label.textContent.trim()) : "";
+    return fencedCodeBlock(preformattedText(pre), language);
+  },
+});
+
+// Players are kept as HTML, which Astro renders as is
+turndownService.addRule("embed", {
+  filter: ["iframe", "video", "audio"],
+  replacement: (content, node) => `\n\n${node.outerHTML}\n\n`,
+});
+
+// Keep wrappers whose inline style sizes the player (e.g. a 16:9 padding box)
+turndownService.addRule("embedWrapper", {
+  filter: (node) =>
+    node.nodeName === "DIV" &&
+    node.hasAttribute("style") &&
+    node.children.length === 1 &&
+    node.firstElementChild.nodeName === "IFRAME" &&
+    !node.textContent.trim(),
+  replacement: (content, node) => `\n\n${node.outerHTML}\n\n`,
+});
+
+// oEmbed blocks that WordPress could not render contain only the URL
+turndownService.addRule("embedUrl", {
+  filter: (node) =>
+    hasClass(node, "wp-block-embed__wrapper") &&
+    !node.children.length &&
+    /^https?:\/\/\S+$/.test(node.textContent.trim()),
+  replacement: (content, node) =>
+    `\n\n${embedFromUrl(node.textContent.trim())}\n\n`,
+});
+
+// Captions are written by the figure rule
+turndownService.addRule("caption", {
+  filter: (node) => captionOf(node.parentNode) === node,
+  replacement: () => "",
+});
+
+// <figure> and <figcaption> are HTML, but the content between the blank lines
+// stays Markdown, so images are still downloaded and processed by Astro
+turndownService.addRule("figure", {
+  filter: (node) => Boolean(captionOf(node)),
+  replacement(content, node) {
+    const caption = captionOf(node).innerHTML.replace(/\s+/g, " ").trim();
+    return `\n\n<figure>\n\n${content.trim()}\n\n<figcaption>${caption}</figcaption>\n</figure>\n\n`;
+  },
+});
+
+// Tables often have a bold first row instead of a header row; Markdown tables need one
+turndownService.addRule("boldHeaderRow", {
+  filter: (node) =>
+    node.nodeName === "TABLE" &&
+    !node.querySelector("thead, th") &&
+    node.rows.length > 1 &&
+    isBoldRow(node.rows[0]) &&
+    !Array.from(node.rows).every(isBoldRow),
+  replacement(content, node) {
+    const document = node.ownerDocument;
+    const wrapper = document.createElement("div");
+    const table = wrapper.appendChild(node.cloneNode(true));
+    const row = table.rows[0];
+    const head = document.createElement("thead");
+    head.appendChild(row);
+    table.insertBefore(head, table.firstChild);
+    for (const cell of Array.from(row.children)) {
+      const th = document.createElement("th");
+      while (cell.firstChild) th.appendChild(cell.firstChild);
+      row.replaceChild(th, cell);
+    }
+    return `\n\n${turndownService.turndown(wrapper)}\n\n`;
+  },
+});
+
+const SHORTCODE = new RegExp(
+  String.raw`\[(\/?)([a-z][\w-]*)((?:\s+[\w-]+=(?:"[^"]*"|'[^']*'|&#82(?:20|21|43);[^\]]*?&#82(?:21|43);|[^\s\]]+))*)\s*\/?\]`,
+  "gi"
+);
+
+// Shortcodes of plugins that are no longer active stay in the HTML as text: drop
+// their tags outside code and keep what they wrap. A bare "[word]" is only a
+// shortcode if a matching "[/word]" exists, so bracketed prose is kept.
+function removeShortcodes(html) {
+  const kept = [];
+  const text = html.replace(
+    /<(pre|code|script|style)\b[\s\S]*?<\/\1>|<[^>]*>/gi,
+    (match) => `\u0000${kept.push(match) - 1}\u0000`
+  );
+  const closed = new Set(
+    Array.from(text.matchAll(SHORTCODE))
+      .filter((match) => match[1])
+      .map((match) => match[2].toLowerCase())
+  );
+  return text
+    .replace(SHORTCODE, (match, slash, name, attributes) =>
+      slash || attributes || closed.has(name.toLowerCase()) ? "" : match
+    )
+    .replace(/\u0000(\d+)\u0000/g, (match, index) => kept[index]);
 }
 
 // Folder for a post that mirrors its WordPress permalink, so the Astro entry id
