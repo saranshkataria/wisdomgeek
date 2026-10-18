@@ -1,0 +1,56 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getCollection } from 'astro:content';
+import BaseHead from '../../../components/BaseHead.astro';
+import PageLayout from '../../../components/PageLayout.astro';
+import PostGrid from '../../../components/PostGrid.astro';
+import Pagination from '../../../components/Pagination.astro';
+import { getArchiveTitle, getTagArchives, paginate } from '../../../lib/utils';
+
+// /tag/<slug>/ and /tag/<slug>/page/<n>/ for every tag used by a post, with the
+// WordPress slugs from the frontmatter so the URLs match the live site
+export const getStaticPaths = (async () => {
+	const posts = (await getCollection('blog')).sort(
+		(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+	);
+	return [...getTagArchives(posts)].flatMap(([slug, { name, posts: tagPosts }]) =>
+		paginate(tagPosts, `/tag/${slug}/`).map((page) => ({
+			params: { tag: slug, page: page.currentPage === 1 ? undefined : `page/${page.currentPage}` },
+			props: { name, page },
+		})),
+	);
+}) satisfies GetStaticPaths;
+
+const { name, page } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={getArchiveTitle(name, page.currentPage)} description={`All blog posts tagged ${name}`} />
+		<style>
+			.tag-header {
+				margin-bottom: 2em;
+			}
+			.tag-header h1 {
+				margin: 0 0 0.5em 0;
+				color: rgb(var(--gray-dark));
+			}
+			.tag-header p {
+				margin: 0;
+				color: rgb(var(--gray));
+				font-size: 1.1rem;
+			}
+		</style>
+	</head>
+	<body>
+		<PageLayout>
+			<div class="tag-header">
+				<h1>{name}</h1>
+				<p>{page.total} {page.total === 1 ? 'post' : 'posts'} found</p>
+			</div>
+			<PostGrid posts={page.data} />
+			<Pagination page={page} />
+		</PageLayout>
+	</body>
+</html>

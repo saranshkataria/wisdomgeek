@@ -1,63 +1,56 @@
 ---
+import type { GetStaticPaths, InferGetStaticPropsType } from 'astro';
 import { getCollection } from 'astro:content';
-import { Image } from 'astro:assets';
 import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import FormattedDate from '../components/FormattedDate.astro';
 import PageLayout from '../components/PageLayout.astro';
-import { 
-	decodeHtmlEntities, 
-	categoryToSlug, 
-	matchesCategoryPath,
-	getCategoryNameFromPath,
-	getAllCategoryPaths,
-	getCategoryNames
+import PostGrid from '../components/PostGrid.astro';
+import Pagination from '../components/Pagination.astro';
+import {
+	getArchiveTitle,
+	getCategoryArchives,
+	getCategoryNames,
+	getFlatCategoryPaths,
+	paginate,
 } from '../lib/utils';
 
-export async function getStaticPaths() {
-	const posts = await getCollection('blog');
+export const getStaticPaths = (async () => {
+	const posts = (await getCollection('blog')).sort(
+		(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+	);
 	const categoryNames = getCategoryNames(posts);
-	
-	// Build all possible category paths from categoryHierarchy
-	const categoryPaths = getAllCategoryPaths(posts);
-	
-	// Create a page for each category path
-	return Array.from(categoryPaths).map(categoryPath => {
-		// Filter posts that match this category path
-		const matchingPosts = posts.filter(post => {
-			// Check if categoryHierarchy starts with this path
-			if (matchesCategoryPath(post, categoryPath)) {
-				return true;
-			}
-			
-			// Also check simple categories for backwards compatibility
-			if (post.data.categories) {
-				const categorySlug = categoryPath.split('/').pop() || categoryPath;
-				return post.data.categories.some(cat => 
-					categoryToSlug(cat) === categorySlug
-				);
-			}
-			
-			return false;
-		}).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-		
-		// Get the category name from the path
-		const categoryName = getCategoryNameFromPath(categoryPath, categoryNames);
-		
-		return {
-			params: { category: categoryPath },
-			props: { 
-				categoryPath,
-				categoryName,
-				posts: matchingPosts
-			}
-		};
-	});
-}
 
-const { categoryPath, categoryName, posts } = Astro.props;
-const title = `Posts in ${categoryName}`;
+	// /<category path>/ and /<category path>/page/<n>/, as on the live site
+	const archivePages = [...getCategoryArchives(posts)].flatMap(([categoryPath, archivePosts]) =>
+		paginate(archivePosts, `/${categoryPath}/`).map((page) => ({
+			params: {
+				category: page.currentPage === 1 ? categoryPath : `${categoryPath}/page/${page.currentPage}`,
+			},
+			props: {
+				categoryName: categoryNames.get(categoryPath) ?? categoryPath,
+				page,
+			},
+		})),
+	);
+
+	// Flat URLs such as /javascript/ duplicate a category archive (here
+	// /development/web-development/javascript/). They render that archive, so
+	// their canonical URL is the archive's.
+	const flatPages = [...getFlatCategoryPaths(posts)].map(([slug, categoryPath]) => ({
+		params: { category: slug },
+		props: { rewrite: `/${categoryPath}/` },
+	}));
+
+	return [...archivePages, ...flatPages];
+}) satisfies GetStaticPaths;
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const props = Astro.props;
+if ('rewrite' in props) {
+	return Astro.rewrite(props.rewrite);
+}
+const { categoryName, page } = props;
+const title = getArchiveTitle(categoryName, page.currentPage);
 const description = `All blog posts categorized under ${categoryName}`;
 ---
 
@@ -77,109 +70,16 @@ const description = `All blog posts categorized under ${categoryName}`;
 				color: rgb(var(--gray));
 				font-size: 1.1rem;
 			}
-			.posts-grid {
-				display: grid;
-				grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-				gap: 2em;
-			}
-			.post-card {
-				border: 1px solid rgb(var(--gray-light));
-				border-radius: 8px;
-				overflow: hidden;
-				text-decoration: none;
-				color: rgb(var(--gray-dark));
-				transition: all 0.2s ease;
-				display: flex;
-				flex-direction: column;
-			}
-			.post-card:hover {
-				box-shadow: var(--box-shadow);
-				border-color: rgb(var(--accent));
-				transform: translateY(-4px);
-			}
-			.post-card img {
-				width: 100%;
-				height: 200px;
-				object-fit: cover;
-			}
-			.post-card-content {
-				padding: 1.5em;
-				flex: 1;
-				display: flex;
-				flex-direction: column;
-			}
-			.post-card-title {
-				font-weight: 700;
-				font-size: 1.25rem;
-				margin-bottom: 0.5em;
-				line-height: 1.3;
-			}
-			.post-card-description {
-				color: rgb(var(--gray));
-				margin-bottom: 1em;
-				flex: 1;
-				font-size: 0.95rem;
-			}
-			.post-card-meta {
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				font-size: 0.875rem;
-				color: rgb(var(--gray));
-				padding-top: 1em;
-				border-top: 1px solid rgb(var(--gray-light));
-			}
-			.post-categories {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 0.5em;
-			}
-			.category-tag {
-				display: inline-block;
-				padding: 0.25em 0.5em;
-				background-color: var(--accent);
-				color: white;
-				border-radius: 4px;
-				font-size: 0.75rem;
-				font-weight: 500;
-			}
 		</style>
 	</head>
 	<body>
 		<PageLayout>
 			<div class="category-header">
-				<h1>{title}</h1>
-				<p>{posts.length} {posts.length === 1 ? 'post' : 'posts'} found</p>
+				<h1>{categoryName}</h1>
+				<p>{page.total} {page.total === 1 ? 'post' : 'posts'} found</p>
 			</div>
-			
-			<div class="posts-grid">
-				{posts.map((post) => (
-					<a href={`/${post.id}/`} class="post-card">
-						{post.data.heroImage && (
-							<Image 
-								width={400} 
-								height={200} 
-								src={post.data.heroImage} 
-								alt={post.data.title} 
-							/>
-						)}
-						<div class="post-card-content">
-							<h2 class="post-card-title">{post.data.title}</h2>
-							<p class="post-card-description">{decodeHtmlEntities(post.data.description)}</p>
-							<div class="post-card-meta">
-								<FormattedDate date={post.data.pubDate} />
-								{post.data.categories && post.data.categories.length > 0 && (
-									<div class="post-categories">
-										{post.data.categories.map((cat) => (
-											<span class="category-tag">{cat}</span>
-										))}
-									</div>
-								)}
-							</div>
-						</div>
-					</a>
-				))}
-			</div>
+			<PostGrid posts={page.data} />
+			<Pagination page={page} />
 		</PageLayout>
 	</body>
 </html>

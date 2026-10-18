@@ -6,13 +6,13 @@ import { buildCategoryTree, sortCategoryTree } from '../lib/utils';
 
 const posts = await getCollection('blog');
 
-// Build hierarchical category tree from posts
+// Category tree from categoryPaths, with real names and post counts like the live sidebar
 const categoryTree = buildCategoryTree(posts);
 const sortedCategoryTree = sortCategoryTree(categoryTree);
 
 // Get featured posts
 const featuredPosts = posts
-	.filter(post => post.data.categories?.some(cat => cat.toLowerCase() === 'featured'))
+	.filter(post => post.data.categoryPaths?.includes('featured'))
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 	.slice(0, 3);
 
@@ -45,8 +45,8 @@ const recentPosts = posts
 							<h4 class="recent-post-title">{post.data.title}</h4>
 						</a>
 						<div class="recent-post-meta">
-							{post.data.categories && post.data.categories.length > 0 && (
-								<a href={`/${post.data.categories[0].toLowerCase()}/`} class="recent-post-category">
+							{post.data.categories?.[0] && post.data.categoryPaths?.[0] && (
+								<a href={`/${post.data.categoryPaths[0]}/`} class="recent-post-category">
 									{post.data.categories[0]}
 								</a>
 							)}
