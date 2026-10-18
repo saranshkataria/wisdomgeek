@@ -351,7 +351,11 @@ ${processedContent}
 
       // Write markdown file as index.md in the post directory
       const filePath = path.join(postDir, "index.md");
-      fs.writeFileSync(filePath, markdown, "utf-8");
+      fs.writeFileSync(
+        filePath,
+        await rewriteInternalLinks(markdown, post, allPosts),
+        "utf-8"
+      );
       console.log(`Saved ${categoryPath}/${postSlug}/index.md`);
     }
 
@@ -360,6 +364,159 @@ ${processedContent}
     console.error(`Error loading WordPress posts: ${error}`);
     throw error;
   }
+}
+
+const SITE_PAGES = new Set(["/", "/about/", "/contact/", "/privacy-policy/"]);
+const liveUrlCache = new Map();
+
+// Matches the alternatives below in one left-to-right pass; code is matched
+// only so that links inside it are skipped
+const LINK_OR_CODE_PATTERN = new RegExp(
+  [
+    // Fenced code block
+    /^[ \t]*(?<fence>`{3,}|~{3,})[^\n]*\n[\s\S]*?(?:^[ \t]*\k<fence>[`~]*[ \t]*$|(?![\s\S]))/,
+    // Inline code span
+    /(?<!`)(?<ticks>`+)(?:[^\n]|\n(?![ \t]*\n))*?(?<!`)\k<ticks>(?!`)/,
+    // Markdown link or image [text](destination "title"); text may be an image
+    /(?<mdOpen>(?<image>!?)\[(?<text>(?:\\.|[^\\[\]]|\[(?:\\.|[^\\[\]])*\])*)\]\(\s*)(?<dest><[^<>\n]*>|(?:\\.|[^\\\s()]|\((?:\\.|[^\\\s()])*\))+)(?<mdClose>(?:\s+(?:"(?:\\.|[^\\"])*"|'(?:\\.|[^\\'])*'|\((?:\\.|[^\\()])*\)))?\s*\))/,
+    // HTML anchor left in the markdown
+    /(?<aOpen><a\s(?:[^>]*?\s)?href\s*=\s*(?<quote>["']))(?<href>[^"'<>]*)(?<aClose>\k<quote>[^>]*>(?<inner>(?:(?!<a\s)[\s\S])*?)<\/a\s*>)/,
+  ]
+    .map((pattern) => pattern.source)
+    .join("|"),
+  "gim"
+);
+
+function withTrailingSlash(pathname) {
+  return pathname.endsWith("/") ? pathname : `${pathname}/`;
+}
+
+function isSiteHost(hostname) {
+  return /^(?:www\.)?wisdomgeek\.com$/.test(hostname);
+}
+
+// Requests a URL on the live site at most once, following redirects
+function fetchLiveUrl(pathAndQuery) {
+  if (!liveUrlCache.has(pathAndQuery)) {
+    liveUrlCache.set(
+      pathAndQuery,
+      fetch(SITE_URL + pathAndQuery, { method: "HEAD" }).then(
+        (response) => ({ status: response.status, url: new URL(response.url) }),
+        (error) => ({ status: 0, error })
+      )
+    );
+  }
+  return liveUrlCache.get(pathAndQuery);
+}
+
+// Returns { from, href } to point the link at href, { from, unlink } to drop
+// the link and keep its text, or null for links that are not to a site page
+async function resolveInternalLink(href, postPaths, knownPaths) {
+  if (!/^(?:https?:)?\/\//i.test(href) && !href.startsWith("/")) return null;
+  let url;
+  try {
+    url = new URL(href, SITE_URL);
+  } catch {
+    return null;
+  }
+  if (!/^https?:$/.test(url.protocol) || !isSiteHost(url.hostname)) return null;
+  if (url.pathname.startsWith("/wp-content/")) return null;
+
+  const pathname = withTrailingSlash(url.pathname);
+  const from = pathname + url.hash;
+  if (pathname.startsWith("/collaboration/")) {
+    return { from, unlink: "collaboration posts are not migrated" };
+  }
+  if (pathname.startsWith("/tag/")) return { from, href: from };
+  if (!url.search) {
+    if (knownPaths.has(pathname)) return { from, href: from };
+    const slug = pathname.split("/").at(-2);
+    if (postPaths.has(slug)) {
+      return { from, href: postPaths.get(slug) + url.hash };
+    }
+  }
+
+  const live = await fetchLiveUrl(pathname + url.search);
+  if (live.status === 404 || live.status === 410) {
+    return { from, unlink: `HTTP ${live.status} on the live site` };
+  }
+  if (live.status < 200 || live.status >= 300) {
+    console.warn(
+      `Could not check ${pathname} on the live site (${live.error ?? `HTTP ${live.status}`}), leaving the link as is`
+    );
+    return { from, href: from };
+  }
+  const finalPath = isSiteHost(live.url.hostname)
+    ? withTrailingSlash(live.url.pathname)
+    : null;
+  if (finalPath?.startsWith("/collaboration/")) {
+    return {
+      from,
+      unlink: "redirects to a collaboration post, which is not migrated",
+    };
+  }
+  if (
+    finalPath &&
+    (knownPaths.has(finalPath) || finalPath.startsWith("/tag/"))
+  ) {
+    return { from, href: finalPath + url.hash };
+  }
+  return {
+    from,
+    unlink: `no matching post or category (live site: ${live.url.href})`,
+  };
+}
+
+// Points links to wisdomgeek.com in the post body at their current
+// root-relative URL (post permalink, category, site page or tag page) and
+// unlinks links to pages that are gone. Uploads under /wp-content/ and code are
+// left untouched.
+async function rewriteInternalLinks(markdown, post, allPosts) {
+  const postPaths = new Map(
+    allPosts.map((p) => [p.slug, new URL(p.link).pathname])
+  );
+  const knownPaths = new Set([
+    ...SITE_PAGES,
+    ...postPaths.values(),
+    ...allPosts
+      .flatMap((p) => (p._embedded?.["wp:term"] ?? []).flat())
+      .filter((term) => term.taxonomy === "category")
+      .map((term) => new URL(term.link).pathname),
+  ]);
+
+  const [, frontmatter, body] = markdown.match(
+    /^(---\n[\s\S]*?\n---\n|)([\s\S]*)$/
+  );
+  let output = frontmatter;
+  let lastIndex = 0;
+  for (const match of body.matchAll(LINK_OR_CODE_PATTERN)) {
+    const { image, text, mdOpen, dest, mdClose, aOpen, href, aClose, inner } =
+      match.groups;
+    if (image || (dest === undefined && href === undefined)) continue;
+
+    const isMarkdown = dest !== undefined;
+    const linkUrl = isMarkdown
+      ? dest.replace(/^<(.*)>$/, "$1").replace(/\\([()])/g, "$1")
+      : href;
+    const target = await resolveInternalLink(linkUrl, postPaths, knownPaths);
+    if (!target) continue;
+
+    let replacement;
+    if (target.unlink) {
+      replacement = isMarkdown ? text : inner;
+      console.warn(`Unlinked ${linkUrl} in ${post.slug}: ${target.unlink}`);
+    } else {
+      replacement = isMarkdown
+        ? mdOpen + target.href.replace(/[()]/g, "\\$&") + mdClose
+        : aOpen + target.href + aClose;
+      if (target.href !== target.from) {
+        console.log(`Rewrote ${linkUrl} -> ${target.href} in ${post.slug}`);
+      }
+    }
+    output += body.slice(lastIndex, match.index) + replacement;
+    lastIndex = match.index + match[0].length;
+  }
+  return output + body.slice(lastIndex);
 }
 
 async function fetchAvatarAsBase64(url) {
