@@ -127,6 +127,26 @@ function convertHtmlToMarkdown(html) {
   return content;
 }
 
+// Folder for a post that mirrors its WordPress permalink, so the Astro entry id
+// (and therefore the URL) stays the same as the live site, e.g.
+// "https://www.wisdomgeek.com/featured/my-post/" -> "featured/my-post".
+// Returns null if the link is missing, invalid or not on SITE_URL's host.
+function getPermalinkPath(link) {
+  try {
+    const url = new URL(link);
+    if (url.host !== new URL(SITE_URL).host) return null;
+    const segments = url.pathname
+      .split("/")
+      .filter(Boolean)
+      .map((segment) => decodeURIComponent(segment));
+    // An encoded slash would change the nesting or escape the content folder
+    if (segments.some((segment) => /[\\/]/.test(segment))) return null;
+    return segments.join("/") || null;
+  } catch {
+    return null;
+  }
+}
+
 async function fetchWordPressPosts() {
   console.log(`Fetching posts from ${SITE_URL}`);
 
@@ -182,8 +202,8 @@ async function fetchWordPressPosts() {
       // Get categories with hierarchy - WordPress stores them with parent information
       const categories = post._embedded?.["wp:term"]?.[0] || [];
 
-      // Find the category with the deepest hierarchy (for folder structure)
-      // and collect all category names
+      // Find the category with the deepest hierarchy (for categoryHierarchy and
+      // the fallback folder) and collect all category names
       let categoryPath = "general";
       let primaryCategoryPath = ["General"];
       const allCategoryNames = [];
@@ -207,7 +227,7 @@ async function fetchWordPressPosts() {
           allCategoryNames.push(cat.name);
         }
 
-        // Use the deepest category for the folder structure
+        // Use the deepest category for the category hierarchy
         const categoryLink = deepestCategory.link || "";
         const linkMatch = categoryLink.match(/https?:\/\/[^\/]+\/(.+?)\/$/);
         if (linkMatch) {
@@ -231,9 +251,17 @@ async function fetchWordPressPosts() {
 
       const primaryCategory = categoryPath.split("/")[0] || "general";
 
-      // Create post directory with nested category structure (lowercase slug)
+      // Create post directory at the post's permalink path so it keeps its live
+      // URL; fall back to the deepest category folder if the link is unusable
       const postSlug = post.slug.toLowerCase();
-      const postDir = path.join(CONTENT_DIR, categoryPath, postSlug);
+      let postPath = getPermalinkPath(post.link);
+      if (!postPath) {
+        postPath = `${categoryPath}/${postSlug}`;
+        console.warn(
+          `No usable permalink for post ${post.id} (${post.link}), using ${postPath}`
+        );
+      }
+      const postDir = path.join(CONTENT_DIR, postPath);
       if (!fs.existsSync(postDir)) {
         fs.mkdirSync(postDir, { recursive: true });
       }
@@ -255,10 +283,10 @@ async function fetchWordPressPosts() {
 
           // Set the hero image path relative to the index.md file
           heroImage = `./${localImageFilename}`;
-          console.log(`Downloaded image for ${categoryPath}/${postSlug}`);
+          console.log(`Downloaded image for ${postPath}`);
         } catch (error) {
           console.warn(
-            `Failed to download image for ${categoryPath}/${postSlug}: ${error}`
+            `Failed to download image for ${postPath}: ${error}`
           );
           heroImage = ""; // Skip image if download fails
         }
@@ -309,7 +337,7 @@ async function fetchWordPressPosts() {
           );
         } catch (error) {
           console.warn(
-            `Failed to download inline image for ${categoryPath}/${postSlug}: ${error.message}`
+            `Failed to download inline image for ${postPath}: ${error.message}`
           );
           // Keep the original URL if download fails
         }
@@ -352,7 +380,7 @@ ${processedContent}
       // Write markdown file as index.md in the post directory
       const filePath = path.join(postDir, "index.md");
       fs.writeFileSync(filePath, markdown, "utf-8");
-      console.log(`Saved ${categoryPath}/${postSlug}/index.md`);
+      console.log(`Saved ${postPath}/index.md`);
     }
 
     console.log(`WordPress posts saved to ${CONTENT_DIR}`);
