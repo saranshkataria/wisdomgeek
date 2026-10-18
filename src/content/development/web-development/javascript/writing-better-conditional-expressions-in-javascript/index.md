@@ -6,7 +6,8 @@ updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["JavaScript"]
-categoryHierarchy: ["Development","Web Development","Javascript"]
+categoryHierarchy: ["Development","Web Development","JavaScript"]
+categoryPaths: ["development/web-development/javascript"]
 tags: [{ name: "ecmascript", slug: "ecmascript" }, { name: "javascript", slug: "javascript" }, { name: "javascript shorthand", slug: "javascript-shorthand" }]
 ---
 

@@ -6,7 +6,8 @@ updatedDate: 'Apr 04, 2017'
 heroImage: './hero.jpg'
 author: 'Saransh Kataria'
 categories: ["JavaScript"]
-categoryHierarchy: ["Development","Web Development","Javascript"]
+categoryHierarchy: ["Development","Web Development","JavaScript"]
+categoryPaths: ["development/web-development/javascript"]
 tags: [{ name: "node", slug: "node" }, { name: "node secuirty", slug: "node-secuirty" }, { name: "node security platform", slug: "node-security-platform" }, { name: "node.js security", slug: "node-js-security" }]
 ---
 

@@ -7,6 +7,7 @@ heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["Python"]
 categoryHierarchy: ["Development","Web Development","Python"]
+categoryPaths: ["development/web-development/python"]
 tags: [{ name: "pydantic", slug: "pydantic" }, { name: "python", slug: "python" }, { name: "python types", slug: "python-types" }, { name: "type checking", slug: "type-checking" }, { name: "type hinting", slug: "type-hinting" }]
 ---
 

@@ -7,6 +7,7 @@ heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]
+categoryPaths: ["development/web-development"]
 tags: [{ name: "nfc", slug: "nfc" }, { name: "web nfc", slug: "web-nfc" }]
 ---
 

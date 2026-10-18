@@ -7,6 +7,7 @@ heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]
+categoryPaths: ["development/web-development/react"]
 tags: [{ name: "emotion", slug: "emotion" }, { name: "emotionjs", slug: "emotionjs" }, { name: "javascript", slug: "javascript" }, { name: "react", slug: "react" }, { name: "reactjs", slug: "reactjs" }, { name: "web design", slug: "web-design" }, { name: "web development", slug: "web-development" }, { name: "webdev", slug: "webdev" }]
 ---
 

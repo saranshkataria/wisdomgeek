@@ -7,6 +7,7 @@ heroImage: './hero.jpg'
 author: 'Saransh Kataria'
 categories: ["Android Development"]
 categoryHierarchy: ["Development","Android Development"]
+categoryPaths: ["development/android-development"]
 tags: [{ name: "andoird", slug: "andoird" }, { name: "android dev", slug: "android-dev" }, { name: "android development", slug: "android-development" }, { name: "android programming", slug: "android-programming" }, { name: "json", slug: "json" }, { name: "json parsing", slug: "json-parsing" }]
 ---
 

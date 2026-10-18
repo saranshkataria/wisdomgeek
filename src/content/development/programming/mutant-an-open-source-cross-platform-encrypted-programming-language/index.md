@@ -4,9 +4,10 @@ description: 'Mutant is an open-source, cross-platform, compiled, garbage collec
 pubDate: 'Apr 01, 2021'
 updatedDate: 'Apr 01, 2021'
 heroImage: './hero.jpeg'
-author: 'Wisdom Geek'
+author: 'Saransh Kataria'
 categories: ["Programming"]
 categoryHierarchy: ["Development","Programming"]
+categoryPaths: ["development/programming"]
 tags: []
 ---
 

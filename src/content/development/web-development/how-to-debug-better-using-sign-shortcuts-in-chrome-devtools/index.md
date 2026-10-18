@@ -7,6 +7,7 @@ heroImage: './hero.jpeg'
 author: 'Saransh Kataria'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]
+categoryPaths: ["development/web-development"]
 tags: [{ name: "chrome", slug: "chrome" }, { name: "chrome devtools", slug: "chrome-devtools" }, { name: "devtools", slug: "devtools" }, { name: "web development", slug: "web-development" }, { name: "webdev", slug: "webdev" }]
 ---
 

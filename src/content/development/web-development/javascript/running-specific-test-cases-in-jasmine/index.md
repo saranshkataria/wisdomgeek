@@ -6,7 +6,8 @@ updatedDate: 'Oct 25, 2023'
 heroImage: './hero.jpg'
 author: 'Saransh Kataria'
 categories: ["JavaScript"]
-categoryHierarchy: ["Development","Web Development","Javascript"]
+categoryHierarchy: ["Development","Web Development","JavaScript"]
+categoryPaths: ["development/web-development/javascript"]
 tags: [{ name: "e2e", slug: "e2e" }, { name: "jasmine", slug: "jasmine" }, { name: "protractor", slug: "protractor" }, { name: "test cases", slug: "test-cases" }]
 ---
 

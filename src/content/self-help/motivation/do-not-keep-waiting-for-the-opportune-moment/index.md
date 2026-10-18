@@ -7,6 +7,7 @@ heroImage: './hero.jpg'
 author: 'Saransh Kataria'
 categories: ["Motivation"]
 categoryHierarchy: ["Self Help","Motivation"]
+categoryPaths: ["self-help/motivation"]
 tags: [{ name: "inspiration", slug: "inspiration" }, { name: "motivation", slug: "motivation" }]
 ---
 

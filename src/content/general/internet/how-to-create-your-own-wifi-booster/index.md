@@ -7,6 +7,7 @@ heroImage: ''
 author: 'Saransh Kataria'
 categories: ["Internet"]
 categoryHierarchy: ["General","Internet"]
+categoryPaths: ["general/internet"]
 tags: [{ name: "DIY", slug: "diy" }, { name: "Internet", slug: "internet" }, { name: "WiFi", slug: "wifi" }]
 ---
 

@@ -6,7 +6,8 @@ updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpg'
 author: 'Saransh Kataria'
 categories: ["JavaScript"]
-categoryHierarchy: ["Development","Web Development","Javascript"]
+categoryHierarchy: ["Development","Web Development","JavaScript"]
+categoryPaths: ["development/web-development/javascript"]
 tags: [{ name: "abort fetch", slug: "abort-fetch" }, { name: "cancel fetch", slug: "cancel-fetch" }, { name: "cancel http request", slug: "cancel-http-request" }, { name: "http fetch", slug: "http-fetch" }]
 ---
 

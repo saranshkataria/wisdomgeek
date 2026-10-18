@@ -6,7 +6,8 @@ updatedDate: 'Feb 05, 2024'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["TypeScript"]
-categoryHierarchy: ["Development","Web Development","Typescript"]
+categoryHierarchy: ["Development","Web Development","TypeScript"]
+categoryPaths: ["development/web-development/typescript"]
 tags: []
 ---
 

@@ -7,6 +7,7 @@ heroImage: './hero.jpg'
 author: 'Saransh Kataria'
 categories: ["Twitter"]
 categoryHierarchy: ["General","Twitter"]
+categoryPaths: ["general/twitter"]
 tags: [{ name: "social media", slug: "social-media" }, { name: "twitter", slug: "twitter" }, { name: "twitter list", slug: "twitter-list" }]
 ---
 

@@ -4,9 +4,10 @@ description: 'You probably would have heard about the term dark web or deep web 
 pubDate: 'Jan 27, 2016'
 updatedDate: 'Jan 27, 2016'
 heroImage: './hero.jpg'
-author: 'Wisdom Geek'
+author: 'Saransh Kataria'
 categories: ["Internet"]
 categoryHierarchy: ["General","Internet"]
+categoryPaths: ["general/internet"]
 tags: [{ name: "dark web", slug: "dark-web" }, { name: "deep web", slug: "deep-web" }, { name: "freenet", slug: "freenet" }, { name: "I2P", slug: "i2p" }, { name: "tor", slug: "tor" }]
 ---
 

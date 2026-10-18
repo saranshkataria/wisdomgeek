@@ -4,9 +4,10 @@ description: 'If you are reading this post right now, chances are high that you 
 pubDate: 'Nov 02, 2020'
 updatedDate: 'Oct 11, 2023'
 heroImage: './hero.jpg'
-author: 'Wisdom Geek'
+author: 'Saransh Kataria'
 categories: ["Algorithms and Data Structures"]
-categoryHierarchy: ["Development","Algorithms And Data Structures"]
+categoryHierarchy: ["Development","Algorithms and Data Structures"]
+categoryPaths: ["development/algorithms-and-data-structures"]
 tags: [{ name: "Algorithms", slug: "algorithms" }, { name: "bfs", slug: "bfs" }, { name: "breadth first search", slug: "breadth-first-search" }, { name: "data structures", slug: "data-structures" }, { name: "interview preparation", slug: "interview-preparation" }, { name: "leetcode", slug: "leetcode" }, { name: "number of islands", slug: "number-of-islands" }, { name: "problem solving", slug: "problem-solving" }, { name: "programming interview", slug: "programming-interview" }]
 ---
 

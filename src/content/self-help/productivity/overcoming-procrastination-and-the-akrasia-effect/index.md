@@ -7,6 +7,7 @@ heroImage: './hero.jpg'
 author: 'Saransh Kataria'
 categories: ["Productivity"]
 categoryHierarchy: ["Self Help","Productivity"]
+categoryPaths: ["self-help/productivity"]
 tags: [{ name: "procrastination", slug: "procrastination" }, { name: "productivity", slug: "productivity" }]
 ---
 

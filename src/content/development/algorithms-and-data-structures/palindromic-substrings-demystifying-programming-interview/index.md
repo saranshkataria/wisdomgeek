@@ -4,9 +4,10 @@ description: 'This is the second post in the Demystifying Programming Interview 
 pubDate: 'Jan 07, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
-author: 'Wisdom Geek'
+author: 'Saransh Kataria'
 categories: ["Algorithms and Data Structures"]
-categoryHierarchy: ["Development","Algorithms And Data Structures"]
+categoryHierarchy: ["Development","Algorithms and Data Structures"]
+categoryPaths: ["development/algorithms-and-data-structures"]
 tags: [{ name: "Algorithms", slug: "algorithms" }, { name: "data structures", slug: "data-structures" }, { name: "interview preparation", slug: "interview-preparation" }, { name: "leetcode", slug: "leetcode" }, { name: "number of palindromes", slug: "number-of-palindromes" }, { name: "palindromes", slug: "palindromes" }, { name: "Palindromic Substrings", slug: "palindromic-substrings" }, { name: "problem solving", slug: "problem-solving" }, { name: "programming", slug: "programming" }, { name: "programming interview", slug: "programming-interview" }]
 ---
 

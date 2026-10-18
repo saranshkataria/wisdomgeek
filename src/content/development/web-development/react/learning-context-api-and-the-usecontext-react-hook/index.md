@@ -7,6 +7,7 @@ heroImage: './hero.jpg'
 author: 'Saransh Kataria'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]
+categoryPaths: ["development/web-development/react"]
 tags: [{ name: "react", slug: "react" }, { name: "react hooks", slug: "react-hooks" }, { name: "reactjs", slug: "reactjs" }, { name: "useContext", slug: "usecontext" }]
 ---
 

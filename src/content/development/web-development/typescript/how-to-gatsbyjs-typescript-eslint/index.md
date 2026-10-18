@@ -6,7 +6,8 @@ updatedDate: 'Oct 15, 2023'
 heroImage: './hero.jpg'
 author: 'Saransh Kataria'
 categories: ["TypeScript"]
-categoryHierarchy: ["Development","Web Development","Typescript"]
+categoryHierarchy: ["Development","Web Development","TypeScript"]
+categoryPaths: ["development/web-development/typescript"]
 tags: [{ name: "ESLint", slug: "eslint" }, { name: "gatsby", slug: "gatsby" }, { name: "javascript", slug: "javascript" }, { name: "typescript", slug: "typescript" }]
 ---
 

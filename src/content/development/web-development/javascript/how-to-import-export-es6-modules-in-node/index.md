@@ -6,7 +6,8 @@ updatedDate: 'Oct 15, 2023'
 heroImage: './hero.jpg'
 author: 'Saransh Kataria'
 categories: ["JavaScript"]
-categoryHierarchy: ["Development","Web Development","Javascript"]
+categoryHierarchy: ["Development","Web Development","JavaScript"]
+categoryPaths: ["development/web-development/javascript"]
 tags: [{ name: "es6", slug: "es6" }, { name: "esm", slug: "esm" }, { name: "export", slug: "export" }, { name: "import", slug: "import" }, { name: "node", slug: "node" }, { name: "nodejs", slug: "nodejs" }]
 ---
 

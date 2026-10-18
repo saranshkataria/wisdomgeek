@@ -6,7 +6,8 @@ updatedDate: 'Oct 11, 2023'
 heroImage: './hero.jpg'
 author: 'Saransh Kataria'
 categories: ["GraphQL"]
-categoryHierarchy: ["Development","Web Development","Graphql"]
+categoryHierarchy: ["Development","Web Development","GraphQL"]
+categoryPaths: ["development/web-development/graphql"]
 tags: [{ name: "graphql", slug: "graphql" }, { name: "web development", slug: "web-development" }, { name: "webdev", slug: "webdev" }]
 ---
 

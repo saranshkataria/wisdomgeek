@@ -7,6 +7,7 @@ heroImage: './hero.jpg'
 author: 'Saransh Kataria'
 categories: ["Productivity"]
 categoryHierarchy: ["Self Help","Productivity"]
+categoryPaths: ["self-help/productivity"]
 tags: [{ name: "habits", slug: "habits" }, { name: "life tips", slug: "life-tips" }, { name: "motivation", slug: "motivation" }, { name: "productivity", slug: "productivity" }]
 ---
 

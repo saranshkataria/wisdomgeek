@@ -6,7 +6,8 @@ updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["GraphQL"]
-categoryHierarchy: ["Development","Web Development","Graphql"]
+categoryHierarchy: ["Development","Web Development","GraphQL"]
+categoryPaths: ["development/web-development/graphql"]
 tags: [{ name: "apollo", slug: "apollo" }, { name: "apollo 2", slug: "apollo-2" }, { name: "apollo server", slug: "apollo-server" }, { name: "graphql", slug: "graphql" }, { name: "graphql API", slug: "graphql-api" }, { name: "graphql server", slug: "graphql-server" }]
 ---
 

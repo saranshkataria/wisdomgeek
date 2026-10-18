@@ -7,6 +7,7 @@ heroImage: './hero.jpg'
 author: 'Saransh Kataria'
 categories: ["Windows"]
 categoryHierarchy: ["General","Windows"]
+categoryPaths: ["general/windows"]
 tags: [{ name: "microsoft", slug: "microsoft" }, { name: "windows 10", slug: "windows-10" }]
 ---
 

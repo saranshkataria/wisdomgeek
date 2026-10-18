@@ -4,9 +4,10 @@ description: 'Do you feel that every day of your corporate life turns out to be 
 pubDate: 'Mar 17, 2016'
 updatedDate: 'Mar 17, 2016'
 heroImage: './hero.jpg'
-author: 'Wisdom Geek'
+author: 'Saransh Kataria'
 categories: ["Fitness","Life Tips","Motivation"]
 categoryHierarchy: ["Self Help","Fitness"]
+categoryPaths: ["self-help/fitness","self-help/life-tips","self-help/motivation"]
 tags: [{ name: "fit", slug: "fit" }, { name: "fit for life", slug: "fit-for-life" }, { name: "fitness", slug: "fitness" }, { name: "fitness tips", slug: "fitness-tips" }, { name: "health", slug: "health" }, { name: "inspiration", slug: "inspiration" }, { name: "life", slug: "life" }, { name: "lifestyle", slug: "lifestyle" }]
 ---
 

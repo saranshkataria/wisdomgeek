@@ -7,6 +7,7 @@ heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]
+categoryPaths: ["development/web-development"]
 tags: [{ name: "CSS", slug: "css" }, { name: "CSS preprocessor", slug: "css-preprocessor" }, { name: "SASS", slug: "sass" }, { name: "SCSS", slug: "scss" }]
 ---
 

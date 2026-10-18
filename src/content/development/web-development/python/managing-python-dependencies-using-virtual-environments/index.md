@@ -7,6 +7,7 @@ heroImage: './hero.jpg'
 author: 'Saransh Kataria'
 categories: ["Python"]
 categoryHierarchy: ["Development","Web Development","Python"]
+categoryPaths: ["development/web-development/python"]
 tags: [{ name: "python", slug: "python" }, { name: "virtual environments", slug: "virtual-environments" }]
 ---
 

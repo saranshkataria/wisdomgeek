@@ -4,9 +4,10 @@ description: 'Hello readers, it has been a long time since I last wrote anything
 pubDate: 'May 19, 2020'
 updatedDate: 'May 19, 2020'
 heroImage: './hero.png'
-author: 'Pranshu Aggarwal'
+author: 'Saransh Kataria'
 categories: ["Self Help"]
 categoryHierarchy: ["Self Help"]
+categoryPaths: ["self-help"]
 tags: [{ name: "Internship", slug: "internship" }, { name: "Learnings", slug: "learnings" }, { name: "Self help", slug: "self-help" }, { name: "Student", slug: "student" }]
 ---
 

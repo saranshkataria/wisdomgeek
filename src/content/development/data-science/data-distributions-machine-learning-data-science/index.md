@@ -4,9 +4,10 @@ description: 'Data distributions lie at the heart of all the machine learning al
 pubDate: 'Oct 13, 2020'
 updatedDate: 'Oct 13, 2020'
 heroImage: './hero.png'
-author: 'Pranshu Aggarwal'
+author: 'Saransh Kataria'
 categories: ["Data Science","Machine Learning"]
 categoryHierarchy: ["Development","Data Science"]
+categoryPaths: ["development/data-science","development/machine-learning"]
 tags: [{ name: "Data Science", slug: "data-science" }, { name: "Machine learning", slug: "machine-learning" }, { name: "Statistics", slug: "statistics" }]
 ---
 

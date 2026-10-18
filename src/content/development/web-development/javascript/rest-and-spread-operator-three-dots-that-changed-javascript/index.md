@@ -6,7 +6,8 @@ updatedDate: 'Oct 15, 2023'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["Development","JavaScript","Web Development"]
-categoryHierarchy: ["Development","Web Development","Javascript"]
+categoryHierarchy: ["Development","Web Development","JavaScript"]
+categoryPaths: ["development","development/web-development/javascript","development/web-development"]
 tags: [{ name: "destructuring", slug: "destructuring" }, { name: "javascript", slug: "javascript" }, { name: "js", slug: "js" }, { name: "web development", slug: "web-development" }, { name: "webdev", slug: "webdev" }]
 ---
 

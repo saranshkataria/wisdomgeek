@@ -7,6 +7,7 @@ heroImage: './hero.jpeg'
 author: 'Saransh Kataria'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]
+categoryPaths: ["development/web-development"]
 tags: [{ name: "security", slug: "security" }]
 ---
 

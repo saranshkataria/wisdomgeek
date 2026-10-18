@@ -7,6 +7,7 @@ heroImage: './hero.jpg'
 author: 'Saransh Kataria'
 categories: ["Programming"]
 categoryHierarchy: ["Development","Programming"]
+categoryPaths: ["development/programming"]
 tags: [{ name: "Code Consistency", slug: "code-consistency" }, { name: "Editor", slug: "editor" }, { name: "editorconfig", slug: "editorconfig" }]
 ---
 

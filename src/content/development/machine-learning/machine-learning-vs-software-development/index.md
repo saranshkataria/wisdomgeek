@@ -4,9 +4,10 @@ description: 'There has been a rapid advancement in technology and machine learn
 pubDate: 'Sep 09, 2020'
 updatedDate: 'Sep 09, 2020'
 heroImage: './hero.jpg'
-author: 'Pranshu Aggarwal'
+author: 'Saransh Kataria'
 categories: ["Development","Machine Learning"]
 categoryHierarchy: ["Development","Machine Learning"]
+categoryPaths: ["development","development/machine-learning"]
 tags: [{ name: "Machine learning", slug: "machine-learning" }]
 ---
 

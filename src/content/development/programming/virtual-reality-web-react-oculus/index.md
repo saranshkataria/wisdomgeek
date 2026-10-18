@@ -4,9 +4,10 @@ description: 'At Oculus Connect 3, Oculus, the virtual reality giant, announced 
 pubDate: 'Jan 03, 2017'
 updatedDate: 'Jan 03, 2017'
 heroImage: './hero.jpg'
-author: 'Wisdom Geek'
+author: 'Saransh Kataria'
 categories: ["Programming"]
 categoryHierarchy: ["Development","Programming"]
+categoryPaths: ["development/programming"]
 tags: [{ name: "oculus", slug: "oculus" }, { name: "react", slug: "react" }, { name: "virtual reality", slug: "virtual-reality" }]
 ---
 

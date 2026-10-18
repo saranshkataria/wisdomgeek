@@ -7,6 +7,7 @@ heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["Windows"]
 categoryHierarchy: ["General","Windows"]
+categoryPaths: ["general/windows"]
 tags: [{ name: "Android", slug: "android" }, { name: "android-emulator", slug: "android-emulator" }, { name: "avd", slug: "avd" }, { name: "emulator", slug: "emulator" }, { name: "haxm", slug: "haxm" }, { name: "hyper-v", slug: "hyper-v" }, { name: "hypervisor", slug: "hypervisor" }, { name: "VT-x", slug: "vt-x" }]
 ---
 

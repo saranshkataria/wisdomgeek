@@ -7,6 +7,7 @@ heroImage: './hero.jpeg'
 author: 'Saransh Kataria'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]
+categoryPaths: ["development/web-development"]
 tags: [{ name: "javascript", slug: "javascript" }, { name: "progressive web apps", slug: "progressive-web-apps" }, { name: "PWA", slug: "pwa" }, { name: "service worker", slug: "service-worker" }, { name: "web development", slug: "web-development" }, { name: "webdev", slug: "webdev" }]
 ---
 

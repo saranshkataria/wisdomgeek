@@ -4,9 +4,10 @@ description: 'We have previously written about parsing JSON in Android without u
 pubDate: 'Jul 22, 2019'
 updatedDate: 'Oct 15, 2023'
 heroImage: './hero.jpeg'
-author: 'Wisdom Geek'
+author: 'Saransh Kataria'
 categories: ["Android Development"]
 categoryHierarchy: ["Development","Android Development"]
+categoryPaths: ["development/android-development"]
 tags: [{ name: "Android", slug: "android" }, { name: "android dev", slug: "android-dev" }, { name: "android development", slug: "android-development" }, { name: "android programming", slug: "android-programming" }, { name: "json", slug: "json" }, { name: "json parsing", slug: "json-parsing" }, { name: "retrofit", slug: "retrofit" }, { name: "retrofit 2", slug: "retrofit-2" }]
 ---
 

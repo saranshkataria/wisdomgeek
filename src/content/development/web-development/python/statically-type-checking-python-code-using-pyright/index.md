@@ -7,6 +7,7 @@ heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["Python"]
 categoryHierarchy: ["Development","Web Development","Python"]
+categoryPaths: ["development/web-development/python"]
 tags: [{ name: "pyright", slug: "pyright" }, { name: "python", slug: "python" }, { name: "static type checker", slug: "static-type-checker" }, { name: "type checking", slug: "type-checking" }]
 ---
 

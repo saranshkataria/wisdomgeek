@@ -7,6 +7,7 @@ heroImage: './hero.jpg'
 author: 'Saransh Kataria'
 categories: ["Email"]
 categoryHierarchy: ["General","Email"]
+categoryPaths: ["general/email"]
 tags: []
 ---
 

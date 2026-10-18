@@ -7,6 +7,7 @@ heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["Flask"]
 categoryHierarchy: ["Development","Web Development","Flask"]
+categoryPaths: ["development/web-development/flask"]
 tags: [{ name: "flask", slug: "flask" }, { name: "python", slug: "python" }]
 ---
 

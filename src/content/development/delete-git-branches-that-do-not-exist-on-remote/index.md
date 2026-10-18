@@ -7,6 +7,7 @@ heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["Development"]
 categoryHierarchy: ["Development"]
+categoryPaths: ["development"]
 tags: [{ name: "git", slug: "git" }]
 ---
 

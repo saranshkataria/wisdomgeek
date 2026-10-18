@@ -4,9 +4,10 @@ description: 'Throughout school, I was a bookworm and an introvert. “Socializi
 pubDate: 'Jun 25, 2020'
 updatedDate: 'Jun 25, 2020'
 heroImage: './hero.jpeg'
-author: 'Wisdom Geek'
+author: 'Saransh Kataria'
 categories: ["Life Tips","People"]
 categoryHierarchy: ["Self Help","Life Tips"]
+categoryPaths: ["self-help/life-tips","self-help/people"]
 tags: []
 ---
 

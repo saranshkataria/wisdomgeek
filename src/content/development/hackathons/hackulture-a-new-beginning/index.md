@@ -7,6 +7,7 @@ heroImage: ''
 author: 'Saransh Kataria'
 categories: ["Hackathons"]
 categoryHierarchy: ["Development","Hackathons"]
+categoryPaths: ["development/hackathons"]
 tags: [{ name: "Hackathon", slug: "hackathon" }, { name: "hackulture", slug: "hackulture" }]
 ---
 
