@@ -1,27 +1,28 @@
 ---
 title: 'Using Retrofit 2 and GSON for parsing JSON in Android'
-description: 'We have previously written about parsing JSON in Android without using any libraries in this post. In this one, we will use a library (Retrofit) for doing the same. Retrofit 2 is a HTTP client written in java. It is a type safe library that makes HTTP API calls. You&#46;&#46;&#46;'
+description: 'We have previously written about parsing JSON in Android without using any libraries in this post. In this one, we will use a library (Retrofit) for doing the…'
 pubDate: 'Jul 22, 2019'
 updatedDate: 'Oct 15, 2023'
 heroImage: './hero.jpeg'
 author: 'Wisdom Geek'
 categories: ["Android Development"]
 categoryHierarchy: ["Development","Android Development"]
+tags: [{ name: "Android", slug: "android" }, { name: "android dev", slug: "android-dev" }, { name: "android development", slug: "android-development" }, { name: "android programming", slug: "android-programming" }, { name: "json", slug: "json" }, { name: "json parsing", slug: "json-parsing" }, { name: "retrofit", slug: "retrofit" }, { name: "retrofit 2", slug: "retrofit-2" }]
 ---
 
-We have previously written about parsing JSON in Android without using any libraries in this [post](https://www.wisdomgeek.com/development/android-development/json-parsing-in-android-tutorial/). In this one, we will use a library (Retrofit) for doing the same.
+We have previously written about parsing JSON in Android without using any libraries in this [post](/development/android-development/json-parsing-in-android-tutorial/). In this one, we will use a library (Retrofit) for doing the same.
 
 Retrofit 2 is a HTTP client written in java. It is a type safe library that makes HTTP API calls. You can then convert it into different formats and parse them to java interfaces or classes as neeeded. Type safety means that the conversion happens according to the types that you have specified in the interface and if those do not match, Retrofit does not parse them at all.
 
 We will be using GSON for parsing JSON in our android application. For people who are unaware of GSON, it is a Java serialization/deserialization library to convert Java Objects into JSON and back. The benefit is that you do not need to worry about using a lot of try parse statements to do the parsing of JSON.
 
-For the purpose of this example, we will use the [TV maze API](http://api.tvmaze.com/shows/1/cast) as our backend. The API gives information about TV show's cast and their personal information like Date of Birth, country etc. This is a public API. Hence, there is no need to sign in to get any API key.
+For the purpose of this example, we will use the [TV maze API](http://api.tvmaze.com/shows/1/cast) as our backend. The API gives information about TV show’s cast and their personal information like Date of Birth, country etc. This is a public API. Hence, there is no need to sign in to get any API key.
 
 ### **Adding dependencies**
 
-As with any third party dependency, we will first add Retrofit 2 to our gradle dependencies. So we will add &#8216;com.squareup.retrofit2:retrofit:2.6.0' to our application's build.gradle file.
+As with any third party dependency, we will first add Retrofit 2 to our gradle dependencies. So we will add ‘com.squareup.retrofit2:retrofit:2.6.0’ to our application’s build.gradle file.
 
-We will also be using GSON to serialize and de-serialize our JSON object. So we will add &#8216;com.squareup.retrofit2:converter-gson:2.6.0' as well and that will take care of the conversion for us.
+We will also be using GSON to serialize and de-serialize our JSON object. So we will add ‘com.squareup.retrofit2:converter-gson:2.6.0’ as well and that will take care of the conversion for us.
 
 ### **Creating the data model**
 
@@ -29,16 +30,16 @@ We can write the data model interface manually if we wanted to. But there are al
 
 We need to select the appropriate output file properties such as the package name, the class name that we want it to be and other properties in the right sidebar. Also, since we will be using GSON for parsing JSON in our Android application, we need to set the annotation style to GSON too. We will set a few other properties such as the ability to use double numbers, include getters and setters, and allowing additional properties. It would look like the following:
 
-![](./screenshot-5-1024x640.png)
+![](./screenshot-5.png)
 
 ## **Setting up Retrofit**
 
 We will be setting up Retrofit next, and since we are going to invoke the GET method for the cast API, we will create an interface which has an annotation of @GET to the relative path of the URL and a method name which we will use later. It will look like the following:
 
-```
+```java
 public interface APIInterface {
     @GET("/shows/1/cast")
-    Calllist> getHeroList();
+    Call<list> getHeroList();
 }
 ```
 
@@ -48,7 +49,7 @@ Next up, we will create a class named ServiceGenerator.java. This will act as ou
 
 We will create a static instance of Retrofit in here and configure it according to our needs. We will add the base URL that this instance will talk to, and also pipe in the GSON converter from the Retrofit GsonConverterFactory to handle the conversions. We will set the base URL in a separate constants file which so that we can easily change it later, if needed.
 
-```
+```java
 public class ServiceGenerator {
     private static Retrofit retrofit;
     private static Gson gson;
@@ -75,8 +76,8 @@ The Retrofit.Builder() method returns a new instance and then we configure it as
 
 Since we are going to be making network requests, we will need to add the network request permission in the project manifest file. That is:
 
-```
-uses-permission android:name = "android.permission.INTERNET"/>
+```xml
+<uses-permission android:name = "android.permission.INTERNET"/>
 ```
 
 That is all we need to do from a functionality point of view to get things up and running. We will set up the UI now to view the response.
@@ -85,7 +86,7 @@ That is all we need to do from a functionality point of view to get things up an
 
 We will create a RecyclerAdapter for binding the data fetched from the API and bind it to our RecyclerAdapter. We will create the ViewHolder and add the corresponding XML markup, and set things up to show the actor name, their country and their date of birth.
 
-```
+```java
 public class RecyclerAdapter extends RecyclerView.Adapter    
 {
     private Context context;
@@ -143,7 +144,7 @@ This should set up the recycler view for being used and then we do the final set
 
 For the final pieces, we will go into our main activity and initialize everything, and connect all of the pieces. We will also set up the interface we created earlier to be invoked and get the API response, and once we get the response, we will enqueue it in the form of a callback and provide it to the Recycler view we created.
 
-```
+```java
 protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -153,10 +154,10 @@ protected void onCreate(Bundle savedInstanceState) {
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
         APIInterface service = ServiceGenerator.getRetrofit().create(APIInterface.class);
-        Calllist> call = service.getHeroList();
-        call.enqueue(new Callbacklist>() {
+        Call<list> call = service.getHeroList();
+        call.enqueue(new Callback<list>() {
             @Override
-            public void onResponse(Calllist> call, Responselist> response) {
+            public void onResponse(Call<list> call, Response<list> response) {
                 loadProgress.setVisibility(View.GONE);
                 tvMazeDataModels = response.body();
                 recyclerAdapter = new RecyclerAdapter(MainActivity.this,tvMazeDataModels);
@@ -164,7 +165,7 @@ protected void onCreate(Bundle savedInstanceState) {
             }
 
             @Override
-            public void onFailure(Calllist> call, Throwable t) {
+            public void onFailure(Call<list> call, Throwable t) {
                 result.setText(t.getMessage());
             }
         });
@@ -173,6 +174,6 @@ protected void onCreate(Bundle savedInstanceState) {
 
 And that should set things up and we can now successfully run the application using our android studio project. You can refer to the completed source code [here](https://github.com/AbhiAndroidManiac/RetrofitSample). After running, you will see the application running like the following:
 
-![](./screenshot-2019-07-21-19-38-40-576x1024.png)
+![](./screenshot-2019-07-21-19-38-40.png)
 
 If you have any questions, feel free to leave a comment down below.

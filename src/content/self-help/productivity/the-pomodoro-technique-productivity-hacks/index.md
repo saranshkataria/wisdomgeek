@@ -1,12 +1,13 @@
 ---
 title: 'The Pomodoro Technique: Productivity hacks'
-description: 'The irony of time management productivity tips is that the people who need them the most do not realize that they do. There are too many productivity tips out there but the Pomodoro technique is probably the most discussed and used one. The reason for its popularity is that it&#46;&#46;&#46;'
+description: 'The irony of time management productivity tips is that the people who need them the most do not realize that they do.'
 pubDate: 'Jul 21, 2021'
 updatedDate: 'Jul 21, 2021'
 heroImage: './hero.jpg'
 author: 'Saransh Kataria'
 categories: ["Productivity"]
 categoryHierarchy: ["Self Help","Productivity"]
+tags: [{ name: "pomodoro", slug: "pomodoro" }, { name: "productivity", slug: "productivity" }]
 ---
 
 The irony of time management productivity tips is that the people who need them the most do not realize that they do. There are too many productivity tips out there but the Pomodoro technique is probably the most discussed and used one. The reason for its popularity is that it is easy to understand and implement.
@@ -21,12 +22,12 @@ This gamified goal-setting has helped me optimize my productivity and get things
 
 Pomodoro is a cyclical system. All that is needed to implement is a timer. No other special apps or tools are required. (There are a ton of apps if one wants to explore them, but the basic concept is simple). Here are the basics:
 
-1. $1
-2. $1
-3. $1
-4. $1
-5. $1
-6. $1
+1. Define the task
+2. Set a timer for 25 minutes
+3. Execute the task until the Pomodoro timer rings
+4. Take a short break of 5 minutes
+5. Repeat
+6. Take longer breaks of 15-30 minutes after 4 Pomodoros
 
 I have changed my Pomodoro duration to 50 minutes and shorter breaks to 10 minutes, and I find that that works better for me.
 
@@ -34,7 +35,7 @@ A few other things that help are:
 
 - Before beginning, break down tasks in terms of Pomodoros. This also helps in estimations and also track progress clearly.
 - Group smaller tasks in a Pomodoro.
-- A Pomodoro is an indivisible unit of work. It should not be broken for checking incoming messages, emails etc. Anything that comes in between should be postponed until the Pomodor is complete. 
+- A Pomodoro is an indivisible unit of work. It should not be broken for checking incoming messages, emails etc. Anything that comes in between should be postponed until the Pomodor is complete.
 - There can be unavoidable distractions, and Cirilo, the creator recommends that they should be tracked. And we should then reflect on how to avoid them in our next session. In case you decide to not postpone the distraction, end the Pomodoro there and start a new one later.
 
 ## What makes the technique effective?
@@ -51,4 +52,4 @@ I also tend to get away from my screen during my breaks, take a walk, move aroun
 
 I use the [Chrome extension](https://chrome.google.com/webstore/detail/marinara-pomodoro%C2%AE-assist/lojgmehidjdhhbmpjfamhpkpodfcodef?hl=en) to track my Pomodoros though a simple timer works too. But the extension gives me analytics on my Pomodoros and makes it easier for me to stick to the Pomodoro technique.
 
-And that is all there is to know about the Pomodoro technique. If you choose to implement it in your schedule, do let us know how it goes!
+And that is all there is to know about the Pomodoro technique. If you choose to implement it in your schedule, do let us know how it goes\!

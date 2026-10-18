@@ -1,33 +1,34 @@
 ---
 title: 'Parsing and validating data in Python using Pydantic'
-description: 'The introduction of type hinting opened the gates for many great new features in Python. And data validation and parsing became easier to do with the use of type hints. Pydantic is one such package that enforces type hints at runtime. It throws errors, allowing developers to catch invalid data.&#46;&#46;&#46;'
+description: 'The introduction of type hinting opened the gates for many great new features in Python. And data validation and parsing became easier to do with the use of…'
 pubDate: 'Mar 23, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["Python"]
 categoryHierarchy: ["Development","Web Development","Python"]
+tags: [{ name: "pydantic", slug: "pydantic" }, { name: "python", slug: "python" }, { name: "python types", slug: "python-types" }, { name: "type checking", slug: "type-checking" }, { name: "type hinting", slug: "type-hinting" }]
 ---
 
 The introduction of type hinting opened the gates for many great new features in Python. And data validation and parsing became easier to do with the use of type hints. Pydantic is one such package that enforces type hints at runtime. It throws errors, allowing developers to catch invalid data.
 
 Pydantic not only does type checking and validation but it can also be used to add constraints to properties and create custom validations for Python variables. It guarantees the types and constraints of the model have been applied and that the data is valid.
 
-This is useful, especially when we have complex nested data. We no longer need to parse JSON's to dictionaries. We can use Pydantic to get better typed code and add validators, ensuring fewer errors.
+This is useful, especially when we have complex nested data. We no longer need to parse JSON’s to dictionaries. We can use Pydantic to get better typed code and add validators, ensuring fewer errors.
 
 It is important to note that Pydantic is different from Pyright in the sense that it performs validation of the data and parses input data at run-time. Pyright, on the other hand, is a static type checker and it only does that. Both tools can be used together to get more robust Python code.
 
 ## Initial setup
 
-As with all things Python, we should setup a [Python virtual environment](https://www.wisdomgeek.com/development/web-development/python/managing-python-dependencies-using-virtual-environments/) for any new project. After doing that, we install Pydantic using pip:
+As with all things Python, we should setup a [Python virtual environment](/development/web-development/python/managing-python-dependencies-using-virtual-environments/) for any new project. After doing that, we install Pydantic using pip:
 
-```
+```bash
 python -m pip install pytest
 ```
 
 Let us first write our code using the dataclass decorator. The dataclass decorator was introduced in Python 3.7 and allows us to reduce boilerplate code such as the init method. They also allow using type hints for our properties. So let us create a Blog data class:
 
-```
+```python
 from dataclasses import dataclass
 from typing import Tuple
 
@@ -38,11 +39,11 @@ class Blog:
     categories: Tuple[str,...]
 ```
 
-The Tuple[str,...] means a tuple of type string having a variable number of elements.
+The Tuple\[str,…\] means a tuple of type string having a variable number of elements.
 
 Since none of the types are marked Optional, we should not be able to assign None to any of these. That means a blog post needs a title, an author and a category. But if we were to assign None to them, there would not be any error thrown:
 
-```
+```python
 def main():
     blog = Blog(title=None, author=None, categories=None)
     print(blog)
@@ -50,7 +51,7 @@ def main():
 
 We get the output:
 
-```
+```python
 Blog(title=None, author=None, categories=None)
 ```
 
@@ -60,7 +61,7 @@ There are no errors thrown because type hints are an optional feature and Python
 
 We can replace the dataclass attribute to be imported from pydantic instead and if we run it with just that change, we will see the validation errors.
 
-```
+```python
 from pydantic.dataclasses import dataclass
 ```
 
@@ -68,11 +69,11 @@ And this will throw the errors:
 
 ![pydantic validation errors](./pydantic-validation-errors.png)
 
-Pydantic does support type conversion. So if we pass the value &#8216;2' to an int field, it will be converted and not throw an error.
+Pydantic does support type conversion. So if we pass the value ‘2’ to an int field, it will be converted and not throw an error.
 
 However, data classes have some limitations. And Pydantic provides a BaseModel class, which we can extend from. Doing so provides us with features like serialization and first-class JSON support. So, we will convert our code to:
 
-```
+```python
 from pydantic import BaseModel
 from typing import Tuple
 
@@ -92,23 +93,23 @@ The BaseModel implementation is probably the better way to go because of the add
 
 Another thing to note is that BaseModel requires keyword arguments, so while this would have worked with dataclass:
 
-```
+```python
 blog=Blog("Hello World","Saransh Kataria",("Wisdom","Geek"))
 ```
 
 With BaseModel, keyword arguments need to be explicit:
 
-```
+```python
 blog=Blog(title="Hello World",author="Saransh Kataria",categories=("Wisdom","Geek"))
 ```
 
-Or we can use **kwargs to do so.
+Or we can use \*\*kwargs to do so.
 
 ## Pydantic and JSON features
 
 We can convert the Pydantic model to a JSON string using the json() function:
 
-```
+```python
 print(blog.json())
 
 # {"title": "Hello World", "author": "Saransh Kataria", "categories": ["Wisdom", "Geek"]}
@@ -116,22 +117,22 @@ print(blog.json())
 
 And we can parse a JSON to a Pydantic model using the `parse_raw` function:
 
-```
+```python
 blog = Blog.parse_raw('{"title": "Hello World", "author": "Saransh Kataria", "categories": ["Wisdom", "Geek"]}')
 print(blog.title)
 
 # Hello World
 ```
 
-And all of the validations will be performed while doing the JSON parsing. And if there are any errors during parsing, `ValidationError` with friendly messages will be thrown for those. 
+And all of the validations will be performed while doing the JSON parsing. And if there are any errors during parsing, `ValidationError` with friendly messages will be thrown for those.
 
 ## Adding custom validations
 
-Let us say we want the authors to be only able to publish 5 posts at a maximum. We will add a number_of_posts field and impose that validation. For doing so, we need to make use of the Field function from Pydantic.
+Let us say we want the authors to be only able to publish 5 posts at a maximum. We will add a number\_of\_posts field and impose that validation. For doing so, we need to make use of the Field function from Pydantic.
 
-Then, we want to use this Field function, which accepts the first parameter as the default value we want to provide to the variable. We can specify a default one or use "..." to specify that it is a required field. In our case, we will specify 0. The rest of the parameters can be validations that we want to specify that should be checked on the field. We will use `gt=0` and `lt=5` for specifying that the value should be greater than or equal to zero and less than equal to 5.
+Then, we want to use this Field function, which accepts the first parameter as the default value we want to provide to the variable. We can specify a default one or use “…” to specify that it is a required field. In our case, we will specify 0. The rest of the parameters can be validations that we want to specify that should be checked on the field. We will use `gt=0` and `lt=5` for specifying that the value should be greater than or equal to zero and less than equal to 5.
 
-```
+```python
 from pydantic import BaseModel, Field
 
 class Blog(BaseModel):
@@ -148,11 +149,12 @@ main()
 
 But if we run it with
 
-```
+```python
 blog=Blog(number_of_posts=2)
 
+
 Traceback (most recent call last):
-  File "pydanticdemo.py", line 10, in 
+  File "pydanticdemo.py", line 10, in <module>
     main()
   File "pydanticdemo.py", line 7, in main
     blog=Blog(number_of_posts=10)
@@ -165,7 +167,7 @@ number_of_posts
 
 We see a value error since our validation failed. If we want our own custom checks apart from the built in ones, we can import the validator decorator. Then we can create a function that we want to use to validate a property. The validator decorator needs the name of the property to be validated and then the function will receive the class and the property as parameters.
 
-```
+```python
 from pydantic import BaseModel, validator
 
 class Blog(BaseModel):
@@ -173,7 +175,7 @@ class Blog(BaseModel):
 
     @validator('name')
     def check_name_length(cls, name):
-        if(len(name) 3):
+        if(len(name) < 3):
             raise ValueError('name too short')
         return name
 
@@ -186,9 +188,9 @@ main()
 
 We are imposing that the name field should have a length greater than 3. And since it is not in this case, we get the error:
 
-```
+```python
 Traceback (most recent call last):
-  File "pydanticdemo.py", line 16, in 
+  File "pydanticdemo.py", line 16, in <module>
     main()
   File "pydanticdemo.py", line 13, in main
     blog=Blog(name="SK")

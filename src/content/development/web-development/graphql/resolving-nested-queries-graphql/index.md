@@ -1,21 +1,22 @@
 ---
 title: 'Resolving nested queries in GraphQL'
-description: 'When creating a GraphQL server with relational data, we want to return the data in a hierarchical format with those relationships in a single query. After all, that is where GraphQL comes in handy, right? Let us look into how we can do this using nested queries in GraphQL. This&#46;&#46;&#46;'
+description: 'When creating a GraphQL server with relational data, we want to return the data in a hierarchical format with those relationships in a single query.'
 pubDate: 'Dec 08, 2020'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["GraphQL"]
 categoryHierarchy: ["Development","Web Development","Graphql"]
+tags: [{ name: "apollo server", slug: "apollo-server" }, { name: "graphql", slug: "graphql" }, { name: "graphql API", slug: "graphql-api" }, { name: "graphql server", slug: "graphql-server" }]
 ---
 
 When creating a GraphQL server with relational data, we want to return the data in a hierarchical format with those relationships in a single query. After all, that is where GraphQL comes in handy, right? Let us look into how we can do this using nested queries in GraphQL.
 
-This post assumes you have knowledge of [GraphQL queries](https://www.wisdomgeek.com/development/web-development/graphql/graphql-basics-types-queries-mutations-schema/) and [how to create a GraphQL server using Apollo Server](https://www.wisdomgeek.com/development/web-development/graphql/creating-graphql-api-apollo-server/). You can reference those posts if you are new to GraphQL.
+This post assumes you have knowledge of [GraphQL queries](/development/web-development/graphql/graphql-basics-types-queries-mutations-schema/) and [how to create a GraphQL server using Apollo Server](/development/web-development/graphql/creating-graphql-api-apollo-server/). You can reference those posts if you are new to GraphQL.
 
 Let us assume we have a blogging application wherein we have users and posts. The types for these are defined as:
 
-```
+```graphql
 type Post {
     id: ID!
     title: String!
@@ -31,7 +32,7 @@ type Post {
 
 Adding some sample hard-coded data for our application.
 
-```
+```javascript
 const posts = [
   {
     id: 1,
@@ -59,7 +60,7 @@ Now that we have our initial setup done. Let us look at what we are expecting ou
 
 We want to query all users and get their corresponding posts for the hardcoded values above. So our query will look like this:
 
-```
+```graphql
 query {
   authors {
     id,
@@ -75,7 +76,7 @@ Posts are related to an author, we are querying for the authors and then sub-que
 
 And we expect the output for our use case to be:
 
-```
+```json
 {
   "data": {
     "authors": [
@@ -98,9 +99,9 @@ And we expect the output for our use case to be:
 
 ## Creating the query and resolver for the authors
 
-Without worrying about the posts field, we can set up the resolver for the authors' query. This will be:
+Without worrying about the posts field, we can set up the resolver for the authors’ query. This will be:
 
-```
+```javascript
 const resolvers = {
   Query: {
     authors: () => {
@@ -122,7 +123,7 @@ Alongside query, we will add a new property that will tell GraphQL how to resolv
 
 Apollo Server can automatically resolve the scalar properties. We only need to create a resolver for nested properties. To resolve nested queries in GraphQL, we only create a method for the properties that reference other custom types. In our case, we only have the posts field which we are looking for. So we will define this as:
 
-```
+```javascript
 const resolvers = {
   Query: {... },
   Author: {
@@ -137,7 +138,7 @@ The posts query is invoked by the author resolver, the parent for the posts reso
 
 Using the author, we can easily figure out which posts need to be returned.
 
-```
+```javascript
 const resolvers = {
   Query: {
     authors: () => {
@@ -154,7 +155,7 @@ const resolvers = {
 
 ## Final code
 
-```
+```javascript
 const { gql, ApolloServer } = require('apollo-server');
 
 const posts = [
@@ -218,16 +219,16 @@ server.listen(4000).then(({ url }) => {
 
 When we run the query now, we get our desired output:
 
-![nested queries in graphql](./nested-queries-in-graphql-1024x415.png)
+![nested queries in graphql](./nested-queries-in-graphql.png)
 
 The first function to be invoked is the authors resolver function since that is what the query asks for. It returns the id, name, and title for all the authors. In our case, we have only one, and that is returned.
 
 Next, GraphQL checks what data was requested. If only name and id were requested, the function execution would end there since those are scalar types.
 
-But we asked for posts. And posts do not exist on the authors object. So GraphQL is going to call the posts function for every individual author. And that is where our resolution of nested queries in GraphQL comes into the picture. Our posts resolver function gets invoked with the parent set as author ({ id: 1, name: &#8216;Saransh Kataria' }). 
+But we asked for posts. And posts do not exist on the authors object. So GraphQL is going to call the posts function for every individual author. And that is where our resolution of nested queries in GraphQL comes into the picture. Our posts resolver function gets invoked with the parent set as author ({ id: 1, name: ‘Saransh Kataria’ }).
 
-If multiple authors were present in our hardcoded example, the posts function would be individually called for both of them. We use the id of the passed parent author to retrieve the author's posts and return them.
+If multiple authors were present in our hardcoded example, the posts function would be individually called for both of them. We use the id of the passed parent author to retrieve the author’s posts and return them.
 
-We can define the relationship differently by having posts defined in the author type and then create a nested GraphQL query in that manner. The schema definition, declaration, and it's execution is all up to us. And we can resolve nested queries in GraphQL however we want to, once we know how to do it.
+We can define the relationship differently by having posts defined in the author type and then create a nested GraphQL query in that manner. The schema definition, declaration, and it’s execution is all up to us. And we can resolve nested queries in GraphQL however we want to, once we know how to do it.
 
 If you have any questions, feel free to comment below.

@@ -1,12 +1,13 @@
 ---
 title: 'JSON Modules in JavaScript'
-description: 'ES Modules were introduced in ES2015. The import and export keywords by default are only applicable to JavaScript code. But there is a new proposal to allow it to be used for JSON modules in JavaScript. It is convenient to keep some configuration inside a JSON file and import that.&#46;&#46;&#46;'
+description: 'ES Modules were introduced in ES2015. The import and export keywords by default are only applicable to JavaScript code.'
 pubDate: 'Dec 08, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
+tags: [{ name: "javascript", slug: "javascript" }]
 ---
 
 ES Modules were introduced in ES2015. The import and export keywords by default are only applicable to JavaScript code. But there is a new proposal to allow it to be used for JSON modules in JavaScript.
@@ -15,13 +16,13 @@ It is convenient to keep some configuration inside a JSON file and import that. 
 
 Let us assume we have a configuration file called configuration.js. The following will give an error by default:
 
-```
+```javascript
 import config from './configuration.json';
 ```
 
 Node.js will throw the following error:
 
-```
+```javascript
 TypeError [ERR_UNKNOWN_FILE_EXTENSION]: Unknown file extension ".json"
 ```
 
@@ -29,11 +30,11 @@ TypeError [ERR_UNKNOWN_FILE_EXTENSION]: Unknown file extension ".json"
 
 The proposal now allows us to import JSON modules using an import assertion.
 
-```
+```javascript
 import jsonObject from "./file.json" assert { type: "json" };
 ```
 
-assert { type: "json" } is what is defined as an import assertion that specifies the type of the module and how it should be parsed and imported as.
+assert { type: “json” } is what is defined as an import assertion that specifies the type of the module and how it should be parsed and imported as.
 
 The jsonObject variable will contain the JavaScript object obtained after parsing the file.
 
@@ -41,7 +42,7 @@ The jsonObject variable will contain the JavaScript object obtained after parsin
 
 It is also possible to import JSON modules dynamically.
 
-```
+```javascript
 const { default: jsonObject } = await import('./file.json', {
   assert: {
     type: 'json'
@@ -53,7 +54,7 @@ const { default: jsonObject } = await import('./file.json', {
 
 JSON modules currently work in Node.js >=17.1 by using the –experimental-json-modules flag.
 
-```
+```bash
 node --experimental-json-modules index.mjs
 ```
 

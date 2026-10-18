@@ -1,12 +1,13 @@
 ---
 title: 'Web NFC is a thing now'
-description: 'NFC or Near Field Communication is a short-range wireless technology that allows devices at a distance of less than 10cm to communicate. It is mostly useful when interacting with NFC tags. Web NFC became a thing very recently with Google announcing support for it in Chrome for Android. It is&#46;&#46;&#46;'
+description: 'NFC or Near Field Communication is a short-range wireless technology that allows devices at a distance of less than 10cm to communicate.'
 pubDate: 'Aug 06, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]
+tags: [{ name: "nfc", slug: "nfc" }, { name: "web nfc", slug: "web-nfc" }]
 ---
 
 NFC or Near Field Communication is a short-range wireless technology that allows devices at a distance of less than 10cm to communicate. It is mostly useful when interacting with NFC tags. Web NFC became a thing very recently with Google announcing support for it in Chrome for Android.
@@ -19,13 +20,13 @@ Payments would probably be built into it at some point in the future I would ima
 
 ## Getting started
 
-You'll need NFC tags to get started. There is no Chrome dev tools support to emulate NFC yet. You can get the NFC tag [stickers](https://amzn.to/3CrJPms) from Amazon. You will also need an Android device that supports NFC. The next one is easy: Chrome v86+.
+You’ll need NFC tags to get started. There is no Chrome dev tools support to emulate NFC yet. You can get the NFC tag [stickers](https://amzn.to/3CrJPms) from Amazon. You will also need an Android device that supports NFC. The next one is easy: Chrome v86+.
 
 ## Writing to a tag
 
 Now that you have the required hardware, writing to a tag is easy:
 
-```
+```javascript
 // can add logic to feature detect first
 // if ('NDEFReader' in window) {}
 document.getElementById("write-to-nfc-tag").addEventListener("click", async () => {
@@ -41,7 +42,7 @@ document.getElementById("write-to-nfc-tag").addEventListener("click", async () =
 
 An NDEF message does not necessarily need to be a string. It can be composed of multiple NDEFRecords, that can be text, URLs, or more complex types. Let us write a URL to the tag:
 
-```
+```javascript
 document.getElementById("write-to-nfc-tag").addEventListener("click", async () => {
  try {
      const ndefReader = new NDEFReader();
@@ -59,7 +60,7 @@ document.getElementById("write-to-nfc-tag").addEventListener("click", async () =
 
 While reading, you have to differentiate between the different types of records that the tag can contain. Before getting into that, reading can be done using:
 
-```
+```javascript
  try {
     const ndef = new NDEFReader();
     await ndef.scan();
@@ -75,7 +76,7 @@ The promise only resolves if the user allows the website to interact with NFC de
 
 To add the logic of reading different types of messages, we can run a loop and have a switch inside:
 
-```
+```javascript
 const decoder = new TextDecoder();
 for (const record of message.records) {
   switch (record.recordType) {
@@ -98,4 +99,4 @@ for (const record of message.records) {
 }
 ```
 
-And that is how you read and write to tags using Web NFC. It has simplicity baked into the usage and should spark creative projects around NFC tags in the future. The API will probably expand in the future and other interesting projects will start becoming a thing. If you have any questions, or ideas about using Web NFC, feel free to drop a comment below!
+And that is how you read and write to tags using Web NFC. It has simplicity baked into the usage and should spark creative projects around NFC tags in the future. The API will probably expand in the future and other interesting projects will start becoming a thing. If you have any questions, or ideas about using Web NFC, feel free to drop a comment below\!

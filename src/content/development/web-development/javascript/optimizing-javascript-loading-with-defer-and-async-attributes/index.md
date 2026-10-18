@@ -1,12 +1,13 @@
 ---
 title: 'Optimizing JavaScript loading with defer and async attributes'
-description: 'We are all used to using the script tag to load external JavaScript files in our HTML. Traditionally, the only workaround for having the scripts load after the HTML has been loaded was to move the script tags towards the end of the body. But JavaScript has come a long&#46;&#46;&#46;'
+description: 'We are all used to using the script tag to load external JavaScript files in our HTML. Traditionally, the only workaround for having the scripts load after the…'
 pubDate: 'Aug 15, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
+tags: [{ name: "ecmascript", slug: "ecmascript" }, { name: "es2015", slug: "es2015" }, { name: "es6", slug: "es6" }, { name: "javascript", slug: "javascript" }]
 ---
 
 We are all used to using the script tag to load external JavaScript files in our HTML. Traditionally, the only workaround for having the scripts load after the HTML has been loaded was to move the script tags towards the end of the body. But JavaScript has come a long way since then. Attributes such as defer and async have been added to the specification in ES2015 that allow more granular control of how JavaScript gets loaded.
@@ -21,14 +22,14 @@ If a script tag is placed in the header of an HTML page, the parsing of the HTML
 
 Both of these are boolean attributes with a similar syntax:
 
-```
-script defer src="script.js">script>
+```javascript
+<script defer src="script.js"></script>
 ```
 
 and
 
-```
-script async src="script.js">script>
+```javascript
+<script async src="script.js"></script>
 ```
 
 It is worth noting that the tags are only useful if the script is in the head section of the HTML. They are useless if the script is put inside the body tag.
@@ -49,7 +50,7 @@ Here is a graphic to help visualize the different processes:
 
 ![JavaScript defer and async](./1-ko9l3yd2uwksxatm15fgdw.png)
 
-Most of the time defer is the preferred option because it reduces page load time the most. It does not execute until the DOM is ready, and follows the script order. So you get more control about the script's execution as well.
+Most of the time defer is the preferred option because it reduces page load time the most. It does not execute until the DOM is ready, and follows the script order. So you get more control about the script’s execution as well.
 
 Async sounds sexier but it is only useful if the script does not need the DOM or any other scripts.
 

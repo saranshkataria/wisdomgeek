@@ -1,34 +1,35 @@
 ---
 title: 'Use redux-like middleware for useReducer in React'
-description: 'If you have used Redux before, you would be aware of the concept of middlewares. Now that useReducer has become a commonly used react hook, we might want to replicate the idea of middleware for the useReducer hook as well. If you do not know about middlewares, middlewares are functions&#46;&#46;&#46;'
+description: 'If you have used Redux before, you would be aware of the concept of middlewares. Now that useReducer has become a commonly used react hook, we might want to…'
 pubDate: 'Jan 14, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]
+tags: [{ name: "custom react hooks", slug: "custom-react-hooks" }, { name: "middleware", slug: "middleware" }, { name: "react", slug: "react" }, { name: "react hooks", slug: "react-hooks" }, { name: "reactjs", slug: "reactjs" }, { name: "redux", slug: "redux" }, { name: "useReducer", slug: "usereducer" }, { name: "useRef", slug: "useref" }]
 ---
 
 If you have used Redux before, you would be aware of the concept of middlewares. Now that useReducer has become a commonly used react hook, we might want to replicate the idea of middleware for the useReducer hook as well.
 
 If you do not know about middlewares, middlewares are functions that run either before or after a state transition has taken place by the reducer. It enables us to opt-in for features such as logging, crash reporting, making asynchronous API requests, etc.
 
-In this post, we will be creating a middleware for useReducer react hook. If you want to read more about the hook and reducers in general, refer to our previous post about the [useReducer React hook](https://www.wisdomgeek.com/development/web-development/react/understanding-the-usereducer-hook-in-react/).
+In this post, we will be creating a middleware for useReducer react hook. If you want to read more about the hook and reducers in general, refer to our previous post about the [useReducer React hook](/development/web-development/react/understanding-the-usereducer-hook-in-react/).
 
 ## Possible approaches for creating the middleware for useReducer
 
 We can implement the middleware functionality in one of two ways:
 
-1. Writing an applyMiddleware function similar to redux. This function will take in the first parameter as the reducer, and we pass the middlewares as an array in the second parameter.
+1\. Writing an applyMiddleware function similar to redux. This function will take in the first parameter as the reducer, and we pass the middlewares as an array in the second parameter.  
 This would look something like this:
 
-```
+```javascript
 const useMyReducer = applyMiddleware(useReducer, [logging, thunks, ...]);
 ```
 
-You can read more about this approach as part of this GitHub [issue](https://github.com/streamich/react-use/issues/164).  The final implementation can be found [here](https://github.com/streamich/react-use/blob/master/src/createReducer.ts).
+You can read more about this approach as part of this GitHub [issue](https://github.com/streamich/react-use/issues/164). The final implementation can be found [here](https://github.com/streamich/react-use/blob/master/src/createReducer.ts).
 
-2. We can create a [custom react hook](https://www.wisdomgeek.com/development/web-development/react/how-to-write-your-own-custom-react-hooks/) which internally implements useReducer and gives us the functionality of passing in the middlewares as a parameter.
+2\. We can create a [custom react hook](/development/web-development/react/how-to-write-your-own-custom-react-hooks/) which internally implements useReducer and gives us the functionality of passing in the middlewares as a parameter.
 
 We will be talking about the second approach in this blog post. The first approach is acceptable too. But my opinion is that if we are thinking in terms of hooks, we should move forward with respect to hooks instead of holding on to redux patterns.
 
@@ -38,7 +39,7 @@ Let us first define what this custom react hook that we will be building will lo
 
 Our middleware for useReducer will take in a reducer as a parameter, along with the initial state. It will also take a middleware as another parameter. Therefore, our hook will be of the form:
 
-```
+```javascript
 const useReducerWithMiddleware = (reducer,
   initialState,
   middleware,
@@ -53,7 +54,7 @@ For the invocation of the middleware function, calling it inside the hook after 
 
 We can solve this by using higher-order functions. We will enhance the dispatch function by creating a higher-order function around it. We will then return the higher-order function from our hook.
 
-```
+```javascript
 const useReducerWithMiddleware = (reducer,
   initialState,
   middleware,
@@ -71,7 +72,7 @@ Since we are returning the extended dispatch function from our custom hook, we e
 
 We can even add other information such as state to the middleware call.
 
-```
+```javascript
 const useReducerWithMiddleware = (reducer,
   initialState,
   middleware,
@@ -91,7 +92,7 @@ Let us expand on our previous implementation of middleware for useReducer to acc
 
 Since all the middleware functions should be invoked before invoking dispatch, we will iterate through them all. Then, we will call dispatch.
 
-```
+```javascript
 const useReducerWithMiddleware = (reducer,
   initialState,
   middlewares,
@@ -111,11 +112,11 @@ But what if we want middlewares that get executed after the state has transition
 
 ## Middlewares after state change
 
-If you think that we will create another input array for middlewares to be executed after the dispatch, you are absolutely correct!
+If you think that we will create another input array for middlewares to be executed after the dispatch, you are absolutely correct\!
 
 However, if you thought about calling these functions right after the dispatch call, like:
 
-```
+```javascript
 const useReducerWithMiddleware = (reducer,
   initialState,
   middlewares,
@@ -139,9 +140,9 @@ It is because dispatch updates the state asynchronously.
 
 What could be done instead?
 
-We can wait for the state to be updated and have a callback function afterwards to handle this. We can use the [useEffect hook](https://www.wisdomgeek.com/development/web-development/react/react-hooks-and-local-storage-lets-build-a-todo-app/) to achieve this.
+We can wait for the state to be updated and have a callback function afterwards to handle this. We can use the [useEffect hook](/development/web-development/react/react-hooks-and-local-storage-lets-build-a-todo-app/) to achieve this.
 
-```
+```javascript
 const useReducerWithMiddleware = (reducer,
   initialState,
   middlewares,
@@ -160,9 +161,9 @@ const useReducerWithMiddleware = (reducer,
 };
 ```
 
-But we do not have access to the action inside useEffect anymore. So we will need to use a ref instance variable by making use of the [useRef hook](https://www.wisdomgeek.com/development/web-development/react/understanding-the-useref-react-hook/). We will write the value of the action to the ref variable before calling dispatch. And then its value will be available to us inside the effect.
+But we do not have access to the action inside useEffect anymore. So we will need to use a ref instance variable by making use of the [useRef hook](/development/web-development/react/understanding-the-useref-react-hook/). We will write the value of the action to the ref variable before calling dispatch. And then its value will be available to us inside the effect.
 
-```
+```javascript
 const useReducerWithMiddleware = (reducer,
   initialState,
   middlewares,
@@ -190,7 +191,7 @@ And that completes our implementation for applying middlewares using useReducer.
 
 Let us build a basic increment counter reducer which only increments the count value. For simplicity, our reducer will always increment the count irrespective of what action is passed in. We will add two middlewares to our reducer. One will log the state before the action, and the other will log the state after it.
 
-```
+```javascript
 import useReducerWithMiddleware from "./useReducerWithMiddleware";
 
 export default function App() {
@@ -210,23 +211,23 @@ export default function App() {
     [logFutureState]
   );
   return (
-    div className="App">
-      span>{state.count}span>
-      button onClick={() => dispatch("increment")}>Increment Countbutton>
-    div>
+    <div className="App">
+      <span>{state.count}</span>
+      <button onClick={() => dispatch("increment")}>Increment Count</button>
+    </div>
   );
 }
 ```
 
 Now, once we run the application and click the increment button a couple of times, we will get the console output:
 
-```
+```javascript
 count before inc: 0 
 count after inc: 1 
 count before inc: 1 
 count after inc: 2 ​
 ```
 
-And thus, we have added logging as a middleware to our useReducer function!
+And thus, we have added logging as a middleware to our useReducer function\!
 
 Let us know in the comments if you have any queries.

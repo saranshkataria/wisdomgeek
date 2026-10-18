@@ -1,19 +1,20 @@
 ---
 title: 'Using the useCallback React hook'
-description: 'The useCallback React hook is a useful hook that can help in optimizing the rendering performance of our functional React components. It is used to memoize functions which means it caches the return value of a function given a set of input parameters. The syntax As we can see, the&#46;&#46;&#46;'
+description: 'The useCallback React hook is a useful hook that can help in optimizing the rendering performance of our functional React components.'
 pubDate: 'Jan 28, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]
+tags: [{ name: "react", slug: "react" }, { name: "react hooks", slug: "react-hooks" }, { name: "react memo", slug: "react-memo" }, { name: "reactjs", slug: "reactjs" }, { name: "useCallback", slug: "usecallback" }]
 ---
 
 The useCallback React hook is a useful hook that can help in optimizing the rendering performance of our functional React components. It is used to memoize functions which means it caches the return value of a function given a set of input parameters.
 
 ## The syntax
 
-```
+```javascript
 const memoizedCallback = useCallback(
   () => {
     functionToBeMemoized(arg);
@@ -28,13 +29,13 @@ This is useful when we want to pass callbacks as props to children components an
 
 Before we get into the applications of the useCallback React hook, we should know that React itself is fairly fast and we should avoid any premature optimizations and only use this hook when we need to.
 
-As with the [useEffect](https://www.wisdomgeek.com/development/web-development/react/understanding-the-useref-react-hook/) dependencies, if we pass in an empty array of dependencies, the memoized function is computed only once. It will store the same reference throughout the lifecycle of the component then.
+As with the [useEffect](/development/web-development/react/understanding-the-useref-react-hook/) dependencies, if we pass in an empty array of dependencies, the memoized function is computed only once. It will store the same reference throughout the lifecycle of the component then.
 
 ## Using the useCallback React hook
 
 Let us consider a component that has a lot of computation involved and is expensive to re-render:
 
-```
+```javascript
 const ExpensiveToComputeComponent = () => {
  // expensive computation
 };
@@ -42,12 +43,12 @@ const ExpensiveToComputeComponent = () => {
 
 If this component were taking in a handler function as a prop, and the parent component was providing in the handler to it:
 
-```
+```javascript
 const App = () => {
   const handler = () => {
   // do something
   };
-  return ExpensiveToComputeComponent handler = {handler} />;
+  return <ExpensiveToComputeComponent handler = {handler} />;
 }
 const ExpensiveToComputeComponent = ({handler}) => {
  // expensive computation
@@ -56,9 +57,9 @@ const ExpensiveToComputeComponent = ({handler}) => {
 
 Any time the App is re-rendered, then the expensive to compute component would get re-rendered as well. This would happen because of the callback function that we are providing in the form of handler. The reference to it would change every time the App is re-rendered.
 
-Even if we used [React.memo](https://www.wisdomgeek.com/development/web-development/react/using-react-memo-in-react-16-6/) to memoize the expensive component:
+Even if we used [React.memo](/development/web-development/react/using-react-memo-in-react-16-6/) to memoize the expensive component:
 
-```
+```javascript
 const ExpensiveToComputeComponent = React.memo(({handler}) => {
  // expensive computation
 });
@@ -66,12 +67,12 @@ const ExpensiveToComputeComponent = React.memo(({handler}) => {
 
 The result will be the same. The re-render happens because the handler function is changing and memo will not change that. To keep the handler callback function the same, we will need to use the useCallback React hook.
 
-```
+```javascript
 const App = () => {
   const handler = useCallback(() => {
   // do something
   }, [dependencies]);
-  return ExpensiveToComputeComponent handler = {handler} />;
+  return <ExpensiveToComputeComponent handler = {handler} />;
 }
 ```
 
@@ -79,4 +80,4 @@ It is also important to note that if the dependencies are also dynamic (referenc
 
 To conclude, the useCallback React hook is useful in memoizing functions. It is useful to obtain performance gains but should be used wisely. We should use the profiler before getting into optimizing. As we have seen, it shines when combined with the React memo API.
 
-If you have any queries, or have any suggestions about what we should cover next, drop a comment below and let us know!
+If you have any queries, or have any suggestions about what we should cover next, drop a comment below and let us know\!

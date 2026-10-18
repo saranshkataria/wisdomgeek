@@ -1,17 +1,18 @@
 ---
 title: 'GraphQL Basics: Types, Queries, Mutations, and Schema'
-description: 'Once you get a grasp of what GraphQL is, and why it is important, you also realize that it is a different design process. And before diving into the implementation, it is important that we understand the GraphQL basics, the various terminologies that come with it. If you are just&#46;&#46;&#46;'
+description: 'Once you get a grasp of what GraphQL is, and why it is important, you also realize that it is a different design process.'
 pubDate: 'Jul 15, 2020'
 updatedDate: 'Oct 11, 2023'
 heroImage: './hero.jpg'
 author: 'Saransh Kataria'
 categories: ["GraphQL"]
 categoryHierarchy: ["Development","Web Development","Graphql"]
+tags: [{ name: "graphql", slug: "graphql" }, { name: "web development", slug: "web-development" }, { name: "webdev", slug: "webdev" }]
 ---
 
 Once you get a grasp of what GraphQL is, and why it is important, you also realize that it is a different design process. And before diving into the implementation, it is important that we understand the GraphQL basics, the various terminologies that come with it.
 
-If you are just getting started and still don't know about the importance of GraphQL, we would recommend reading our previous post about [why GraphQL?](https://www.wisdomgeek.com/development/web-development/why-graphql/)
+If you are just getting started and still don’t know about the importance of GraphQL, we would recommend reading our previous post about [why GraphQL?](/development/web-development/graphql/why-graphql/)
 
 Looking at the way GraphQL works in the examples mentioned in that post, we realize that we only have one endpoint to work with instead of multiple REST endpoints. This means that we no longer look at our API as a collection of endpoints. Instead, we look at it as a collection of schemas, queries, and mutations.
 
@@ -22,9 +23,7 @@ Before we get into implementing GraphQL, we need to get a better idea of all the
 The first GraphQL basic term we will explore is a type. If we consider the blogging example (similar to the previous post), we will have the following data in our application:
 
 - Posts
-
 - Comments
-
 - Authors (or can be Users)
 
 These are similar to the tables that we are used to creating in our relational databases. In GraphQL, we call these types which are a collection of these data entities that can also contain relationships with other entities. The relationships are similar to foreign keys in a relational database which can be lazy-loaded.
@@ -33,7 +32,7 @@ These are similar to the tables that we are used to creating in our relational d
 
 Since GraphQL is a strongly typed language, we specify the data type of the properties that it holds as well when defining the type. So the type for a post will look like:
 
-```
+```graphql
 type Post {
   id: ID!
   title: String!
@@ -44,9 +43,9 @@ type Post {
 
 The ID type and String type are built-in primitive types that are defined using the Schema Definition Language (SDL). The exclamation mark is present to tell that signify that the fields are required fields.
 
-The ID, String, and other primitive types are known as Scalar types and the Post type that we created is known as Object type since it is a user-defined type. An object type can include another object type in it. 
+The ID, String, and other primitive types are known as Scalar types and the Post type that we created is known as Object type since it is a user-defined type. An object type can include another object type in it.
 
-**Note: **No matter what programming language is being used to implement GraphQL, the SDL remains the same.
+**Note:** No matter what programming language is being used to implement GraphQL, the SDL remains the same.
 
 ## What is a Query?
 
@@ -58,7 +57,7 @@ For allowing the client to be able to query our schema, we first need to define 
 
 To get all the posts, we define it like:
 
-```
+```graphql
 type Query {
   # Returns all blog posts
   getAllBlogs: [Post]
@@ -67,7 +66,7 @@ type Query {
 
 We can even extend this further by allowing the queries to accept parameters to fetch specific blog posts.
 
-```
+```graphql
 type Query {
   # Returns all blog posts
   getAllBlogs: [Post]
@@ -79,7 +78,7 @@ type Query {
 
 On the client side, we can then fetch the data using the query operation:
 
-```
+```graphql
 query getAllBlogs {
   id
   title
@@ -88,7 +87,7 @@ query getAllBlogs {
 
 When we execute this on the client, the server returns all the posts that we requested in the format that was requested. The response will be:
 
-```
+```graphql
 getAllBlogs {
   ["id" : 1,  "title" : "Wisdom Geek"],
   ["id" : 2, "title" : "Saransh Kataria"],
@@ -107,7 +106,7 @@ Queries are used for reading objects from the server, and mutations are used to 
 
 A single mutation contains a signature and a return type for that mutation. It defines what all properties the mutation needs to create the object and what it will return when the object is created. To create a blog post, we will make use of the following mutation:
 
-```
+```graphql
 Mutation {
   addBlogPost(title: String!, content: String!): Post
 }
@@ -121,9 +120,9 @@ Apart from queries and mutations, there is a third type of operation that can be
 
 A schema definition contains the type definition, its relationships as well as a description of how this data can be queried or modified. In other words, we define how the client application interacts using GraphQL in a schema.
 
-Extending the post type that we defined before, and adding relationships and queries, it would look something like the following. Every post will have an author. And similarly, the author has a collection of posts defined as a relationship. 
+Extending the post type that we defined before, and adding relationships and queries, it would look something like the following. Every post will have an author. And similarly, the author has a collection of posts defined as a relationship.
 
-```
+```graphql
 type Post {
   id: ID!
   title: String!

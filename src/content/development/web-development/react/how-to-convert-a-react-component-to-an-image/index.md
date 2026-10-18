@@ -1,12 +1,13 @@
 ---
 title: 'How to convert a React component to an image'
-description: 'Sometimes you want to give the users the ability to download a part of the web application as an image. In that case, you want a way to convert a React component to an image. And it can be straightforward by using a third-party NPM package called html2canvas. Let us&#46;&#46;&#46;'
+description: 'Sometimes you want to give the users the ability to download a part of the web application as an image.'
 pubDate: 'Sep 27, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpeg'
 author: 'Saransh Kataria'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]
+tags: [{ name: "react", slug: "react" }, { name: "reactjs", slug: "reactjs" }]
 ---
 
 Sometimes you want to give the users the ability to download a part of the web application as an image. In that case, you want a way to convert a React component to an image. And it can be straightforward by using a third-party NPM package called html2canvas. Let us look at how to do it.
@@ -15,22 +16,22 @@ Sometimes you want to give the users the ability to download a part of the web a
 
 We want to first mark the div in HTML markup that we want to be downloaded when the user hits the download button. This could be a chart, user data, a table, or anything we want. We will allocate an id to that element.
 
-```
-div id="print">This will be downloaded as an imagediv>
+```html
+<div id="print">This will be downloaded as an image</div>
 ```
 
 We can wrap this as a React component with an event handler attached to a download button:
 
-```
+```javascript
 const App = () => {
   const handleImageDownload = () => {
     // TODO: add logic here
   };
   return (
-    
-      button type="button" onClick={handleImageDownload}>Downloadbutton>
-      div id="print">This will be downloaded as an imagediv>
-    
+    <>
+      <button type="button" onClick={handleImageDownload}>Download</button>
+      <div id="print">This will be downloaded as an image</div>
+    </>
   );
 }
 ```
@@ -39,13 +40,13 @@ const App = () => {
 
 As we discussed earlier, we will install the html2canvas NPM package.
 
-```
+```bash
 npm install html2canvas
 ```
 
-Then, all we need to do is use the package to fetch the corresponding div that we want to convert to an image. We then create a link in memory to download the image, click it programmatically and then remove the link from the DOM. 
+Then, all we need to do is use the package to fetch the corresponding div that we want to convert to an image. We then create a link in memory to download the image, click it programmatically and then remove the link from the DOM.
 
-```
+```javascript
 const handleDownloadImage = () => {
     const element = document.getElementById('print'),
     canvas = await html2canvas(element),

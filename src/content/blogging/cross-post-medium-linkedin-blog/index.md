@@ -1,12 +1,13 @@
 ---
 title: 'Should I cross post between Medium, LinkedIn and my website?'
-description: 'Most people have, at some point, thought of using a blog vs using a publishing platform such as Medium or LinkedIn. The platforms, have a higher reach since they are dedicated places where in people come for the sole purpose of reading. Hence a there are chances of increasing your&#46;&#46;&#46;'
+description: 'Most people have, at some point, thought of using a blog vs using a publishing platform such as Medium or LinkedIn.'
 pubDate: 'Apr 21, 2016'
 updatedDate: 'Apr 21, 2016'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["Blogging"]
 categoryHierarchy: ["Blogging"]
+tags: []
 ---
 
 Most people have, at some point, thought of using a blog vs using a publishing platform such as Medium or LinkedIn. The platforms, have a higher reach since they are dedicated places where in people come for the sole purpose of reading. Hence a there are chances of increasing your readership if posts are directly published to Medium, LinkedIn, Reddit, Quora or any other similar website. But the next question that comes in the minds of people who have a dedicated blog is that a post on these platforms cannot be monetized. You cannot prompt people to join your mailing list using pop ups, nor can you show your own advertisements and earn revenue. And the other thought that pops into the mind of a blogger immediately after this is that duplicate content will lead to negative SEO effects if one cross posts between these platforms and their own blogs.
@@ -20,19 +21,12 @@ And as far as the negative SEO aspect of it goes, the thinking is incorrect. As 
 So, if you are looking to expand your audience, cross posting does not seem to have many cons. Though you need to keep in mind that
 
 - Re posting content on different publishing platforms will not lead to penalties for duplicate content
-
 - Your website traffic might reduce due to cross posts on medium and LinkedIn (search will have more options which might defuse traffic among platforms and your website)
-
 - You get access to thousands of readers who might not have found your content otherwise
-
 - A better approach would be to post the content on your website/blog first, and then, after say 5 days,  cross post it onto different platforms, if that makes you more satisfied
-
 - Chances of your post going viral are more on LinkedIn or Medium
-
 - Your website may not rank the highest for the keywords you want to since publishing sites might be more authoritative
-
 - You can experiment with different keywords/headlines for the same content by publishing them on different platforms
-
 - Medium links are better for forums that are sensitive to blog posts or view them as spam posts
 
-In fact, medium even gives a built in feature to [import ](https://medium.com/p/import)stories from URL's, encouraging you to cross post. I am going to start reposting my old posts from [Wisdom Geek](http://www.wisdomgeek.com) on LinkedIn and Medium starting today. What about you?
+In fact, medium even gives a built in feature to [import](https://medium.com/p/import) stories from URL’s, encouraging you to cross post. I am going to start reposting my old posts from [Wisdom Geek](/) on LinkedIn and Medium starting today. What about you?

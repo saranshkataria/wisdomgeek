@@ -1,12 +1,13 @@
 ---
 title: 'How to format a Number as Currency using ES2015'
-description: 'The process to format a number as currency can be a tedious task. It feels like a small task, but the number of lines and the edge cases can keep on increasing when considering factors such as internationalization and different formatting standards. Luckily, ES2015 introduced an internationalization API which can&#46;&#46;&#46;'
+description: 'The process to format a number as currency can be a tedious task. It feels like a small task, but the number of lines and the edge cases can keep on increasing…'
 pubDate: 'Mar 04, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpg'
 author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
+tags: [{ name: "ecmascript", slug: "ecmascript" }, { name: "es2015", slug: "es2015" }, { name: "es6", slug: "es6" }, { name: "javascript", slug: "javascript" }, { name: "number formatting", slug: "number-formatting" }, { name: "string formatting", slug: "string-formatting" }]
 ---
 
 The process to format a number as currency can be a tedious task. It feels like a small task, but the number of lines and the edge cases can keep on increasing when considering factors such as internationalization and different formatting standards. Luckily, ES2015 introduced an internationalization API which can make the process to format a number as currency super easy.
@@ -15,7 +16,7 @@ The process to format a number as currency can be a tedious task. It feels like 
 
 We can surely put together a hacky function for this, right?
 
-```
+```javascript
 let formatCurrency = (val, currency) => {
     let val;    
     switch (currency) {
@@ -34,7 +35,7 @@ let formatCurrency = (val, currency) => {
 
 But what if we want to handle formatting such as $ 100 is good, but 1000 should be shown as $ 1,000? Let us make use of some Regex magic.
 
-```
+```javascript
 let formatCurrency = (val, currency) => {
   let currencyVal = val.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'); 
   switch (currency) {
@@ -50,6 +51,7 @@ let formatCurrency = (val, currency) => {
     return val;
 }
 
+
 console.log(formatCurrency(1000,'USD'));
 // "$ 1,000.00"
 ```
@@ -57,14 +59,11 @@ console.log(formatCurrency(1000,'USD'));
 The challenges with this approach are:
 
 - There are a bunch of currencies (~300)
-
-- Some currencies use &#8216;.' as the separator between thousands instead of &#8216;,'
-
-- Those currencies use &#8216;,' as the step separator
-"$ 1000.05" would be "€ 1.000,05" in german euros
-
-- Some currencies have the thousand's separators at custom positions
-1000000 would be ₹10,00,000.00&#8243; instead of $1,000,000.00&#8243;
+- Some currencies use ‘.’ as the separator between thousands instead of ‘,’
+- Those currencies use ‘,’ as the step separator  
+  “$ 1000.05” would be “€ 1.000,05” in german euros
+- Some currencies have the thousand’s separators at custom positions  
+  1000000 would be ₹10,00,000.00″ instead of $1,000,000.00″
 
 And so on and so forth. We do not want to be testing across all currencies and across all browsers.
 
@@ -73,16 +72,12 @@ And so on and so forth. We do not want to be testing across all currencies and a
 Before ES2015 and the internationalization API, we could still format a Number as currency making use of locale and string formatting. A locale is a collection of parameters that allow the developer to specify region specific attributes such as:
 
 - Currency format
-
 - Date-time format
-
 - Weekday format
-
 - Number format
-
 - Unit of measurement
 
-```
+```javascript
 const cashBalance = 10000; // 🤑
 
 console.log(
@@ -96,14 +91,14 @@ This worked fine and was recommended before the ECMAScript internationalization 
 
 ## Format a number as currency using Intl.NumberFormat
 
-```
+```javascript
 new Intl.NumberFormat([locales[, options]])
 ```
 
 The first parameter is the locale string which represents the language and the region settings. It comprises of the language code and the country code.
 
-en-US: English +USA
-de-DE: German + Germany
+en-US: English +USA  
+de-DE: German + Germany  
 en-IN: English + India
 
 The options parameter has a ton of options. But we will be sticking to style, currency and minimum fraction digits for this post.
@@ -116,7 +111,7 @@ The minimum fraction digits tells the minimum number of decimal places to includ
 
 Putting it all together:
 
-```
+```javascript
 const usDollar = new Intl.NumberFormat('en-US', {
   style: 'currency',
   currency: 'USD',

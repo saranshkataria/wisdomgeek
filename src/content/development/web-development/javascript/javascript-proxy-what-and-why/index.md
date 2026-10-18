@@ -1,19 +1,20 @@
 ---
 title: 'JavaScript Proxy: What and Why?'
-description: 'EcmaScript 2015 introduced yet another feature that has not been used widely yet. A JavaScript proxy allows us to wrap an existing object with a layer. The layer can provide us with capabilities such as the interception of attributes and methods. And this can be done even if the properties&#46;&#46;&#46;'
+description: 'EcmaScript 2015 introduced yet another feature that has not been used widely yet. A JavaScript proxy allows us to wrap an existing object with a layer.'
 pubDate: 'Feb 16, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
+tags: [{ name: "es2015", slug: "es2015" }, { name: "es6", slug: "es6" }, { name: "javascript", slug: "javascript" }, { name: "javascript proxy", slug: "javascript-proxy" }]
 ---
 
-EcmaScript 2015 introduced yet another feature that has not been used widely yet. A JavaScript proxy allows us to wrap an existing object with a layer. The layer can provide us with capabilities such as the interception of attributes and methods. And this can be done even if the properties do not exist!
+EcmaScript 2015 introduced yet another feature that has not been used widely yet. A JavaScript proxy allows us to wrap an existing object with a layer. The layer can provide us with capabilities such as the interception of attributes and methods. And this can be done even if the properties do not exist\!
 
 What does that mean?
 
-A JavaScript proxy gives us the ability to change the underlying behavior of objects and functions. They can be considered as middlewares for JavaScript objects. It allows us to override internal operations such as object property lookup, assignment, enumeration, function invocation, generators' behavior, iteration, and much more.
+A JavaScript proxy gives us the ability to change the underlying behavior of objects and functions. They can be considered as middlewares for JavaScript objects. It allows us to override internal operations such as object property lookup, assignment, enumeration, function invocation, generators’ behavior, iteration, and much more.
 
 Let us get an understanding of the terminologies before we get into how we declare a JavaScript proxy.
 
@@ -23,7 +24,7 @@ The internal methods that we can override are known as traps. The JavaScript pro
 
 ### **Object methods:**
 
-```
+```javascript
 getPrototypeOf()
 setPrototypeOf()
 isExtensible()
@@ -34,7 +35,7 @@ ownKeys()
 
 ### **Property getters/setters:**
 
-```
+```javascript
 has()
 get()
 set()
@@ -43,7 +44,7 @@ deleteProperty()
 
 ### Function methods:
 
-```
+```javascript
 apply()
 construct()
 ```
@@ -58,9 +59,9 @@ Since there are multiple traps on an object, we can have multiple configurations
 
 ## Defining a JavaScript Proxy
 
-Now that we know the terminologies, let us define a JavaScript proxy!
+Now that we know the terminologies, let us define a JavaScript proxy\!
 
-```
+```javascript
 let proxy = new Proxy(target, handler);
 ```
 
@@ -68,7 +69,7 @@ Now, JavaScript will internally refer to the handler whenever we perform an oper
 
 If we were to create a proxy without any traps on the handler
 
-```
+```javascript
 let proxy = new Proxy(target, {});
 ```
 
@@ -76,27 +77,27 @@ The proxy is a transparent wrapper around the target object.
 
 A proxy does not have any properties of its own. Before we start intercepting handlers, let us take a look at when the handler methods are triggered.
 
-**get: **reading a property
-**set:** writing to a property
-**has:** in operator
-**deleteProperty:** delete operator
-**apply:** function call
-**construct:** new operator
-**getPrototypeOf:** Object.getPrototypeOf
-**setPrototypeOf:** Object.setPrototypeOf
-**isExtensible:** Object.isExtensible
-**preventExtensions:** Object.preventExtensions
-**defineProperty:** Object.defineProperty, Object.defineProperties
-**getOwnPropertyDescriptor:** Object.getOwnPropertyDescriptor, for..in, Object.keys/values/entries
+**get:** reading a property  
+**set:** writing to a property  
+**has:** in operator  
+**deleteProperty:** delete operator  
+**apply:** function call  
+**construct:** new operator  
+**getPrototypeOf:** Object.getPrototypeOf  
+**setPrototypeOf:** Object.setPrototypeOf  
+**isExtensible:** Object.isExtensible  
+**preventExtensions:** Object.preventExtensions  
+**defineProperty:** Object.defineProperty, Object.defineProperties  
+**getOwnPropertyDescriptor:** Object.getOwnPropertyDescriptor, for..in, Object.keys/values/entries  
 **ownKeys:** Object.getOwnPropertyNames, Object.getOwnPropertySymbols, for..in, Object.keys/values/entries
 
-Now that we have know all the in's and out's of JavaScript proxies, let us get to some examples!
+Now that we have know all the in’s and out’s of JavaScript proxies, let us get to some examples\!
 
 ## Assigning default values using the GET trap
 
 Let us assign a default value for undefined properties.
 
-```
+```javascript
 const handler = {
 	get: (obj, property) => 
   	property in obj ? obj[property] : 'you forgot to assign a value to this property bruh'
@@ -118,7 +119,7 @@ JavaScript has an invariant on the SET trap. That is, there is a condition that 
 
 Let us create a proxy to validate the age property before setting it.
 
-```
+```javascript
 let handler = {
   set: function(obj, property, value) {
     if (property === 'age') {
@@ -147,7 +148,7 @@ person.age = 250;        // Throws exception: Age is invalid, enter value less t
 
 ## Private properties using the HAS, OWNKEYS, SET, GET, and DELETE traps
 
-```
+```javascript
 const hidePrivateFields = (target, prefix = "_") {
   return new Proxy(target, {
     has: (target, prop) => {
@@ -192,19 +193,15 @@ delete userInfo._password    // returns true, but does not delete the password
 
 ## Conclusion
 
-And that concludes our post about JavaScript proxies!
+And that concludes our post about JavaScript proxies\!
 
 A few gotchas before we conclude the post:
 
-- Currently, there is no support for proxies in IE.
-And there are no complete polyfills available 🙁
-
+- Currently, there is no support for proxies in IE.  
+  And there are no complete polyfills available 🙁
 - There is no way to determine whether an object is a proxy or not.
-
 - Once defined, it is not possible to change the target or the handler objects.
-
 - Proxy performance is relatively slow.
-
 - The target needs to be an object and proxies cannot be applied on primitives.
 
 Let us know your experiences with it, or if you face any issues. What proxies are you going to create? Drop a comment below and let us know.

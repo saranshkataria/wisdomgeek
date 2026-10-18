@@ -1,12 +1,13 @@
 ---
 title: 'How to cancel an HTTP fetch request'
-description: 'JavaScript promises have been a huge catalyst for asynchronous coding in the language. They have vastly improved the performance and experience for web development. One shortcoming of native promises has been that we were not able to cancel an HTTP fetch request once it was initiated. But now there is&#46;&#46;&#46;'
+description: 'JavaScript promises have been a huge catalyst for asynchronous coding in the language. They have vastly improved the performance and experience for web…'
 pubDate: 'Jan 19, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpg'
 author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
+tags: [{ name: "abort fetch", slug: "abort-fetch" }, { name: "cancel fetch", slug: "cancel-fetch" }, { name: "cancel http request", slug: "cancel-http-request" }, { name: "http fetch", slug: "http-fetch" }]
 ---
 
 JavaScript promises have been a huge catalyst for asynchronous coding in the language. They have vastly improved the performance and experience for web development. One shortcoming of native promises has been that we were not able to cancel an HTTP fetch request once it was initiated. But now there is a way to do so.
@@ -29,19 +30,19 @@ The default fetch timeout is 300 seconds for Chrome and 90 seconds for Firefox. 
 
 The AbortController and AbortSignal API are provided by the [DOM standard](https://dom.spec.whatwg.org/#aborting-ongoing-activities), and have been kept generic so that they can be used by other web standards. To declare a controller:
 
-```
+```javascript
 const controller = new AbortController();
 ```
 
 and for the signal:
 
-```
+```javascript
 const signal = controller.signal;
 ```
 
 The controller only has one abort method. And when that is invoked, the signal gets notified.
 
-```
+```javascript
 controller.abort();
 signal.addEventListener('abort', () => {
   console.log(signal.aborted); // true
@@ -52,7 +53,7 @@ signal.addEventListener('abort', () => {
 
 The fetch API itself does not allow programmatic cancellation of requests. But it can take in AbortSignal as a parameter. Then we can abort the fetch request after a specific time duration if we want to.
 
-```
+```javascript
 const controller = new AbortController();
 const signal = controller.signal;
 
@@ -63,6 +64,7 @@ fetch(url, { signal })
     }
   });
 
+
 // Abort the request after 4s
 // aborts the fetch with 'AbortError'
 setTimeout(() => {
@@ -72,7 +74,7 @@ setTimeout(() => {
 
 We can even create our own wrapper of a fetch with a timeout call if we want to:
 
-```
+```javascript
 async function cancellableFetch(url, data, timeout = 4000) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeout);
@@ -90,11 +92,8 @@ async function cancellableFetch(url, data, timeout = 4000) {
 A few things to note:
 
 - If you pass in the same signal to multiple fetch calls, it cancels all requests with that signal on abort. So we can use it if there are multiple requests that need to be aborted if one fails.
-
 - Since controllers are not reusable, if we do not want to abort all fetches when we cancel an HTTP fetch request, we need to create a new instance of the controller to all of them.
-
 - The request gets aborted only at the client end. The server might still process it though the client will not receive the response.
-
 - We could have used Promise.race to achieve this functionality as well but that solution would have left the request hanging instead of aborting the request. It would have continued to consume bandwidth in the background.
 
 And that is how you can cancel an HTTP fetch request after a timeout, or abort it programmatically. I am excited about being able to do so and hope you are too. Let me know in the comments section if you plan on using this.

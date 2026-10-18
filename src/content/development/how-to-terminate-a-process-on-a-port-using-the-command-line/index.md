@@ -1,34 +1,35 @@
 ---
 title: 'How to kill a process on a port using the command line'
-description: 'Zombie processes are usually a pain to figure out. More often than not, I end up googling about how to kill a process on a port using the command line. It can be done using the activity monitor as well, but that is a time-consuming process. There are ways of&#46;&#46;&#46;'
+description: 'Zombie processes are usually a pain to figure out. More often than not, I end up googling about how to kill a process on a port using the command line.'
 pubDate: 'Mar 10, 2022'
 updatedDate: 'Oct 25, 2023'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["Development"]
 categoryHierarchy: ["Development"]
+tags: []
 ---
 
 Zombie processes are usually a pain to figure out. More often than not, I end up googling about how to kill a process on a port using the command line. It can be done using the activity monitor as well, but that is a time-consuming process.
 
 There are ways of doing it using netstat and other methods which I kept fiddling through. But recently I discovered an npm package that is easy to remember and does the job pretty instantaneously. And since I am a JavaScript developer, this is a lifesaver instead of remembering terminal commands.
 
-First, we need to install the "kill-port" package globally:
+First, we need to install the “kill-port” package globally:
 
-```
+```bash
 yarn global add kill-port
 ```
 
 And then:
 
-```
+```bash
 # Kill processes on multiple ports
 kill-port 8080 8000
 ```
 
 Or, if you want to do it in one step without a global install:
 
-```
+```bash
 npx kill-port 8080
 ```
 

@@ -1,23 +1,24 @@
 ---
 title: 'Provide callback to useState hook like setState'
-description: 'If you have been writing class components for a while, you might be familiar with the callback functionality that the setState function provides. setState allows a second parameter to be passed to it as a callback. The callback function is invoked whenever the state of the function gets updated. But,&#46;&#46;&#46;'
+description: 'If you have been writing class components for a while, you might be familiar with the callback functionality that the setState function provides.'
 pubDate: 'Dec 15, 2020'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpg'
 author: 'Saransh Kataria'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]
+tags: [{ name: "react", slug: "react" }, { name: "react hooks", slug: "react-hooks" }, { name: "reactjs", slug: "reactjs" }, { name: "useEffect", slug: "useeffect" }, { name: "useState", slug: "usestate" }]
 ---
 
-If you have been writing class components for a while, you might be familiar with the callback functionality that the setState function provides. setState allows a second parameter to be passed to it as a callback. The callback function is invoked whenever the state of the function gets updated. 
+If you have been writing class components for a while, you might be familiar with the callback functionality that the setState function provides. setState allows a second parameter to be passed to it as a callback. The callback function is invoked whenever the state of the function gets updated.
 
-```
+```javascript
 this.setState(newState, callbackFunction)
 ```
 
 But, this callback mechanism does not exist with functional components.
 
-```
+```javascript
 const [state, setState] = useState();
 setState(newState, callbackFunction)
 
@@ -37,7 +38,7 @@ The state update usually happens on the next render, but even that can vary. Bat
 
 Considering the following example:
 
-```
+```javascript
 export default function useProgressPercentage() {
   const [percentage, setPercentage] = useState(0);
   const [completedRequests, setCompletedRequests] = useState(0);
@@ -66,7 +67,7 @@ export default function useProgressPercentage() {
 
 We want to update the percentage indicator whenever the total requests or the completed requests get updated. However, the above implementation will not work correctly because of the asynchronous manner of useState. The completed requests and total requests would return the older values whenever we call the increment functions.
 
-```
+```javascript
 const [percentage, 
   incrementCompletedRequestCount,
   incrementDataLoadRequestCount] = useProgressPercentage();
@@ -80,20 +81,20 @@ console.log(percentage); // still 0 if re-render has not happened
 
 In React functional components, a callback function for anything can be implemented using the useEffect hook. We will be using the same to provide callback functionality to our useState hook to make it function similar to setState.
 
-We will be making use of the dependency array of the useEffect to achieve this. If you are not familiar with it, we recommend reading our post on [useEffect react hook](https://www.wisdomgeek.com/development/web-development/react/react-hooks-and-local-storage-lets-build-a-todo-app/).
+We will be making use of the dependency array of the useEffect to achieve this. If you are not familiar with it, we recommend reading our post on [useEffect react hook](/development/web-development/react/react-hooks-and-local-storage-lets-build-a-todo-app/).
 
-```
+```javascript
 const [state, setState] = useState();
 useEffect(() => {callbackFunction()}, [state])
 ```
 
 As soon as the state is updated, it will trigger the useEffect hook. The useEffect hook will only be invoked when state changes because of the dependency array. And we can call our callback function inside that hook and get the functionality we wanted to achieve.
 
-**Note:** If you want the changes performed in the callback function to be reflected in the component's rendered output, you would want to use useLayoutEffect instead of the useEffect react hook.
+**Note:** If you want the changes performed in the callback function to be reflected in the component’s rendered output, you would want to use useLayoutEffect instead of the useEffect react hook.
 
 Therefore, our percentage hook can be updated as follows:
 
-```
+```javascript
 export default function useProgressPercentage() {
   const [percentage, setPercentage] = useState(0);
   const [completedRequests, setCompletedRequests] = useState(0);
@@ -120,4 +121,4 @@ export default function useProgressPercentage() {
 }
 ```
 
-Thus, we have our implementation of providing a callback to the useState react hook, just like we do for setState in a class component. If you want to learn more about [react hooks](https://www.wisdomgeek.com/tag/react-hooks/), do check out our various posts about them. If there is some topic that you would like us to write about, do drop a comment below and let us know.
+Thus, we have our implementation of providing a callback to the useState react hook, just like we do for setState in a class component. If you want to learn more about [react hooks](/tag/react-hooks/), do check out our various posts about them. If there is some topic that you would like us to write about, do drop a comment below and let us know.

@@ -1,27 +1,28 @@
 ---
 title: 'How React, Relay, and GraphQL fit together'
-description: 'If you are a javascript developer, chances are you would have heard about React, Relay, and GraphQL recently. And if you are a react developer who has been happily using redux for a while now, the very first question that comes to mind is why another set of technologies? Why should I&#46;&#46;&#46;'
+description: 'If you are a javascript developer, chances are you would have heard about React, Relay, and GraphQL recently.'
 pubDate: 'Mar 21, 2018'
 updatedDate: 'Oct 15, 2023'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["GraphQL"]
 categoryHierarchy: ["Development","Web Development","Graphql"]
+tags: [{ name: "graphql", slug: "graphql" }, { name: "javascript", slug: "javascript" }, { name: "react", slug: "react" }, { name: "relay", slug: "relay" }]
 ---
 
-If you are a javascript developer, chances are you would have heard about React, Relay, and GraphQL recently.
+If you are a javascript developer, chances are you would have heard about React, Relay, and GraphQL recently.
 
-And if you are a react developer who has been happily using redux for a while now, the very first question that comes to mind is **why another set of technologies? **Why should I invest time in learning newer libraries and how does this help me?
+And if you are a react developer who has been happily using redux for a while now, the very first question that comes to mind is **why another set of technologies?** Why should I invest time in learning newer libraries and how does this help me?
 
 ## GraphQL
 
 The primary advantage of GraphQL is that it helps you define the data that you need from the server. You make a single request to the server to fetch nested complex data saving round trips to the server. This helps you save bandwidth. GraphQL also helps you reduce under-fetching and over-fetching of data.
 
-It also enhances client-side developer productivity by bringing in a strongly typed mechanism to fetch data.  Also, there is inbuilt tooling for documenting your API in the form of GraphiQL. GraphiQL also provides a GUI for developers to interact with the GraphQL backend.
+It also enhances client-side developer productivity by bringing in a strongly typed mechanism to fetch data.  Also, there is inbuilt tooling for documenting your API in the form of GraphiQL. GraphiQL also provides a GUI for developers to interact with the GraphQL backend.
 
-GraphQL also provides validation and strong type checking that fails fast when the developer makes a mistake while querying for the data. It also removes the hassle of maintaining separate versions of your API as long as your schema is backward compatible.
+GraphQL also provides validation and strong type checking that fails fast when the developer makes a mistake while querying for the data. It also removes the hassle of maintaining separate versions of your API as long as your schema is backward compatible.
 
-I have already talked about [Why GraphQL](https://www.wisdomgeek.com/development/web-development/why-graphql/) in a different post. And if you want to take a look at the [GraphQL basic terminologies(type, query, mutation, schema)](https://www.wisdomgeek.com/development/web-development/graphql-basics-types-queries-mutations-schema/) to get a better understanding, there is a post about that too.
+I have already talked about [Why GraphQL](/development/web-development/graphql/why-graphql/) in a different post. And if you want to take a look at the [GraphQL basic terminologies(type, query, mutation, schema)](/development/web-development/graphql/graphql-basics-types-queries-mutations-schema/) to get a better understanding, there is a post about that too.
 
 ## Relay
 
@@ -35,7 +36,7 @@ Every component defines its data dependencies in its definition using GraphQL qu
 
 A sample relay component would like the following:
 
-```
+```javascript
 export default createFragmentContainer(
   class TodoInput extends React.Component {
     focus() {
@@ -46,7 +47,7 @@ export default createFragmentContainer(
        The component does not get rendered until then */
 
     render() {
-      return input type="text" /> { this.input = node; }}
+      return <input type="text" /> { this.input = node; }}
         placeholder={this.props.data.suggestedNextTitle}
       />;
     }
@@ -59,7 +60,7 @@ export default createFragmentContainer(
 );
 ```
 
-As can be seen above, the TodoInput component is defining its data dependencies in its definition and the values being fetched are rendered there itself. You can read more about this example in the [documentation here](https://facebook.github.io/relay/docs/en/fragment-container.html).
+As can be seen above, the TodoInput component is defining its data dependencies in its definition and the values being fetched are rendered there itself. You can read more about this example in the [documentation here](https://facebook.github.io/relay/docs/en/fragment-container.html).
 
 If you are already familiar with JSX, Relay adds the data fetching logic in the same component as well. This might seem unconventional at the first look but helps in querying for only the data that you need. This colocation of data fetching inside the component helps you reason if that property is even required in the component or not. If not, you can safely remove it and be sure that it will not impact anything else.
 
@@ -73,11 +74,11 @@ React already has taken the web development ecosystem by storm. Its declarative 
 
 Each React component specifies what data it needs in the component itself. And Relay stitches all of these by composing the queries into the parent (root) component.
 
-The root component then makes a single request to the server and gets a batched result for it. The response received from the server gets split according to which component had requested what data. Hence there is an overall performance gain since there is only one request to the server. If multiple components had asked for the same data, it gets fetched only once. Subsequent reads get served from the Relay store.
+The root component then makes a single request to the server and gets a batched result for it. The response received from the server gets split according to which component had requested what data. Hence there is an overall performance gain since there is only one request to the server. If multiple components had asked for the same data, it gets fetched only once. Subsequent reads get served from the Relay store.
 
-## Putting it all together: React, Relay, and GraphQL
+## Putting it all together: React, Relay, and GraphQL
 
-![React, Relay, and GraphQL](./react-relay-and-graphql-architecture-1024x512.png)
+![React, Relay, and GraphQL](./react-relay-and-graphql-architecture.png)
 
 Just like react fostered the idea of a declarative API for front-end code, Relay and GraphQL apply the same concepts for data fetching and mutation.
 
@@ -87,4 +88,6 @@ Using the React, Relay, and GraphQL architecture truly makes your application co
 
 And if you are not sold yet, here is a video explaining how all React, Relay, and GraphQL work together. It also explains why Facebook is heavily investing in these technologies:
 
-So, are you going to start learning the React, Relay, and GraphQL stack? Let us know in the comments below.
+<iframe title="React.js Conf 2015 - Data fetching for React applications at Facebook" width="740" height="416" src="https://www.youtube.com/embed/9sc8Pyc51uU?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+
+So, are you going to start learning the React, Relay, and GraphQL stack? Let us know in the comments below.

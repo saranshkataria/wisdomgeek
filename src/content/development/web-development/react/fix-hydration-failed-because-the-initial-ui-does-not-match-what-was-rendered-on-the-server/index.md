@@ -1,15 +1,16 @@
 ---
 title: 'Fix: Hydration failed because the initial UI does not match what was rendered on the server'
-description: 'Within a React or Next.js app, if you encounter the error "Hydration failed because the initial UI does not match what was rendered on the server", there could be a few reasons for it. Let us look at all the possible reasons and potential fixes for the error. Potential issues&#46;&#46;&#46;'
+description: 'Within a React or Next.js app, if you encounter the error “Hydration failed because the initial UI does not match what was rendered on the server”, there could…'
 pubDate: 'Mar 12, 2024'
 updatedDate: 'Mar 12, 2024'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]
+tags: []
 ---
 
-Within a React or Next.js app, if you encounter the error "Hydration failed because the initial UI does not match what was rendered on the server", there could be a few reasons for it.
+Within a React or Next.js app, if you encounter the error “Hydration failed because the initial UI does not match what was rendered on the server”, there could be a few reasons for it.
 
 Let us look at all the possible reasons and potential fixes for the error.
 
@@ -17,43 +18,44 @@ Let us look at all the possible reasons and potential fixes for the error.
 
 ### Incorrect HTML formatting
 
-The most common cause for the error is incorrect HTML formatting in our code. 
+The most common cause for the error is incorrect HTML formatting in our code.
 
-But why does the browser not tell you that but instead throws the error "Hydration failed because the initial UI does not match what was rendered on the server"? Because the browser tries to fix these on its own and then does a comparison of the HTML it has from what the server sent, it fails to match the two. Thus it throws the generic error.
+But why does the browser not tell you that but instead throws the error “Hydration failed because the initial UI does not match what was rendered on the server”? Because the browser tries to fix these on its own and then does a comparison of the HTML it has from what the server sent, it fails to match the two. Thus it throws the generic error.
 
 Some examples of invalid HTML are as follows.
 
 Having a div element inside a paragraph is not allowed.
 
-```
+```javascript
 export const IncorrectComponent = () => {
   return (
-    p>
-      div>Incorrect HTMLdiv>
-    p>
+    <p>
+      <div>Incorrect HTML</div>
+    </p>
   )
 }
 ```
 
 A paragraph inside another paragraph is erroneous too. The same goes for an H1, or a list item too.
 
-```
+```javascript
 export const IncorrectComponent = () => {
   return (
-    p>
-      p>p inside paragraph is invalidp>
-      h1>H1 inside paragraph is invalid tooh1>
-    p>
+    <p>
+      <p>p inside paragraph is invalid</p>
+      <h1>H1 inside paragraph is invalid too</h1>
+    </p>
   )
 }
 
+
 export const AnotherIncorrectComponent = () => {
   return (
-    ul>
-      p>
-        li>Incorrect HTMLli>
-      p>
-    ul>
+    <ul>
+      <p>
+        <li>Incorrect HTML</li>
+      </p>
+    </ul>
   )
 }
 
@@ -61,45 +63,45 @@ export const AnotherIncorrectComponent = () => {
 
 The Link tag that is provided by Next.js is already rendered as an anchor component. Trying to add another anchor inside it will throw an error too, since an anchor cannot be placed inside another.
 
-```
+```javascript
 export const IncorrectComponent = () => {
   return (
-    Link>
-      a>Link tag already creates an anchor tag, so this errors tooa>
-    Link>
+    <Link>
+      <a>Link tag already creates an anchor tag, so this errors too</a>
+    </Link>
   )
 }
 ```
 
 A `<table>` must have a `<thead>` or a `<tbody>` before adding any table rows (`<tr>` ).
 
-```
+```javascript
 export const IncorrectComponent = () => {
   return (
-    table>
+    <table>
       tbody is needed inside a table
-    table>
+    </table>
   )
 }
 ```
 
 Images inside an anchor tag throw an error too.
 
-```
+```javascript
 export const IncorrectComponent = () => {
   return (
-    a>
-      img />
-    a>
+    <a>
+      <img />
+    </a>
   )
 }
 ```
 
 ### Locale objects
 
-When working with locale objects, like date or time objects that are being rendered in the component, it could lead to a mismatch in the output of the component. Who doesn't love timezones, right?
+When working with locale objects, like date or time objects that are being rendered in the component, it could lead to a mismatch in the output of the component. Who doesn’t love timezones, right?
 
-```
+```javascript
 export const IncorrectComponent = () => {
   return (
     {new Date().toLocaleString()}
@@ -111,7 +113,7 @@ export const IncorrectComponent = () => {
 
 Incorrect CSS formatting can also lead to the error. For example, if you forget to add quotes when specifying background image
 
-```
+```css
 .image {
   background-image: url(https://www.wisdomgeek.com)
 }
@@ -123,7 +125,7 @@ Another possible reason is that an extension might be inserting something in the
 
 ### Accessing the window object
 
-If our component tries to access the window object, that is not going to be available on the server. That can lead to this error. This is pretty common when using a third-party component. Even checks like  `typeof window !== 'undefined'` can lead to this error. 
+If our component tries to access the window object, that is not going to be available on the server. That can lead to this error. This is pretty common when using a third-party component. Even checks like  `typeof window !== 'undefined'` can lead to this error.
 
 Sometimes you still need to access some of the properties mentioned above and there is no workaround. For those cases, there are a couple of possible solutions to fix it. Let us take a look at those next.
 
@@ -133,7 +135,7 @@ Sometimes you still need to access some of the properties mentioned above and th
 
 We can intentionally render something different on the client side by using a variable that gets updated inside a useEffect hook.
 
-```
+```javascript
 import { useState, useEffect } from 'react'
  
 export default function App() {
@@ -144,10 +146,10 @@ export default function App() {
   }, [])
  
   return (
-    
-      {isClient && {/* Window related checks or components can go here */}}
+    <>
+      {isClient && <>{/* Window related checks or components can go here */}</>}
       {!isClient && "Pre-rendered content"}
-    
+    </>
   )
 }
 ```
@@ -156,16 +158,16 @@ export default function App() {
 
 Another potential solution is to disable prerendering altogether for a component. In Next.js, we can do so using the following:
 
-```
+```javascript
 import dynamic from 'next/dynamic'
 
 const DynamicComponent = dynamic(() => import('./Component'), { ssr: false })
 
 export default NewComponent = () => {
   return (
-    
-      DynamicComponent />
-    
+    <>
+      <DynamicComponent />
+    </>
   )
 }
 ```
@@ -174,14 +176,14 @@ export default NewComponent = () => {
 
 We can suppress the warning altogether by adding the HTML attribute suppressHydrationWarning to the component or element. For example, if we have a custom component that we want to suppress the warning for:
 
-```
+```javascript
 export default Component = () => {
   return (
-    
-      CustomComponent suppressHydrationWarning={true} />
-    
+    <>
+      <CustomComponent suppressHydrationWarning={true} />
+    </>
   );
 }
 ```
 
-And those are all the potential solutions for fixing the "Hydration failed because the initial UI does not match what was rendered on the server" error. Let us know in the comments if you are still facing the error.
+And those are all the potential solutions for fixing the “Hydration failed because the initial UI does not match what was rendered on the server” error. Let us know in the comments if you are still facing the error.

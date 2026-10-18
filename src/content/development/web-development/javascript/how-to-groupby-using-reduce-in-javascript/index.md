@@ -1,12 +1,13 @@
 ---
 title: 'How to groupby using reduce in JavaScript'
-description: 'The groupBy method is one of the reasons people use lodash in their project. In this blog post, we will write our own version of groupBy using reduce and vanilla JavaScript. What groupBy does? groupBy works on an array of items, and it groups these items together into an object&#46;&#46;&#46;'
+description: 'The groupBy method is one of the reasons people use lodash in their project. In this blog post, we will write our own version of groupBy using reduce and…'
 pubDate: 'Oct 01, 2020'
 updatedDate: 'Oct 11, 2023'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
+tags: [{ name: "javascript", slug: "javascript" }, { name: "js", slug: "js" }, { name: "reduce", slug: "reduce" }]
 ---
 
 The groupBy method is one of the reasons people use [lodash](https://lodash.com/) in their project. In this blog post, we will write our own version of groupBy using reduce and vanilla JavaScript.
@@ -15,7 +16,7 @@ The groupBy method is one of the reasons people use [lodash](https://lodash.com/
 
 groupBy works on an array of items, and it groups these items together into an object based on some criterion. Let us assume we have the following blog posts:
 
-```
+```javascript
 let posts = [
   {
     author: 'saransh',
@@ -35,13 +36,13 @@ let posts = [
 
 We want our groupBy function to return an object which has all posts written by me (Saransh) and other authors too. That is we want to group posts by author names. Thus:
 
-```
+```javascript
 groupBy(posts, 'author');
 ```
 
 will give us the output:
 
-```
+```javascript
 {
   "saransh": [
     {
@@ -70,7 +71,7 @@ We will be making use of the array.reduce method for our implementation. The red
 
 Here is what we already know: We will be taking an input array and a key as an input and returning an object as the output. And we will be using the reduce function to iterate over the input array. Since the output will be an object, we will start with an empty object as our accumulator and then keep adding properties to it as we iterate over the input array. Thus, a skeleton of all this would look like:
 
-```
+```javascript
 const groupBy = (input, key) => {
   return input.reduce((acc, currentValue) => {
     // TODO: implement method
@@ -80,7 +81,7 @@ const groupBy = (input, key) => {
 
 Now, we need to initialize an empty array for each distinct key value if it does not exist. We can do this in two ways:
 
-```
+```javascript
 let groupKey = currentValue[key];
 if(!acc[groupKey]) {
   acc[groupKey] = [];
@@ -91,7 +92,7 @@ And then we need to add the current value to this array and move on to the next 
 
 Thus, our groupBy function is completed, and we get our final definition:
 
-```
+```javascript
 const groupBy = (input, key) => {
   return input.reduce((acc, currentValue) => {
     let groupKey = currentValue[key];
@@ -104,6 +105,6 @@ const groupBy = (input, key) => {
 };
 ```
 
-Note: The latest version has an Array.prototype.groupBy method which can be used to [groupby in js](https://www.wisdomgeek.com/development/web-development/javascript/using-groupby-on-an-array-of-objects-in-javascript/). We can use that with a polyfill using [core-js](https://github.com/zloirock/core-js#array-grouping) if we want to.
+Note: The latest version has an Array.prototype.groupBy method which can be used to [groupby in js](/development/web-development/javascript/using-groupby-on-an-array-of-objects-in-javascript/). We can use that with a polyfill using [core-js](https://github.com/zloirock/core-js#array-grouping) if we want to.
 
-And that is all we need to do to implement our own groupBy function. We hope this post helped you learn a bit more about how to use reduce and also create your own groupBy function so that you don't need to rely on Lodash anymore.
+And that is all we need to do to implement our own groupBy function. We hope this post helped you learn a bit more about how to use reduce and also create your own groupBy function so that you don’t need to rely on Lodash anymore.

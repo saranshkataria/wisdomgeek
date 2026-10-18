@@ -1,15 +1,16 @@
 ---
 title: 'Adding fixtures and parameterized functions to PyTest'
-description: 'As we discussed in our post on getting started with Pytest, the framework allows us to reuse tests by using test fixtures and parameterized functions. In this post, we will learn how to do so. We will build on the simple calculator example that we discussed in the previous post&#46;&#46;&#46;'
+description: 'As we discussed in our post on getting started with Pytest, the framework allows us to reuse tests by using test fixtures and parameterized functions.'
 pubDate: 'Mar 11, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["Python"]
 categoryHierarchy: ["Development","Web Development","Python"]
+tags: [{ name: "fixtures", slug: "fixtures" }, { name: "integration testing", slug: "integration-testing" }, { name: "pytest", slug: "pytest" }, { name: "unit testing", slug: "unit-testing" }]
 ---
 
-As we discussed in our post on [getting started with Pytest](https://www.wisdomgeek.com/development/web-development/python/testing-python-applications-using-pytest/), the framework allows us to reuse tests by using test fixtures and parameterized functions. In this post, we will learn how to do so.
+As we discussed in our post on [getting started with Pytest](/development/web-development/python/testing-python-applications-using-pytest/), the framework allows us to reuse tests by using test fixtures and parameterized functions. In this post, we will learn how to do so.
 
 We will build on the simple calculator example that we discussed in the previous post and add to it. Without further ado, let us get started.
 
@@ -17,7 +18,7 @@ We will build on the simple calculator example that we discussed in the previous
 
 As we saw in our small example, there is some repetition in the two basic tests that we wrote:
 
-```
+```python
 # calculator_test.py
 from calculator import add
 
@@ -38,7 +39,7 @@ We can create fixture functions by marking them using the @pytest.fixture decora
 
 Functions that require these fixtures can then accept them as an argument. So our fixture definition will become:
 
-```
+```python
 import pytest
 
 @pytest.fixture
@@ -50,14 +51,14 @@ def numbers():
 
 Since a fixture is a function, we could have either defined two functions to return the two numbers, or we can combine them in a list and return it from one. And now, we can have access to this list in our test case, and our test simplifies to:
 
-```
+```python
 def test_add(numbers):
     assert add(numbers[0], numbers[1]) == 3
 ```
 
 For the subtract one, we can simply do:
 
-```
+```python
 def test_subtract(numbers):
     assert subtract(numbers[0], numbers[1]) == 1
 ```
@@ -65,13 +66,9 @@ def test_subtract(numbers):
 A few things to note about fixtures:
 
 - We can define multiple fixtures for a single file. These can then be individually accessed by their names in the argument of the test function.
-
 - A test can request multiple fixtures.
-
 - Every test receives a newly initialized value of the variables declared in the fixture. The values are not re-used among tests.
-
 - Fixtures are accessible only among a particular file.
-
 - Fixtures can request other fixtures.
 
 ### Conftest.py
@@ -86,9 +83,9 @@ By default, all fixtures are executed once per function. This can be an expensiv
 
 For instance, if we were calling an API, we would make the request every time, slowing down our tests. We can define scopes for fixtures which gives us the capability to re-use fixture instances in between tests.
 
-The possible values of scope are: `function`, `class`, `module`, `package` or `session`.
+The possible values of scope are: `function`, `class`, `module`, `package` or `session`.
 
-```
+```python
 # content of conftest.py
 import pytest
 import smtplib
@@ -109,6 +106,7 @@ We use the @pytest.mark.parameterize decorator. Before getting into the implemen
 
 Markers are decorators that allow classification of tests or give us the ability to perform a specific action. Some of the relevant markers are:
 
+```
 @pytest.mark.skip(reason=None):
 skip the given test function with an optional reason
 
@@ -123,10 +121,11 @@ call a test function multiple times passing in different arguments in turn.
 argvalues generally needs to be a list of values
 if argnames specifies only one name
 or a list of tuples of values if argnames specifies multiple names.
+```
 
 To see a list of all markers, we can use:
 
-```
+```bash
 pytest --markers
 ```
 
@@ -134,7 +133,7 @@ pytest --markers
 
 As we found out, we can parameterize our test cases using markers. Let us assume we wanted to test not just positive numbers but negative numbers as well. Instead of writing multiple tests, we would instead use:
 
-```
+```python
 # calculator_test.py
 from calculator import add
 

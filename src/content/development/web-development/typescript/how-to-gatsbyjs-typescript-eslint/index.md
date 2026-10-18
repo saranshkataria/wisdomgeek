@@ -1,12 +1,13 @@
 ---
 title: 'How to setup GatsbyJS starter with TypeScript and ESLint'
-description: 'Gatsby has become fairly popular in the last couple of years and it has starting becoming the go to static site generator for a lot of projects. The smooth developer experience and the warm community has enriched the adoption even more. TypeScript has had a similar growth curve and has&#46;&#46;&#46;'
+description: 'Gatsby has become fairly popular in the last couple of years and it has starting becoming the go to static site generator for a lot of projects.'
 pubDate: 'May 10, 2020'
 updatedDate: 'Oct 15, 2023'
 heroImage: './hero.jpg'
 author: 'Saransh Kataria'
 categories: ["TypeScript"]
 categoryHierarchy: ["Development","Web Development","Typescript"]
+tags: [{ name: "ESLint", slug: "eslint" }, { name: "gatsby", slug: "gatsby" }, { name: "javascript", slug: "javascript" }, { name: "typescript", slug: "typescript" }]
 ---
 
 Gatsby has become fairly popular in the last couple of years and it has starting becoming the go to static site generator for a lot of projects. The smooth developer experience and the warm community has enriched the adoption even more. TypeScript has had a similar growth curve and has risen to popularity too.
@@ -25,17 +26,13 @@ The term static site generator might be a bit off-putting, but Gatsby has far mo
 
 While the developer experience is the biggest selling point for Gatsby, it has other benefits too.
 
-1. $1
+1. There is a minimalistic configuration involved to set up Gatsby. This also makes it a beginner-friendly project.
+2. There are plugins that have been built by the community to help you avoid reinventing the wheel. The rich Gatsby ecosystem also assists in the form of great documentation and a lot of starter kits to kick things off quickly.
+3. The data layer is a GraphQL powered layer that allows you to collect data from a variety of different sources: markdown files, CMS, APIs, or even JSON. Gatbsy will create an internal graph of all this data at build time, give it to your React components, render the HTML, and save that static HTML as the output.
+4. Gatsby is super performant and has been built keeping every aspect of performance in mind.
+5. Accessibility is emphasized in the product and having it as a built-in focus point is always a good to have.
 
-2. $1
-
-3. $1
-
-4. $1
-
-5. $1
-
-## Let's get started with a Gatsby Project and TypeScript integration!
+## Let’s get started with a Gatsby Project and TypeScript integration\!
 
 Now let us get to the fun stuff! Let us create our own Gatsby project, we will then add TypeScript to it and then integrate ESLint in the setup.
 
@@ -43,13 +40,13 @@ Now let us get to the fun stuff! Let us create our own Gatsby project, we will t
 
 For setting up Gatsby, we will need the Gatsby CLI. We can either use `npx` to run the Gatsby command mentioned below once if you want to. But since we are going to need it for other Gatsby related things, we can install it globally as well.
 
-```
+```bash
 yarn global add gatsby-cli
 ```
 
 Next, we will use the installed Gatsby CLI to create a new site for us.
 
-```
+```bash
 gatsby new gatsby-starter-blog-wisdomgeek https://github.com/gatsbyjs/gatsby-starter-default
 ```
 
@@ -59,25 +56,25 @@ It is also worth noting that this is where the rich ecosystem comes into the pic
 
 The above command will create a folder named gatsby-starter-blog-wisdomgeek in our current directory and we will open it in our editor. Running the command yarn develop in this location will run our project. If we navigate to http://localhost:8000/ in our browser, we would see the Gatsby app up and running.
 
-That command did all the configurations that were needed for us to be able to run Gatsby. Easy, wasn't it?
+That command did all the configurations that were needed for us to be able to run Gatsby. Easy, wasn’t it?
 
 ## Integrating TypeScript
 
-As of a few days ago, Gatsby has integrated typescript support right [inside ](https://github.com/gatsbyjs/gatsby/issues/18983)the core ecosystem. Support for `.ts` and `.tsx` files others exists as of now, other features are still being baked in.
+As of a few days ago, Gatsby has integrated typescript support right [inside](https://github.com/gatsbyjs/gatsby/issues/18983) the core ecosystem. Support for `.ts` and `.tsx` files others exists as of now, other features are still being baked in.
 
-What this means is that we do not need to do any steps to [configure Webpack or Babel for setting up TypeScript](https://www.wisdomgeek.com/development/web-development/how-to-setup-typescript-with-babel-and-webpack/). If we were older versions of Gatsby, then also that would still not have been needed. We would have had to add a plugin called `gatsby-plugin-typescript` manually in the configuration in that case. But now that `.ts` and `.tsx` support is provided out of the box and that plugin is what gets used under the hood.
+What this means is that we do not need to do any steps to [configure Webpack or Babel for setting up TypeScript](/featured/how-to-setup-typescript-with-babel-and-webpack/). If we were older versions of Gatsby, then also that would still not have been needed. We would have had to add a plugin called `gatsby-plugin-typescript` manually in the configuration in that case. But now that `.ts` and `.tsx` support is provided out of the box and that plugin is what gets used under the hood.
 
 All we need to do for this step is convert all .js files in the project to the extension .tsx.
 
 Once we are done with the conversion of files to `.tsx`, we need to introduce type checking and linting into the project. Before we get to that, we should add TypeSript as a developer dependency in our project. So we will run the command:
 
-```
+```bash
 yarn add typescript --dev
 ```
 
 We will also add a .tsconfig file to set up some of the configuration values for TypeScript. To generate the default one, we will use the command:
 
-```
+```bash
 npx tsc --init
 ```
 
@@ -87,31 +84,31 @@ We will change a couple of properties in it.
 
 Firstly, we will uncomment the lines `"sourceMap": true` and `"noEmit": true`. These will ensure that source maps are enabled and the outputs are not be emitted by the TypeScript compiler. We can additionally uncomment the `"noImplicitAny": true` statement as well if we want to enforce stricter type checking.
 
-Secondly, we will also add the line `"skipLibCheck": true` towards the end of the file to skip type checking of all declaration files (*.d.ts).
+Secondly, we will also add the line `"skipLibCheck": true` towards the end of the file to skip type checking of all declaration files (\*.d.ts).
 
 We will also add the types for all the libraries that we are using in our project to help us with type checking and intellisense:
 
-```
+```bash
 yarn add @types/node @types/react @types/react-dom @types/react-helmet prettier --dev
 ```
 
-Even though we will not be configuring the usage of [prettier ](https://www.wisdomgeek.com/development/web-development/javascript/using-prettier-format-javascript-code/)in this project, we have added it in here since we will be adding configuration related to it in our ESLint configuration for people that do use it.
+Even though we will not be configuring the usage of [prettier](/featured/using-prettier-format-javascript-code/) in this project, we have added it in here since we will be adding configuration related to it in our ESLint configuration for people that do use it.
 
 Those are all the steps that we need to do to start using TypeScript. But we want to use the benefits of type checking in our project. For that, we need to setup type checking and linting in the project too. So we move on to the next step.
 
 ## Setting up ESLint
 
-This was a fairly easy step for me since I had done the setup of [ESLint and TypeScript](https://www.wisdomgeek.com/development/web-development/how-to-setup-eslint-for-typescript-code/) before as well. And setting up ESLint in a Gatsby project was similar to any other React project.
+This was a fairly easy step for me since I had done the setup of [ESLint and TypeScript](/development/web-development/how-to-setup-eslint-for-typescript-code/) before as well. And setting up ESLint in a Gatsby project was similar to any other React project.
 
 We will add the packages needed for ESLint:
 
-```
+```bash
 yarn add @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-prettier eslint-jsx-a11y eslint-plugin-react --dev
 ```
 
 Now that we have all the packages we need, we will configure ESLint by creating a `.eslintrc.js` file.
 
-```
+```javascript
 module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -162,7 +159,7 @@ The `'react/prop-types': 'off'` rule is us explicitly turning the prop types rul
 
 Now that we have everything in place, we will add the following scripts to our `package.json`:
 
-```
+```javascript
 "test": "npm run type-check && npm run lint",
 "lint": "eslint . --ext .ts,.tsx",
 "type-check": "tsc --pretty"
@@ -178,11 +175,11 @@ And that is all the set up that we need to have TypeScript up and running in our
 
 ## Fixing TypeScript errors in our starter project
 
-Now that we have everything configured, we need to fix the errors that TS and ESLint have reported. 
+Now that we have everything configured, we need to fix the errors that TS and ESLint have reported.
 
 The major refactor that we will need to do to remove the errors that the linter is throwing would be to shift from prop types to TypeScript interfaces. For example, in the `layout.tsx` file, we will change it from:
 
-```
+```javascript
 const Header = ({ siteTitle }) => ( // definition)
 Header.propTypes = {
   siteTitle: PropTypes.string,
@@ -191,19 +188,19 @@ Header.propTypes = {
 
 to
 
-```
+```javascript
 interface HeaderProps {
   siteTitle: string;
 }
-const Layout: React.FunctionComponentHeaderProps> = ({
+const Layout: React.FunctionComponent<HeaderProps> = ({
   siteTitle,
 }) => (// definition)
 ```
 
 We will be doing the same change across all TypeScript files. This ensures that we have converted all source code to TypeScript interfaces. All the TS errors should be gone once these changes are made.
 
-And Voila! Those would be the last set of changes that we would need to make! We now have a working Gatsby project configured using TypeScript and ESLint!
+And Voila! Those would be the last set of changes that we would need to make! We now have a working Gatsby project configured using TypeScript and ESLint\!
 
-You can browse the files [here ](https://github.com/saranshkataria/gatsby-starter-blog-wisdomgeek/tree/57adccb0375abb903fb04f9ccbcc66c927782ec9)to see what the complete project looks like.
+You can browse the files [here](https://github.com/saranshkataria/gatsby-starter-blog-wisdomgeek/tree/57adccb0375abb903fb04f9ccbcc66c927782ec9) to see what the complete project looks like.
 
 Let us know in the comments section if you have any questions. Or if there is anything more that you would like added to this post.

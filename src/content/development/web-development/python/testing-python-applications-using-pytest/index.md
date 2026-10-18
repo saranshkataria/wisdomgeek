@@ -1,15 +1,16 @@
 ---
 title: 'Testing Python applications using Pytest'
-description: 'Testing our code brings in a variety of benefits, including building confidence in the code''s functioning and having lesser regressions. Writing and maintaining tests requires some additional work, and that is why we want to leverage tools as much as we can. Python does provide inbuilt tools such as unittest&#46;&#46;&#46;'
+description: 'Testing our code brings in a variety of benefits, including building confidence in the code’s functioning and having lesser regressions.'
 pubDate: 'Mar 09, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["Python"]
 categoryHierarchy: ["Development","Web Development","Python"]
+tags: [{ name: "integration testing", slug: "integration-testing" }, { name: "pytest", slug: "pytest" }, { name: "python", slug: "python" }, { name: "testing", slug: "testing" }, { name: "unit testing", slug: "unit-testing" }]
 ---
 
-Testing our code brings in a variety of benefits, including building confidence in the code's functioning and having lesser regressions. Writing and maintaining tests requires some additional work, and that is why we want to leverage tools as much as we can. Python does provide inbuilt tools such as [unittest](https://docs.python.org/3/library/unittest.html) for supporting testing, but it involves writing a lot of boilerplate code. It also has a limited ability to reuse components (or fixtures in PyTest). Therefore we will be testing Python applications using Pytest instead of other tools. Pytest is the most popular tool among other alternatives as well.
+Testing our code brings in a variety of benefits, including building confidence in the code’s functioning and having lesser regressions. Writing and maintaining tests requires some additional work, and that is why we want to leverage tools as much as we can. Python does provide inbuilt tools such as [unittest](https://docs.python.org/3/library/unittest.html) for supporting testing, but it involves writing a lot of boilerplate code. It also has a limited ability to reuse components (or fixtures in PyTest). Therefore we will be testing Python applications using Pytest instead of other tools. Pytest is the most popular tool among other alternatives as well.
 
 (We will be using Python 3 in this tutorial.)
 
@@ -18,22 +19,17 @@ Testing our code brings in a variety of benefits, including building confidence 
 Pytest is one of the most popular libraries dedicated to unit and functional testing. But what makes it so popular?
 
 - Less boilerplate
-
 - Setup code can be reused by making use of fixtures
-
 - Filtering of tests while executing (to run only a specific set of test(s) at a time)
-
 - Parameterizing tests (to provide different input values to the same test allowing testing of various scenarios making use of one test)
-
 - Plugin-based architecture that enables flexibility and wider adoption
-
 - Allows parallel execution of tests
 
 ## Installing Pytest
 
-Pytest is a dependency that we will need to add to our project. As we know from our previous post on [managing python virtual environments](https://www.wisdomgeek.com/development/web-development/python/managing-python-dependencies-using-virtual-environments/), we always want to be working in one.
+Pytest is a dependency that we will need to add to our project. As we know from our previous post on [managing python virtual environments](/development/web-development/python/managing-python-dependencies-using-virtual-environments/), we always want to be working in one.
 
-```
+```bash
 $ mkdir pytest-demo
 $ cd pytest-demo
 $ python3 -m venv .venv
@@ -42,7 +38,7 @@ $ source .venv/bin/activate
 
 And then, we will install Pytest.
 
-```
+```bash
 $ pip install pytest
 ```
 
@@ -52,17 +48,17 @@ This will enable the pytest command in our installation environment. This comple
 
 As with any test framework, Pytest has a few places that it automatically looks for test files.
 
-The file name should start with "test" or end with "_test.py".
+The file name should start with “test” or end with “\_test.py”.
 
-The test functions that are defined should start with "test_". Methods that do not follow this convention do not get executed. To see which tests will get executed without running them, we can use:
+The test functions that are defined should start with “test\_”. Methods that do not follow this convention do not get executed. To see which tests will get executed without running them, we can use:
 
-```
+```bash
 pytest --collect-only
 ```
 
 To execute all tests in our pytest-demo directory, we can run:
 
-```
+```bash
 pytest pytest-demo
 ```
 
@@ -70,7 +66,7 @@ Pytest will run in the current directory by default if we do not specify the dir
 
 Or if we want to ignore a directory (such as the virtual environment), we can use:
 
-```
+```bash
 pytest --ignore .venv
 ```
 
@@ -78,11 +74,12 @@ pytest --ignore .venv
 
 Now that we know the basics let us set up the code we will be testing. We can use a complex code block and write multiple test cases around it, but this post is more about Pytest than writing test cases. So, we will stick to a simple addition and subtraction problem.
 
-```
+```python
 # calculator.py
 
 def add(firstNumber, secondNumber):
     return firstNumber + secondNumber
+
 
 def subtract(firstNumber, secondNumber):
     return firstNumber - secondNumber
@@ -92,7 +89,7 @@ def subtract(firstNumber, secondNumber):
 
 Now that we have our minimal piece of code, we can start with our basic test. We will be doing a calculation of 2+1 = 3. For this, we will define our test as:
 
-```
+```python
 # calculator_test.py
 from calculator import add
 
@@ -104,7 +101,7 @@ def test_add():
 
 The assert keyword compares the two values it gets and returns True or False based on their equality. We can also have detailed assertions, which can be helpful in debugging. They can be written as:
 
-```
+```python
 assert True == False, "This is a demo with a failed assertion and a detailed message."
 ```
 
@@ -112,15 +109,15 @@ Detailed assertions can be useful for debugging purposes.
 
 And we can run our test using the command:
 
-```
+```bash
 pytest
 ```
 
-![pytest add test](./pytest-add-test-1024x757.png)
+![pytest add test](./pytest-add-test.png)
 
 Similarly, we can write a test for our subtract method as well.
 
-```
+```python
 # calculator_test.py
 from calculator import add
 
@@ -134,10 +131,10 @@ def test_add():
 
 We can pass in a parameter while running the tests to increase/decrease the verbosity of the output generated by Pytest. The following options are available:
 
--v: increases verbosity
--q: quiter output
--r: summary of tests
--rp: summary of passed tests
--rp: summary of failed tests
+\-v: increases verbosity  
+\-q: quiter output  
+\-r: summary of tests  
+\-rp: summary of passed tests  
+\-rp: summary of failed tests
 
-And that is a quick introduction to testing Python applications using Pytest. We will cover fixtures and parameterized functions in our next post. Until then, if you have any questions, drop a comment below; we would be happy to help you!
+And that is a quick introduction to testing Python applications using Pytest. We will cover fixtures and parameterized functions in our next post. Until then, if you have any questions, drop a comment below; we would be happy to help you\!

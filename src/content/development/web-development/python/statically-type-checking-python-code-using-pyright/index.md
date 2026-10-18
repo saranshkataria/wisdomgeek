@@ -1,12 +1,13 @@
 ---
 title: 'Statically type checking Python code using Pyright'
-description: 'With the introduction of type hinting in Python 3.5, static typing and checking Python codes has started to gain popularity. While MyPy was the first tool to do static type checking of Python code, many other frameworks have been built after it. Pyright is one such tool built by Microsoft&#46;&#46;&#46;'
+description: 'With the introduction of type hinting in Python 3.5, static typing and checking Python codes has started to gain popularity.'
 pubDate: 'Mar 16, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["Python"]
 categoryHierarchy: ["Development","Web Development","Python"]
+tags: [{ name: "pyright", slug: "pyright" }, { name: "python", slug: "python" }, { name: "static type checker", slug: "static-type-checker" }, { name: "type checking", slug: "type-checking" }]
 ---
 
 With the introduction of type hinting in Python 3.5, static typing and checking Python codes has started to gain popularity. While MyPy was the first tool to do static type checking of Python code, many other frameworks have been built after it. Pyright is one such tool built by Microsoft and is the one that we will be discussing in this post.
@@ -16,12 +17,9 @@ With the introduction of type hinting in Python 3.5, static typing and checking 
 Python has been a dynamically typed language. While that flexibility has its benefits, it becomes a hassle when working on large scale projects. Inferring the type of an object can be hard at times for the interpreter. Using type hints, we can resolve the following problems:
 
 - Lesser run-time issues because of typeless code and failure of inferring the correct types
-
 - Test cases for type checking do not need to exist
-
 - Better tooling and IDE support since it becomes easy for the tools to infer types and provide suggestions accordingly
-
-- Code becomes easier to understand and IDE's can help generate more accurate docstrings
+- Code becomes easier to understand and IDE’s can help generate more accurate docstrings
 
 Type hints, like TypeScript, are usually beneficial for larger projects. For smaller projects, they might be an overhead.
 
@@ -33,37 +31,37 @@ Another thing to point out is type hints are only available in Python 3.5 and ab
 
 There are 3 ways in which we can specify type hints in Python:
 
-1. $1
+1. Special comments
 
-```
+```python
 name = "Saransh Kataria" # type: str
 ```
 
-2. Function annotations
+2\. Function annotations
 
-```
+```python
 def greeting(name: str) -> str:
     return 'Hello {}'.format(name)
 ```
 
-3. Stub files
+3\. Stub files
 
-Stub files can be created for modules to avoid modifying the existing codebase. Stub files have a .pyi extension. The convention in the pyi file is to replace the body with "...". We define our code without the types in the main file:
+Stub files can be created for modules to avoid modifying the existing codebase. Stub files have a .pyi extension. The convention in the pyi file is to replace the body with “…”. We define our code without the types in the main file:
 
-```
+```python
 def greeting():
     return 'Hello {}'.format(name)
 ```
 
 And in the greeting.pyi file, we specify the hints:
 
-```
+```python
 def greeting(name: str) -> str: ...
 ```
 
 For generics, we can use:
 
-```
+```python
 from typing import Dict
 
 def greeting(names: Dict[str, int]) -> str:
@@ -81,7 +79,7 @@ It is faster at type-checking than other tools and more accurate than MyPy.
 
 From the README
 
-Pyright is typically 5x or more faster than mypy and other type checkers that are written in Python. It is meant for large Python source bases. It can run in a “watch” mode and performs fast incremental updates when files are modified.
+> Pyright is typically 5x or more faster than mypy and other type checkers that are written in Python. It is meant for large Python source bases. It can run in a “watch” mode and performs fast incremental updates when files are modified.
 
 ### Terminal
 
@@ -89,7 +87,7 @@ The one negative for Pyright is that you need Node installed for using Pyright s
 
 So for installing Pyright, we will use:
 
-```
+```bash
 npm install pyright
 
 # or we can use npm install -g pyright if we want to install it globally
@@ -97,8 +95,8 @@ npm install pyright
 
 Once installed, we can use it as:
 
-```
-pyright options>
+```bash
+pyright <options>
 ```
 
 ### VSCode extension
@@ -111,17 +109,17 @@ As with all tools, we can have a configuration file for Pyright to set it up acc
 
 **pythonVersion:** the version of Python to execute the source code. Pyright will also generate errors for the code if the feature being used is not supported for that Python version.
 
-**include:** an array of paths in the form of directories or files that Pyright should check. If this is not specified, the default is the current directory.Paths can follow glob pattern ( ** for a directory or multiple levels), or the regex pattern of single (?) or zero or more characters (*).
+**include:** an array of paths in the form of directories or files that Pyright should check. If this is not specified, the default is the current directory.Paths can follow glob pattern ( \*\* for a directory or multiple levels), or the regex pattern of single (?) or zero or more characters (\*).
 
-**exlcude:** an array of paths of directories/subdirectories/files to be excluded. It is also worth noting that Pyright automatically excludes: **/node_modules, **/__pycache__, .git, and any virtual environment directories.
+**exlcude:** an array of paths of directories/subdirectories/files to be excluded. It is also worth noting that Pyright automatically excludes: \*\*/node\_modules, \*\*/\_\_pycache\_\_, .git, and any virtual environment directories.
 
 **ignore:** By default, if there is a file in the exclude path but is used in a file which is included in the analysis, Pyright will analyze that file too. If we want those to be ignored completely, we can specify them in the ignore path instead.
 
 **strict:** strict mode enables all type-checking rules. We can turn it on by specifying the file paths under this key or we can manually add a “# pyright: strict” comment to a file to enable it.
 
-**verboseOutput: **A boolean to specify if the output logs should be verbose or not.
+**verboseOutput:** A boolean to specify if the output logs should be verbose or not.
 
-**typeCheckingMode**: specify wether the type checking mode should be off", "basic", or "strict".
+**typeCheckingMode**: specify wether the type checking mode should be off”, “basic”, or “strict”.
 
 There are other flags which can be configured to fine tune type check diagnostics and execution environment settings. Those can be found [here](https://github.com/microsoft/pyright/blob/master/docs/configuration.md#type-check-diagnostics-settings).
 
@@ -131,14 +129,14 @@ Once we have the configuration in place, we can run the Pyright command from the
 
 Thus, if we try to do something like:
 
-```
+```python
 def greeting(name: str) -> str:
         return 0
 ```
 
 We will get the error:
 
-```
+```python
 Expression of type "Literal[0]" cannot be assigned to return type "str"
   "Literal[0]" is incompatible with "str"
 ```

@@ -1,12 +1,13 @@
 ---
 title: 'Generating a QR code using Node.js'
-description: 'I was preparing a slide deck for a hackathon and decided to put in a QR code to allow people to connect with me. Naturally, I googled for a service and used it. It turns out that the code generated used a link that had an expiration time associated with&#46;&#46;&#46;'
+description: 'I was preparing a slide deck for a hackathon and decided to put in a QR code to allow people to connect with me. Naturally, I googled for a service and used it.'
 pubDate: 'Jun 12, 2024'
 updatedDate: 'Jun 12, 2024'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
+tags: []
 ---
 
 I was preparing a slide deck for a hackathon and decided to put in a QR code to allow people to connect with me. Naturally, I googled for a service and used it. It turns out that the code generated used a link that had an expiration time associated with it.
@@ -17,19 +18,19 @@ And all good things start with installing an npm package. In this case, we can e
 
 Firstly, we will take the user input we want to use as text for our QR code. We will also store this in a variable called `inputText`
 
-```
+```bash
 read -p "Enter the text for the QR code: " inputText
 ```
 
 Next, we will pass this input to the qrcode npm package
 
-```
+```bash
 qrcode -o qr.png "$inputText"
 ```
 
 The `-o` option is used to specify the output file name that we want it to generate. Along with that, we will pass a couple of other arguments to the package
 
-```
+```bash
 -w 1000 -q 1
 ```
 
@@ -37,13 +38,13 @@ The w parameter is used to specify the width of the output image and the q flag 
 
 So combining these together into one command, we can use the following for generating a QR code using Node.js
 
-```
+```bash
 read -p "Enter input text for the QR code: " inputText && qrcode -o qr.png "$inputText" -w 1000 -q 1
 ```
 
 The above code works well if we have installed the `qrcode` package globally. But if we want to use npx, we can modify the command as follows:
 
-```
+```bash
 read -p "Enter the text for the QR code: " inputText && npx qrcode -o qr.png "$inputText" -w 1000 -q 1
 ```
 

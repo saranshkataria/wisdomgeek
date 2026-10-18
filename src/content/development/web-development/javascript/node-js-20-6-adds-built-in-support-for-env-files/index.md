@@ -1,45 +1,46 @@
 ---
 title: 'Node.js 20.6 adds built-in support for .env files'
-description: 'Node.js 20.6 added built-in support for the .env file. This is an excellent addition to the platform and gives us the ability to load environment variables from .env files directly without using third-party packages. While it is great to see first-class support, some caveats remain. Let us look at how it works. Assuming that&#46;&#46;&#46;'
+description: 'Node.js 20.6 added built-in support for the .env file. This is an excellent addition to the platform and gives us the ability to load environment variables…'
 pubDate: 'Apr 10, 2024'
 updatedDate: 'Apr 17, 2024'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
+tags: [{ name: "node", slug: "node" }, { name: "node.js", slug: "node-js" }]
 ---
 
-Node.js 20.6 added built-in support for the `.env` file. This is an excellent addition to the platform and gives us the ability to load environment variables from `.env` files directly without using third-party packages. While it is great to see first-class support, some caveats remain. 
+Node.js 20.6 added built-in support for the `.env` file. This is an excellent addition to the platform and gives us the ability to load environment variables from `.env` files directly without using third-party packages. While it is great to see first-class support, some caveats remain.
 
 Let us look at how it works. Assuming that you are running Node 20.6, create a .env file:
 
-```
+```javascript
 API_KEY="KEY"
 DATABASE_URL="URL"
 ```
 
 And then, you can run node using the following command:
 
-```
+```javascript
 node --env-file .env index.js
 ```
 
 This would give you access to the variables defined in the .env file in your JavaScript code.
 
-```
+```javascript
 // index.js
 console.log(`Hello ${process.env.DATABASE_URL}`)
 
 // URL
 ```
 
-That is it! Want to have a different production configuration? Just create a new file and point it to a `.env.production` file.
+That is it! Want to have a different production configuration? Just create a new file and point it to a `.env.production` file.
 
 ### Order when running the command matters
 
 A minor detail to remember when executing the script is that the env file needs to be passed in before the file name. Ideally, it should have been interchangeable, but that is not the case. The env file gets ignored if we use the command:
 
-```
+```javascript
 // .env file gets ignored in this case
 node inex.js --env-file .env
 ```
@@ -52,10 +53,11 @@ As with all experimental things, a few things are missing. Some of these might l
 
 Multiline environment variables are not supported currently. If you add one, it will be undefined.
 
-```
+```javascript
 // .env
 WORLD="Hello
 World"
+
 
 // index.js
 console.log(`Hello ${process.env.WORLD}`)
@@ -70,9 +72,10 @@ Hello undefined
 
 If the same variable is defined in the environment and the file, the value from the file takes precedence. There is no way to override it with the system environment variables.
 
-```
+```javascript
 // .env
 WORLD="foo"
+
 
 // index.js
 console.log(`Hello ${process.env.WORLD}`)
@@ -89,10 +92,11 @@ Hello foo
 
 Node does not support variable expansion currently. It will output the variable as a string if trying to reference another variable using $variable. This is possible in dotenv using the [dotenv-expand](https://github.com/motdotla/dotenv-expand) library.
 
-```
+```javascript
 // .env
 WORLD="foo"
 WORLD_BAZ=$WORLD
+
 
 // index.js
 console.log(`Hello ${process.env.WORLD_BAZ}`)
@@ -108,4 +112,4 @@ Hello $WORLD
 
 ## Conclusion
 
-Node.js 20.6 adding built-in support for .env files is a huge step forward for the Node community. Hopefully, it does not stay experimental in the near future, and we can start using it in our applications soon!
+Node.js 20.6 adding built-in support for .env files is a huge step forward for the Node community. Hopefully, it does not stay experimental in the near future, and we can start using it in our applications soon\!

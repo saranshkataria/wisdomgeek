@@ -1,15 +1,16 @@
 ---
 title: 'Learning context API and the useContext React hook'
-description: 'In this react hooks series, we have already explored the react hooks useState, useEffect, and useReducer. The next react hook we will look into is the useContext hook. As we saw while building our sample application, we had to lift the state up to our root component in order to&#46;&#46;&#46;'
+description: 'In this react hooks series, we have already explored the react hooks useState, useEffect, and useReducer.'
 pubDate: 'Sep 15, 2020'
 updatedDate: 'Oct 11, 2023'
 heroImage: './hero.jpg'
 author: 'Saransh Kataria'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]
+tags: [{ name: "react", slug: "react" }, { name: "react hooks", slug: "react-hooks" }, { name: "reactjs", slug: "reactjs" }, { name: "useContext", slug: "usecontext" }]
 ---
 
-In this react hooks series, we have already explored the react hooks [useState, useEffect](https://www.wisdomgeek.com/development/web-development/react/react-hooks-and-local-storage-lets-build-a-todo-app/), and [useReducer](https://www.wisdomgeek.com/development/web-development/react/understanding-the-usereducer-hook-in-react/). The next react hook we will look into is the useContext hook.
+In this react hooks series, we have already explored the react hooks [useState, useEffect](/development/web-development/react/react-hooks-and-local-storage-lets-build-a-todo-app/), and [useReducer](/development/web-development/react/understanding-the-usereducer-hook-in-react/). The next react hook we will look into is the useContext hook.
 
 As we saw while building our sample application, we had to lift the state up to our root component in order to be able to share it among multiple children components. We then passed in the corresponding state objects to the children components as props to have shared state and a single source of truth at the parent level.
 
@@ -27,18 +28,18 @@ Context lets you broadcast data and changes to that data to components that have
 
 To start using the API, we need to create a context object:
 
-```
+```javascript
 const MyContext = React.createContext(defaultValue);
 ```
 
-This object will be our source of values to components that subscribe to it. Whenever React is going to render a component that has subscribed to a context object, it will read it's value from the nearest Provider above it in the tree.
+This object will be our source of values to components that subscribe to it. Whenever React is going to render a component that has subscribed to a context object, it will read it’s value from the nearest Provider above it in the tree.
 
 ### Context Provider
 
 Every context object comes with a Provider component which, as the name suggests, provides the value of the context object to all children components. It also allows the consuming components to subscribe to changes in the context value. It can be declared as:
 
-```
-MyContext.Provider value={/* some value */}>
+```javascript
+<MyContext.Provider value={/* some value */}>
 ```
 
 A provider can be connected to more than one consumers and providers can be nested as well. They might override values deeper in the tree since the subscribers consume values from the nearest provider.
@@ -47,7 +48,7 @@ A provider can be connected to more than one consumers and providers can be nest
 
 Now that we have a provider, we can start consuming the assigned value.
 
-```
+```javascript
 const value = useContext(MyContext);
 ```
 
@@ -63,7 +64,7 @@ If you have not been following along our sample to-do list application, you can 
 
 So, we will create a new context folder and in it, we will add an items context file:
 
-```
+```javascript
 import React from 'react';
 
 const ItemsContext = React.createContext();
@@ -75,31 +76,31 @@ Next, we will hop into our App component to create a provider for the context ob
 
 The render function part of the component changes from:
 
-```
+```javascript
 return (
-    div className="App">
-      header className="App-header">
+    <div className="App">
+      <header className="App-header">
         To Do items
-        ItemList items={items} removeItem={removeItem} />
-        AddItemForm addItem={addItem} />
-      header>
-    div>
+        <ItemList items={items} removeItem={removeItem} />
+        <AddItemForm addItem={addItem} />
+      </header>
+    </div>
   );
 ```
 
 to:
 
-```
+```javascript
 return (
-    ItemsContext.Provider>
-      div className="App">
-        header className="App-header">
+    <ItemsContext.Provider>
+      <div className="App">
+        <header className="App-header">
           To Do items
-          ItemList items={items} removeItem={removeItem} />
-          AddItemForm addItem={addItem} />
-        header>
-      div>
-    ItemsContext.Provider>
+          <ItemList items={items} removeItem={removeItem} />
+          <AddItemForm addItem={addItem} />
+        </header>
+      </div>
+    </ItemsContext.Provider>
   );
 ```
 
@@ -111,7 +112,7 @@ Doing so will remove the need for all the props that we are passing from the App
 
 Thus, we will create an object with those two properties on it, which will also be the default value for our context object. Thus, the initialization of the context object changes to:
 
-```
+```javascript
 const ItemsContext = React.createContext({
   items: [],
   itemsDispatch: () => {},
@@ -120,8 +121,8 @@ const ItemsContext = React.createContext({
 
 and the provider gets the value as:
 
-```
-ItemsContext.Provider value={{ items, itemsDispatch }}>
+```javascript
+<ItemsContext.Provider value={{ items, itemsDispatch }}>
 ```
 
 With this in place, we do not need to pass in any props to the ItemList and AddItem components. It is now upto them to extract what they need from the context API using the useContext hook.
@@ -132,38 +133,38 @@ The item list component no longer needs items as a prop. We can refactor it to g
 
 Since we will be using the useContext hook, we will need to import that in the ItemList component as well as the items context that we had created since useContext needs that too.
 
-```
+```javascript
 const ItemList = ({ items, removeItem }) => {
   return (
-    div className="items-container">
-      ul>
+    <div className="items-container">
+      <ul>
         {items.map((item) => (
-          li>
-            Item key={item} item={item} removeItem={removeItem} />
-          li>
+          <li>
+            <Item key={item} item={item} removeItem={removeItem} />
+          </li>
         ))}
-      ul>
-    div>
+      </ul>
+    </div>
   );
 };
 ```
 
 will be changed to:
 
-```
+```javascript
 const ItemList = ({ removeItem }) => {
   const { items } = useContext(ItemsContext);
 
   return (
-    div className="items-container">
-      ul>
+    <div className="items-container">
+      <ul>
         {items.map((item) => (
-          li>
-            Item key={item} item={item} removeItem={removeItem} />
-          li>
+          <li>
+            <Item key={item} item={item} removeItem={removeItem} />
+          </li>
         ))}
-      ul>
-    div>
+      </ul>
+    </div>
   );
 };
 ```
@@ -172,34 +173,34 @@ const ItemList = ({ removeItem }) => {
 
 Notice that the remove item function is eventually calling the dispatch function in our application. And we have already added that function to the context object. So we can remove that prop as well, and refactor our Item component too.
 
-```
+```javascript
 const Item = ({ item, removeItem }) => {
   return (
-    div>
-      span>{item}span>
-      button onClick={() => removeItem(item)}>Xbutton>
-    div>
+    <div>
+      <span>{item}</span>
+      <button onClick={() => removeItem(item)}>X</button>
+    </div>
   );
 };
 ```
 
 Can now be changed to:
 
-```
+```javascript
 const Item = ({ item }) => {
   const { itemsDispatch } = useContext(ItemsContext);
 
   return (
-    div>
-      span>{item}span>
-      button
+    <div>
+      <span>{item}</span>
+      <button
         onClick={() =>
           itemsDispatch({ type: 'REMOVE_ITEM', itemToBeDeleted: item })
         }
       >
         X
-      button>
-    div>
+      </button>
+    </div>
   );
 };
 ```

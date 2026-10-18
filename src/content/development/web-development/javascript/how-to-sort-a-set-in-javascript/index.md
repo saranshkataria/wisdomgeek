@@ -1,12 +1,13 @@
 ---
 title: 'How to sort a Set in JavaScript'
-description: 'ES6 introduced the set data structure in JavaScript. But sets are not ordered abstract data structures. So there is no .sort() property available on them. To sort a Set in JavaScript, we need to convert it into an array first. Since arrays are sortable, we will then sort them, and&#46;&#46;&#46;'
+description: 'ES6 introduced the set data structure in JavaScript. But sets are not ordered abstract data structures. So there is no .sort() property available on them.'
 pubDate: 'Nov 26, 2022'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
+tags: [{ name: "es6", slug: "es6" }, { name: "javascript", slug: "javascript" }]
 ---
 
 ES6 introduced the set data structure in JavaScript. But sets are not ordered abstract data structures. So there is no .sort() property available on them. To sort a Set in JavaScript, we need to convert it into an array first.
@@ -15,7 +16,7 @@ Since arrays are sortable, we will then sort them, and then convert the array ba
 
 Here is what it looks like code-wise:
 
-```
+```javascript
 const numbers = new Set([5, 4, 1]);
 
 const sortedNumbersArray = Array.from(numbers).sort((a, b) => a - b);
@@ -24,9 +25,9 @@ const sortedNumbersSet = new Set(sortedNumbersArray);
 console.log(sortedNumbersSet); //  {1, 4, 5}
 ```
 
-Instead of the Array.from method, we can use [destructuring (aka the spread operator) ](https://www.wisdomgeek.com/development/web-development/javascript/rest-and-spread-operator-three-dots-that-changed-javascript/)to create the array too:
+Instead of the Array.from method, we can use [destructuring (aka the spread operator)](/development/web-development/javascript/rest-and-spread-operator-three-dots-that-changed-javascript/) to create the array too:
 
-```
+```javascript
 const strings = new Set(['x', 'z', 'y']);
 
 const sortedStringsArray = [...strings].sort();
