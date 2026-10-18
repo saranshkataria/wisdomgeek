@@ -15,7 +15,11 @@ const blog = defineCollection({
 		heroImage: image().optional(),
 		author: z.string().optional(),
 		categories: z.array(z.string()).optional(),
+		// Names of the post's deepest category (in categoryPaths) and its ancestors, top level first
 		categoryHierarchy: z.array(z.string()).optional(),
+		// Archive path of each entry in `categories` (same order), taken from the
+		// WordPress term links, e.g. "development/web-development/javascript"
+		categoryPaths: z.array(z.string()).optional(),
 		// Slugs come from WordPress and match the live /tag/<slug>/ URLs
 		tags: z.array(z.object({ name: z.string(), slug: z.string() })).optional(),
 	}),
