@@ -15,6 +15,8 @@ const blog = defineCollection({
 		author: z.string().optional(),
 		categories: z.array(z.string()).optional(),
 		categoryHierarchy: z.array(z.string()).optional(),
+		// Slugs come from WordPress and match the live /tag/<slug>/ URLs
+		tags: z.array(z.object({ name: z.string(), slug: z.string() })).optional(),
 	}),
 });
 
