@@ -11,11 +11,13 @@ import {
 	categoryToSlug, 
 	matchesCategoryPath,
 	getCategoryNameFromPath,
-	getAllCategoryPaths
+	getAllCategoryPaths,
+	getCategoryNames
 } from '../lib/utils';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
+	const categoryNames = getCategoryNames(posts);
 	
 	// Build all possible category paths from categoryHierarchy
 	const categoryPaths = getAllCategoryPaths(posts);
@@ -25,7 +27,7 @@ export async function getStaticPaths() {
 		// Filter posts that match this category path
 		const matchingPosts = posts.filter(post => {
 			// Check if categoryHierarchy starts with this path
-			if (matchesCategoryPath(post.data.categoryHierarchy, categoryPath)) {
+			if (matchesCategoryPath(post, categoryPath)) {
 				return true;
 			}
 			
@@ -41,7 +43,7 @@ export async function getStaticPaths() {
 		}).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 		
 		// Get the category name from the path
-		const categoryName = getCategoryNameFromPath(categoryPath);
+		const categoryName = getCategoryNameFromPath(categoryPath, categoryNames);
 		
 		return {
 			params: { category: categoryPath },

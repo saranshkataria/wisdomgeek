@@ -4,9 +4,10 @@ description: '“Not today, I will do it tomorrow.” Sounds familiar? More ofte
 pubDate: 'Aug 28, 2017'
 updatedDate: 'Aug 28, 2017'
 heroImage: './hero.jpg'
-author: 'Pranshu Aggarwal'
+author: 'Saransh Kataria'
 categories: ["Motivation"]
 categoryHierarchy: ["Self Help","Motivation"]
+categoryPaths: ["self-help/motivation"]
 tags: [{ name: "inspiration", slug: "inspiration" }, { name: "motivation", slug: "motivation" }, { name: "persistance", slug: "persistance" }]
 ---
 

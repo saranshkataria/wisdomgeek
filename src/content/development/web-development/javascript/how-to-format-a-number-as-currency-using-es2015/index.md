@@ -6,7 +6,8 @@ updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpg'
 author: 'Saransh Kataria'
 categories: ["JavaScript"]
-categoryHierarchy: ["Development","Web Development","Javascript"]
+categoryHierarchy: ["Development","Web Development","JavaScript"]
+categoryPaths: ["development/web-development/javascript"]
 tags: [{ name: "ecmascript", slug: "ecmascript" }, { name: "es2015", slug: "es2015" }, { name: "es6", slug: "es6" }, { name: "javascript", slug: "javascript" }, { name: "number formatting", slug: "number-formatting" }, { name: "string formatting", slug: "string-formatting" }]
 ---
 

@@ -7,6 +7,7 @@ heroImage: './hero.webp'
 author: 'Saransh Kataria'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]
+categoryPaths: ["development/web-development/react"]
 tags: [{ name: "font-awesome", slug: "font-awesome" }, { name: "react", slug: "react" }, { name: "reactjs", slug: "reactjs" }]
 ---
 

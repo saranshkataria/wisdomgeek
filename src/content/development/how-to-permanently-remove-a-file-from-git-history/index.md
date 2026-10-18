@@ -7,6 +7,7 @@ heroImage: './hero.jpg'
 author: 'Saransh Kataria'
 categories: ["Development"]
 categoryHierarchy: ["Development"]
+categoryPaths: ["development"]
 tags: []
 ---
 

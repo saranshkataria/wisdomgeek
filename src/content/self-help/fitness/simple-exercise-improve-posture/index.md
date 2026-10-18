@@ -7,6 +7,7 @@ heroImage: './hero.jpg'
 author: 'Saransh Kataria'
 categories: ["Fitness"]
 categoryHierarchy: ["Self Help","Fitness"]
+categoryPaths: ["self-help/fitness"]
 tags: []
 ---
 

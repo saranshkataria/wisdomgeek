@@ -4,9 +4,10 @@ description: 'Hey gamers, it’s time for a game review! The Arkham Series is on
 pubDate: 'Sep 06, 2015'
 updatedDate: 'Sep 06, 2015'
 heroImage: './hero.jpg'
-author: 'Wisdom Geek'
+author: 'Saransh Kataria'
 categories: ["Game Review"]
 categoryHierarchy: ["General","Game Review"]
+categoryPaths: ["general/game-review"]
 tags: [{ name: "Arkham Knight", slug: "arkham-knight" }, { name: "Games", slug: "games" }]
 ---
 

@@ -4,9 +4,10 @@ description: 'Building advanced layout designs using CSS is a troublesome proces
 pubDate: 'Dec 11, 2017'
 updatedDate: 'Oct 15, 2023'
 heroImage: './hero.jpg'
-author: 'Wisdom Geek'
+author: 'Saransh Kataria'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]
+categoryPaths: ["development/web-development"]
 tags: [{ name: "css grid", slug: "css-grid" }, { name: "css grid layout", slug: "css-grid-layout" }]
 ---
 

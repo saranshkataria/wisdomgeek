@@ -1,3 +1,7 @@
+import type { CollectionEntry } from 'astro:content';
+
+type Post = CollectionEntry<'blog'>;
+
 // Helper function to decode HTML entities
 export function decodeHtmlEntities(text: string): string {
 	const entities: Record<string, string> = {
@@ -37,33 +41,49 @@ export function buildCategoryPath(hierarchy: string[]): string {
 	return hierarchy.map(categoryToSlug).join('/');
 }
 
-// Helper function to match category path against post hierarchy
-export function matchesCategoryPath(
-	postHierarchy: string[] | undefined,
-	categoryPath: string
-): boolean {
-	if (!postHierarchy || postHierarchy.length === 0) return false;
-	
-	const pathParts = categoryPath.split('/');
-	
-	// Check if the hierarchy matches the path prefix
-	if (postHierarchy.length >= pathParts.length) {
-		const postPath = postHierarchy
-			.slice(0, pathParts.length)
-			.map(categoryToSlug)
-			.join('/');
-		
-		return postPath === categoryPath;
-	}
-	
-	return false;
+// Archive path of the post's categoryHierarchy, i.e. its deepest category in
+// categoryPaths, e.g. "development/web-development/javascript". Paths come from
+// WordPress, so archive URLs don't depend on category names.
+export function getHierarchyPath(post: Post): string | undefined {
+	const { categoryHierarchy = [], categoryPaths = [] } = post.data;
+	return categoryPaths.find((path) => path.split('/').length === categoryHierarchy.length);
 }
 
-// Helper function to get category name from path
-export function getCategoryNameFromPath(categoryPath: string): string {
-	return categoryPath
-		.split('/')
-		.map(slugToTitle)
+// Real name of every category archive path, e.g. "development/vs-code" -> "VS Code"
+export function getCategoryNames(posts: Post[]): Map<string, string> {
+	const names = new Map<string, string>();
+	posts.forEach((post) => {
+		const { categories = [], categoryPaths = [], categoryHierarchy = [] } = post.data;
+		// categoryPaths[i] is the archive path of categories[i]
+		categoryPaths.forEach((path, i) => {
+			if (categories[i]) names.set(path, categories[i]);
+		});
+		// categoryHierarchy also names the ancestors of the hierarchy path
+		const segments = getHierarchyPath(post)?.split('/') ?? [];
+		segments.forEach((_, i) => {
+			names.set(segments.slice(0, i + 1).join('/'), categoryHierarchy[i]);
+		});
+	});
+	return names;
+}
+
+// Helper function to match category path against post hierarchy
+export function matchesCategoryPath(post: Post, categoryPath: string): boolean {
+	const path = getHierarchyPath(post);
+	return path === categoryPath || Boolean(path?.startsWith(`${categoryPath}/`));
+}
+
+// Name of a category archive, e.g. "development/vs-code" -> "Development > VS Code".
+// Flat paths such as "vs-code" are named after the category with that slug.
+export function getCategoryNameFromPath(categoryPath: string, names: Map<string, string>): string {
+	const nestedPath = names.has(categoryPath)
+		? categoryPath
+		: [...names.keys()].find((path) => path.split('/').pop() === categoryPath);
+	if (!nestedPath) return slugToTitle(categoryPath);
+	if (nestedPath !== categoryPath) return names.get(nestedPath)!;
+	const segments = categoryPath.split('/');
+	return segments
+		.map((segment, i) => names.get(segments.slice(0, i + 1).join('/')) ?? slugToTitle(segment))
 		.join(' > ');
 }
 
@@ -77,22 +97,15 @@ export interface CategoryNode {
 }
 
 // Helper function to build all category paths from posts
-export function getAllCategoryPaths(posts: any[]): Set<string> {
+export function getAllCategoryPaths(posts: Post[]): Set<string> {
 	const categoryPaths = new Set<string>();
 	
 	posts.forEach(post => {
-		if (post.data.categoryHierarchy && post.data.categoryHierarchy.length > 0) {
-			const hierarchy = post.data.categoryHierarchy;
-			let pathParts: string[] = [];
-			
-			// Create paths for each level in the hierarchy
-			hierarchy.forEach((categoryName: string) => {
-				const slug = categoryToSlug(categoryName);
-				pathParts.push(slug);
-				const path = pathParts.join('/');
-				categoryPaths.add(path);
-			});
-		}
+		// Create paths for each level in the hierarchy
+		const segments = getHierarchyPath(post)?.split('/') ?? [];
+		segments.forEach((_, i) => {
+			categoryPaths.add(segments.slice(0, i + 1).join('/'));
+		});
 		
 		// Also add simple category paths for backwards compatibility
 		if (post.data.categories) {
@@ -107,35 +120,29 @@ export function getAllCategoryPaths(posts: any[]): Set<string> {
 }
 
 // Helper function to build hierarchical category tree from posts
-export function buildCategoryTree(posts: any[]): Map<string, CategoryNode> {
+export function buildCategoryTree(posts: Post[]): Map<string, CategoryNode> {
 	const categoryTree = new Map<string, CategoryNode>();
 	
 	posts.forEach(post => {
-		if (post.data.categoryHierarchy && post.data.categoryHierarchy.length > 0) {
-			const hierarchy = post.data.categoryHierarchy;
-			let currentLevel = categoryTree;
-			let pathParts: string[] = [];
+		const hierarchy = post.data.categoryHierarchy ?? [];
+		const segments = getHierarchyPath(post)?.split('/') ?? [];
+		let currentLevel = categoryTree;
+		
+		segments.forEach((slug, i) => {
+			if (!currentLevel.has(slug)) {
+				currentLevel.set(slug, {
+					name: hierarchy[i],
+					slug: slug,
+					path: segments.slice(0, i + 1).join('/'),
+					count: 0,
+					children: new Map()
+				});
+			}
 			
-			hierarchy.forEach((categoryName: string) => {
-				const slug = categoryToSlug(categoryName);
-				pathParts.push(slug);
-				const path = pathParts.join('/');
-				
-				if (!currentLevel.has(slug)) {
-					currentLevel.set(slug, {
-						name: categoryName,
-						slug: slug,
-						path: path,
-						count: 0,
-						children: new Map()
-					});
-				}
-				
-				const node = currentLevel.get(slug)!;
-				node.count++; // Count posts at this level and all children
-				currentLevel = node.children;
-			});
-		}
+			const node = currentLevel.get(slug)!;
+			node.count++; // Count posts at this level and all children
+			currentLevel = node.children;
+		});
 	});
 	
 	return categoryTree;

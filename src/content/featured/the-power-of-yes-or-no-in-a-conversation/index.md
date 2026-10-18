@@ -7,6 +7,7 @@ heroImage: './hero.jpg'
 author: 'Saransh Kataria'
 categories: ["Featured","People"]
 categoryHierarchy: ["Self Help","People"]
+categoryPaths: ["featured","self-help/people"]
 tags: [{ name: "People", slug: "people" }]
 ---
 

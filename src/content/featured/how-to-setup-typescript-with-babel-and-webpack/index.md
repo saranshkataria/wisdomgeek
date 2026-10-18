@@ -7,6 +7,7 @@ heroImage: './hero.jpg'
 author: 'Saransh Kataria'
 categories: ["Featured","Web Development"]
 categoryHierarchy: ["Development","Web Development"]
+categoryPaths: ["featured","development/web-development"]
 tags: [{ name: "babel", slug: "babel" }, { name: "javascript", slug: "javascript" }, { name: "typescript", slug: "typescript" }, { name: "web development", slug: "web-development" }, { name: "webpack", slug: "webpack" }]
 ---
 

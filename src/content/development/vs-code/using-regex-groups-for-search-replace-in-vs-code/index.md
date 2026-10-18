@@ -6,7 +6,8 @@ updatedDate: 'Feb 29, 2024'
 heroImage: ''
 author: 'Saransh Kataria'
 categories: ["VS Code"]
-categoryHierarchy: ["Development","Vs Code"]
+categoryHierarchy: ["Development","VS Code"]
+categoryPaths: ["development/vs-code"]
 tags: [{ name: "Visual Studio Code", slug: "visual-studio-code" }, { name: "vscode", slug: "vscode" }]
 ---
 

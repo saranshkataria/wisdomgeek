@@ -7,6 +7,7 @@ heroImage: './hero.jpg'
 author: 'Saransh Kataria'
 categories: ["Facebook"]
 categoryHierarchy: ["General","Facebook"]
+categoryPaths: ["general/facebook"]
 tags: [{ name: "Facebook", slug: "facebook" }]
 ---
 

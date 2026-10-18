@@ -4,9 +4,10 @@ description: 'In this article, we will explore recurrent neural networks. For al
 pubDate: 'Oct 27, 2020'
 updatedDate: 'Oct 27, 2020'
 heroImage: './hero.jpg'
-author: 'Pranshu Aggarwal'
+author: 'Saransh Kataria'
 categories: ["Machine Learning"]
 categoryHierarchy: ["Development","Machine Learning"]
+categoryPaths: ["development/machine-learning"]
 tags: [{ name: "Artificial Neural Networks", slug: "artificial-neural-networks" }, { name: "Machine learning", slug: "machine-learning" }, { name: "recurrent neural networks", slug: "recurrent-neural-networks" }, { name: "rnn", slug: "rnn" }]
 ---
 

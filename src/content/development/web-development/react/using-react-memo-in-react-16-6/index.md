@@ -7,6 +7,7 @@ heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]
+categoryPaths: ["development/web-development/react"]
 tags: [{ name: "functional components", slug: "functional-components" }, { name: "react", slug: "react" }, { name: "react memo", slug: "react-memo" }, { name: "reactjs", slug: "reactjs" }]
 ---
 

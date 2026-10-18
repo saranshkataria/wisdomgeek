@@ -4,9 +4,10 @@ description: 'It has been a while since I did a game review. Unfortunately, I di
 pubDate: 'Jun 15, 2016'
 updatedDate: 'Jun 15, 2016'
 heroImage: './hero.jpg'
-author: 'Wisdom Geek'
+author: 'Saransh Kataria'
 categories: ["Game Review"]
 categoryHierarchy: ["General","Game Review"]
+categoryPaths: ["general/game-review"]
 tags: [{ name: "DOOM", slug: "doom" }, { name: "Doom 2016", slug: "doom-2016" }, { name: "Doom 4", slug: "doom-4" }, { name: "Doom game", slug: "doom-game" }, { name: "Game Review", slug: "game-review" }]
 ---
 

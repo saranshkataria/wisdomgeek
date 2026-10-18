@@ -4,9 +4,10 @@ description: 'Businesses these days are generating and consuming a huge amount o
 pubDate: 'Jan 05, 2021'
 updatedDate: 'Jan 05, 2021'
 heroImage: './hero.jpg'
-author: 'Pranshu Aggarwal'
+author: 'Saransh Kataria'
 categories: ["Data Science","Machine Learning"]
 categoryHierarchy: ["Development","Data Science"]
+categoryPaths: ["development/data-science","development/machine-learning"]
 tags: [{ name: "Artificial Intelligence", slug: "artificial-intelligence" }, { name: "Business", slug: "business" }, { name: "Machine learning", slug: "machine-learning" }]
 ---
 

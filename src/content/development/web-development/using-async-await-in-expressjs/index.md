@@ -7,6 +7,7 @@ heroImage: './hero.jpeg'
 author: 'Saransh Kataria'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]
+categoryPaths: ["development/web-development"]
 tags: [{ name: "async", slug: "async" }, { name: "async javascript", slug: "async-javascript" }, { name: "async/await", slug: "async-await" }, { name: "asynchronous javascript", slug: "asynchronous-javascript" }, { name: "await", slug: "await" }, { name: "express", slug: "express" }, { name: "expressjs", slug: "expressjs" }, { name: "javascript", slug: "javascript" }]
 ---
 

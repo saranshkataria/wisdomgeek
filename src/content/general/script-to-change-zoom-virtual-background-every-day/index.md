@@ -7,6 +7,7 @@ heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["General"]
 categoryHierarchy: ["General"]
+categoryPaths: ["general"]
 tags: [{ name: "Zoom", slug: "zoom" }, { name: "Zoom virtual backgrounds", slug: "zoom-virtual-backgrounds" }]
 ---
 

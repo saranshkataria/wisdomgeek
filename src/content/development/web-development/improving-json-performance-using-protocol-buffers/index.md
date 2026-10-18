@@ -7,6 +7,7 @@ heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]
+categoryPaths: ["development/web-development"]
 tags: [{ name: "json", slug: "json" }, { name: "json parsing", slug: "json-parsing" }, { name: "protobuf", slug: "protobuf" }, { name: "protocol buffers", slug: "protocol-buffers" }]
 ---
 

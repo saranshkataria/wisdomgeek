@@ -7,6 +7,7 @@ heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["Android"]
 categoryHierarchy: ["General","Android"]
+categoryPaths: ["general/android"]
 tags: [{ name: "Android", slug: "android" }, { name: "Bootloop", slug: "bootloop" }, { name: "Disable Xposed Framework", slug: "disable-xposed-framework" }, { name: "Xposed Framework", slug: "xposed-framework" }]
 ---
 

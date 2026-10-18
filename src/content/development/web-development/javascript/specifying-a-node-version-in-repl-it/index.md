@@ -6,7 +6,8 @@ updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["JavaScript"]
-categoryHierarchy: ["Development","Web Development","Javascript"]
+categoryHierarchy: ["Development","Web Development","JavaScript"]
+categoryPaths: ["development/web-development/javascript"]
 tags: [{ name: "javascript", slug: "javascript" }, { name: "node", slug: "node" }, { name: "node.js", slug: "node-js" }, { name: "repl", slug: "repl" }, { name: "replit", slug: "replit" }]
 ---
 

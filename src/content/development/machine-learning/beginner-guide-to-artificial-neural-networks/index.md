@@ -4,9 +4,10 @@ description: 'In this article, We would like to talk to you about artificial neu
 pubDate: 'Jun 06, 2020'
 updatedDate: 'Jun 06, 2020'
 heroImage: './hero.png'
-author: 'Pranshu Aggarwal'
+author: 'Saransh Kataria'
 categories: ["Machine Learning"]
 categoryHierarchy: ["Development","Machine Learning"]
+categoryPaths: ["development/machine-learning"]
 tags: []
 ---
 

@@ -7,6 +7,7 @@ heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["Blogging"]
 categoryHierarchy: ["Blogging"]
+categoryPaths: ["blogging"]
 tags: []
 ---
 

@@ -6,7 +6,8 @@ updatedDate: 'Oct 15, 2023'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["Featured","JavaScript"]
-categoryHierarchy: ["Development","Web Development","Javascript"]
+categoryHierarchy: ["Development","Web Development","JavaScript"]
+categoryPaths: ["featured","development/web-development/javascript"]
 tags: [{ name: "clean code", slug: "clean-code" }, { name: "formatting", slug: "formatting" }, { name: "javascript", slug: "javascript" }, { name: "prettier", slug: "prettier" }, { name: "pretty javascript", slug: "pretty-javascript" }]
 ---
 

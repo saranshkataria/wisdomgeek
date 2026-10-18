@@ -7,6 +7,7 @@ heroImage: './hero.jpg'
 author: 'Saransh Kataria'
 categories: ["Community Management","Featured"]
 categoryHierarchy: ["Community Management"]
+categoryPaths: ["community-management","featured"]
 tags: [{ name: "communities", slug: "communities" }, { name: "community building", slug: "community-building" }, { name: "community management", slug: "community-management" }, { name: "developer community", slug: "developer-community" }, { name: "Facebook", slug: "facebook" }, { name: "facebook developer circle", slug: "facebook-developer-circle" }, { name: "facebook developer circle delhi", slug: "facebook-developer-circle-delhi" }, { name: "fb devc", slug: "fb-devc" }, { name: "growing communities", slug: "growing-communities" }, { name: "scaling communities", slug: "scaling-communities" }]
 ---
 

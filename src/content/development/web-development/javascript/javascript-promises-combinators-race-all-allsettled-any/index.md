@@ -6,7 +6,8 @@ updatedDate: 'Oct 15, 2023'
 heroImage: './hero.jpeg'
 author: 'Saransh Kataria'
 categories: ["JavaScript"]
-categoryHierarchy: ["Development","Web Development","Javascript"]
+categoryHierarchy: ["Development","Web Development","JavaScript"]
+categoryPaths: ["development/web-development/javascript"]
 tags: [{ name: "async javascript", slug: "async-javascript" }, { name: "asynchronous javascript", slug: "asynchronous-javascript" }, { name: "javascript", slug: "javascript" }, { name: "javascript promise", slug: "javascript-promise" }, { name: "js", slug: "js" }, { name: "promises", slug: "promises" }, { name: "web development", slug: "web-development" }, { name: "webdev", slug: "webdev" }]
 ---
 

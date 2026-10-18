@@ -6,7 +6,8 @@ updatedDate: 'Mar 24, 2022'
 heroImage: './hero.webp'
 author: 'Saransh Kataria'
 categories: ["JavaScript"]
-categoryHierarchy: ["Development","Web Development","Javascript"]
+categoryHierarchy: ["Development","Web Development","JavaScript"]
+categoryPaths: ["development/web-development/javascript"]
 tags: [{ name: "chrome devtools", slug: "chrome-devtools" }, { name: "devtools", slug: "devtools" }]
 ---
 

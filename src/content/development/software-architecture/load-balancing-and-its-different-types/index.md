@@ -7,6 +7,7 @@ heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["Software Architecture"]
 categoryHierarchy: ["Development","Software Architecture"]
+categoryPaths: ["development/software-architecture"]
 tags: [{ name: "load balancing", slug: "load-balancing" }, { name: "loadbalancer", slug: "loadbalancer" }, { name: "loadbalancing", slug: "loadbalancing" }, { name: "software architecture", slug: "software-architecture" }, { name: "software design", slug: "software-design" }, { name: "system design", slug: "system-design" }]
 ---
 

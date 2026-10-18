@@ -7,6 +7,7 @@ heroImage: './hero.jpeg'
 author: 'Saransh Kataria'
 categories: ["Privacy"]
 categoryHierarchy: ["General","Privacy"]
+categoryPaths: ["general/privacy"]
 tags: []
 ---
 

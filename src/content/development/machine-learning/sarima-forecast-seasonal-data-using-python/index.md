@@ -4,9 +4,10 @@ description: 'In this article, we explore the world of time series and how to im
 pubDate: 'Jul 20, 2020'
 updatedDate: 'Oct 11, 2023'
 heroImage: './hero.jpg'
-author: 'Pranshu Aggarwal'
+author: 'Saransh Kataria'
 categories: ["Machine Learning"]
 categoryHierarchy: ["Development","Machine Learning"]
+categoryPaths: ["development/machine-learning"]
 tags: []
 ---
 

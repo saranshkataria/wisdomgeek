@@ -7,6 +7,7 @@ heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["Programming"]
 categoryHierarchy: ["Development","Programming"]
+categoryPaths: ["development/programming"]
 tags: [{ name: "Editor", slug: "editor" }, { name: "Visual Studio", slug: "visual-studio" }, { name: "Visual Studio Code", slug: "visual-studio-code" }, { name: "vscode", slug: "vscode" }]
 ---
 

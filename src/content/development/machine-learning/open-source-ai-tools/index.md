@@ -4,9 +4,10 @@ description: 'In this article, we will go through some of the most commonly used
 pubDate: 'Dec 22, 2020'
 updatedDate: 'Dec 22, 2020'
 heroImage: './hero.jpg'
-author: 'Pranshu Aggarwal'
+author: 'Saransh Kataria'
 categories: ["Machine Learning"]
 categoryHierarchy: ["Development","Machine Learning"]
+categoryPaths: ["development/machine-learning"]
 tags: [{ name: "Artificial Intelligence", slug: "artificial-intelligence" }, { name: "Machine learning", slug: "machine-learning" }, { name: "Open Source Tools", slug: "open-source-tools" }]
 ---
 

@@ -7,6 +7,7 @@ heroImage: './hero.jpg'
 author: 'Saransh Kataria'
 categories: ["Development"]
 categoryHierarchy: ["Development"]
+categoryPaths: ["development"]
 tags: [{ name: "apple m1", slug: "apple-m1" }, { name: "homebrew", slug: "homebrew" }, { name: "m1", slug: "m1" }, { name: "m1 mac", slug: "m1-mac" }, { name: "rosetta", slug: "rosetta" }, { name: "rosetta 2", slug: "rosetta-2" }]
 ---
 

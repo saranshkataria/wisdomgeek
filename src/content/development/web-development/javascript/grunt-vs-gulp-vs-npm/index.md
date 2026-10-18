@@ -6,7 +6,8 @@ updatedDate: 'Jan 12, 2016'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["JavaScript"]
-categoryHierarchy: ["Development","Web Development","Javascript"]
+categoryHierarchy: ["Development","Web Development","JavaScript"]
+categoryPaths: ["development/web-development/javascript"]
 tags: [{ name: "automation", slug: "automation" }, { name: "build", slug: "build" }, { name: "grunt", slug: "grunt" }, { name: "gulp", slug: "gulp" }, { name: "npm", slug: "npm" }, { name: "task runners", slug: "task-runners" }, { name: "web development", slug: "web-development" }]
 ---
 

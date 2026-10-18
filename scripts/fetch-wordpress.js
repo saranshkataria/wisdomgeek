@@ -10,6 +10,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const SITE_URL = "https://www.wisdomgeek.com";
 const PER_PAGE = 100;
+// Every post is credited to Saransh, whoever published it on WordPress
+const POST_AUTHOR = "Saransh Kataria";
 const CONTENT_DIR = path.join(__dirname, "../src/content");
 const DATA_DIR = path.join(__dirname, "../src/config");
 
@@ -647,6 +649,7 @@ function removeShortcodes(html) {
 // Folder for a post that mirrors its WordPress permalink, so the Astro entry id
 // (and therefore the URL) stays the same as the live site, e.g.
 // "https://www.wisdomgeek.com/featured/my-post/" -> "featured/my-post".
+// Also gives a category's archive path from its term link.
 // Returns null if the link is missing, invalid or not on SITE_URL's host.
 function getPermalinkPath(link) {
   try {
@@ -662,6 +665,69 @@ function getPermalinkPath(link) {
   } catch {
     return null;
   }
+}
+
+// Every category by id: decoded name, parent id and archive path (from its
+// term link, e.g. "development/web-development/javascript")
+async function fetchCategories() {
+  const categories = new Map();
+  let totalPages = 1;
+  for (let page = 1; page <= totalPages; page++) {
+    const response = await fetch(
+      `${SITE_URL}/wp-json/wp/v2/categories?per_page=${PER_PAGE}&page=${page}`
+    );
+    if (!response.ok) {
+      throw new Error(`Failed to fetch categories: ${response.statusText}`);
+    }
+    totalPages = Number(response.headers.get("X-WP-TotalPages")) || 1;
+    for (const category of await response.json()) {
+      const archivePath = getPermalinkPath(category.link);
+      if (!archivePath) {
+        throw new Error(
+          `No usable link for category ${category.id} (${category.link})`
+        );
+      }
+      categories.set(category.id, {
+        name: htmlToText(category.name),
+        parent: category.parent,
+        path: archivePath,
+      });
+    }
+  }
+  console.log(`Fetched ${categories.size} categories`);
+  return categories;
+}
+
+// A post's category names and archive paths (same order, as WordPress lists
+// them) and the hierarchy of its deepest category: that category's name and
+// its ancestors' names, top level first
+function getPostCategories(post, categoriesById) {
+  const categories = (post.categories ?? []).map((id) => {
+    const category = categoriesById.get(id);
+    if (!category) {
+      throw new Error(`Post ${post.id} has unknown category ${id}`);
+    }
+    return category;
+  });
+  const depth = (category) => category.path.split("/").length;
+  const deepest = categories.reduce(
+    (result, category) => (depth(category) > depth(result) ? category : result),
+    categories[0]
+  );
+  const hierarchy = [];
+  for (
+    let category = deepest;
+    category;
+    category = categoriesById.get(category.parent)
+  ) {
+    hierarchy.unshift(category.name);
+  }
+  return {
+    names: categories.map((category) => category.name),
+    paths: categories.map((category) => category.path),
+    hierarchy,
+    deepestPath: deepest?.path,
+  };
 }
 
 async function fetchWordPressPosts() {
@@ -711,68 +777,25 @@ async function fetchWordPressPosts() {
 
     console.log(`\nTotal posts fetched: ${allPosts.length}`);
 
+    const categoriesById = await fetchCategories();
+
     // Process each post
     for (const post of allPosts) {
       const cleanContent = convertHtmlToMarkdown(post.content.rendered);
 
-      // Get categories with hierarchy - WordPress stores them with parent information
-      const categories = post._embedded?.["wp:term"]?.[0] || [];
-
-      // Find the category with the deepest hierarchy (for categoryHierarchy and
-      // the fallback folder) and collect all category names
-      let categoryPath = "general";
-      let primaryCategoryPath = ["General"];
-      const allCategoryNames = [];
-
-      if (categories.length > 0) {
-        // Find the category with the longest path (deepest hierarchy)
-        let deepestCategory = categories[0];
-        let maxDepth = 0;
-
-        for (const cat of categories) {
-          const link = cat.link || "";
-          const linkMatch = link.match(/https?:\/\/[^\/]+\/(.+?)\/$/);
-          if (linkMatch) {
-            const depth = linkMatch[1].split("/").length;
-            if (depth > maxDepth) {
-              maxDepth = depth;
-              deepestCategory = cat;
-            }
-          }
-          // Collect all category names
-          allCategoryNames.push(cat.name);
-        }
-
-        // Use the deepest category for the category hierarchy
-        const categoryLink = deepestCategory.link || "";
-        const linkMatch = categoryLink.match(/https?:\/\/[^\/]+\/(.+?)\/$/);
-        if (linkMatch) {
-          categoryPath = linkMatch[1].toLowerCase();
-        } else {
-          // Fallback: just use the slug
-          categoryPath = (deepestCategory.slug || "general").toLowerCase();
-        }
-
-        // Convert the path to a hierarchy array
-        // e.g., "development/web-development/javascript" -> ["Development", "Web Development", "JavaScript"]
-        const pathParts = categoryPath.split("/");
-        primaryCategoryPath = pathParts.map((part) => {
-          // Convert slug to title case
-          return part
-            .split("-")
-            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-            .join(" ");
-        });
-      }
-
-      const primaryCategory = categoryPath.split("/")[0] || "general";
+      const {
+        names: categoryNames,
+        paths: categoryPaths,
+        hierarchy: categoryHierarchy,
+        deepestPath,
+      } = getPostCategories(post, categoriesById);
 
       // Create post directory at the post's permalink path so it keeps its live
       // URL; fall back to the deepest category folder if the link is unusable
       const postSlug = post.slug.toLowerCase();
       let postPath = getPermalinkPath(post.link);
       if (!postPath) {
-        postPath = `${categoryPath}/${postSlug}`;
+        postPath = `${deepestPath ?? "general"}/${postSlug}`;
         console.warn(
           `No usable permalink for post ${post.id} (${post.link}), using ${postPath}`
         );
@@ -831,9 +854,6 @@ async function fetchWordPressPosts() {
         day: "2-digit",
       });
 
-      // Get author name from embedded data
-      const authorName = post._embedded?.author?.[0]?.name || "";
-
       const title = htmlToText(post.title.rendered);
       const description = buildDescription(post.excerpt.rendered);
 
@@ -865,9 +885,10 @@ description: '${description.replace(/'/g, "''")}'
 pubDate: '${formattedDate}'
 updatedDate: '${formattedModifiedDate}'
 heroImage: '${heroImage}'
-author: '${authorName.replace(/'/g, "''")}'
-categories: ${JSON.stringify(allCategoryNames)}
-categoryHierarchy: ${JSON.stringify(primaryCategoryPath)}
+author: '${POST_AUTHOR.replace(/'/g, "''")}'
+categories: ${JSON.stringify(categoryNames)}
+categoryHierarchy: ${JSON.stringify(categoryHierarchy)}
+categoryPaths: ${JSON.stringify(categoryPaths)}
 tags: [${tags.map((tag) => `{ name: ${JSON.stringify(tag.name)}, slug: ${JSON.stringify(tag.slug)} }`).join(", ")}]
 ---
 

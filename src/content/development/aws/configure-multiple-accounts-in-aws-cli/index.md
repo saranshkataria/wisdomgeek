@@ -6,7 +6,8 @@ updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["AWS"]
-categoryHierarchy: ["Development","Aws"]
+categoryHierarchy: ["Development","AWS"]
+categoryPaths: ["development/aws"]
 tags: [{ name: "amazon web services", slug: "amazon-web-services" }, { name: "AWS", slug: "aws" }]
 ---
 

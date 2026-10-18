@@ -6,7 +6,8 @@ updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpg'
 author: 'Saransh Kataria'
 categories: ["JavaScript"]
-categoryHierarchy: ["Development","Web Development","Javascript"]
+categoryHierarchy: ["Development","Web Development","JavaScript"]
+categoryPaths: ["development/web-development/javascript"]
 tags: [{ name: "es2020", slug: "es2020" }, { name: "javascript", slug: "javascript" }, { name: "nullish coalescing", slug: "nullish-coalescing" }, { name: "optional chaining", slug: "optional-chaining" }]
 ---
 

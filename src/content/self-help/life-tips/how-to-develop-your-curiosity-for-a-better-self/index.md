@@ -7,6 +7,7 @@ heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["Life Tips"]
 categoryHierarchy: ["Self Help","Life Tips"]
+categoryPaths: ["self-help/life-tips"]
 tags: [{ name: "curiosity", slug: "curiosity" }, { name: "Self help", slug: "self-help" }, { name: "self improvement", slug: "self-improvement" }]
 ---
 

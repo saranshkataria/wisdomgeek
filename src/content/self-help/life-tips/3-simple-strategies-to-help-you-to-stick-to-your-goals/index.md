@@ -7,6 +7,7 @@ heroImage: './hero.jpg'
 author: 'Saransh Kataria'
 categories: ["Life Tips"]
 categoryHierarchy: ["Self Help","Life Tips"]
+categoryPaths: ["self-help/life-tips"]
 tags: [{ name: "goals", slug: "goals" }, { name: "life tips", slug: "life-tips" }, { name: "motivation", slug: "motivation" }, { name: "systems", slug: "systems" }]
 ---
 

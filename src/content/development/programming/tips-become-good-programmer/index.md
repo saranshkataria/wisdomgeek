@@ -4,9 +4,10 @@ description: 'One of the most popular questions from inexperienced programmers i
 pubDate: 'May 19, 2016'
 updatedDate: 'May 19, 2016'
 heroImage: './hero.jpg'
-author: 'Wisdom Geek'
+author: 'Saransh Kataria'
 categories: ["Programming"]
 categoryHierarchy: ["Development","Programming"]
+categoryPaths: ["development/programming"]
 tags: []
 ---
 

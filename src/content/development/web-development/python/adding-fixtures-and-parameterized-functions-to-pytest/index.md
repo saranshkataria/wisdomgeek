@@ -7,6 +7,7 @@ heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["Python"]
 categoryHierarchy: ["Development","Web Development","Python"]
+categoryPaths: ["development/web-development/python"]
 tags: [{ name: "fixtures", slug: "fixtures" }, { name: "integration testing", slug: "integration-testing" }, { name: "pytest", slug: "pytest" }, { name: "unit testing", slug: "unit-testing" }]
 ---
 

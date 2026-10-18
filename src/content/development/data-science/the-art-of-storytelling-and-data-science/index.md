@@ -4,9 +4,10 @@ description: 'Data Science and storytelling are inseparable. And the bridge betw
 pubDate: 'Aug 11, 2020'
 updatedDate: 'Aug 11, 2020'
 heroImage: './hero.jpg'
-author: 'Pranshu Aggarwal'
+author: 'Saransh Kataria'
 categories: ["Data Science"]
 categoryHierarchy: ["Development","Data Science"]
+categoryPaths: ["development/data-science"]
 tags: []
 ---
 
