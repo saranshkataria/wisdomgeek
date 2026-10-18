@@ -177,7 +177,6 @@ async function fetchWordPressPosts() {
     // Process each post
     for (const post of allPosts) {
       const cleanContent = convertHtmlToMarkdown(post.content.rendered);
-      const cleanExcerpt = convertHtmlToMarkdown(post.excerpt.rendered);
 
       // Get categories with hierarchy - WordPress stores them with parent information
       const categories = post._embedded?.["wp:term"]?.[0] || [];
@@ -334,16 +333,41 @@ async function fetchWordPressPosts() {
       // Get author name from embedded data
       const authorName = post._embedded?.author?.[0]?.name || "";
 
+      const title = htmlToText(post.title.rendered);
+      const description = buildDescription(post.excerpt.rendered);
+
+      // Get tags (name + slug, so tag pages can reproduce the live /tag/<slug>/ URLs).
+      // _embed returns at most 10 terms per taxonomy, so fetch the full list when needed.
+      let tagTerms = (post._embedded?.["wp:term"] || [])
+        .flat()
+        .filter((term) => term.taxonomy === "post_tag");
+      if (post.tags?.length > tagTerms.length) {
+        const response = await fetch(
+          `${SITE_URL}/wp-json/wp/v2/tags?post=${post.id}&per_page=100`
+        );
+        if (!response.ok) {
+          throw new Error(
+            `Failed to fetch tags for ${post.slug}: ${response.statusText}`
+          );
+        }
+        tagTerms = await response.json();
+      }
+      const tags = tagTerms.map((term) => ({
+        name: htmlToText(term.name),
+        slug: term.slug,
+      }));
+
       // Create markdown content
       const markdown = `---
-title: '${post.title.rendered.replace(/'/g, "''")}'
-description: '${cleanExcerpt.replace(/'/g, "''")}'
+title: '${title.replace(/'/g, "''")}'
+description: '${description.replace(/'/g, "''")}'
 pubDate: '${formattedDate}'
 updatedDate: '${formattedModifiedDate}'
 heroImage: '${heroImage}'
 author: '${authorName.replace(/'/g, "''")}'
 categories: ${JSON.stringify(allCategoryNames)}
 categoryHierarchy: ${JSON.stringify(primaryCategoryPath)}
+tags: [${tags.map((tag) => `{ name: ${JSON.stringify(tag.name)}, slug: ${JSON.stringify(tag.slug)} }`).join(", ")}]
 ---
 
 ${processedContent}
@@ -360,6 +384,85 @@ ${processedContent}
     console.error(`Error loading WordPress posts: ${error}`);
     throw error;
   }
+}
+
+const DESCRIPTION_MAX_LENGTH = 160;
+// End on a sentence only if that keeps at least this many characters
+const DESCRIPTION_MIN_SENTENCE_LENGTH = 100;
+
+// Named entities WordPress may emit; numeric references are decoded generically
+const NAMED_ENTITIES = {
+  amp: "&",
+  lt: "<",
+  gt: ">",
+  quot: '"',
+  apos: "'",
+  nbsp: "\u00a0",
+  hellip: "…",
+  ndash: "–",
+  mdash: "—",
+  lsquo: "‘",
+  rsquo: "’",
+  ldquo: "“",
+  rdquo: "”",
+  laquo: "«",
+  raquo: "»",
+  bull: "•",
+  middot: "·",
+  copy: "©",
+  reg: "®",
+  trade: "™",
+  rarr: "→",
+  larr: "←",
+};
+
+function decodeHtmlEntities(text) {
+  return text.replace(/&(#x[\da-f]+|#\d+|[a-z][a-z\d]*);/gi, (entity, ref) => {
+    if (ref[0] !== "#") {
+      return Object.hasOwn(NAMED_ENTITIES, ref) ? NAMED_ENTITIES[ref] : entity;
+    }
+    const codePoint =
+      ref[1].toLowerCase() === "x"
+        ? parseInt(ref.slice(2), 16)
+        : parseInt(ref.slice(1), 10);
+    return codePoint > 0 && codePoint <= 0x10ffff
+      ? String.fromCodePoint(codePoint)
+      : entity;
+  });
+}
+
+// Converts an HTML fragment (title, excerpt, term name) to a single line of plain text
+function htmlToText(html) {
+  const text = html
+    .replace(/<\/?(?:p|br|div|li|h[1-6]|blockquote|pre)\b[^>]*>/gi, " ")
+    .replace(/<[^>]*>/g, "");
+  return decodeHtmlEntities(text).replace(/\s+/g, " ").trim();
+}
+
+// Builds a meta description from the excerpt: plain text of at most
+// DESCRIPTION_MAX_LENGTH characters, ending on a sentence where possible
+function buildDescription(excerptHtml) {
+  const excerpt = htmlToText(excerptHtml);
+  // WordPress appends "..." / "[…]" when it shortens the excerpt
+  const text = excerpt.replace(/\s*(?:\[\s*(?:…|\.{3})\s*\]|…|\.{3})$/, "");
+  if (text === excerpt && text.length <= DESCRIPTION_MAX_LENGTH) {
+    return text;
+  }
+
+  let sentenceEnd = 0;
+  for (const match of text.matchAll(/[.!?]["'”’)]*(?=\s|$)/g)) {
+    const end = match.index + match[0].length;
+    if (end > DESCRIPTION_MAX_LENGTH) break;
+    sentenceEnd = end;
+  }
+  if (sentenceEnd >= DESCRIPTION_MIN_SENTENCE_LENGTH) {
+    return text.slice(0, sentenceEnd);
+  }
+
+  // Cut at the last word boundary that leaves room for the ellipsis
+  const limit = DESCRIPTION_MAX_LENGTH - 1;
+  const cut = text.length <= limit ? text.length : text.lastIndexOf(" ", limit);
+  return text.slice(0, cut > 0 ? cut : limit).replace(/[\s,;:–—-]+$/, "") + "…";
 }
 
 async function fetchAvatarAsBase64(url) {
