@@ -1,10 +1,10 @@
 # Wisdom Geek
 
-This repository is the [Astro](https://astro.build) 5 rebuild of [wisdomgeek.com](https://www.wisdomgeek.com), Saransh Kataria's blog, which is migrating from WordPress.
+This repository is the [Astro](https://astro.build) 7 rebuild of [wisdomgeek.com](https://www.wisdomgeek.com), Saransh Kataria's blog, which is migrating from WordPress.
 
 ## Requirements
 
-- **Node.js** 20.3 or later, except 21 (Astro 5 doesn't support it). Developed on Node 24 LTS.
+- **Node.js** 22.12 or later (required by Astro 7). Developed on Node 24 LTS.
 - **Yarn 1** (Classic). `yarn.lock` is a v1 lockfile.
 
 ## Commands

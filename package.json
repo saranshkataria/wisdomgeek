@@ -10,11 +10,11 @@
     "fetch-wordpress": "node scripts/fetch-wordpress.js"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.9",
-    "@astrojs/rss": "^4.0.13",
-    "@astrojs/sitemap": "^3.6.0",
-    "astro": "^5.15.3",
-    "sharp": "^0.34.3"
+    "@astrojs/mdx": "^8.0.3",
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.4",
+    "astro": "^7.3.8",
+    "sharp": "^0.35.5"
   },
   "devDependencies": {
     "@joplin/turndown-plugin-gfm": "^1.0.68",
