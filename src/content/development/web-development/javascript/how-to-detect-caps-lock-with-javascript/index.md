@@ -1,19 +1,20 @@
 ---
-title: 'How to detect caps lock with JavaScript'
-description: 'The need to verify and notify the user if the Caps Lock key is on is fairly common. It is particularly significant when constructing password inputs because users do not realize they are typing with their caps lock on. Let us see how to detect caps lock with JavaScript to do&#46;&#46;&#46;'
+title: 'How to detect caps lock with JavaScript'
+description: 'The need to verify and notify the user if the Caps Lock key is on is fairly common. It is particularly significant when constructing password inputs because…'
 pubDate: 'Feb 11, 2024'
 updatedDate: 'Feb 11, 2024'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
+tags: []
 ---
 
 The need to verify and notify the user if the Caps Lock key is on is fairly common. It is particularly significant when constructing password inputs because users do not realize they are typing with their caps lock on. Let us see how to detect caps lock with JavaScript to do so.
 
 There is a method called `getmodifierState` that is available on `KeyboardEvent` that we can use to do so. This can be accessed inside an event listener for a keyboard-related event:
 
-```
+```javascript
 document.querySelector('input[type=password]')
   .addEventListener('keyup', (keyboardEvent) => {
     const isCapsLockOn = keyboardEvent.getModifierState('CapsLock');

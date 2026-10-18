@@ -1,12 +1,13 @@
 ---
 title: 'Script to change Zoom virtual background every day'
-description: 'Over the past few months, I found a new use of the pictures that I have clicked while hiking. I started using them as Zoom virtual backgrounds. If you are anything like me and take a lot of pictures, it can be hard to decide which one looks good. And&#46;&#46;&#46;'
+description: 'Over the past few months, I found a new use of the pictures that I have clicked while hiking. I started using them as Zoom virtual backgrounds.'
 pubDate: 'Aug 17, 2021'
 updatedDate: 'Oct 09, 2023'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["General"]
 categoryHierarchy: ["General"]
+tags: [{ name: "Zoom", slug: "zoom" }, { name: "Zoom virtual backgrounds", slug: "zoom-virtual-backgrounds" }]
 ---
 
 Over the past few months, I found a new use of the pictures that I have clicked while hiking. I started using them as Zoom virtual backgrounds. If you are anything like me and take a lot of pictures, it can be hard to decide which one looks good. And then I decided to use them all, on different days. Sadly, Zoom does not have this as a built-in feature. And being a Software developer, I had to automate the process of choosing a random Zoom virtual background every day.
@@ -62,7 +63,7 @@ If you are new to cron jobs, you can use the [generat](https://codebeautify.org/
 55 9 * * 1-5 /Users/saranshkataria/zoom/zoombg.sh > /dev/null 2>&1
 ```
 
-The first part (55 9 * * 1-5) is what you will need to customize according to your schedule. The second part is just telling the OS what to do at that point in time. The path will need to be updated if you chose a different location for the bash script.
+The first part (55 9 \* \* 1-5) is what you will need to customize according to your schedule. The second part is just telling the OS what to do at that point in time. The path will need to be updated if you chose a different location for the bash script.
 
 To put it in a cron job, type
 
@@ -70,10 +71,10 @@ To put it in a cron job, type
 crontab -e
 ```
 
-and it will open up an editor using vi. Hit the I key on the keyboard to enter insert mode, paste in the line, and press Escape followed by ":wq" and enter to save and quit.
+and it will open up an editor using vi. Hit the I key on the keyboard to enter insert mode, paste in the line, and press Escape followed by “:wq” and enter to save and quit.
 
-That is all there is to it and we shall have a random Zoom virtual background every day/ frequency you chose!
+That is all there is to it and we shall have a random Zoom virtual background every day/ frequency you chose\!
 
 If you are using Windows, the script can be modified accordingly and should be fairly straightforward to use.
 
-If you have any questions, feel free to drop a comment below!
+If you have any questions, feel free to drop a comment below\!

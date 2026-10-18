@@ -1,12 +1,13 @@
 ---
 title: 'Load balancing and its different types'
-description: 'As our application scales to multiple users, we need to start thinking about scaling our servers and applications with it. Load balancing is the activity of effectively distributing traffic load across multiple servers. This is how we achieve highly available applications that help us achieve scaling effectively. What is load-balancing?&#46;&#46;&#46;'
+description: 'As our application scales to multiple users, we need to start thinking about scaling our servers and applications with it.'
 pubDate: 'Jan 26, 2021'
 updatedDate: 'Jan 26, 2021'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["Software Architecture"]
 categoryHierarchy: ["Development","Software Architecture"]
+tags: [{ name: "load balancing", slug: "load-balancing" }, { name: "loadbalancer", slug: "loadbalancer" }, { name: "loadbalancing", slug: "loadbalancing" }, { name: "software architecture", slug: "software-architecture" }, { name: "software design", slug: "software-design" }, { name: "system design", slug: "system-design" }]
 ---
 
 As our application scales to multiple users, we need to start thinking about scaling our servers and applications with it. Load balancing is the activity of effectively distributing traffic load across multiple servers.
@@ -17,7 +18,7 @@ This is how we achieve highly available applications that help us achieve scalin
 
 Since nobody can afford a web server overload, we scale out our backend servers to multiple machines. The aim is to have a distributed architecture and to avoid having all users connecting to a single server and choke it up. Therefore we distribute the incoming traffic by making use of a load balancer.
 
-![load balancing](./load-balancing-1024x582.png)
+![load balancing](./load-balancing.png)
 
 The load balancer thus becomes a key component in our architecture, diverting traffic based on different techniques that we will discuss later in this post. Its main responsibility is to avoid convergence of traffic and thus avoiding choking of the system.
 
@@ -25,21 +26,21 @@ Load balancers thus become the first point of contact for the client requests.
 
 There can be multiple load balancers in a system as well. One each for various tiers of the application. This would help handle the separate application tiers more effectively and also scale them independently if needed.
 
-![load balancing multiple tiers](./load-balancing-multiple-tiers-1024x472.png)
+![load balancing multiple tiers](./load-balancing-multiple-tiers.png)
 
 It is also important to mention that when a load balancer redirects to a particular location, it might not hit an application server. It might hit another load balancer that is implemented at a location-based cluster in a data center if we were scaling globally.
 
-**Note: **If a server goes down, the load balancer also ensures that no traffic is directed to that server until it is back up and running. This is done by performing health checks that ensure the load balancer is only sending traffic to servers that are online.
+**Note:** If a server goes down, the load balancer also ensures that no traffic is directed to that server until it is back up and running. This is done by performing health checks that ensure the load balancer is only sending traffic to servers that are online.
 
-But how do we decide which machine the user will land upon? 
+But how do we decide which machine the user will land upon?
 
 ## Types of load balancing
 
 There are three types of load balancing:
 
-1. $1
-2. $1
-3. $1
+1. DNS load balancing
+2. Hardware-based load balancing
+3. Software-based load balancing
 
 As with everything, there are pros and cons to either of the approaches. Let us discuss them in detail.
 
@@ -53,7 +54,7 @@ The reason a list of IP addresses is returned and not a single IP address is to 
 
 Though this is a popular strategy, it has its limitations too. What the strategy does not factor in is the existing load on the server, the processing time of the server, their online status, etc.
 
-Another limitation of this technique is that IP addresses are cached on the client machine's DNS resolver. This can be mitigated by setting a low TTL (time to live, or how long to store the mapping for). But it is a tradeoff since longer TTL means clients do not know about changes and shorter TTL may improve accuracy but increases DNS processing and DNS caching was implemented to mitigate that in the first place. Also, the client might choose to disregard your TTL value altogether. So it is not guaranteed.
+Another limitation of this technique is that IP addresses are cached on the client machine’s DNS resolver. This can be mitigated by setting a low TTL (time to live, or how long to store the mapping for). But it is a tradeoff since longer TTL means clients do not know about changes and shorter TTL may improve accuracy but increases DNS processing and DNS caching was implemented to mitigate that in the first place. Also, the client might choose to disregard your TTL value altogether. So it is not guaranteed.
 
 Another limitation is of possibly routing to a machine that is not functional will exist. Though most cloud services these days do provide health checks along with DNS balancing these days, but it might not be true for all services.
 
@@ -79,22 +80,22 @@ The major benefit of software-based load balancers over DNS load balancers is th
 
 A benefit of the software-based approach over the hardware one is that we can scale beyond the initial capacity by just adding more VM based instances. No need to buy additional specialized hardware. We also would have to plan ahead of time for peak traffic if we were buying specialized hardware to manage it. In the cloud, there are no hardware balancers, and you purchase more virtual machines to fulfill your needs. This ends up being cheaper.
 
-There are many "software-balancers as a service" services out there that allow us to use them without any configuration of our own. Or we can install the software from one of the open-sourced versions ourselves. [HAProxy](https://github.com/haproxy/haproxy) and [Nginx](https://github.com/nginx/nginx) are fairly common ones that many enterprises use as well.
+There are many “software-balancers as a service” services out there that allow us to use them without any configuration of our own. Or we can install the software from one of the open-sourced versions ourselves. [HAProxy](https://github.com/haproxy/haproxy) and [Nginx](https://github.com/nginx/nginx) are fairly common ones that many enterprises use as well.
 
 Since there are a lot of ways in which the software-based load balancers can be configured, we will discuss the major algorithms to do so next.
 
 ### Traffic routing algorithms used by software balancers
 
-**Round Robin: **Similar to DNS based routing, a software uses a list of IP addresses and rotates through this list on every request. Nothing else is taken as a parameter.
+**Round Robin:** Similar to DNS based routing, a software uses a list of IP addresses and rotates through this list on every request. Nothing else is taken as a parameter.
 
-**Weighted round-robin**: A modified variation of the round-robin in which the traffic is routed in a weighted manner. The weights are determined by the server's traffic capacity and compute capabilities. Thus, machines that can handle more traffic get more of it relative to those that can handle less.
+**Weighted round-robin**: A modified variation of the round-robin in which the traffic is routed in a weighted manner. The weights are determined by the server’s traffic capacity and compute capabilities. Thus, machines that can handle more traffic get more of it relative to those that can handle less.
 
-**Least connections:** Traffic is redirected to the machine that has the least amount of current network connections. Similar to the previous one, there are two approaches. One assumes that all requests to a server take equal server resources. The other takes into account the server's traffic capacity and compute capabilities while making the decision of least open connections.
+**Least connections:** Traffic is redirected to the machine that has the least amount of current network connections. Similar to the previous one, there are two approaches. One assumes that all requests to a server take equal server resources. The other takes into account the server’s traffic capacity and compute capabilities while making the decision of least open connections.  
 This approach is a good candidate for scenarios where the connections are long-term ones and stay open for larger durations, such as live streams or gaming applications.
 
 **Random:** The load balancer picks two servers randomly and then using the least connections mechanism, sends the request to the one that gets selected.
 
-**Hash-based: **A key is defined on the basis of which distribution takes place. The key could be the client IP address, or the request URL, or both. Hashing the IP ensures that the requests from an IP are always redirected to the same server. This is useful in cases where the server has some in-memory data/cache about the user's information.
+**Hash-based:** A key is defined on the basis of which distribution takes place. The key could be the client IP address, or the request URL, or both. Hashing the IP ensures that the requests from an IP are always redirected to the same server. This is useful in cases where the server has some in-memory data/cache about the user’s information.
 
 **Least time:** This builds up on the least connections method. The traffic is redirected to the server with the fewest active connections and the lowest average response time.
 

@@ -1,21 +1,22 @@
 ---
 title: 'Detecting dark mode preference using JavaScript'
-description: 'As dark themes have become popular across the web and across operating systems, we might want to check the user''s operating system preference when they visit our website. This way, we can initialize our website accordingly after detecting their dark mode preference. We can make use of the prefers-color-scheme media&#46;&#46;&#46;'
+description: 'As dark themes have become popular across the web and across operating systems, we might want to check the user’s operating system preference when they visit…'
 pubDate: 'Mar 02, 2022'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
+tags: [{ name: "dark mode", slug: "dark-mode" }, { name: "javascript", slug: "javascript" }]
 ---
 
-As dark themes have become popular across the web and across operating systems, we might want to check the user's operating system preference when they visit our website. This way, we can initialize our website accordingly after detecting their dark mode preference.
+As dark themes have become popular across the web and across operating systems, we might want to check the user’s operating system preference when they visit our website. This way, we can initialize our website accordingly after detecting their dark mode preference.
 
 We can make use of the prefers-color-scheme media feature to help us do this.
 
 ## Using CSS
 
-```
+```css
 @media (prefers-color-scheme: dark) {
   /* styles */
 }
@@ -27,7 +28,7 @@ The possible values of the prefers-color-scheme are: light, dark, and no-prefere
 
 We will again make use of the same property, but use the window.matchMedia function to check for it.
 
-```
+```javascript
 const isDarkMode = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
 ```
 
@@ -35,7 +36,7 @@ We can then use this to set the default value for a user that has set the dark m
 
 If we want to add a listener to the property to ensure that we change the theme as the user switches between the two (this would rarely be a scenario, though), we can do so by:
 
-```
+```javascript
 window
   .matchMedia("(prefers-color-scheme: dark)")
   .addEventListener("change", event => {

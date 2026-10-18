@@ -1,12 +1,13 @@
 ---
 title: 'Visual Studio Code Snippets: Boost productivity with shortcuts'
-description: 'As developers, we always want to be more productive. And who does not like to write more code using a lesser number of keystrokes? Code snippets provide is with exactly that. Let us dive deeper into Visual Studio Code snippets in detail in this post. Code snippets refer to common&#46;&#46;&#46;'
+description: 'As developers, we always want to be more productive. And who does not like to write more code using a lesser number of keystrokes?'
 pubDate: 'Feb 11, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpg'
 author: 'Saransh Kataria'
 categories: ["Programming"]
 categoryHierarchy: ["Development","Programming"]
+tags: [{ name: "Visual Studio Code", slug: "visual-studio-code" }, { name: "vscode", slug: "vscode" }]
 ---
 
 As developers, we always want to be more productive. And who does not like to write more code using a lesser number of keystrokes? Code snippets provide is with exactly that. Let us dive deeper into Visual Studio Code snippets in detail in this post.
@@ -25,23 +26,20 @@ Visual Studio Code snippets go a bit further than just pasting the code at the c
 
 ## Creating a snippet
 
-Pressing Ctrl (or Cmd) + Shift + P on the keyboard opens the command palette in VS Code. We can then search for the "Configure User Snippets" option. And it allows us to choose the language we want to create the snippet for. For our example, we will choose JavaScript.
+Pressing Ctrl (or Cmd) + Shift + P on the keyboard opens the command palette in VS Code. We can then search for the “Configure User Snippets” option. And it allows us to choose the language we want to create the snippet for. For our example, we will choose JavaScript.
 
 The snippet editor that opens shows a comment telling us how to create a Visual Studio Code snippet on our own. Snippet files are JSON files, and a user can define an unlimited number of custom Visual Studio Code snippets. They support C-style code comments if we want to add some.
 
 A snippet has 4 parts:
 
 - **Name:** What IntelliSense will display for this snippet (also the key for the JSON object)
-
 - **Prefix:** The character combination that triggers the snippet
-
 - **Body:** The content to be copied over
-
 - **Description:** An optional description of the snippet (displayed in the tooltip of Intellisense)
 
-Starting with our very own "Hello World" snippet:
+Starting with our very own “Hello World” snippet:
 
-```
+```javascript
 {
   "hello world": {
     "prefix": "hello",
@@ -54,13 +52,12 @@ The above snippet will spin out a hello world statement whenever we invoke it. T
 
 ## Ways to invoke a code snippet
 
-1. $1
+1. We can again use the command palette, select “Insert Snippet” and then select which snippet we wish to insert.
+2. We can use Intellisense to our aid. We can type in the prefix that we specified earlier, and then use the keyboard combination of Ctrl and Space to insert the snippet and choose it from the list that shows up.
+3. We can assign a custom keyboard shortcut for an individual snippet. We can assign a key binding for a snippet in the keyboard settings.  
+   In the “Open Keyboard Settings (JSON)” option in the command palette, we can add a binding:
 
-2. $1
-
-3. $1
-
-```
+```javascript
 [
     {
         "key": "ctrl+k 1",
@@ -76,11 +73,11 @@ The above snippet will spin out a hello world statement whenever we invoke it. T
 
 But what good is a simple Hello World snippet? There is more to Visual Studio code snippets than that! Let us dive into it.
 
-##  Addin variables to code snippets
+## Addin variables to code snippets
 
 We can use values such as selected text, system dates, clipboard content, environment variables, and so on and so forth. Let us put our hello world string in a comment block.
 
-```
+```javascript
 {
   "hello world": {
     "prefix": "hello-world",
@@ -91,7 +88,7 @@ We can use values such as selected text, system dates, clipboard content, enviro
 
 The above snippet will insert the string `/* Hello World */` in JavaScript files. But in HTML files, it will insert: `<!-- Hello World -->`
 
-Similarly, we can use TM_SELECTED_TEXT for inserting currently selected text, CLIPBOARD for copying clipboard, CURRENT_YEAR for the current year, and similar variables.
+Similarly, we can use TM\_SELECTED\_TEXT for inserting currently selected text, CLIPBOARD for copying clipboard, CURRENT\_YEAR for the current year, and similar variables.
 
 ## Dynamic snippets using Tab stops
 
@@ -107,7 +104,7 @@ We can have numbered stops that we can circle through in order by using the tab 
 
 `$0` is the final cursor position. If specified, VS code exits out of snippet mode on reaching this position.
 
-```
+```javascript
 {
     "Hello variable": {
         prefix: "div",
@@ -126,7 +123,7 @@ Example declaration: `${1:default}`
 
 It presents a choice to the user. A dropdown of values is presented to choose from when focused on these. Example declaration: `${1|one,two,three|}`
 
-```
+```javascript
 "Console Choice": {
     "prefix": "console-ch",
     "body": "console.${1|log,warning,error|}('$2');",
@@ -135,17 +132,17 @@ It presents a choice to the user. A dropdown of values is presented to choose fr
 
 ### **Mirrored Tab Stops**
 
-The same tab stop can be used at multiple locations inside the snippet. Yes, the "i" variable in a for loop is the perfect example for this. Any edit to one of these stops will update them all.
+The same tab stop can be used at multiple locations inside the snippet. Yes, the “i” variable in a for loop is the perfect example for this. Any edit to one of these stops will update them all.
 
 Example: `import ${2:${1:module}} from '${1:module}'$0`
 
-Or our favorite for loop can be written as: ("\t" has been added for formatting and indentation purposes).
+Or our favorite for loop can be written as: (“\\t” has been added for formatting and indentation purposes).
 
-```
+```javascript
 "for ": {
     "prefix": "forarr",
     "body": [
-        "for (let ${index} = 0; ${index} ,
+        "for (let ${index} = 0; ${index} < ${array}.length; ${index}++) {",
         "\tconst ${element} = ${array}[${index}];",
         "\t$0",
         "}"
@@ -157,22 +154,22 @@ Or our favorite for loop can be written as: ("\t" has been added for formatting 
 
 We can even apply regex transformations to a variable or placeholder. The format is:
 
-```
+```javascript
 ${variable or placeholder/regex/replacement string/flags}
 ```
 
-If you are aware of regex, this might be easy to understand. 
+If you are aware of regex, this might be easy to understand.
 
 For example:
 
-```
+```javascript
 ${CLIPBOARD/(.*)/${1:/upcase}/}
 ```
 
-The above snippet would paste in the clipboard's contents in upper case.
+The above snippet would paste in the clipboard’s contents in upper case.
 
 ## Conclusion
 
-Now that we know what all is possible, we might want to make loads of the snippets. There is a [tool ](https://snippet-generator.app/)that can help us. Snippet Generator is a site that allows us to do so using a visual interface. Or we can search for the VS Code marketplace for snippets. There are thousands of them out there. My favorite one is the [ESES7 React/Redux/GraphQL/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets).
+Now that we know what all is possible, we might want to make loads of the snippets. There is a [tool](https://snippet-generator.app/) that can help us. Snippet Generator is a site that allows us to do so using a visual interface. Or we can search for the VS Code marketplace for snippets. There are thousands of them out there. My favorite one is the [ESES7 React/Redux/GraphQL/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets).
 
 And that is all there is to Visual Studio Code snippets! With a little amount of configuration, we can make VS Code even more powerful and adapt it according to our workflow. Do let us know in the comments below which custom code snippets you will create?

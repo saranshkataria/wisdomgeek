@@ -1,15 +1,16 @@
 ---
 title: 'Palindromic Substrings: Demystifying Programming Interview'
-description: 'This is the second post in the Demystifying Programming Interview series, which aims at helping students and professionals who are planning to appear for programming interviews. If you are new to this series, you can check out the first post about the number of islands problem. We will solve the&#46;&#46;&#46;'
+description: 'This is the second post in the Demystifying Programming Interview series, which aims at helping students and professionals who are planning to appear for…'
 pubDate: 'Jan 07, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 author: 'Wisdom Geek'
 categories: ["Algorithms and Data Structures"]
 categoryHierarchy: ["Development","Algorithms And Data Structures"]
+tags: [{ name: "Algorithms", slug: "algorithms" }, { name: "data structures", slug: "data-structures" }, { name: "interview preparation", slug: "interview-preparation" }, { name: "leetcode", slug: "leetcode" }, { name: "number of palindromes", slug: "number-of-palindromes" }, { name: "palindromes", slug: "palindromes" }, { name: "Palindromic Substrings", slug: "palindromic-substrings" }, { name: "problem solving", slug: "problem-solving" }, { name: "programming", slug: "programming" }, { name: "programming interview", slug: "programming-interview" }]
 ---
 
-This is the second post in the Demystifying Programming Interview series, which aims at helping students and professionals who are planning to appear for programming interviews. If you are new to this series, you can check out the first post about [the number of islands problem](https://www.wisdomgeek.com/development/algorithms-and-data-structures/demystifying-programming-interview-number-of-islands/). We will solve the Palindromic Substrings problem on [Leetcode](https://leetcode.com/problems/palindromic-substrings/), which asks to count the palindromic substrings in a given input string. While doing that, we will also learn how to optimize the brute force solution to arrive at the optimal one.
+This is the second post in the Demystifying Programming Interview series, which aims at helping students and professionals who are planning to appear for programming interviews. If you are new to this series, you can check out the first post about [the number of islands problem](/development/algorithms-and-data-structures/demystifying-programming-interview-number-of-islands/). We will solve the Palindromic Substrings problem on [Leetcode](https://leetcode.com/problems/palindromic-substrings/), which asks to count the palindromic substrings in a given input string. While doing that, we will also learn how to optimize the brute force solution to arrive at the optimal one.
 
 ## The Palindromic Substrings Problem:
 
@@ -29,15 +30,15 @@ Therefore, to check all the substrings and return the total palindromic substrin
 
 ## Can we do better?
 
-The critical question to ask when trying to optimize any solution is: Are we doing anything extra? Is there something that is not needed? Often, the answer would be a &#8216;Yes'. Arriving at the optimal solution follows naturally if we figure out what extraneous work we are doing in the brute force solution.
+The critical question to ask when trying to optimize any solution is: Are we doing anything extra? Is there something that is not needed? Often, the answer would be a ‘Yes’. Arriving at the optimal solution follows naturally if we figure out what extraneous work we are doing in the brute force solution.
 
 For the remainder of this post, we will be using the following string to analyze and solve the palindromic substring problem.
 
-![palindromic substring problem visualization 1](./palindromic-substring-problem-visualization.png)
+![palindromic substring problem visualization 1](./palindromic-substring-pr-e3f44ca1.png)
 
 Let us say that the brute force solution is analyzing the substring “nanas” and finding out whether it is a palindrome.
 
-![palindromic substring problem visualization 1](./palindromic-substring-problem-visualization-1.png)
+![palindromic substring problem visualization 1](./palindromic-substring-pr-85087afc.png)
 
 After that, let us analyze the substring formed by including a character on the left and right of “nanas.” The new substring to be analyzed will be “ananasr.” Since “nanas” is at the center of “ananasr” and we know that “nanas” is NOT a palindrome. Therefore we can be certain that “ananasr” is not a palindrome either.
 
@@ -57,45 +58,45 @@ Now let us look at the string “yellowbananasrock” that we have been using so
 
 Let us look at ‘y’ which is the first pivot of the string “yellowbananasrock”.
 
-![palindromic substring problem visualization 2](./palindromic-substring-problem-visualization-2.png)
+![palindromic substring problem visualization 2](./palindromic-substring-pr-4d60e2a5.png)
 
-The first substring with ‘y’ as its center is “y,” which is also a palindrome trivially as it has a length of 1. The left edge and the window's right edge are both at ‘y’ at the moment. Since the window's left edge is already at the left boundary of the string, we cannot expand this window centered at ‘y’ further even though we can expand on the right side. In other words, we don’t have any other substrings that are centered at ‘y’.
+The first substring with ‘y’ as its center is “y,” which is also a palindrome trivially as it has a length of 1. The left edge and the window’s right edge are both at ‘y’ at the moment. Since the window’s left edge is already at the left boundary of the string, we cannot expand this window centered at ‘y’ further even though we can expand on the right side. In other words, we don’t have any other substrings that are centered at ‘y’.
 
 We now move to the next pivot which is “ye”.
 
-![palindromic substring problem visualization 3](./palindromic-substring-problem-visualization-3.png)
+![palindromic substring problem visualization 3](./palindromic-substring-pr-25b830e6.png)
 
 The first substring that is centered at the pivot “ye” is “ye” itself. Since ‘y’ is not equal to ‘e,’ “ye” isn’t a palindromic substring. Therefore we will not expand the window pivoted at “ye” to look at the other substrings.
 
-The next pivots that would be analyzed in order by the algorithm would be: &#8216;e', "el", &#8216;l' and so on. We would not be looking at these pivots in this post as they are trivial examples.
+The next pivots that would be analyzed in order by the algorithm would be: ‘e’, “el”, ‘l’ and so on. We would not be looking at these pivots in this post as they are trivial examples.
 
 Let’s look at a more interesting pivot now: “ll.” Like the previous examples, the first substring pivoted at “ll” is “ll” itself.
 
-![palindromic substring problem visualization 4](./palindromic-substring-problem-visualization-4.png)
+![palindromic substring problem visualization 4](./palindromic-substring-pr-7e4f5c07.png)
 
 Since “ll” is a palindrome, we will try to expand the window towards left and right to obtain the next substring pivoted at “ll.” The next substring, thus obtained, would be “ello.”
 
-![palindromic substring problem visualization 5](./palindromic-substring-problem-visualization-5.png)
+![palindromic substring problem visualization 5](./palindromic-substring-pr-ffe097c5.png)
 
 Since, ‘e’ is not equal to ‘o’, “ello” is not a palindrome, and we stop expanding the window pivoted at “ll” and move to the next pivot.
 
-Moving on to a more interesting pivot: ‘a’ (index 9). Since “a” itself is a palindrome (trivially), we proceed to expand the window centered at ‘a’. 
+Moving on to a more interesting pivot: ‘a’ (index 9). Since “a” itself is a palindrome (trivially), we proceed to expand the window centered at ‘a’. 
 
-![palindromic substring problem visualization 6](./palindromic-substring-problem-visualization-6.png)
+![palindromic substring problem visualization 6](./palindromic-substring-pr-6dd82fa0.png)
 
 As we move the left and right edges of the window, we obtain the substring “nan.” Since the characters at the edges of the window are equal and the substring at the center is also a palindrome, we know that “nan” is also a palindrome.
 
-![palindromic substring problem visualization 7](./palindromic-substring-problem-visualization-7.png)
+![palindromic substring problem visualization 7](./palindromic-substring-pr-4d85ec05.png)
 
 We can now expand the window further and obtain the new substring: “anana”.
 
-![palindromic substring problem visualization 8](./palindromic-substring-problem-visualization-8.png)
+![palindromic substring problem visualization 8](./palindromic-substring-pr-31066a8b.png)
 
 Just like before, both the characters on the boundary of the window are equal. Since the previous substring was a palindrome, we can conclude that “anana” is also a palindrome.
 
 As we expand the window again, we obtain the substring: “bananas”.
 
-![palindromic substring problem visualization 9](./palindromic-substring-problem-visualization-9.png)
+![palindromic substring problem visualization 9](./palindromic-substring-pr-6516e09b.png)
 
 ‘b’ is not equal to ‘s.’ We know that “bananas” is not a palindrome, and thus we can stop expanding this window further and move to the next pivot.
 
@@ -105,14 +106,14 @@ We keep doing this for all pivots in our given string and end up with an optimiz
 
 The above algorithm can be formally represented in the following C++ code:
 
-```
+```cpp
 class Solution {
 public:
     int countSubstrings(string s) {
         int count = 0;
         int len = s.length();
         // iterate through all pivots
-        for(int mid = 0; mid 
+        for(int mid = 0; mid < len; mid++) {
             //odd length pal
             //increment the count as a string of length 1 is trivially a palindrome
             count++;
@@ -120,7 +121,7 @@ public:
             //expand the window
             int i = mid - 1;
             int j = mid + 1;
-            while(i >= 0 && j 
+            while(i >= 0 && j < len) {
                 //check the boundary of the window
                 if(s[i] == s[j]) {
                     //increment the count of palindromes
@@ -137,7 +138,7 @@ public:
             //even len pal
             i = mid;
             j = mid + 1;
-            while(i >=0 && j 
+            while(i >=0 && j < len) {
                 //check the boundary of the window
                 if(s[i] == s[j]) {
                     //increment the count of palindromes
@@ -158,8 +159,8 @@ public:
 
 ## Space and Time Complexity Analysis:
 
-In the final algorithm, we look at 2*N – 1 pivots (N pivots for odd-length substrings and N-1 pivots for even-length substrings) that act as centers for possible palindromic substrings. For each center, we expand towards left and right one character at a time and expand the substring till the latest substring is not a palindrome. Therefore, for each pivot point, we look at a maximum of N characters. Thus, in the worst case, our algorithm takes O(N) time for each pivot, and there are O(N) pivots in the input string. Therefore, the worst-case time complexity of our solution is O(N^2).
+In the final algorithm, we look at 2\*N – 1 pivots (N pivots for odd-length substrings and N-1 pivots for even-length substrings) that act as centers for possible palindromic substrings. For each center, we expand towards left and right one character at a time and expand the substring till the latest substring is not a palindrome. Therefore, for each pivot point, we look at a maximum of N characters. Thus, in the worst case, our algorithm takes O(N) time for each pivot, and there are O(N) pivots in the input string. Therefore, the worst-case time complexity of our solution is O(N^2).
 
-Since we’re not using any auxiliary space in our solution, our solution's worst-case space complexity is O(1).
+Since we’re not using any auxiliary space in our solution, our solution’s worst-case space complexity is O(1).
 
 So there you have it! This was my solution to the Palindromic Substrings problem. Did you like this solution? Can you think of any other solution to this problem? Let me know in the comments.

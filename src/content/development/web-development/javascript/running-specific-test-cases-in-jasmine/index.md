@@ -1,25 +1,26 @@
 ---
 title: 'Running specific test cases in Jasmine or Mocha'
-description: 'I recently was working on writing end-to-end test cases using protractor on a project. Everything was working fine until the number of test cases increased significantly, and running the complete set of test cases took too much time. It was a pain to even think of running the e2e command&#46;&#46;&#46;'
+description: 'I recently was working on writing end-to-end test cases using protractor on a project. Everything was working fine until the number of test cases increased…'
 pubDate: 'Nov 20, 2017'
 updatedDate: 'Oct 25, 2023'
 heroImage: './hero.jpg'
 author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
+tags: [{ name: "e2e", slug: "e2e" }, { name: "jasmine", slug: "jasmine" }, { name: "protractor", slug: "protractor" }, { name: "test cases", slug: "test-cases" }]
 ---
 
 I recently was working on writing end-to-end test cases using protractor on a project. Everything was working fine until the number of test cases increased significantly, and running the complete set of test cases took too much time. It was a pain to even think of running the e2e command since I knew it would take 10 minutes at least to get to a specific test.
 
 I started searching for a way to run a specific test case, and there were some solutions on Google and Stack Overflow, which provided command-line arguments while running the test cases. Sadly, they did not work. Others mentioned some changes to configuration files, which I could not do since I was using a CLI that had encapsulated all of those files.
 
-However, controlling which test case to execute was something I needed to do. I wanted to run a single test case using Jasmine. And I was not going to comment out test cases that I did not want to run or delete other files temporarily. I found a temporary workaround for running specific test cases in Jasmine. Instead of the tedious task of commenting test cases, all you need to do is add a character to your file/test cases!
+However, controlling which test case to execute was something I needed to do. I wanted to run a single test case using Jasmine. And I was not going to comment out test cases that I did not want to run or delete other files temporarily. I found a temporary workaround for running specific test cases in Jasmine. Instead of the tedious task of commenting test cases, all you need to do is add a character to your file/test cases\!
 
 ## Running specific test cases in Jasmine
 
 You can use `fit()` or `fdescribe()` instead of `it()` and `fdescribe()` to achieve what is known as focussed test cases.
 
-```
+```javascript
 describe("test spec",() => {
     it("test case 1",() => {});
     fit("test case 2", () => {});
@@ -32,7 +33,7 @@ In the above example, only test case 2 would get executed. On execution, a singl
 
 For Mocha, we need to use use `it.only()` instead of `fit()` to achieve the same result.
 
-```
+```javascript
 describe("test spec",() => {
     it("test case 1",() => {});
     it.only("test case 2", () => {});
@@ -41,18 +42,18 @@ describe("test spec",() => {
 
 ## Excluding specific test cases or specs in Jasmine
 
-To exclude a specific test case or spec, all you need to do is use `xit()` or `xdescribe()` instead of `it()` and `describe()`. And that is it!
+To exclude a specific test case or spec, all you need to do is use `xit()` or `xdescribe()` instead of `it()` and `describe()`. And that is it\!
 
 This means that all of the following test cases would get skipped during execution:
 
-```
+```javascript
 xdescribe("test spec", function() {
     it("test case 1", () => {});
     it("test case 2", () => {});
 });
 ```
 
-```
+```javascript
 describe("test spec", function() {
     it("test case", () => {});
     xit("test case", () => {});
@@ -66,7 +67,7 @@ The output in the terminal would read:
 Executed 0 of 3 test cases (skipped 3) SUCCESS
 ```
 
-```
+```javascript
 Executed 0 of 3 test cases (skipped 3) SUCCESS
 ```
 
@@ -74,7 +75,7 @@ Executed 0 of 3 test cases (skipped 3) SUCCESS
 
 For Mocha, we need to use use `describe.skip()` instead of `xdescribe()` to achieve the same result.
 
-```
+```javascript
 describe.skip("test spec", function() {
     it("test case", () => {});
     it("test case", () => {});
@@ -84,7 +85,7 @@ describe.skip("test spec", function() {
 
 For skipping individual test cases:
 
-```
+```javascript
 describe("test spec", function() {
     it.skip("test case", () => {});
     it("test case", () => {});

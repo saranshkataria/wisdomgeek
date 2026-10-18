@@ -1,12 +1,13 @@
 ---
 title: 'React TypeScript: Simplify Imports with Path Aliases'
-description: 'As codebases grow larger and more complex in structure, imports can become unmanageable. As more directories are added, imports become intricately long and obscure clarity. Fortunately, we can simplify imports with path aliases. The problem The following is a fairly common occurrence in a large project: This can be burdensome&#46;&#46;&#46;'
+description: 'As codebases grow larger and more complex in structure, imports can become unmanageable. As more directories are added, imports become intricately long and…'
 pubDate: 'Jan 27, 2024'
 updatedDate: 'Jan 27, 2024'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["TypeScript"]
 categoryHierarchy: ["Development","Web Development","Typescript"]
+tags: []
 ---
 
 As codebases grow larger and more complex in structure, imports can become unmanageable. As more directories are added, imports become intricately long and obscure clarity. Fortunately, we can simplify imports with path aliases.
@@ -15,7 +16,7 @@ As codebases grow larger and more complex in structure, imports can become unman
 
 The following is a fairly common occurrence in a large project:
 
-```
+```javascript
 import { ComponentButton } from '../../../../components/ComponentButton';
 ```
 
@@ -25,7 +26,7 @@ This can be burdensome to read, follow, and sometimes refactor.
 
 Our code can be made more understandable and clearer by using path aliases to create import path shortcuts. Regardless of the size of the project, they allow you to obtain concise imports such as these:
 
-```
+```javascript
 import { ComponentButton } from '@components/ComponentButton';
 ```
 
@@ -33,9 +34,9 @@ import { ComponentButton } from '@components/ComponentButton';
 
 In a TypeScript project, we can set path aliases in the tsconfig.json file located at the project’s root.
 
-We'll need to add a &#8216;paths' attribute inside the &#8216;compilerOptions' key in the tsconfig.json file:
+We’ll need to add a ‘paths’ attribute inside the ‘compilerOptions’ key in the tsconfig.json file:
 
-```
+```json
 {
   "compilerOptions": {
     "baseUrl": ".",
@@ -46,11 +47,11 @@ We'll need to add a &#8216;paths' attribute inside the &#8216;compilerOptions' k
 }
 ```
 
-The configuration above tells the TypeScript compiler to interpret imports with "@components/*" to correspond to the "src/comoponents/*" directory.
+The configuration above tells the TypeScript compiler to interpret imports with “@components/*” to correspond to the “src/comoponents/*” directory.
 
-We can then strategically expand the aliases as the application grows in size. Here's an example of an updated section in the tsconfig.json that includes additional aliases:
+We can then strategically expand the aliases as the application grows in size. Here’s an example of an updated section in the tsconfig.json that includes additional aliases:
 
-```
+```json
 {
   "compilerOptions": {
     "baseUrl": "src",
@@ -66,7 +67,7 @@ We can then strategically expand the aliases as the application grows in size. H
 }
 ```
 
-In this example, the &#8216;baseUrl' attribute simplifies the alias definitions, referencing the "src" directory as the root for all specified paths.
+In this example, the ‘baseUrl’ attribute simplifies the alias definitions, referencing the “src” directory as the root for all specified paths.
 
 ## Conclusion
 

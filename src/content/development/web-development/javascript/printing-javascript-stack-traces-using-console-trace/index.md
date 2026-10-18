@@ -1,12 +1,13 @@
 ---
 title: 'Printing JavaScript stack traces using console.trace'
-description: 'The console object in JavaScript has a lot more useful functions than the most frequently used console.log method. Debugging errors and finding execution flow can be a lot easier by making use of the console.trace method. It allows us to print the current stack trace where the method was called.&#46;&#46;&#46;'
+description: 'The console object in JavaScript has a lot more useful functions than the most frequently used console.log method.'
 pubDate: 'Jan 26, 2022'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
+tags: [{ name: "javascript", slug: "javascript" }]
 ---
 
 The console object in JavaScript has a lot more useful functions than the most frequently used console.log method. Debugging errors and finding execution flow can be a lot easier by making use of the console.trace method. It allows us to print the current stack trace where the method was called.
@@ -15,7 +16,7 @@ The console object in JavaScript has a lot more useful functions than the most f
 
 Writing console.trace() prints file names and line numbers of the call stack that exists when the method was invoked.
 
-```
+```javascript
 const stackTraceExample = () => {
   const nestedFunction = () => {
     console.trace();
@@ -29,7 +30,7 @@ stackTraceExample();
 
 will print
 
-```
+```javascript
 nestedFunction @ VM56:3
 stackTraceExample @ VM56:6
 (anonymous) @ VM56:9
@@ -37,7 +38,7 @@ stackTraceExample @ VM56:6
 
 We can even pass arguments to the method:
 
-```
+```javascript
 const anotherExample = () => {
   console.trace('My log statement');
 }
@@ -53,7 +54,7 @@ anotherExample @ VM111:2
 
 Another thing to know as that the same trace is available on an error object as well.
 
-```
+```javascript
 const error = new Error('foo');
 console.log(error.stack);
 ```

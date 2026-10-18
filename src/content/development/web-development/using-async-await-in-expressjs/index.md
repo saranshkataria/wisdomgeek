@@ -1,12 +1,13 @@
 ---
 title: 'Using async/await in ExpressJs'
-description: 'If you have not been living under a rock for the past few years, you probably have heard of async/await. It has been one of the interesting additions to EcmaScript. It makes control flow easier to understand and read and also allows to write concise, maintainable code. If you need&#46;&#46;&#46;'
+description: 'If you have not been living under a rock for the past few years, you probably have heard of async/await.'
 pubDate: 'Aug 06, 2020'
 updatedDate: 'Oct 11, 2023'
 heroImage: './hero.jpeg'
 author: 'Saransh Kataria'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]
+tags: [{ name: "async", slug: "async" }, { name: "async javascript", slug: "async-javascript" }, { name: "async/await", slug: "async-await" }, { name: "asynchronous javascript", slug: "asynchronous-javascript" }, { name: "await", slug: "await" }, { name: "express", slug: "express" }, { name: "expressjs", slug: "expressjs" }, { name: "javascript", slug: "javascript" }]
 ---
 
 If you have not been living under a rock for the past few years, you probably have heard of async/await. It has been one of the interesting additions to EcmaScript. It makes control flow easier to understand and read and also allows to write concise, maintainable code. If you need a refresher on async/await, you can refer to the [MDN article](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) about it. We are going to be more focused on using async/await in ExpressJs in this post.
@@ -15,7 +16,7 @@ If you have not been living under a rock for the past few years, you probably ha
 
 Node 8+ supports async/await out of the box and you can start using them right away in your node/express application. So if we had a method like this in our controller:
 
-```
+```javascript
 app.post('/test', (req, res) => {
   // Call async function here
 })
@@ -23,7 +24,7 @@ app.post('/test', (req, res) => {
 
 We can convert this into a function that uses async/await in Express by first marking the handler as an async function. Then we can call await inside of the request handler.
 
-```
+```javascript
 app.post('/test', async (req, res) => {
   const result = await asyncFunction(req.body);
   res.json(result);
@@ -37,7 +38,7 @@ If the above function would have worked and you already knew about async/await s
 
 To handle an error in the asynchronous function, it needs to be wrapped in a try-catch block.
 
-```
+```javascript
 app.post('/test', async (req, res) => {
   try {
     const result = await asyncFunction(req.body);
@@ -51,7 +52,7 @@ app.post('/test', async (req, res) => {
 
 This will handle the error, but express still does not know that an error has occurred. So the error needs to be passed to express using the next method.
 
-```
+```javascript
 app.post('/test', async (req, res) => {
   try {
     const result = await asyncFunction(req.body);
@@ -68,7 +69,7 @@ app.post('/test', async (req, res) => {
 
 If there are 2 asynchronous functions that need to be invoked, the first thing that would come to mind would be:
 
-```
+```javascript
 app.post('/test', async (req, res) => {
   try {
     await asyncFunction1(req.body);
@@ -88,7 +89,7 @@ app.post('/test', async (req, res) => {
 
 But this is not needed. If the first function throws an error, the request would be returned to the error handler immediately. The second function will not be invoked anyway. Since only one of these will throw an error, we can refactor it as:
 
-```
+```javascript
 app.post('/test', async (req, res) => {
   try {
     await asyncFunction1(req.body);
@@ -107,7 +108,7 @@ Writing try/catch blocks in every request handler would not be a great way of wr
 
 A simpler way to do this would be to convert the above code into a promise:
 
-```
+```javascript
 app.post('/test', async (req, res) => {
   let runAsync = () => {
     await asyncFunction1(req.body);
@@ -118,9 +119,9 @@ app.post('/test', async (req, res) => {
 
 ```
 
-And the logical next step is to abstract the catch mechanism into a different method of it's own.
+And the logical next step is to abstract the catch mechanism into a different method of it’s own.
 
-```
+```javascript
 function runAsyncWrapper (callback) {
   return function (req, res, next) {
     callback(req, res, next)
@@ -139,4 +140,4 @@ Now you can keep using the wrapper function and writing async/await in ExpressJs
 
 You can also use packages like [express-async-handler](https://www.npmjs.com/package/express-async-handler) and [@awaitjs/express](https://www.npmjs.com/package/@awaitjs/express) to do the same thing if you do not like writing the wrapper function yourself. The packages do the same thing but in a robust way, they ensure that next is always the last argument being passed.
 
-And that is it! Start using async/await in express as if it's nobody's business.
+And that is it! Start using async/await in express as if it’s nobody’s business.

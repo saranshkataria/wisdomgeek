@@ -1,12 +1,13 @@
 ---
 title: 'Enforcing coding standards using husky pre-commit hooks'
-description: 'Having consistency and enforcing coding standards becomes very important as an application scales. It becomes important to automate the process to ensure quality standards and make the application maintainable. ESLint and Prettier can be used to define these standards, but we also need a tool to enforce them. Husky provides&#46;&#46;&#46;'
+description: 'Having consistency and enforcing coding standards becomes very important as an application scales. It becomes important to automate the process to ensure…'
 pubDate: 'Jun 05, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
+tags: [{ name: "ESLint", slug: "eslint" }, { name: "git", slug: "git" }, { name: "husky", slug: "husky" }, { name: "lint", slug: "lint" }]
 ---
 
 Having consistency and enforcing coding standards becomes very important as an application scales. It becomes important to automate the process to ensure quality standards and make the application maintainable. ESLint and Prettier can be used to define these standards, but we also need a tool to enforce them. Husky provides that functionality by providing pre-commit git hooks that can be configured per our needs.
@@ -21,7 +22,7 @@ It provides pre-push, pre-rebase, pre-commit and other similar hooks. These hook
 
 To view a list of all the hooks in a project, we can run:
 
-```
+```bash
 ls .git/hooks
 ```
 
@@ -32,24 +33,21 @@ For our purpose, we need to run the linter and formatter before someone creates 
 Husky ensures:
 
 - Hooks are shared across machines (installed using configurations in the package.json)
-
 - Hooks are created on local developer machines
-
-- Hooks run when a git command is executed (before it's execution)
-
+- Hooks run when a git command is executed (before it’s execution)
 - Enforce checks are in place to fail git command execution if criteria are not met
 
 ## Installing and configuring Husky
 
 We install husky using the command:
 
-```
+```bash
 npm i -D husky
 ```
 
-Configuring husky requires adding a husky key to the root of the project's package.json:
+Configuring husky requires adding a husky key to the root of the project’s package.json:
 
-```
+```javascript
 "husky": {
   "hooks": {
     "pre-commit": "",  // pre-commit command
@@ -63,7 +61,7 @@ The commands can be anything we want to run before the corresponding git action.
 
 If we have npm scripts for running prettier and ESLint set up as:
 
-```
+```javascript
 "scripts": {
     "prettier": "prettier --config .prettierrc 'src/**/*.{js,jsx,css}' --write",
     "lint": "eslint . --ext .js",
@@ -73,7 +71,7 @@ If we have npm scripts for running prettier and ESLint set up as:
 
 We can configure husky to run those before a commit happens:
 
-```
+```javascript
 "husky": {
     "hooks": {
       "pre-commit": "npm run prettier && npm run lint"

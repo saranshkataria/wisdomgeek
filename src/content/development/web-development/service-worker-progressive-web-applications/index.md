@@ -1,35 +1,31 @@
 ---
 title: 'How to use a Service Worker to create Progressive Web Applications?'
-description: 'The web is and probably always be an ever-evolving platform. Even though most of us have a decent internet connection these days, it is not the case for everyone in the world. Even if you have a nice internet, it might be flaky if you are traveling. Such situations can&#46;&#46;&#46;'
+description: 'The web is and probably always be an ever-evolving platform. Even though most of us have a decent internet connection these days, it is not the case for…'
 pubDate: 'Jun 18, 2019'
 updatedDate: 'Oct 15, 2023'
 heroImage: './hero.jpeg'
 author: 'Saransh Kataria'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]
+tags: [{ name: "javascript", slug: "javascript" }, { name: "progressive web apps", slug: "progressive-web-apps" }, { name: "PWA", slug: "pwa" }, { name: "service worker", slug: "service-worker" }, { name: "web development", slug: "web-development" }, { name: "webdev", slug: "webdev" }]
 ---
 
-The web is and probably always be an ever-evolving platform. Even though most of us have a decent internet connection these days, it is not the case for everyone in the world. Even if you have a nice internet, it might be flaky if you are traveling. Such situations can often lead to bad user experience for websites.  This was the problem that Google was trying to tackle when they came up with the concept of Progressive Web Applications. PWAs  brought in the concept of a service worker.
+The web is and probably always be an ever-evolving platform. Even though most of us have a decent internet connection these days, it is not the case for everyone in the world. Even if you have a nice internet, it might be flaky if you are traveling. Such situations can often lead to bad user experience for websites. This was the problem that Google was trying to tackle when they came up with the concept of Progressive Web Applications. PWAs brought in the concept of a service worker.
 
-A progressive web app is a user experience (not just for web apps, but websites too) that is fast, reliable and engaging.  These applications work cross-platform and provide an app-like experience on the web. In other words, Progressive Web Apps are somewhat network independent and work with both offline as well as poor network connections.
+A progressive web app is a user experience (not just for web apps, but websites too) that is fast, reliable and engaging. These applications work cross-platform and provide an app-like experience on the web. In other words, Progressive Web Apps are somewhat network independent and work with both offline as well as poor network connections.
 
-This is made possible with the help of a service worker. It is a programmable network proxy inside the browser that manages network requests. 
+This is made possible with the help of a service worker. It is a programmable network proxy inside the browser that manages network requests.
 
 ## Benefits of a service worker
 
 The benefits of using a service worker are huge! With just a small amount of coding effort, you are able to:
 
 - Decrease your page load time
-
 - Implement better caching
-
-Give a mobile application like feel to your application providing functionalities such as
-
-- home screen icons for mobile browsers
-
-- sending push notifications to the user
-
-- full-screen mode, etc.
+- Give a mobile application like feel to your application providing functionalities such as
+  - home screen icons for mobile browsers
+  - sending push notifications to the user
+  - full-screen mode, etc.
 
 ## What does it do?
 
@@ -43,7 +39,7 @@ They can also be used to send push notifications to the user, or sync data in th
 
 The service worker survives even if the browser tab is closed. So you can fetch things in the background or do some interesting things in the background for a few seconds if needed. (There is a ton of security around it to not allow malicious use of it though).
 
-You can also do transparent URL rewrites using it. Let's say you were fetching an image from a CDN and for some reason that is not accessible. You could just use a different one if needed instead of changing the HTML of the page. This technique could also be used to create a browser side load balancer if you wanted to.
+You can also do transparent URL rewrites using it. Let’s say you were fetching an image from a CDN and for some reason that is not accessible. You could just use a different one if needed instead of changing the HTML of the page. This technique could also be used to create a browser side load balancer if you wanted to.
 
 You can use service workers across all latest versions of browsers today, though some progressive web app functionalities might be missing in some browser. A couple of things to keep in mind are that they work on HTTPS pages only and do not have access to DOM elements.
 
@@ -51,7 +47,7 @@ You can use service workers across all latest versions of browsers today, though
 
 You need to register a service worker in your main JavaScript file. For doing so, in your onLoad method, you would do the following:
 
-```
+```javascript
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
     navigator.serviceWorker.register('/sw.js').then(function(registration) {
@@ -71,13 +67,13 @@ A quick note that if you place the service worker under a directory while creati
 
 This is all you need to do to register it. Next up, we will write the implementation of the service worker itself.
 
-Before switching to the sw.js file, we should understand about when it gets executed. As soon as you register the worker, it opens the sw.js file and executes it. But the browser may choose to kill your service worker if it is not being used and it is running low on memory (happens all the time on mobile browsers). So, if a service worker is killed and the user revisits the website, then the sw.js file is executed again. Hence, Whenever writing the service worker file code, don't assume that the globals will retain their values forever. It does not have access to local storage either (since local storage is synchronous in nature and a service worker is asynchronous by default).  So you might want to use indexDB for such things.
+Before switching to the sw.js file, we should understand about when it gets executed. As soon as you register the worker, it opens the sw.js file and executes it. But the browser may choose to kill your service worker if it is not being used and it is running low on memory (happens all the time on mobile browsers). So, if a service worker is killed and the user revisits the website, then the sw.js file is executed again. Hence, Whenever writing the service worker file code, don’t assume that the globals will retain their values forever. It does not have access to local storage either (since local storage is synchronous in nature and a service worker is asynchronous by default). So you might want to use indexDB for such things.
 
 Getting to the file, we will start listening to events to make changes. Events are the way the service worker communicates with the website since it is an asynchronous network proxy. Another thing to know is that the browser might decide to kill your service worker at any point of time and you might be in the middle of an operation. To tell the browser to wait until some task is completed, we make use of the event.waitUntil() method.
 
-For a basic example, we will listen to the install event. We will open a cache using a unique identifier. The cache which will store all our domain related data. We need to provide it with a list of URL's that we want to be cached.
+For a basic example, we will listen to the install event. We will open a cache using a unique identifier. The cache which will store all our domain related data. We need to provide it with a list of URL’s that we want to be cached.
 
-```
+```javascript
 const CACHE_NAME = 'wisdomgeek-v1';
 const URLS_TO_CACHE = [
   '/styles/main.css',
@@ -100,7 +96,7 @@ cache.addAll takes an array of files that the cache needs to store. This chain o
 
 The service worker successfully installs if all the files get cached. It fails if even one of the files fails to download. After installing the worker, you would also want to use it to return the cached files instead of relying on the network. This will be done by capturing the fetch event inside the worker. Inside the callback to this event, we respond with files from the cache if they exist in it. Else we make a call to a network request using fetch for them.
 
-```
+```javascript
 self.addEventListener('fetch', function onFetch(event) {
   event.respondWith(
     caches.match(event.request)
@@ -118,7 +114,7 @@ self.addEventListener('fetch', function onFetch(event) {
 
 If we want to add the new requests that we are making to the cache as we make them, we can change the fetch callback to:
 
-```
+```javascript
 return fetch(event.request).then(function(response) {
             // Check if we received a valid response
             if (!response || response.status !== 200 || response.type !== 'basic') {
@@ -133,7 +129,7 @@ return fetch(event.request).then(function(response) {
 });
 ```
 
-We make the request and then in the callback check if it is a valid response. If it is, then we add it to the cache, else we just return it. We are cloning the response because the response is a stream and it's body can only be consumed once.
+We make the request and then in the callback check if it is a valid response. If it is, then we add it to the cache, else we just return it. We are cloning the response because the response is a stream and it’s body can only be consumed once.
 
 And that is all you need to know about a basic service worker. There is a lot more to service workers than what can be covered in a single post. You can check this [MDN link](http://serviceworke.rs) for more configuration samples and in-depth dive of code samples.
 

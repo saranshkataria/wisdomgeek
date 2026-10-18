@@ -1,47 +1,45 @@
 ---
 title: 'JavaScript Promise combinators: race, all, allSettled, any'
-description: 'Promises have not been a new concept in the javascript community. They have existed in the ecosystem for a long time. JavaScript promises existed even before they were officially made a part of the ECMAScript spec in ES6. These initial implementations of JavaScript promise were in the form of framework&#46;&#46;&#46;'
+description: 'Promises have not been a new concept in the javascript community. They have existed in the ecosystem for a long time.'
 pubDate: 'Dec 03, 2019'
 updatedDate: 'Oct 15, 2023'
 heroImage: './hero.jpeg'
 author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
+tags: [{ name: "async javascript", slug: "async-javascript" }, { name: "asynchronous javascript", slug: "asynchronous-javascript" }, { name: "javascript", slug: "javascript" }, { name: "javascript promise", slug: "javascript-promise" }, { name: "js", slug: "js" }, { name: "promises", slug: "promises" }, { name: "web development", slug: "web-development" }, { name: "webdev", slug: "webdev" }]
 ---
 
 Promises have not been a new concept in the javascript community. They have existed in the ecosystem for a long time. JavaScript promises existed even before they were officially made a part of the ECMAScript spec in ES6. These initial implementations of JavaScript promise were in the form of framework level implementations but were standardized as part of the ES6 specification.
 
 But for complex scenarios, it was always difficult to use the native Promise object since there was no API for handling a combination of promises. The specification for JavaScript promise has evolved a lot over the years and now we have additional support for the combinator methods on the Promise class.
 
-The combinator methods take in an iterable object as an argument. They allow you to handle the combination of these promises according to the method's definition of handling the collection. These methods are: `Promise.all()`, `Promise.allSettled()`, `Promise.race()` and `Promise.any()`.
+The combinator methods take in an iterable object as an argument. They allow you to handle the combination of these promises according to the method’s definition of handling the collection. These methods are: `Promise.all()`, `Promise.allSettled()`, `Promise.race()` and `Promise.any()`.
 
-It is worth noting that while `Promise.all` and `Promise.race` have been a part of the specification since 2015, the other two combinator methods have not been. `Promise.allSettled` recently joined the gang (so, Edge and IE support does not exist). And `Promise.any` is at stage 3 of the process which means it is a candidate to be added soon-ish.
+It is worth noting that while `Promise.all` and `Promise.race` have been a part of the specification since 2015, the other two combinator methods have not been. `Promise.allSettled` recently joined the gang (so, Edge and IE support does not exist). And `Promise.any` is at stage 3 of the process which means it is a candidate to be added soon-ish.
 
 With the addition of the new combinator methods, javascript developers now have the flexibility to finally handle complex scenarios for multiple promise calls. And this post will cover them in detail.
 
-If you are not up to date with the JavaScript promise specification, you can refer to [MDN ](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)for documentation about them since we will not be covering the basics in this post.
+If you are not up to date with the JavaScript promise specification, you can refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) for documentation about them since we will not be covering the basics in this post.
 
 ## Possible states of a JavaScript promise
 
 One thing to refresh before getting into all the JavaScript promise combinator methods is the possible states of promises. These will be important in distinguishing between the methods. So here is a brief refresher about the states of a promise object:
 
 - “pending” – still waiting
-
--  “fulfilled” – promise succeeded
-
--  “rejected” – promise failed
-
--  “settled” – succeeded or failed
+- “fulfilled” – promise succeeded
+- “rejected” – promise failed
+- “settled” – succeeded or failed
 
 ## The Promise.all method
 
-The Promise.all method runs all the promises that have been passed to it lets you know if all the promises are fulfilled or if any one of them has been rejected.  If all of them are fulfilled, it returns an array with the fulfillment value of all the promises that were input to it. If any of the promises fails, it short circuits the evaluation and rejects with the rejection value of the failed promise. 
+The Promise.all method runs all the promises that have been passed to it lets you know if all the promises are fulfilled or if any one of them has been rejected. If all of them are fulfilled, it returns an array with the fulfillment value of all the promises that were input to it. If any of the promises fails, it short circuits the evaluation and rejects with the rejection value of the failed promise.
 
 The important piece about it is the last part, that is you cannot handle partial failures. If one of the promises fails, Promse.all gets rejected.
 
 Example outputs for the method would be:
 
-```
+```javascript
 let promise1 = Promise.resolve('Wisdom');
 let promise2 = new Promise(function(resolve, reject) {
   setTimeout(resolve, 100, 'Geek');
@@ -68,9 +66,9 @@ What if you want a JavaScript promise combinator method that does not do the sho
 
 Once all promises are settled, this method returns an array of objects. Each object has a status key with the value of the promise (fulfilled or rejected), and the other one will be the value if the promise is fulfilled or the reason if it got rejected.
 
-Promise.allSettled does not get rejected if any of the promises are rejected and so the only case when it will be rejected would be when there is an error iterating over the promises. Let's look into an example:
+Promise.allSettled does not get rejected if any of the promises are rejected and so the only case when it will be rejected would be when there is an error iterating over the promises. Let’s look into an example:
 
-```
+```javascript
 Promise.allSettled([
   Promise.resolve('Wisdom'),
   Promise.reject('Geek'),
@@ -94,9 +92,9 @@ The only caveat is that if one of the promises is pending, this method is not ca
 
 This javascript combinator method can be useful when you want to do something as soon as any of the promises either gets resolved or rejected. The resolved promise will contain the value or the reason of the promise that got resolved or rejected first.
 
-Let's dive into the example for this one:
+Let’s dive into the example for this one:
 
-```
+```javascript
 let promise1 = new Promise((resolve, reject) => {
     setTimeout(resolve, 500, 'one');
 });
@@ -117,7 +115,7 @@ Promise.race([promise1, promise2, promise3])
 
 Promise.race can be used to create a pseudo version of a cancellable promise that times out after a certain time period.
 
-```
+```javascript
 let timeout = (timeoutLimit) => new Promise((resolve, reject) => {
     setTimeout(() => reject(), timeoutLimit);
   });
@@ -137,7 +135,7 @@ Before we get into the implementation of this method, it is important to reitera
 
 This method is similar to the race method in the form that it only gets fulfilled when one of the input promises gets fulfilled. The only difference is that it does not care about rejections. It will only get rejected if all the input promises are rejected.
 
-```
+```javascript
 let promise1 = new Promise((resolve, reject) => {
     setTimeout(() => reject(new Error('p3 failed')), 100);
 });
@@ -158,29 +156,11 @@ Even though the first two promises rejected before the third one, any will only 
 
 That is all the JavaScript promise combinator methods that exist as of today. Hopefully, this post gave you a good idea of the differences between them and when to use which one. To sum it all up, here is a cheat sheet:
 
-Method Name
-Short-circuit?
-Fulfilled on?
-Rejected on?
+| Method Name | Short-circuit? | Fulfilled on? | Rejected on? |
+| --- | --- | --- | --- |
+| Promise.all | First rejected | All | Any |
+| Promise.allSettled | N/A | Always | N/A |
+| Promise.race | First settled | Any | Any |
+| Promise.any | First resolved | Any | All |
 
-Promise.all
-First rejected
-All
-Any
-
-Promise.allSettled
-N/A
-Always
-N/A
-
-Promise.race
-First settled
-Any
-Any
-
-Promise.any
-First resolved
-Any
-All
-
-I hope this all helped you get a better understanding of all the JavaScript promise combinator methods, and if you have any questions, feel free to drop a comment below to start a discussion!
+I hope this all helped you get a better understanding of all the JavaScript promise combinator methods, and if you have any questions, feel free to drop a comment below to start a discussion\!

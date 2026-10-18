@@ -1,12 +1,13 @@
 ---
 title: 'Beating JSON performance using Protocol Buffers'
-description: 'Protocol buffers or Protobuf, is a binary format that was created by Google to serialize structured data that is transferred among services. Before we get into what protocol buffers are, let us first look into JSON. JSON clearly has great advantages when it comes to being a data interchange format&#46;&#46;&#46;'
+description: 'Protocol buffers or Protobuf, is a binary format that was created by Google to serialize structured data that is transferred among services.'
 pubDate: 'Oct 20, 2020'
 updatedDate: 'Oct 11, 2023'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]
+tags: [{ name: "json", slug: "json" }, { name: "json parsing", slug: "json-parsing" }, { name: "protobuf", slug: "protobuf" }, { name: "protocol buffers", slug: "protocol-buffers" }]
 ---
 
 Protocol buffers or Protobuf, is a binary format that was created by Google to serialize structured data that is transferred among services.
@@ -14,21 +15,15 @@ Protocol buffers or Protobuf, is a binary format that was created by Google to s
 Before we get into what protocol buffers are, let us first look into JSON. JSON clearly has great advantages when it comes to being a data interchange format such as:
 
 - Widely accepted format on the web
-
 - Can be read by all languages
-
 - Can be easily shared over the network
-
 - Data can be of any type (nested elements, arrays etc.)
-
 - Human readable
 
 But it has a few disadvantages as well:
 
 - Schema is not enforced
-
 - Objects can be huge in size because of repeated keys
-
 - Does not support comments, metadata or documentation
 
 Keeping these in mind, let us now take a look at what protobuf is and how it tries to address these disadvantages.
@@ -37,7 +32,7 @@ Keeping these in mind, let us now take a look at what protobuf is and how it tri
 
 From the [official](https://developers.google.com/protocol-buffers/) page:
 
-Protocol buffers are Google's language-neutral, platform-neutral, extensible mechanism for serializing structured data – think XML, but smaller, faster, and simpler. You define how you want your data to be structured once, then you can use special generated source code to easily write and read your structured data to and from a variety of data streams and using a variety of languages.
+> Protocol buffers are Google’s language-neutral, platform-neutral, extensible mechanism for serializing structured data – think XML, but smaller, faster, and simpler. You define how you want your data to be structured once, then you can use special generated source code to easily write and read your structured data to and from a variety of data streams and using a variety of languages.
 
 Thus, protocol buffers are a method of encoding structured data efficiently. It provides flexibility to create the structure of the data by defining its schema using a specification language. The specification language is not written in any language and you can define a message using the proto file syntax.
 
@@ -47,7 +42,7 @@ These messages are used to encode the data in a specific format to make the mess
 
 Let us define a message definition for a blog post. We will specify 3 field names on it, the title, author and a body.
 
-```
+```proto
 syntax = "proto3";
 
 message BlogPost {
@@ -77,16 +72,14 @@ The messages also have field rules allocated to them which let us specify if the
 
 ### Comments
 
-We can also add documentation in the message definition by making use of the single line (//) and multi-line comment definitions (/*  */).
+We can also add documentation in the message definition by making use of the single line (//) and multi-line comment definitions (/\* \*/).
 
 This is a sample schema file for a type, and we do not need to manually create this every time. It can be created using auto-generation tools, depending on the programming language that we are implementing protobufs in.
 
 Other useful things to know are:
 
 - Multiple types can be defined in the same .proto file
-
 - Types can be nested within one another
-
 - Types can be imported in different .proto files as well (import statements require relative path from the root of the project)
 
 ## How is a protobuf message compressed?
@@ -97,7 +90,7 @@ A key feature of protocol buffers is that they separate the context of the messa
 
 So for the JSON message:
 
-```
+```json
 {
   "author" : "saransh",
   "title" : "protobuf"
@@ -106,7 +99,7 @@ So for the JSON message:
 
 The corresponding protocol buffer (in string for our understanding) would according to our message definition above would be:
 
-```
+```proto
 127saransh228protobuf
 ```
 
@@ -116,7 +109,7 @@ The output message is less human readable and needs understanding of the protobu
 
 Each segment of the message is structured like this:
 
-```
+```proto
 {field_number}{field_type}{data}
 ```
 
@@ -127,29 +120,20 @@ Thus instead of carrying along the entire definition of the field, all we need i
 ## Advantages of protobuf
 
 - Data is fully typed
-
 - Data is compressed automatically
-
 - Documentation can be embedded in the schema definition
-
 - Language agnostic (All major languages have support)
-
 - Schema can evolve over time in a safe manner (backwards compatibility is ensured)
-
 - 3-10x smaller and 20-100x faster than XML
-
 - Code can be generated automatically for you
-
 - Less boilerplate code for data type checking is needed
 
 ## Disadvantages of protobuf
 
 - Schema is needed to generate code and read data
-
 - Serialized data is not human-readable
-
 - Support for some language might be lacking (the majority of them do exist though)
 
 If a platform (such as making web requests), does not support the binary format of protocol buffers, there are capabilities within protocol buffers to serialize the binary message to a string in order to make it safe for transmission. This makes it usable for those scenarios as well, though the majority use cases of protocol buffers revolve around microservices and gRPC calls.
 
-In the end, one needs to consider all those tradeoffs and make the decision of choosing one thing over the other. But it is good to know about the various technologies out there and this post was intended to make you aware about it. If you liked the post, do leave a comment below letting us know!
+In the end, one needs to consider all those tradeoffs and make the decision of choosing one thing over the other. But it is good to know about the various technologies out there and this post was intended to make you aware about it. If you liked the post, do leave a comment below letting us know\!

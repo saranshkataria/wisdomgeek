@@ -1,20 +1,21 @@
 ---
 title: 'Mutant: An open-source, cross-platform, encrypted programming language'
-description: 'Mutant is an open-source, cross-platform, compiled, garbage collected, encrypted programming language that wants to make secure programming and security research more accessible. The target audience for mutant is students, security researchers, and reverse engineers. The aim is to provide an accessible, secure system for programming & security research. And it&#46;&#46;&#46;'
+description: 'Mutant is an open-source, cross-platform, compiled, garbage collected, encrypted programming language that wants to make secure programming and security…'
 pubDate: 'Apr 01, 2021'
 updatedDate: 'Apr 01, 2021'
 heroImage: './hero.jpeg'
 author: 'Wisdom Geek'
 categories: ["Programming"]
 categoryHierarchy: ["Development","Programming"]
+tags: []
 ---
 
 Mutant is an open-source, cross-platform, compiled, garbage collected, encrypted programming language that wants to make secure programming and security research more accessible. The target audience for mutant is students, security researchers, and reverse engineers.
 
 The aim is to provide an accessible, secure system for programming & security research. And it can be learned in under an hour.
 
-Mutant is loosely typed and it does not require defining specific data types while creating variables. The idea is to build a "secure by default" programming language that provides both compile-time and run-time security. This is achieved by encrypting byte code both on disk and in memory.
-
+Mutant is loosely typed and it does not require defining specific data types while creating variables. The idea is to build a “secure by default” programming language that provides both compile-time and run-time security. This is achieved by encrypting byte code both on disk and in memory.  
+  
 While semi-colons are not required strictly to use the language, it is recommended that they are used in order to avoid unusual errors in code.
 
 ## Features of Mutant
@@ -31,8 +32,8 @@ The language has support for a basic REPL for testing out the capabilities. It i
 
 ### VM
 
-Mutant makes use of a virtual machine, known as “Mutant Virtual Machine” or MVM. This virtual machine makes sure that your program runs in YOUR machine. It has been tested on Linux, macOS, & Windows. It should also work on Android, FreeBSD, and essentially any platform/architecture that is supported natively by the Go Programming Language.
-
+Mutant makes use of a virtual machine, known as “Mutant Virtual Machine” or MVM. This virtual machine makes sure that your program runs in YOUR machine. It has been tested on Linux, macOS, & Windows. It should also work on Android, FreeBSD, and essentially any platform/architecture that is supported natively by the Go Programming Language.  
+  
 This virtual machine is run every time it has to run compiled mu files or whenever the user decides to run their programs through REPL
 
 ### Unicode Support

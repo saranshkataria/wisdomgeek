@@ -1,12 +1,13 @@
 ---
 title: 'Automatic batching in React 18 helps avoid re-rendering'
-description: 'Remember the earlier versions of React that used to batch multiple state updates inside event handlers such as click or change to avoid multiple re-renders? React 18 has added automatic batching for all use cases to improve that performance optimization even further. With React 18, state updates in event handlers,&#46;&#46;&#46;'
+description: 'Remember the earlier versions of React that used to batch multiple state updates inside event handlers such as click or change to avoid multiple re-renders?'
 pubDate: 'Jan 13, 2022'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpeg'
 author: 'Saransh Kataria'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]
+tags: [{ name: "javascript", slug: "javascript" }, { name: "react", slug: "react" }, { name: "reactjs", slug: "reactjs" }]
 ---
 
 Remember the earlier versions of React that used to batch multiple state updates inside event handlers such as click or change to avoid multiple re-renders? React 18 has added automatic batching for all use cases to improve that performance optimization even further.
@@ -19,7 +20,7 @@ For people who do not know about batching, let us discuss that first. If a funct
 
 Let us say we had the following function:
 
-```
+```javascript
 const handleClick = () => {
   setCount(count + 1);
   setTotalCount(totalCount+1);
@@ -40,14 +41,14 @@ As mentioned, above, this is only available from React 18 onwards. So the projec
 
 After that, we need to replace our ReactDOM.render method from
 
-```
-ReactDOM.render(App />, document.getElementById("root"));
+```javascript
+ReactDOM.render(<App />, document.getElementById("root"));
 ```
 
 to
 
-```
-ReactDOM.createRoot(rootNode).render(App />);
+```javascript
+ReactDOM.createRoot(rootNode).render(<App />);
 ```
 
 And this enables batch updates automatically.
@@ -58,7 +59,7 @@ In all the following examples, the multiple calls to set state would be batched 
 
 ## Event handlers
 
-```
+```javascript
 const App = () => {
   const [count, setCount] = useState(0);
   const [flag, setFlag] = useState(false);
@@ -69,18 +70,18 @@ const App = () => {
   };
 
   return (
-    div>
-      button onClick={handleClick}>Click here!button>
-      h1>{count}h1>
-      h1>{`${flag}`}h1>
-    div>
+    <div>
+      <button onClick={handleClick}>Click here!</button>
+      <h1>{count}</h1>
+      <h1>{`${flag}`}</h1>
+    </div>
   );
 };
 ```
 
 ### fetch call
 
-```
+```javascript
 const handleClick = () => {
   fetch("URL").then(() => {
     setCount(count + 1);
@@ -91,7 +92,7 @@ const handleClick = () => {
 
 ### **setTimeout**
 
-```
+```javascript
 const handleClick = () => {
   setTimeout(() => {
     setCount(count + 1);
@@ -102,7 +103,7 @@ const handleClick = () => {
 
 ### Native event handlers
 
-```
+```javascript
 const el = document.getElementById("button");
 el.addEventListener("click", () => {
   setCount(count + 1);
@@ -114,7 +115,7 @@ el.addEventListener("click", () => {
 
 There are going to be cases where we do not want React to batch update the state. We can make use of the flushSync API from react-dom.
 
-```
+```javascript
 import { flushSync } from 'react-dom'; 
 
 function handleClick() {
@@ -128,4 +129,4 @@ function handleClick() {
 }
 ```
 
-For more information, you can always head to the discussion on [Github](https://github.com/reactwg/react-18/discussions/21). Or leave a comment below if you have any questions!
+For more information, you can always head to the discussion on [Github](https://github.com/reactwg/react-18/discussions/21). Or leave a comment below if you have any questions\!

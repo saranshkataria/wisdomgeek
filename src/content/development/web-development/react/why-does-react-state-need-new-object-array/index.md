@@ -1,12 +1,13 @@
 ---
 title: 'Why does React state need a new object/array?'
-description: 'If you have been using React for a while, you are familiar with how state update works. There are a lot of internal optimizations that React makes for faster rendering. One of the implementation details of the React internals is that it checks whether the given state object has actually&#46;&#46;&#46;'
+description: 'If you have been using React for a while, you are familiar with how state update works. There are a lot of internal optimizations that React makes for faster…'
 pubDate: 'May 25, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]
+tags: [{ name: "react", slug: "react" }, { name: "reactjs", slug: "reactjs" }, { name: "state", slug: "state" }, { name: "useState", slug: "usestate" }]
 ---
 
 If you have been using React for a while, you are familiar with how state update works. There are a lot of internal optimizations that React makes for faster rendering. One of the implementation details of the React internals is that it checks whether the given state object has actually changed or not. But the behavior of assigning a new object/array trips up newcomers. Let us understand why React needs a new copy of an object/array when assigning state.
@@ -17,7 +18,7 @@ If you have been using React for a while, you are familiar with how state update
 
 For an object:
 
-```
+```javascript
 const author1 = {name: "Saransh Kataria"};
 const author2 = {name: "Saransh Kataria"};
 
@@ -30,18 +31,18 @@ Since objects are stored by reference, the comparison returns false.
 
 React uses Object.is() for comparison of the previous and next states to determine whether or not to update the DOM. The relevant part for that case is:
 
-```
+```javascript
 const author1 = {name: "Saransh Kataria"};
 author1.name = "Wisdom Geek";
 
 Object.is(author1, author1); // true
 ```
 
-Since we are mutating the same object and it's properties, the comparison will always return true.
+Since we are mutating the same object and it’s properties, the comparison will always return true.
 
 Therefore, when we do:
 
-```
+```javascript
 const [author, setAuthor] = useState({name:"Saransh Kataria")};
 
 const updateName = () => {
@@ -60,7 +61,7 @@ Since the object reference did not change, Object.is() returns false even though
 
 To get it to work correctly, we must pass in a new reference to the useState function. And for doing that, we need to create a new object. Once we do that, Object.is() will return true because the references will not be the same, and we will trigger a re-render.
 
-```
+```javascript
 const updateName = () => {
   setAuthor(prevState => {...prevState, name: "Wisdom Geek"});
 }
@@ -72,4 +73,4 @@ The same logic applies to arrays as well since they are reference types as well.
 
 ## Conclusion
 
-I hope that that explanation demystifies React internals and gives a better idea about the implementation detail of state management in React. If you have any questions, feel free to drop a comment below!
+I hope that that explanation demystifies React internals and gives a better idea about the implementation detail of state management in React. If you have any questions, feel free to drop a comment below\!

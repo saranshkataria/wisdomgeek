@@ -1,17 +1,18 @@
 ---
 title: 'Select all text on click using CSS'
-description: 'When a user has to select some text on a website, they have to drag and hold their mouse, or use double-click it. Sometimes, there are some samples that we know that the user is going to copy for sure. A use case for this can be code samples. The&#46;&#46;&#46;'
+description: 'When a user has to select some text on a website, they have to drag and hold their mouse, or use double-click it.'
 pubDate: 'Oct 22, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]
+tags: [{ name: "CSS", slug: "css" }]
 ---
 
 When a user has to select some text on a website, they have to drag and hold their mouse, or use double-click it. Sometimes, there are some samples that we know that the user is going to copy for sure. A use case for this can be code samples. The user-select CSS property can help do exactly just that.
 
-```
+```css
 .select-all-text {
     user-select: all;
     -moz-user-select: all;
@@ -23,7 +24,7 @@ And if you were to click the above, it would select the full text on click.
 
 You can also provide a none value to the user-select property to disable selection altogether:
 
-```
+```css
 user-select: none;
 ```
 

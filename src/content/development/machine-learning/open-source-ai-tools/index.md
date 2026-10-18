@@ -1,25 +1,26 @@
 ---
 title: 'Open-Source AI Tools'
-description: 'In this article, we will go through some of the most commonly used open-source AI tools available in the market. This is not an exhaustive list. But it serves as a good starting point for anyone trying to venture into machine learning or artificial intelligence. Since these are open-source AI&#46;&#46;&#46;'
+description: 'In this article, we will go through some of the most commonly used open-source AI tools available in the market. This is not an exhaustive list.'
 pubDate: 'Dec 22, 2020'
 updatedDate: 'Dec 22, 2020'
 heroImage: './hero.jpg'
 author: 'Pranshu Aggarwal'
 categories: ["Machine Learning"]
 categoryHierarchy: ["Development","Machine Learning"]
+tags: [{ name: "Artificial Intelligence", slug: "artificial-intelligence" }, { name: "Machine learning", slug: "machine-learning" }, { name: "Open Source Tools", slug: "open-source-tools" }]
 ---
 
 In this article, we will go through some of the most commonly used open-source AI tools available in the market. This is not an exhaustive list. But it serves as a good starting point for anyone trying to venture into machine learning or artificial intelligence. Since these are open-source AI tools, one can easily experiment with the codebase. It can also help you understand the logic behind many machine learning algorithms.
 
 There are plenty of open-source AI tools. However, for the sake of keeping it short and crisp, I have tabulated the ones which I tend to most commonly use in my machine learning work.
 
- So, without any further ado, let us start!
+So, without any further ado, let us start\!
 
 ### **Programming Languages**
 
-A variety of programming languages are available for machine learning. The Python and R languages are frequently used. A large number of support tools and software libraries have been developed in these languages to provide extensive support for manipulation of datasets, statistical analysis, machine learning algorithms, visualization, and other capabilities related to AI/ML. Prevalent languages used for general software development—such as Java, C++, C#, and so forth—can also be used for AI/ML. New languages continue to be developed and are finding significant use in AI/ML. 
+A variety of programming languages are available for machine learning. The Python and R languages are frequently used. A large number of support tools and software libraries have been developed in these languages to provide extensive support for manipulation of datasets, statistical analysis, machine learning algorithms, visualization, and other capabilities related to AI/ML. Prevalent languages used for general software development—such as Java, C++, C#, and so forth—can also be used for AI/ML. New languages continue to be developed and are finding significant use in AI/ML.
 
-## **NumPy**
+## ****NumPy****
 
 This is a [library](https://numpy.org/) for Python that enables you to create and perform mathematical calculations on large, multi-dimensional arrays (matrices). It also supports advanced mathematical functions for operating on these arrays, particularly in the domain of linear algebra. NumPy is a foundational library for machine learning using Python because it supports much more efficient computations than standard Python arrays. NumPy arrays can store many different types of data.
 
@@ -49,15 +50,15 @@ The Natural Language Toolkit ([NLTK](https://www.nltk.org/)) is a suite of Pytho
 
 ## **TensorFlow**
 
-This library supports deep learning algorithms, enabling you to quickly set up, train, and deploy artificial neural networks with large datasets. [TensorFlow](https://www.tensorflow.org/) supports a wide variety of programming languages, particularly Python and C. TensorFlow can leverage the power of GPUs to increase training performance. A companion library called TensorBoard provides visualization tools for TensorFlow neural networks. The "Tensor" in "TensorFlow" refers to a type of data structure used in linear algebra and commonly used in machine learning. For now, you might think of a tensor as a special sort of multi-dimensional array.
+This library supports deep learning algorithms, enabling you to quickly set up, train, and deploy artificial neural networks with large datasets. [TensorFlow](https://www.tensorflow.org/) supports a wide variety of programming languages, particularly Python and C. TensorFlow can leverage the power of GPUs to increase training performance. A companion library called TensorBoard provides visualization tools for TensorFlow neural networks. The “Tensor” in “TensorFlow” refers to a type of data structure used in linear algebra and commonly used in machine learning. For now, you might think of a tensor as a special sort of multi-dimensional array.
 
 ## **PyTorch**
 
-[PyTorch ](https://pytorch.org/)is a deep learning library for Python that, like TensorFlow, uses tensors for computations. It is especially useful in NLP projects that leverage recurrent neural networks (RNNs). Because it is deeply rooted in Python, PyTorch tends to be easier to learn than TensorFlow. PyTorch also supports accelerated computations using GPUs.
+[PyTorch](https://pytorch.org/) is a deep learning library for Python that, like TensorFlow, uses tensors for computations. It is especially useful in NLP projects that leverage recurrent neural networks (RNNs). Because it is deeply rooted in Python, PyTorch tends to be easier to learn than TensorFlow. PyTorch also supports accelerated computations using GPUs.
 
 ## **Keras**
 
-[Keras](https://keras.io/) is a library that acts as a high-level interface for experimenting with [artificial neural networks](https://www.wisdomgeek.com/development/machine-learning/beginner-guide-to-artificial-neural-networks/) used in deep learning. It can run on top of several different neural network technologies, including TensorFlow. Keras is particularly useful for beginners to ANNs. It provides rapid prototyping because it abstracts some of the more complex components.
+[Keras](https://keras.io/) is a library that acts as a high-level interface for experimenting with [artificial neural networks](/development/machine-learning/beginner-guide-to-artificial-neural-networks/) used in deep learning. It can run on top of several different neural network technologies, including TensorFlow. Keras is particularly useful for beginners to ANNs. It provides rapid prototyping because it abstracts some of the more complex components.
 
 ## **Apache Spark MLlib**
 
@@ -75,8 +76,8 @@ Google provides a free [cloud service](https://colab.research.google.com/noteboo
 
 [Anaconda](https://www.anaconda.com/) is a cross-platform open-source distribution of many Python and R data science libraries (including NumPy, SciPy, pandas, Matplotlib, Seaborn, scikit-learn, NTLK, TensorFlow, and PyTorch) It also includes a graphical user interface (GUI) called Anaconda Navigator for managing packages and running processes. Because it includes so many of the libraries that make up open-source machine learning, Anaconda is often the preferred method of setting up a machine learning environment rather than installing each component individually.
 
-This brings us to the end of this article!
+This brings us to the end of this article\!
 
-I hope this list proves useful to you in your machine learning journey. If you think I missed any prominent open-source AI tool in this list, let me know in the comment section below. 
+I hope this list proves useful to you in your machine learning journey. If you think I missed any prominent open-source AI tool in this list, let me know in the comment section below.
 
-Until next time, keep learning!
+Until next time, keep learning\!

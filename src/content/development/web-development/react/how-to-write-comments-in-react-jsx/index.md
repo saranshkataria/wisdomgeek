@@ -1,21 +1,22 @@
 ---
 title: 'How to write comments in React (JSX)?'
-description: 'I was recently trying to comment out some logic inside my JSX to add context about what a potentially complex logic. I then realized that comments in JSX are weird. So, how to write comments in React (JSX)? You cannot use HTML comments because they are parsed as DOM nodes:&#46;&#46;&#46;'
+description: 'I was recently trying to comment out some logic inside my JSX to add context about what a potentially complex logic.'
 pubDate: 'Oct 15, 2022'
 updatedDate: 'Oct 25, 2023'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["React"]
 categoryHierarchy: ["Development","Web Development","React"]
+tags: [{ name: "javascript", slug: "javascript" }, { name: "jsx", slug: "jsx" }, { name: "react", slug: "react" }, { name: "reactjs", slug: "reactjs" }]
 ---
 
 I was recently trying to comment out some logic inside my JSX to add context about what a potentially complex logic. I then realized that comments in JSX are weird. So, how to write comments in React (JSX)?
 
 You cannot use HTML comments because they are parsed as DOM nodes:
 
-```
+```javascript
 const doesNotWork = () => {
-  return Does not work -->
+  return <!-- Does not work -->
 }
 const doesNotWork2 = () => {
   return (
@@ -28,7 +29,7 @@ const doesNotWork2 = () => {
 
 To write comments in React (JSX), we need to wrap them in curly braces.
 
-```
+```javascript
 const doesWork = () => {
   return {/* this works */ }
 }
@@ -40,9 +41,9 @@ The curly braces tell the JSX parser to parse the code inside as JavaScript and 
 
 Since the contents inside are parsed as JavaScript, this enables us to also do multi-line or single-line comments:
 
-```
+```javascript
 const doesWork = () => {
-  return 
+  return <>
   {
     /*
       mult-line
@@ -52,7 +53,7 @@ const doesWork = () => {
   {
       // single-line test
   }
-  
+  </>
 }
 ```
 

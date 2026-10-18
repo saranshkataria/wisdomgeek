@@ -1,17 +1,18 @@
 ---
 title: 'Recurrent Neural Networks'
-description: 'In this article, we will explore recurrent neural networks. For all the readers who are not versed with the concept of neural networks, I will recommend that you go through one of our previous articles and get a basic understanding of how a neural network works. Disclaimer – The concepts&#46;&#46;&#46;'
+description: 'In this article, we will explore recurrent neural networks. For all the readers who are not versed with the concept of neural networks, I will recommend that…'
 pubDate: 'Oct 27, 2020'
 updatedDate: 'Oct 27, 2020'
 heroImage: './hero.jpg'
 author: 'Pranshu Aggarwal'
 categories: ["Machine Learning"]
 categoryHierarchy: ["Development","Machine Learning"]
+tags: [{ name: "Artificial Neural Networks", slug: "artificial-neural-networks" }, { name: "Machine learning", slug: "machine-learning" }, { name: "recurrent neural networks", slug: "recurrent-neural-networks" }, { name: "rnn", slug: "rnn" }]
 ---
 
-In this article, we will explore recurrent neural networks. For all the readers who are not versed with the concept of neural networks, I will recommend that you go through one of our previous articles and get a basic understanding of [how a neural network works](https://www.wisdomgeek.com/development/machine-learning/beginner-guide-to-artificial-neural-networks/).
+In this article, we will explore recurrent neural networks. For all the readers who are not versed with the concept of neural networks, I will recommend that you go through one of our previous articles and get a basic understanding of [how a neural network works](/development/machine-learning/beginner-guide-to-artificial-neural-networks/).
 
-**Disclaimer **– The concepts in this article may get confusing. I will try to keep the language as lucid as possible.
+**Disclaimer** – The concepts in this article may get confusing. I will try to keep the language as lucid as possible.
 
 ## Shortfall of Classic Neural Networks
 
@@ -33,54 +34,69 @@ Now that we have a fair bit of idea about RNNs, let us dig a little deep to unde
 
 ## Structure of a Recurrent Neural Network
 
-This section of the article assumes that you are familiar with the working of a neural network. However, if you are not, we recommend that you go through one of our previous article on neural networks. In a neural network, nodes in one layer are connected to other layers and their relationship is defined by the "weight" and "bias" for that node. Hence, for different nodes, we have different weights and biases. RNNs operate differently in the sense that these weights and biases are the same for all the nodes. This is called "parameter sharing". 
+This section of the article assumes that you are familiar with the working of a neural network. However, if you are not, we recommend that you go through one of our previous article on neural networks. In a neural network, nodes in one layer are connected to other layers and their relationship is defined by the “weight” and “bias” for that node. Hence, for different nodes, we have different weights and biases. RNNs operate differently in the sense that these weights and biases are the same for all the nodes. This is called “parameter sharing”.
 
 A basic RNN has the following schema.
 
-![Recurrent Neural Networks](./rnn-1.png)Recurrent Neural Network Schema
+<figure>
 
-If we unroll the RNN, it will look something like this – 
+![Recurrent Neural Networks](./rnn-1.png)
 
-![Recurrent Neural Networks](./unfoldedrnn-2.png)Unfolded Recurrent Network
+<figcaption>Recurrent Neural Network Schema</figcaption>
+</figure>
 
-**Side Note** – Almost all the illustrations on the internet have a horizontal view of unfolded RNNs. While trying to understand the concept behind RNNs, I had a tough time visualizing the network in my head. Hence, I made this illustration for the sake of simplicity for all of you. Hope it helps!
+If we unroll the RNN, it will look something like this –
 
-One important thing to notice is that each input in the above RNN produces an output. Therefore, it is important to understand that RNNs are of the following types – 
+<figure>
 
-1. $1
-2. $1
-3. $1
-4. $1
+![Recurrent Neural Networks](./unfoldedrnn-2.png)
+
+<figcaption>Unfolded Recurrent Network</figcaption>
+</figure>
+
+**Side Note** – Almost all the illustrations on the internet have a horizontal view of unfolded RNNs. While trying to understand the concept behind RNNs, I had a tough time visualizing the network in my head. Hence, I made this illustration for the sake of simplicity for all of you. Hope it helps\!
+
+One important thing to notice is that each input in the above RNN produces an output. Therefore, it is important to understand that RNNs are of the following types –
+
+1. One to One (single input single output)
+2. One to Many (single input multiple outputs)
+3. Many to One (multiple inputs single output)
+4. Many to Many (multiple inputs multiple outputs)
 
 ## Behind the scenes in a recurrent neural network
 
 By now, we hope that you are familiar with the basic functioning of a recurrent neural networks. Now, let us deep dive into some mathematics behind it. For simplicity, we will consider one node in the neural network. The preceding and following nodes follow the same principle and hence, can be extrapolated.
 
-![Recurrent Neural Networks](./rnn-1-4.png)A single node in a recurrent neural network
+<figure>
 
-Following are the meanings of the notations used above – 
+![Recurrent Neural Networks](./rnn-1-4.png)
 
-- XT – Input to the neural network at time T
-- WX – Weight of the input node
-- HT-1 – Previous state
-- HT – Current state
-- Wy – Weight of the output node
-- YT – Output at time T
+<figcaption>A single node in a recurrent neural network</figcaption>
+</figure>
 
-WX, Wy are shared across the network (part of parameter sharing explained above). Mathematically, they are linked to each other by the following formula – 
+Following are the meanings of the notations used above –
 
-**YT = HT x Wy + By **
+- X<sub>T</sub> – Input to the neural network at time T
+- W<sub>X</sub> – Weight of the input node
+- H<sub>T-1</sub> – Previous state
+- H<sub>T</sub> – Current state
+- W<sub>y</sub> – Weight of the output node
+- Y<sub>T</sub> – Output at time T
+
+W<sub>X</sub>, W<sub>y</sub> are shared across the network (part of parameter sharing explained above). Mathematically, they are linked to each other by the following formula –
+
+**Y<sub>T</sub> = H<sub>T</sub> x W<sub>y</sub> + B<sub>y</sub>**
 
 and
 
-**HT = f(XT x WX + WH x HT-1 + B) **
+**H<sub>T</sub> = f(X<sub>T</sub> x W<sub>X</sub> + W<sub>H</sub> x H<sub>T-1</sub> + B)**
 
-where **By** and **B **are bias at output and hidden state, **WH** is the weight of the hidden state.
+where **B<sub>y</sub>** and **B** are bias at output and hidden state, **W<sub>H</sub>** is the weight of the hidden state.
 
-While RNNs are said to perform better than the conventional ARIMA time series models, they too have some limitations. They are computationally slow. Owing to its dependence on the past value, it sometimes has difficulty in accessing from a very old time frame. 
+While RNNs are said to perform better than the conventional ARIMA time series models, they too have some limitations. They are computationally slow. Owing to its dependence on the past value, it sometimes has difficulty in accessing from a very old time frame.  
 
-### THE END!
+### THE END\!
 
 We have reached the end of this article. If you liked the article, do not forget to drop a comment below. Until next time,
 
-Keep Learning!
+Keep Learning\!

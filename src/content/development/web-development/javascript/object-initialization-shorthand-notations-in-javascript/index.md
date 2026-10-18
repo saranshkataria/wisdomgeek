@@ -1,23 +1,24 @@
 ---
 title: 'Object initialization shorthand notations in JavaScript'
-description: 'I was recently working on a project in which I was trying to use a shorthand notation for destructuring assignment of a variable. I was researching different ways of getting a specific scenario to work. And while doing that research, I found that ES2015 had added 3 new object initialization&#46;&#46;&#46;'
+description: 'I was recently working on a project in which I was trying to use a shorthand notation for destructuring assignment of a variable.'
 pubDate: 'Feb 02, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
+tags: [{ name: "es2015", slug: "es2015" }, { name: "es6", slug: "es6" }, { name: "javascript", slug: "javascript" }, { name: "javascript shorthand", slug: "javascript-shorthand" }]
 ---
 
 I was recently working on a project in which I was trying to use a shorthand notation for destructuring assignment of a variable. I was researching different ways of getting a specific scenario to work. And while doing that research, I found that ES2015 had added 3 new object initialization shorthand notations that I had not known existed. And so I decided to share these with everyone.
 
-**Note: **As with most good things, these do not work with Internet Explorer. So if you are supporting it, these still might be good to have in your arsenal when Microsoft drops support for IE later.
+**Note:** As with most good things, these do not work with Internet Explorer. So if you are supporting it, these still might be good to have in your arsenal when Microsoft drops support for IE later.
 
 ## What does object initialization shorthand notations mean?
 
 Objects initialization by default can be done using `Object.create()`, `new Object` or the literal notation by using an object initializer. The object initializer has been one of the most common ways:
 
-```
+```javascript
 const foo = {
   bar: 1,
   baz: 2
@@ -29,9 +30,7 @@ There are ways to make this initialization concise in specific scenarios and we 
 The 3 new object initialization shorthand notations were added to it in ES2015:
 
 - Shorthand property names
-
 - Shorthand method names
-
 - Computed property names
 
 ## Shorthand property names
@@ -40,7 +39,7 @@ This one is the most widely known object initialization shorthand notation out t
 
 This means code that used to be:
 
-```
+```javascript
 const bar = 1;
 const foo: {
   bar: bar ,
@@ -50,7 +49,7 @@ const foo: {
 
 can now be:
 
-```
+```javascript
 const bar = 1;
 const foo: {
   bar,
@@ -64,7 +63,7 @@ This one was a little surprising when I first saw it in the sense that I always 
 
 There was code that was like:
 
-```
+```javascript
 const bar = 1;
 const foo: {
   bar,
@@ -76,7 +75,7 @@ const foo: {
 
 can be shorthanded to:
 
-```
+```javascript
 const bar = 1;
 const foo: {
   bar,
@@ -94,14 +93,14 @@ This was the most interesting shorthand of all the 3 object initialization short
 
 Have you ever done this?
 
-```
+```javascript
 const obj = {}, key = 'bar';
 obj[key] = 'baz';
 ```
 
-This is possible because JavaScript objects are dictionaries and that gives us the possibility of adding dynamic keys to them. But this was always a pain for me. Not anymore!
+This is possible because JavaScript objects are dictionaries and that gives us the possibility of adding dynamic keys to them. But this was always a pain for me. Not anymore\!
 
-```
+```javascript
 let key = 'bar';
 let obj = {
   [key]: 'baz',
@@ -110,7 +109,7 @@ let obj = {
 
 And it will work! The idea of being able to inject a dynamic key might seem trivial but it opens up a lot of possibilities. We can even add complex expressions in there or even use template literals:
 
-```
+```javascript
 let key = 'bar';
 const prefix = '_prefix'
 let obj = {
@@ -119,6 +118,6 @@ let obj = {
 }
 ```
 
-And those are the 3 object initialization shorthand notations that we had to discuss. Though these are syntactic sugar over existing methods, these are the most commonly used tasks we do while creating objects. And the small improvements add up. If you would like to get a bit more into shorthands in JavaScript, you can read more about our post on [JavaScript rest and spread operator and destructuring](https://www.wisdomgeek.com/development/web-development/rest-and-spread-operator-three-dots-that-changed-javascript/). 
+And those are the 3 object initialization shorthand notations that we had to discuss. Though these are syntactic sugar over existing methods, these are the most commonly used tasks we do while creating objects. And the small improvements add up. If you would like to get a bit more into shorthands in JavaScript, you can read more about our post on [JavaScript rest and spread operator and destructuring](/development/web-development/javascript/rest-and-spread-operator-three-dots-that-changed-javascript/).
 
-Will you use any of these? Let us know in the comments below!
+Will you use any of these? Let us know in the comments below\!

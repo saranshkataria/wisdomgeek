@@ -1,15 +1,16 @@
 ---
 title: 'Why GraphQL?'
-description: 'Developing APIs for the web has never been an easy task for developers. REST has been the defacto standard for designing web APIs for the last decade. Considering REST''s wild popularity, the first question that pops into anyone''s head when they start reading about GraphQL is: Why GraphQL? Why do&#46;&#46;&#46;'
+description: 'Developing APIs for the web has never been an easy task for developers. REST has been the defacto standard for designing web APIs for the last decade.'
 pubDate: 'Jun 02, 2020'
 updatedDate: 'Jun 02, 2020'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["GraphQL"]
 categoryHierarchy: ["Development","Web Development","Graphql"]
+tags: [{ name: "graphql", slug: "graphql" }, { name: "web development", slug: "web-development" }]
 ---
 
-Developing APIs for the web has never been an easy task for developers.  REST has been the defacto standard for designing web APIs for the last decade. Considering REST's wild popularity, the first question that pops into anyone's head when they start reading about GraphQL is: Why GraphQL? Why do we need GraphQL when developers are already well versed with RESTful architecture?
+Developing APIs for the web has never been an easy task for developers. REST has been the defacto standard for designing web APIs for the last decade. Considering REST’s wild popularity, the first question that pops into anyone’s head when they start reading about GraphQL is: Why GraphQL? Why do we need GraphQL when developers are already well versed with RESTful architecture?
 
 While GraphQL is the new kid on the block, and REST is the old person with lots of experience. We need to understand why GraphQL even came into existence. Before diving into the why let us first understand what.
 
@@ -17,7 +18,7 @@ While GraphQL is the new kid on the block, and REST is the old person with lots 
 
 GraphQL stands for Graph Query language. It is a query language created by Facebook for Web APIs. It operates over HTTP, the same as REST. It is also to note that it is just a specification, not an implementation. That means we can implement it using any programming language we want with any database that we like, and any client we want while using GraphQL.
 
-GraphQL is not an architectural pattern, nor a web service. It merely acts as a thin middle layer that enables declarative data fetching, giving the client the power to specify what data it needs. GraphQL is not a REST replacement, but an alternative. We can use it in combination with REST, or not, and that is up to us. 
+GraphQL is not an architectural pattern, nor a web service. It merely acts as a thin middle layer that enables declarative data fetching, giving the client the power to specify what data it needs. GraphQL is not a REST replacement, but an alternative. We can use it in combination with REST, or not, and that is up to us.
 
 ## Where does GraphQL come into play?
 
@@ -33,7 +34,7 @@ The major benefits of GraphQL are :
 - Simple to maintain
 - Developer-friendly
 
-Let's take a deeper look at how GraphQL tackles these.
+Let’s take a deeper look at how GraphQL tackles these.
 
 ### GraphQL is faster
 
@@ -47,13 +48,13 @@ We also are showing some related articles down below. So we need another GET req
 
 This finally gives us everything we need to display this page. The whole process will look something like:
 
-![](./rest-api-architecture-1-1024x368.jpg)
+![](./rest-api-architecture-1.jpg)
 
 Now, if we were to fetch the same data from a GraphQL endpoint, we would not need so many HTTP requests. We will be querying a single endpoint (that would be /graphql). And we would be making a POST request to this endpoint, describing what all information we need from the server. In our case, we query for the post information, comments information, and related posts. We will be requesting these in the form of a GraphQL query.
 
 We will not get into the specifics of the GraphQL query in this post since this is more about why GraphQL and not the how. But this is what it would eventually look like:
 
-![](./graphql-api-architecture-1024x368.jpg)
+![](./graphql-api-architecture.jpg)
 
 The important distinction is that instead of the server deciding what data gets sent back, the client describes what all it needs. The server then returns all of that information in a single request instead of having to make multiple requests.
 
@@ -97,6 +98,6 @@ While GraphQL has a lot of advantages over REST, it does not mean that GraphQL i
 
 We need to understand the tradeoffs between the two and have both tools at our disposal. We can then select the correct one according to the application that we are building and its requirements.
 
-Now that you have an idea of Why GraphQL, you can read more about the GraphQL [basic terminologies: Types, Queries, Mutations, and Schema](https://www.wisdomgeek.com/development/web-development/graphql-basics-types-queries-mutations-schema/) to get to understand GraphQL a bit more.  If you are interested in knowing more about the complete stack, the [React, Relay, and GraphQL ecosystem](https://www.wisdomgeek.com/development/web-development/how-react-relay-graphql-stick-together/), you can check that post out.
+Now that you have an idea of Why GraphQL, you can read more about the GraphQL [basic terminologies: Types, Queries, Mutations, and Schema](/development/web-development/graphql/graphql-basics-types-queries-mutations-schema/) to get to understand GraphQL a bit more. If you are interested in knowing more about the complete stack, the [React, Relay, and GraphQL ecosystem](/development/web-development/graphql/how-react-relay-graphql-stick-together/), you can check that post out.
 
 Let us know in the comments about what you think about GraphQL. And if you would be using it in your next application?

@@ -1,19 +1,20 @@
 ---
 title: 'CSS :has a parent selector now'
-description: 'CSS now includes a :has selector that allows us to apply styles on the basis of what is happening inside an element. Often referred to as a parent seletor, the :has() function allows us to achieve this and more. Let us take a look at this relative selector. It only&#46;&#46;&#46;'
+description: 'CSS now includes a :has selector that allows us to apply styles on the basis of what is happening inside an element.'
 pubDate: 'Nov 12, 2022'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["Web Development"]
 categoryHierarchy: ["Development","Web Development"]
+tags: [{ name: "CSS", slug: "css" }]
 ---
 
 CSS now includes a :has selector that allows us to apply styles on the basis of what is happening inside an element. Often referred to as a parent seletor, the :has() function allows us to achieve this and more.
 
 Let us take a look at this relative selector.
 
-```
+```css
 div:has(img) {
   background: black;
 }
@@ -21,10 +22,10 @@ div:has(img) {
 
 It only applies the background if there is an image inside the div, otherwise, it will not. So
 
-```
-div>
-     img />
-div>
+```html
+<div>
+     <img />
+</div>
 ```
 
 will get selected but if it is a simple div, or has anything else inside it, the styles will not be applied to them.
@@ -33,7 +34,7 @@ will get selected but if it is a simple div, or has anything else inside it, the
 
 We can even chain the selector and have nested conditions:
 
-```
+```css
 div:has(h2):has(ul) {
   background: black;
 }
@@ -43,11 +44,11 @@ div:has(h2):has(ul) {
 
 I came across [this](https://www.bram.us/2021/12/21/the-css-has-selector-is-way-more-than-a-parent-selector/) article which takes the selector a bit further and does not limit the :has selector to just being a parent selector. You can select the children as well by combining it with the parent selector.
 
-```
-/*  Matches  elements that have a  as a child element */
+```css
+/*  Matches <figure> elements that have a <figcaption> as a child element */
 figure:has(figcaption) { … }
 
-/* Matches  elements that is a child of a  that contains a  child element */
+/* Matches <img> elements that is a child of a <figure> that contains a <figcaption> child element */
 figure:has(figcaption) img { … }
 ```
 

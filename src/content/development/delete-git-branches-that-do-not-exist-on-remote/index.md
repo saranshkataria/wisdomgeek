@@ -1,21 +1,21 @@
 ---
 title: 'Delete git branches that do not exist on remote'
-description: 'After working on a project for a while, there will come a time when we will end up with a lot of local branches that have been merged on remote but still exist on our local machine. To delete git branches that do not exist on remote, we can perform&#46;&#46;&#46;'
+description: 'After working on a project for a while, there will come a time when we will end up with a lot of local branches that have been merged on remote but still exist…'
 pubDate: 'Dec 23, 2023'
 updatedDate: 'Dec 23, 2023'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["Development"]
 categoryHierarchy: ["Development"]
+tags: [{ name: "git", slug: "git" }]
 ---
 
 After working on a project for a while, there will come a time when we will end up with a lot of local branches that have been merged on remote but still exist on our local machine. To delete git branches that do not exist on remote, we can perform the following steps:
 
-1. $1
+1. Switch to the main branch of the project (master/main)
+2. Run the command:
 
-2. $1
-
-```
+```bash
 git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -d
 ```
 
@@ -27,10 +27,10 @@ git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -d
 
 `&&`: is a logical operator that executes the second command only if the first one succeeds.
 
-`git branch -vv`: lists all local and upstream branches in very verbose mode. It displays detailed information about each branch and also specifies "[gone]" next to a branch if the local branch's upstream branch does not exist.
+`git branch -vv`: lists all local and upstream branches in very verbose mode. It displays detailed information about each branch and also specifies “\[gone\]” next to a branch if the local branch’s upstream branch does not exist.
 
-`|awk '/:gone]/{print $1}'`: pipes the verbose output to awk which is used to process text. awk matches lines containing :gone]. In awk, a line is delimited by a whitespace by default and $1 refers to the first field in that line. So `{print $1}` prints the first field of the matching lines which is the branch names in this case.
+`|awk '/:gone]/{print $1}'`: pipes the verbose output to awk which is used to process text. awk matches lines containing :gone\]. In awk, a line is delimited by a whitespace by default and $1 refers to the first field in that line. So `{print $1}` prints the first field of the matching lines which is the branch names in this case.
 
-`|xargs git branch -d`: pipes the output of the first field that we got from the previous part of the command (branch  names) to xargs. xargs is used to build and execute commands from input. So it runs git branch -d for every input line that it gets. So it deletes the branch names that it receives line by line for each input.
+`|xargs git branch -d`: pipes the output of the first field that we got from the previous part of the command (branch names) to xargs. xargs is used to build and execute commands from input. So it runs git branch -d for every input line that it gets. So it deletes the branch names that it receives line by line for each input.
 
 And thus we delete git branches that do not exist on remote one by one. Let us know in the comments if you have any questions.

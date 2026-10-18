@@ -1,19 +1,20 @@
 ---
 title: 'Accessing the clipboard in JavaScript'
-description: 'Developers are probably the laziest people on the planet. And of all the things, copy-paste is our favorite keyboard shortcut. But what is better than hitting ctrl + c? Having a button do the copying for you! And that is now possible using an asynchronous version of the clipboard API&#46;&#46;&#46;'
+description: 'Developers are probably the laziest people on the planet. And of all the things, copy-paste is our favorite keyboard shortcut.'
 pubDate: 'Sep 08, 2021'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.png'
 author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
+tags: [{ name: "clipboard", slug: "clipboard" }, { name: "javascript", slug: "javascript" }]
 ---
 
 Developers are probably the laziest people on the planet. And of all the things, copy-paste is our favorite keyboard shortcut. But what is better than hitting ctrl + c? Having a button do the copying for you! And that is now possible using an asynchronous version of the clipboard API in JavaScript.
 
-You would have probably come across this while copying code off of a website, or an API key, or copying links from Google Drive:
+You would have probably come across this while copying code off of a website, or an API key, or copying links from Google Drive:  
 
-![](./image-1024x198.png)
+![](./image.png)
 
 ## The clipboard API
 
@@ -25,7 +26,7 @@ The newer asynchronous clipboard API is supported by all browsers and is more se
 
 For copying to the clipboard using JavaScript:
 
-```
+```javascript
 // copying to clipboard
 navigator.clipboard.writeText(SOME_VALUE)
     .then(() => alert("Text is now stored your cliboard!"));
@@ -33,7 +34,7 @@ navigator.clipboard.writeText(SOME_VALUE)
 
 And for copying from it:
 
-```
+```javascript
 // copying from clipboard
 await readText = await navigator.clipboard.readText();
 

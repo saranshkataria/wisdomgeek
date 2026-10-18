@@ -1,21 +1,22 @@
 ---
 title: 'Overriding nested dependencies in NPM'
-description: 'Whenever we install a particular package, it is common to come across a problem with a dependency''s dependency. With the release of npm 8.3, an overrides attribute has been added to solve this problem and allow overriding of nested dependencies in NPM. The problem Let us say your project depends&#46;&#46;&#46;'
+description: 'Whenever we install a particular package, it is common to come across a problem with a dependency’s dependency.'
 pubDate: 'Jan 18, 2022'
 updatedDate: 'Oct 10, 2023'
 heroImage: './hero.jpeg'
 author: 'Saransh Kataria'
 categories: ["JavaScript"]
 categoryHierarchy: ["Development","Web Development","Javascript"]
+tags: [{ name: "javascript", slug: "javascript" }, { name: "npm", slug: "npm" }]
 ---
 
-Whenever we install a particular package, it is common to come across a problem with a dependency's dependency. With the release of npm 8.3, an overrides attribute has been added to solve this problem and allow overriding of nested dependencies in NPM.
+Whenever we install a particular package, it is common to come across a problem with a dependency’s dependency. With the release of npm 8.3, an overrides attribute has been added to solve this problem and allow overriding of nested dependencies in NPM.
 
 ## The problem
 
 Let us say your project depends on Package A which depends on Package B. Package B has an update, but package A has not updated it yet.
 
-```
+```javascript
 my-project
   |_ Package A@1.0.0
       |_ Package B @1.0.0
@@ -33,7 +34,7 @@ The changes can be as specific as we want and scoped, or we can make them generi
 
 If we wanted to install version 2.0.0 of package B no matter what, we could use:
 
-```
+```javascript
 {
   "overrides": {
     "package-b": "2.0.0"
@@ -43,7 +44,7 @@ If we wanted to install version 2.0.0 of package B no matter what, we could use:
 
 If we wanted package A to always be 1.0.0, and package B at any depth beyond package A to be 2.0.0:
 
-```
+```javascript
 {
   "overrides": {
     "package-a": {
@@ -56,7 +57,7 @@ If we wanted package A to always be 1.0.0, and package B at any depth beyond pac
 
 If we wanted package B to be resolved as 2.0..0 when specified as a dependency of Package A at version 1.0.0:
 
-```
+```javascript
 {
   "overrides": {
     "package-a@1.0.0": {
@@ -70,4 +71,4 @@ This overrides and enforces the version of the nested dependency and can be usef
 
 The keys can be of any nested length, so we can choose the specificity we want according to our needs.
 
-**Note: **Only root package's overrides will be considered when installing dependencies. overrides of installed dependencies (including workspaces) will not be a part of the dependency resolution.
+**Note:** Only root package’s overrides will be considered when installing dependencies. overrides of installed dependencies (including workspaces) will not be a part of the dependency resolution.
