@@ -29,9 +29,13 @@ const {
   keywords = [],
 } = Astro.props;
 
+// The home page passes SITE_TITLE and shows it alone; every other page gets the
+// site name as a suffix in <title> only, as on the WordPress site
+const pageTitle = title === SITE_TITLE ? title : `${title} - ${SITE_TITLE}`;
+
 const imageUrl = image
   ? new URL(image.src, Astro.url)
-  : new URL("/og-image.jpg", Astro.url);
+  : new URL("/og-image.png", Astro.url);
 
 // Structured Data (JSON-LD)
 const structuredData =
@@ -82,7 +86,9 @@ const structuredData =
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" href="/icon-192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 <link rel="sitemap" href="/sitemap-index.xml" />
 <link
   rel="alternate"
@@ -112,7 +118,7 @@ const structuredData =
 <link rel="canonical" href={canonicalURL} />
 
 <!-- Primary Meta Tags -->
-<title>{title}</title>
+<title>{pageTitle}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
 <meta name="author" content={author} />
@@ -120,6 +126,7 @@ const structuredData =
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content={article ? "article" : "website"} />
+<meta property="og:locale" content="en_US" />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
@@ -138,16 +145,19 @@ const structuredData =
 {article && <meta property="article:author" content={author} />}
 
 <!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={Astro.url} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={imageUrl} />
-<meta name="twitter:creator" content="@wisdomgeek" />
-<meta name="twitter:site" content="@wisdomgeek" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={Astro.url} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageUrl} />
+<meta name="twitter:creator" content="@saranshk" />
+<meta name="twitter:site" content="@saranshk" />
 
 <!-- Additional SEO -->
-<meta name="robots" content="index, follow" />
+<meta
+  name="robots"
+  content="max-snippet:-1,max-image-preview:large,max-video-preview:-1"
+/>
 <meta name="language" content="English" />
 <meta name="revisit-after" content="7 days" />
 <link rel="author" href="/about" />

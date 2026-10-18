@@ -3,8 +3,8 @@
 
 export const SITE_TITLE = "Wisdom Geek";
 export const SITE_DESCRIPTION =
-  "Programming tutorials and self-help articles to make you a better developer and human being.";
-export const SITE_URL = "https://wisdomgeek.com";
+  "Wisdom Geek is a platform to share knowledge related to software development and self help lessons.";
+export const SITE_URL = "https://www.wisdomgeek.com";
 export const SITE_AUTHOR = "Saransh Kataria";
 export const SOCIAL_LINKS = {
   twitter: "https://twitter.com/saranshk",

@@ -3,13 +3,15 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import PageLayout from '../components/PageLayout.astro';
-import { SITE_TITLE } from '../consts';
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={`Contact | ${SITE_TITLE}`} description="Get in touch with us" />
+		<BaseHead
+			title="Contact Us"
+			description="On various occasions in life, I have learnt that feedback is super important. So it would be super awesome to hear from you! I enjoy listening to people’s…"
+		/>
 		<style>
 			.contact-container {
 				max-width: 600px;
