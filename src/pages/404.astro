@@ -1,0 +1,61 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import PageLayout from '../components/PageLayout.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title="Page not found"
+			description="The page you are trying to reach does not exist, or has been moved."
+		/>
+		{/* Search engines apply the most restrictive of BaseHead's robots tag and this one */}
+		<meta name="robots" content="noindex" />
+		<style>
+			.not-found h1 {
+				font-size: 2rem;
+				margin: 0 0 1em 0;
+				color: rgb(var(--black));
+			}
+
+			.not-found p,
+			.not-found li {
+				color: rgb(var(--gray-dark));
+				font-size: 1.05rem;
+				line-height: 1.7;
+			}
+
+			.not-found p {
+				margin: 0 0 1em 0;
+			}
+
+			.not-found ul {
+				margin: 0 0 1em 0;
+			}
+
+			.not-found a {
+				color: var(--accent);
+				text-decoration: none;
+			}
+
+			.not-found a:hover {
+				text-decoration: underline;
+			}
+		</style>
+	</head>
+	<body>
+		<PageLayout>
+			<section class="not-found">
+				<h1>Page not found</h1>
+				<p>The page you are trying to reach does not exist, or has been moved.</p>
+				<p>Try one of these instead:</p>
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/development/">Development</a></li>
+					<li><a href="/self-help/">Self Help</a></li>
+				</ul>
+			</section>
+		</PageLayout>
+	</body>
+</html>
