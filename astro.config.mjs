@@ -52,6 +52,9 @@ const lastModDates = getLastModDates();
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.wisdomgeek.com",
+  // Astro 7 defaults to "jsx", which drops whitespace between elements on
+  // separate lines; keep the HTML-aware behavior the templates were written for
+  compressHTML: true,
   integrations: [
     mdx(),
     sitemap({
