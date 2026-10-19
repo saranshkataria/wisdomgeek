@@ -1,6 +1,5 @@
 import type { Page } from 'astro';
 import type { CollectionEntry } from 'astro:content';
-import { SITE_TITLE } from '../consts';
 
 type Post = CollectionEntry<'blog'>;
 
@@ -157,10 +156,10 @@ export function paginate<T>(items: T[], base: string): Page<T>[] {
 	});
 }
 
-// <title> of an archive page, as on the live site, e.g. "JavaScript - Wisdom Geek"
-// and "JavaScript - Page 2 - Wisdom Geek"
+// Title of an archive page, as on the live site, e.g. "JavaScript" and
+// "JavaScript - Page 2". BaseHead adds the site name to <title>
 export function getArchiveTitle(name: string, pageNumber: number): string {
-	return [name, ...(pageNumber > 1 ? [`Page ${pageNumber}`] : []), SITE_TITLE].join(' - ');
+	return pageNumber > 1 ? `${name} - Page ${pageNumber}` : name;
 }
 
 // Interface for category tree nodes
