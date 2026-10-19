@@ -43,14 +43,14 @@ const { tags = [] } = Astro.props;
   .post-tags a {
     display: inline-block;
     padding: 0.35em 1em;
-    background: #f0f2f5;
-    color: #4361ee;
+    background: var(--surface-muted);
+    color: var(--pill-text);
     border-radius: 999px;
     font-weight: 700;
     text-decoration: none;
     transition: background 0.15s;
   }
   .post-tags a:hover {
-    background: #e8ebfa;
+    background: var(--pill-hover);
   }
 </style>
