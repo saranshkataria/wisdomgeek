@@ -29,9 +29,13 @@ const {
   keywords = [],
 } = Astro.props;
 
-// The home page passes SITE_TITLE and shows it alone; every other page gets the
-// site name as a suffix in <title> only, as on the WordPress site
-const pageTitle = title === SITE_TITLE ? title : `${title} - ${SITE_TITLE}`;
+// The home page and its pagination ("Wisdom Geek - Page 2") already lead with the
+// site name; every other page gets it as a suffix in <title> only, as on the
+// WordPress site
+const pageTitle =
+  title === SITE_TITLE || title.startsWith(`${SITE_TITLE} - `)
+    ? title
+    : `${title} - ${SITE_TITLE}`;
 
 const imageUrl = image
   ? new URL(image.src, Astro.url)
