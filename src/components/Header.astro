@@ -1,13 +1,14 @@
 ---
 import { SITE_TITLE, SOCIAL_LINKS } from "../consts";
 import HeaderLink from "./HeaderLink.astro";
+import ThemeToggle from "./ThemeToggle.astro";
 ---
 
 <header>
   <div class="header-inner">
     <a href="/" class="logo" aria-label="Wisdom Geek Home">
       <svg width="40" height="40" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="512" height="512" rx="80" fill="var(--accent)"/>
+        <rect width="512" height="512" rx="80" fill="var(--accent-strong)"/>
         <text x="256" y="340" text-anchor="middle" font-family="Atkinson, sans-serif" font-weight="700" font-size="280" fill="white">W</text>
       </svg>
       <span class="logo-text">{SITE_TITLE}</span>
@@ -49,6 +50,7 @@ import HeaderLink from "./HeaderLink.astro";
         <a href={SOCIAL_LINKS.twitter} target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
           <svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         </a>
+        <ThemeToggle />
       </div>
     </nav>
   </div>
@@ -74,8 +76,8 @@ import HeaderLink from "./HeaderLink.astro";
 <style>
   header {
     margin: 0;
-    background: white;
-    box-shadow: 0 2px 8px rgba(var(--black), 5%);
+    background: var(--surface);
+    box-shadow: 0 2px 8px rgba(var(--shadow), 5%);
   }
 
   .header-inner {
@@ -185,10 +187,10 @@ import HeaderLink from "./HeaderLink.astro";
       top: 64px;
       left: 0;
       right: 0;
-      background: white;
+      background: var(--surface);
       flex-direction: column;
       padding: 1em 1.5em 1.5em;
-      box-shadow: 0 8px 16px rgba(var(--black), 8%);
+      box-shadow: 0 8px 16px rgba(var(--shadow), 8%);
       z-index: 100;
       gap: 1em;
     }

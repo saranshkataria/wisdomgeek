@@ -86,6 +86,19 @@ const structuredData =
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
+<!-- Applies the saved or system color theme before the page renders -->
+<script is:inline>
+  (() => {
+    let theme;
+    try {
+      theme = localStorage.getItem("theme");
+    } catch {}
+    if (theme !== "light" && theme !== "dark") {
+      theme = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    document.documentElement.dataset.theme = theme;
+  })();
+</script>
 <link rel="icon" href="/favicon.ico" sizes="32x32" />
 <link rel="icon" href="/icon-192.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
