@@ -13,8 +13,7 @@ const sortedCategoryTree = sortCategoryTree(categoryTree);
 // Get featured posts
 const featuredPosts = posts
 	.filter(post => post.data.categoryPaths?.includes('featured'))
-	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-	.slice(0, 3);
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 // Get recent posts
 const recentPosts = posts
@@ -150,56 +149,43 @@ const recentPosts = posts
 		padding-bottom: 0.5em;
 	}
 
+	/* Compact rows as on the live sidebar: 14px text, 7px above and below */
 	.category-list {
 		list-style: none;
 		margin: 0;
 		padding: 0;
+		font-size: 0.875rem;
+		line-height: 1.6;
 	}
 
 	.category-list li {
-		margin-bottom: 0.75em;
+		padding: 7px 0;
 	}
 
 	.category-sublist {
 		list-style: none;
-		margin: 0.5em 0 0 0;
-		padding-left: 1.25em;
-		border-left: 2px solid rgb(var(--gray-light));
+		margin: 0;
+		padding-left: 15px;
 	}
 
+	/* The parent row's bottom padding closes the group */
 	.category-sublist li {
-		margin-bottom: 0.5em;
+		padding-bottom: 0;
 	}
 
 	.category-list a {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		padding: 0.5em;
-		border-radius: 4px;
 		text-decoration: none;
 		color: rgb(var(--gray-dark));
-		transition: all 0.2s ease;
+		font-weight: 300;
+		transition: color 0.2s ease;
 	}
 
 	.category-list a:hover {
-		background-color: rgb(var(--gray-light));
 		color: var(--accent);
-		padding-left: 1em;
-	}
-
-	.category-sublist a {
-		padding: 0.35em 0.5em;
-		font-size: 0.95em;
-	}
-
-	.category-name {
-		font-weight: 500;
 	}
 
 	.category-count {
 		color: rgb(var(--gray));
-		font-size: 0.9em;
 	}
 
 	.featured-posts {
