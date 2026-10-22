@@ -1,7 +1,5 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import PageLayout from '../components/PageLayout.astro';
 ---
 
@@ -13,59 +11,38 @@ import PageLayout from '../components/PageLayout.astro';
 			description="On various occasions in life, I have learnt that feedback is super important. So it would be super awesome to hear from you! I enjoy listening to people’s…"
 		/>
 		<style>
-			.contact-container {
-				max-width: 600px;
-				margin: 0 auto;
+			.contact h1 {
+				font-size: 2rem;
+				margin: 0 0 1em 0;
+				color: rgb(var(--black));
 			}
-			.contact-header {
-				text-align: center;
-				margin-bottom: 2em;
-			}
-			.contact-header h1 {
-				margin: 0;
+
+			.contact p {
+				margin: 0 0 1em 0;
 				color: rgb(var(--gray-dark));
+				font-size: 1.05rem;
+				line-height: 1.7;
 			}
-			.contact-info {
-				padding: 2em;
-				background: var(--surface);
-				border-radius: 8px;
-				border: 1px solid rgb(var(--gray-light));
-				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-			}
-			.contact-info p {
-				margin: 1em 0;
-				color: rgb(var(--gray));
-				font-size: 1.1rem;
-				line-height: 1.6;
-			}
-			.contact-info .email {
-				margin: 1.5em 0;
-				font-size: 1.2rem;
-			}
-			.contact-info a {
+
+			.contact a {
 				color: var(--accent);
 				text-decoration: none;
-				font-weight: 600;
 			}
-			.contact-info a:hover {
+
+			.contact a:hover {
 				text-decoration: underline;
 			}
 		</style>
 	</head>
 	<body>
-		<PageLayout showSidebar={false}>
-			<div class="contact-container">
-				<div class="contact-header">
-					<h1>Contact</h1>
-				</div>
-
-				<div class="contact-info">
-					<p>On various occasions in life, I have learnt that feedback is super important. So it would be super awesome to hear from you!</p>
-					<p>I enjoy listening to people's opinions/suggestions and respond to their queries. Feel free to drop in a email!</p>
-					<p class="email"><a href="mailto:saransh@wisdomgeek.com">saransh@wisdomgeek.com</a></p>
-					<p>Looking forward to hear from you.</p>
-				</div>
-			</div>
+		<PageLayout>
+			<section class="contact">
+				<h1>Contact</h1>
+				<p>On various occasions in life, I have learnt that feedback is super important. So it would be super awesome to hear from you!</p>
+				<p>I enjoy listening to people's opinions/suggestions and respond to their queries. Feel free to drop in a email!</p>
+				<p><a href="mailto:saransh@wisdomgeek.com">saransh@wisdomgeek.com</a></p>
+				<p>Looking forward to hear from you.</p>
+			</section>
 		</PageLayout>
 	</body>
 </html>

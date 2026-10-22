@@ -3,6 +3,7 @@ import type { GetStaticPaths, InferGetStaticPropsType } from 'astro';
 import { getCollection } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import PageLayout from '../components/PageLayout.astro';
+import PageTitle from '../components/PageTitle.astro';
 import PostGrid from '../components/PostGrid.astro';
 import Pagination from '../components/Pagination.astro';
 import {
@@ -57,27 +58,10 @@ const description = `All blog posts categorized under ${categoryName}`;
 <html lang="en">
 	<head>
 		<BaseHead title={title} description={description} />
-		<style>
-			.category-header {
-				margin-bottom: 2em;
-			}
-			.category-header h1 {
-				margin: 0 0 0.5em 0;
-				color: rgb(var(--gray-dark));
-			}
-			.category-header p {
-				margin: 0;
-				color: rgb(var(--gray));
-				font-size: 1.1rem;
-			}
-		</style>
 	</head>
 	<body>
 		<PageLayout>
-			<div class="category-header">
-				<h1>{categoryName}</h1>
-				<p>{page.total} {page.total === 1 ? 'post' : 'posts'} found</p>
-			</div>
+			<PageTitle icon="folder">{categoryName}</PageTitle>
 			<PostGrid posts={page.data} />
 			<Pagination page={page} />
 		</PageLayout>

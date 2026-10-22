@@ -116,14 +116,12 @@ const encodedTitle = encodeURIComponent(title);
         width: 100%;
         height: auto;
       }
+      /* Darkens the whole image: on phones the title reaches the top of the image */
       .hero-card-image::after {
         content: "";
         position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 65%;
-        background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+        inset: 0;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6));
         pointer-events: none;
       }
 
@@ -213,6 +211,7 @@ const encodedTitle = encodeURIComponent(title);
       .meta-icon {
         display: inline-flex;
         align-items: center;
+        flex-wrap: wrap;
         gap: 0.3em;
       }
       .meta-icon svg {
@@ -343,6 +342,8 @@ const encodedTitle = encodeURIComponent(title);
         }
         .share-btn svg { width: 20px; height: 20px; }
         .category-badge { margin-left: 0; }
+        /* The meta row wraps on phones, where a separator would start a line */
+        .meta-sep { display: none; }
       }
     </style>
   </head>

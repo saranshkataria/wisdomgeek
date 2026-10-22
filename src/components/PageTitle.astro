@@ -1,0 +1,46 @@
+---
+// Compact title of archive and error pages, as on the live site: an outline
+// icon followed by the title, e.g. a category name
+interface Props {
+	icon: 'folder' | 'tag' | 'alert';
+}
+
+const { icon } = Astro.props;
+---
+
+<h1 class="page-title">
+	<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+		{icon === 'folder' && <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />}
+		{icon === 'tag' && (
+			<Fragment>
+				<path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
+				<line x1="7" y1="7" x2="7.01" y2="7" />
+			</Fragment>
+		)}
+		{icon === 'alert' && (
+			<Fragment>
+				<circle cx="12" cy="12" r="10" />
+				<line x1="12" y1="8" x2="12" y2="12" />
+				<line x1="12" y1="16" x2="12.01" y2="16" />
+			</Fragment>
+		)}
+	</svg><slot />
+</h1>
+
+<style>
+	.page-title {
+		margin: 0 0 30px;
+		font-size: 1.2rem;
+		font-weight: 700;
+		line-height: 1.4;
+		color: rgb(var(--black));
+	}
+
+	/* The title follows the icon without a space, so the margin is the whole gap */
+	svg {
+		width: 1em;
+		height: 1em;
+		margin-right: 12px;
+		vertical-align: -0.125em;
+	}
+</style>

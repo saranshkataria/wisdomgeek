@@ -1,6 +1,7 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
 import PageLayout from '../components/PageLayout.astro';
+import PageTitle from '../components/PageTitle.astro';
 ---
 
 <!doctype html>
@@ -13,10 +14,8 @@ import PageLayout from '../components/PageLayout.astro';
 		{/* Search engines apply the most restrictive of BaseHead's robots tag and this one */}
 		<meta name="robots" content="noindex" />
 		<style>
-			.not-found h1 {
-				font-size: 2rem;
-				margin: 0 0 1em 0;
-				color: rgb(var(--black));
+			.not-found-note {
+				color: rgb(var(--gray));
 			}
 
 			.not-found p,
@@ -47,7 +46,7 @@ import PageLayout from '../components/PageLayout.astro';
 	<body>
 		<PageLayout>
 			<section class="not-found">
-				<h1>Page not found</h1>
+				<PageTitle icon="alert">Error 404. <span class="not-found-note">Page not found!</span></PageTitle>
 				<p>The page you are trying to reach does not exist, or has been moved.</p>
 				<p>Try one of these instead:</p>
 				<ul>

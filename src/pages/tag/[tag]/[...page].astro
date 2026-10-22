@@ -3,6 +3,7 @@ import type { GetStaticPaths } from 'astro';
 import { getCollection } from 'astro:content';
 import BaseHead from '../../../components/BaseHead.astro';
 import PageLayout from '../../../components/PageLayout.astro';
+import PageTitle from '../../../components/PageTitle.astro';
 import PostGrid from '../../../components/PostGrid.astro';
 import Pagination from '../../../components/Pagination.astro';
 import { getArchiveTitle, getTagArchives, paginate } from '../../../lib/utils';
@@ -28,27 +29,10 @@ const { name, page } = Astro.props;
 <html lang="en">
 	<head>
 		<BaseHead title={getArchiveTitle(name, page.currentPage)} description={`All blog posts tagged ${name}`} />
-		<style>
-			.tag-header {
-				margin-bottom: 2em;
-			}
-			.tag-header h1 {
-				margin: 0 0 0.5em 0;
-				color: rgb(var(--gray-dark));
-			}
-			.tag-header p {
-				margin: 0;
-				color: rgb(var(--gray));
-				font-size: 1.1rem;
-			}
-		</style>
 	</head>
 	<body>
 		<PageLayout>
-			<div class="tag-header">
-				<h1>{name}</h1>
-				<p>{page.total} {page.total === 1 ? 'post' : 'posts'} found</p>
-			</div>
+			<PageTitle icon="tag">{name}</PageTitle>
 			<PostGrid posts={page.data} />
 			<Pagination page={page} />
 		</PageLayout>

@@ -10,7 +10,7 @@ interface Props {
 }
 
 const { posts } = Astro.props;
-const slides = posts.slice(0, 5);
+const slides = posts.slice(0, 4);
 ---
 
 <section
@@ -246,9 +246,8 @@ const slides = posts.slice(0, 5);
 	.carousel-card-image::after {
 		content: '';
 		position: absolute;
-		inset: auto 0 0 0;
-		height: 60%;
-		background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, transparent 100%);
+		inset: 0;
+		background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7));
 		pointer-events: none;
 	}
 
