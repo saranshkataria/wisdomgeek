@@ -1,16 +1,15 @@
 ---
+import { Image } from "astro:assets";
 import { SITE_TITLE, SOCIAL_LINKS } from "../consts";
 import HeaderLink from "./HeaderLink.astro";
 import ThemeToggle from "./ThemeToggle.astro";
+import logo from "../assets/logo.png";
 ---
 
 <header>
   <div class="header-inner">
     <a href="/" class="logo" aria-label="Wisdom Geek Home">
-      <svg width="40" height="40" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="512" height="512" rx="80" fill="var(--accent-strong)"/>
-        <text x="256" y="340" text-anchor="middle" font-family="Atkinson, sans-serif" font-weight="700" font-size="280" fill="white">W</text>
-      </svg>
+      <Image src={logo} alt="" width={48} height={48} densities={[1, 2]} loading="eager" />
       <span class="logo-text">{SITE_TITLE}</span>
     </a>
 
