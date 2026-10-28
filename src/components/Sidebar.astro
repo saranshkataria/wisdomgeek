@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { type CollectionEntry, getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import FormattedDate from './FormattedDate.astro';
 import { buildCategoryTree, sortCategoryTree } from '../lib/utils';
@@ -19,6 +19,13 @@ const featuredPosts = posts
 const recentPosts = posts
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 	.slice(0, 5);
+
+// Linked categories of a post, shown as "Featured / JavaScript" like on the live sidebar
+const categoryLinks = (post: CollectionEntry<'blog'>) =>
+	(post.data.categories ?? []).flatMap((name, i) => {
+		const path = post.data.categoryPaths?.[i];
+		return path ? [{ name, href: `/${path}/` }] : [];
+	});
 ---
 
 <aside class="sidebar">
@@ -29,10 +36,11 @@ const recentPosts = posts
 			{recentPosts.map((post) => (
 				<div class="recent-post">
 					{post.data.heroImage && (
-						<a href={`/${post.id}/`}>
+						<a href={`/${post.id}/`} class="recent-post-thumbnail-link">
 							<Image 
-								width={80} 
-								height={80} 
+								width={48} 
+								height={48} 
+								densities={[1, 2]}
 								src={post.data.heroImage} 
 								alt={post.data.title}
 								class="recent-post-thumbnail"
@@ -40,19 +48,17 @@ const recentPosts = posts
 						</a>
 					)}
 					<div class="recent-post-content">
+						<p class="post-categories">
+							{categoryLinks(post).map((category, i) => (
+								<>{i > 0 && ' / '}<a href={category.href}>{category.name}</a></>
+							))}
+						</p>
 						<a href={`/${post.id}/`} class="recent-post-title-link">
 							<h4 class="recent-post-title">{post.data.title}</h4>
 						</a>
-						<div class="recent-post-meta">
-							{post.data.categories?.[0] && post.data.categoryPaths?.[0] && (
-								<a href={`/${post.data.categoryPaths[0]}/`} class="recent-post-category">
-									{post.data.categories[0]}
-								</a>
-							)}
-							<span class="recent-post-date">
-								<FormattedDate date={post.data.pubDate} />
-							</span>
-						</div>
+						<p class="recent-post-date">
+							<FormattedDate date={post.data.pubDate} />
+						</p>
 					</div>
 				</div>
 			))}
@@ -104,23 +110,30 @@ const recentPosts = posts
 			<h3>Featured Posts</h3>
 			<div class="featured-posts">
 				{featuredPosts.map((post) => (
-					<a href={`/${post.id}/`} class="featured-post">
+					<div class="featured-post">
 						{post.data.heroImage && (
-							<Image 
-								width={300} 
-								height={150} 
-								src={post.data.heroImage} 
-								alt={post.data.title}
-								class="featured-thumbnail"
-							/>
+							<a href={`/${post.id}/`} class="featured-thumbnail-link">
+								<Image 
+									width={300} 
+									height={150} 
+									src={post.data.heroImage} 
+									alt={post.data.title}
+									class="featured-thumbnail"
+								/>
+							</a>
 						)}
-						<div class="featured-content">
-							<h4>{post.data.title}</h4>
-							<p class="featured-date">
-								<FormattedDate date={post.data.pubDate} />
-							</p>
-						</div>
-					</a>
+						<p class="post-categories">
+							{categoryLinks(post).map((category, i) => (
+								<>{i > 0 && ' / '}<a href={category.href}>{category.name}</a></>
+							))}
+						</p>
+						<a href={`/${post.id}/`} class="featured-title-link">
+							<h4 class="featured-title">{post.data.title}</h4>
+						</a>
+						<p class="featured-date">
+							<FormattedDate date={post.data.pubDate} />
+						</p>
+					</div>
 				))}
 			</div>
 		</div>
@@ -128,25 +141,44 @@ const recentPosts = posts
 </aside>
 
 <style>
+	/* Flat column as on the live site: a rule along its full height separates it from the content */
 	.sidebar {
+		box-sizing: border-box;
 		width: 100%;
+		min-height: 100%;
+		padding-left: 30px;
+		border-left: 1px solid rgb(var(--gray-light));
 	}
 
 	.sidebar-section {
-		background: var(--surface);
-		border: 1px solid rgb(var(--gray-light));
-		border-radius: 8px;
-		padding: 1.5em;
-		margin-bottom: 2em;
-		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+		margin-bottom: 40px;
 	}
 
+	/* The title sits on a thin rule that starts at the column's border: "─ Categories ───" */
 	.sidebar-section h3 {
-		margin: 0 0 1em 0;
-		font-size: 1.25rem;
-		color: rgb(var(--gray-dark));
-		border-bottom: 2px solid var(--accent);
-		padding-bottom: 0.5em;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		margin: 0 0 30px -30px;
+		font-size: 1rem;
+		line-height: 1.3;
+		letter-spacing: normal;
+		color: rgba(var(--black), 70%);
+	}
+
+	.sidebar-section h3::before,
+	.sidebar-section h3::after {
+		content: '';
+		height: 1px;
+		background-color: rgb(var(--gray-light));
+	}
+
+	.sidebar-section h3::before {
+		flex: 0 0 20px;
+	}
+
+	.sidebar-section h3::after {
+		flex: 1;
 	}
 
 	/* Compact rows as on the live sidebar: 14px text, 7px above and below */
@@ -188,128 +220,129 @@ const recentPosts = posts
 		color: rgb(var(--gray));
 	}
 
-	.featured-posts {
-		display: flex;
-		flex-direction: column;
-		gap: 1.5em;
-	}
-
-	.featured-post {
-		text-decoration: none;
-		color: rgb(var(--gray-dark));
-		display: block;
-		transition: all 0.2s ease;
-		border-radius: 4px;
-		overflow: hidden;
-	}
-
-	.featured-post:hover {
-		transform: translateX(4px);
-	}
-
-	.featured-post :global(.featured-thumbnail) {
-		width: 100%;
-		height: 150px;
-		object-fit: cover;
-		border-radius: 4px;
-		margin-bottom: 0.5em;
-	}
-
-	.featured-content h4 {
-		margin: 0 0 0.5em 0;
-		font-size: 1rem;
-		line-height: 1.3;
-		color: rgb(var(--gray-dark));
-	}
-
-	.featured-post:hover .featured-content h4 {
-		color: var(--accent);
-	}
-
-	.featured-date {
-		margin: 0;
-		font-size: 0.875rem;
-		color: rgb(var(--gray));
-	}
-
-	.recent-posts {
-		display: flex;
-		flex-direction: column;
-		gap: 1.25em;
-	}
-
+	/* Compact rows as on the live sidebar: a 48px thumbnail beside category, title and date */
 	.recent-post {
-		padding-bottom: 1.25em;
-		border-bottom: 1px solid rgb(var(--gray-light));
 		display: flex;
-		gap: 1em;
 		align-items: flex-start;
+		gap: 14px;
+		padding: 7px 0;
+		font-size: 0.875rem;
+		line-height: 1.4em;
 	}
 
-	.recent-post:last-child {
-		border-bottom: none;
-		padding-bottom: 0;
+	.recent-post-thumbnail-link {
+		flex-shrink: 0;
+		transition: opacity 0.2s ease;
 	}
 
 	.recent-post :global(.recent-post-thumbnail) {
-		width: 80px;
-		height: 80px;
+		display: block;
+		width: 48px;
+		height: 48px;
 		object-fit: cover;
-		border-radius: 6px;
-		flex-shrink: 0;
-	}
-
-	.recent-post-title-link {
-		text-decoration: none;
-		color: inherit;
+		border-radius: 10px;
 	}
 
 	.recent-post-content {
 		flex: 1;
-		display: flex;
-		flex-direction: column;
-		gap: 0.5em;
+		min-width: 0;
 	}
 
-	.recent-post-title {
-		font-weight: 600;
-		font-size: 0.9rem;
-		line-height: 1.3;
-		color: rgb(var(--gray-dark));
+	.post-categories {
 		margin: 0;
-		transition: color 0.2s ease;
-	}
-
-	.recent-post-title-link:hover .recent-post-title {
-		color: var(--accent);
-	}
-
-	.recent-post-meta {
-		display: flex;
-		flex-direction: column;
-		gap: 0.25em;
-		font-size: 0.75rem;
-	}
-
-	.recent-post-category {
-		display: inline-block;
-		padding: 0.2em 0.4em;
-		background-color: var(--accent-strong);
-		color: white;
-		border-radius: 3px;
-		font-weight: 500;
-		text-transform: capitalize;
-		width: fit-content;
-		text-decoration: none;
-	}
-
-	.recent-post-date {
+		font-size: 0.625rem;
 		color: rgb(var(--gray));
 	}
 
+	.post-categories a {
+		font-weight: 600;
+		color: var(--accent);
+		text-decoration: none;
+		transition: color 0.2s ease;
+	}
+
+	.post-categories a:hover {
+		color: rgb(var(--black));
+	}
+
+	.recent-post-title-link,
+	.featured-title-link {
+		text-decoration: none;
+	}
+
+	.recent-post-title,
+	.featured-title {
+		margin: 2px 0;
+		font-size: 0.875rem;
+		line-height: inherit;
+		letter-spacing: normal;
+		color: rgb(var(--gray-dark));
+		transition: color 0.2s ease;
+	}
+
+	.recent-post-date,
+	.featured-date {
+		margin: 0;
+		font-size: 0.8125rem;
+		font-weight: 400;
+		color: rgb(var(--gray));
+	}
+
+	/* Featured posts keep a large image, with 13px category and date lines */
+	.featured-post {
+		padding: 7px 0;
+		font-size: 0.875rem;
+		line-height: 1.4em;
+	}
+
+	.featured-thumbnail-link {
+		display: block;
+		margin-bottom: 10px;
+		transition: opacity 0.2s ease;
+	}
+
+	.featured-post :global(.featured-thumbnail) {
+		display: block;
+		width: 100%;
+		height: 150px;
+		object-fit: cover;
+		border-radius: 10px;
+	}
+
+	.featured-post .post-categories {
+		font-size: 0.8125rem;
+	}
+
+	.featured-title {
+		font-size: 1.125rem;
+		line-height: 1.4em;
+	}
+
+	/* As on the live sidebar, hovering a post fades its image and colors its title */
+	.recent-post:hover .recent-post-thumbnail-link,
+	.featured-post:hover .featured-thumbnail-link {
+		opacity: 0.75;
+	}
+
+	.recent-post:hover .recent-post-title,
+	.featured-post:hover .featured-title {
+		color: var(--accent);
+	}
+
+	/* Below the content on narrow screens: no column rule, titles start at the text */
 	@media (max-width: 960px) {
 		.sidebar {
 			margin-top: 2em;
+			padding-left: 0;
+			border-left: none;
+		}
+
+		.sidebar-section h3 {
+			margin-left: 0;
+		}
+
+		.sidebar-section h3::before {
+			display: none;
 		}
 	}
 </style>

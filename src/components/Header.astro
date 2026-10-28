@@ -79,6 +79,21 @@ import logo from "../assets/logo.png";
     box-shadow: 0 2px 8px rgba(var(--shadow), 5%);
   }
 
+  /* Stays at the top while scrolling on wide screens; as on the live site,
+     it scrolls away with the page below 1081px */
+  @media (min-width: 1081px) {
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    /* Keeps anchor targets and keyboard focus clear of the 64px header */
+    :global(html) {
+      scroll-padding-top: calc(64px + 1rem);
+    }
+  }
+
   .header-inner {
     max-width: 1200px;
     margin: 0 auto;

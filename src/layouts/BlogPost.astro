@@ -262,34 +262,73 @@ const encodedTitle = encodeURIComponent(title);
         color: rgb(var(--black));
       }
 
-      /* ── Post navigation ── */
+      /* ── Post navigation: one bar split into Previous and Next halves, as on the live site ── */
       .post-navigation {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         margin: 2em 0 1.5em;
-        display: flex;
-        justify-content: space-between;
-        gap: 1em;
+        background: var(--surface-muted);
+        border-radius: 20px;
       }
       .post-navigation a {
-        flex: 1;
-        padding: 1em;
-        border: 1px solid rgb(var(--gray-light));
-        border-radius: 8px;
+        position: relative;
+        padding: 10px 20px 10px 40px;
+        font-size: 0.9375rem;
+        line-height: 1.5;
         text-decoration: none;
         color: rgb(var(--gray-dark));
-        transition: all 0.2s ease;
       }
-      .post-navigation a:hover {
-        border-color: var(--accent);
-        box-shadow: var(--box-shadow);
+      /* Each link keeps its half when the other one is missing */
+      .post-navigation .prev { grid-column: 1; }
+      .post-navigation .next {
+        grid-column: 2;
+        padding: 10px 40px 10px 20px;
+        border-left: 1px solid rgb(var(--gray-light));
       }
       .post-navigation .nav-label {
-        font-size: 0.875rem;
+        display: block;
+        font-size: 0.75rem;
+        line-height: 1.875;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
         color: rgb(var(--gray));
-        margin-bottom: 0.5em;
       }
-      .post-navigation .nav-title { font-weight: 600; }
-      .post-navigation .prev { text-align: left; }
-      .post-navigation .next { text-align: right; }
+      .post-navigation .nav-title {
+        display: block;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-weight: 600;
+        transition: color 0.2s ease;
+      }
+      .post-navigation .nav-arrow {
+        position: absolute;
+        top: 50%;
+        width: 18px;
+        height: 18px;
+        margin-top: -10px;
+        color: rgb(var(--gray));
+        transition: color 0.2s ease;
+      }
+      .post-navigation .prev .nav-arrow { left: 10px; }
+      .post-navigation .next .nav-arrow { right: 10px; }
+      .post-navigation a:hover .nav-title,
+      .post-navigation a:hover .nav-arrow {
+        color: var(--accent);
+      }
+      /* Stacked on phones with Next above Previous, as on the live site */
+      @media (max-width: 720px) {
+        .post-navigation { grid-template-columns: minmax(0, 1fr); }
+        .post-navigation .next {
+          grid-column: 1;
+          grid-row: 1;
+          border-left: none;
+        }
+        .post-navigation .prev:not(:only-child) {
+          grid-row: 2;
+          border-top: 1px solid rgb(var(--gray-light));
+        }
+      }
 
       /* ── Related posts ── */
       .related-posts {
@@ -430,17 +469,17 @@ const encodedTitle = encodeURIComponent(title);
         <!-- Previous/Next Navigation -->
         {
           (prevPost || nextPost) && (
-            <nav class="post-navigation">
+            <nav class="post-navigation" aria-label="Previous and next posts">
               {prevPost && (
-                <a href={`/${prevPost.id}/`} class="prev">
-                  <div class="nav-label">&larr; PREVIOUS</div>
-                  <div class="nav-title">{prevPost.data.title}</div>
+                <a href={`/${prevPost.id}/`} class="prev" rel="prev">
+                  <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3l-9 9 9 9" /></svg>
+                  <span class="nav-label">Previous</span> <span class="nav-title">{prevPost.data.title}</span>
                 </a>
               )}
               {nextPost && (
-                <a href={`/${nextPost.id}/`} class="next">
-                  <div class="nav-label">NEXT &rarr;</div>
-                  <div class="nav-title">{nextPost.data.title}</div>
+                <a href={`/${nextPost.id}/`} class="next" rel="next">
+                  <span class="nav-label">Next</span> <span class="nav-title">{nextPost.data.title}</span>
+                  <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3l9 9-9 9" /></svg>
                 </a>
               )}
             </nav>
