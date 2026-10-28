@@ -17,7 +17,7 @@ In my case, the error shown every time I installed HAXM was:
 
 > HAXM cannot be installed until VT-x is enabled
 
-[![Intel HAXM installation error - This computer does not support Intel Virtualization Technology (VT-x)](./irju31.png)](./irju31.png)
+![Intel HAXM installation error - This computer does not support Intel Virtualization Technology (VT-x)](./irju31.png)
 
 But my computer obviously did support virtualization since I was running Hyper-V. The problem was that HAXM and Hyper-V couldn’t be installed at the same time. They both use hardware virtualization and only one can be active at a time since they both lock vt-x.
 
@@ -32,7 +32,7 @@ Steps to do so are:
 1. Open command prompt in elevated mode (administrator privileges).
 2. Put in the command  
    bcdedit /copy {current} /d “Windows with hypervisor”  
-   This step copies your current boot entry into a new one with a different name. You can name this profile to whatever you wish to, this is just the display name in the booting up section.[![cmd disable hyervisor](./image11.png)](./image11.png)
+   This step copies your current boot entry into a new one with a different name. You can name this profile to whatever you wish to, this is just the display name in the booting up section.![cmd disable hyervisor](./image11.png)
 3. You can then type in the next command as  
    bcdedit /set “{current}” hypervisorlaunchtype off  
    which sets the hypervisor off for the current boot entry and then you can install HAXM for android development on this boot entry.

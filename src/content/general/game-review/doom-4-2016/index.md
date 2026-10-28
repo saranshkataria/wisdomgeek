@@ -59,168 +59,168 @@ So, what are you waiting for? Doom 4 is the FPS we all deserve to play after a l
 
 <figure>
 
-[![DOOM 1993/2016](./bljejhp.jpg)](./bljejhp.jpg)
+![DOOM 1993/2016](./bljejhp.jpg)
 
 <figcaption>DOOM 1993/2016</figcaption>
 </figure>
 
 <figure>
 
-[![No Fall Damage](./20160615100612-1.jpg)](./20160615100612-1.jpg)
+![No Fall Damage](./20160615100612-1.jpg)
 
 <figcaption>No Fall Damage</figcaption>
 </figure>
 
 <figure>
 
-[![Fast Paced Combat](./20160615100636-1.jpg)](./20160615100636-1.jpg)
+![Fast Paced Combat](./20160615100636-1.jpg)
 
 <figcaption>Fast Paced Combat</figcaption>
 </figure>
 
 <figure>
 
-[![Glory Kill](./20160615100709-1.jpg)](./20160615100709-1.jpg)
+![Glory Kill](./20160615100709-1.jpg)
 
 <figcaption>Glory Kill</figcaption>
 </figure>
 
 <figure>
 
-[![Glory Kill IMP](./20160615100724-1.jpg)](./20160615100724-1.jpg)
+![Glory Kill IMP](./20160615100724-1.jpg)
 
 <figcaption>Glory Kill IMP</figcaption>
 </figure>
 
 <figure>
 
-[![Map](./20160615122013-1.jpg)](./20160615122013-1.jpg)
+![Map](./20160615122013-1.jpg)
 
 <figcaption>Map</figcaption>
 </figure>
 
 <figure>
 
-[![Weapon Upgrade](./20160615122025-1.jpg)](./20160615122025-1.jpg)
+![Weapon Upgrade](./20160615122025-1.jpg)
 
 <figcaption>Weapon Upgrade</figcaption>
 </figure>
 
 <figure>
 
-[![Praetor Suit Upgrade](./20160615122032-1.jpg)](./20160615122032-1.jpg)
+![Praetor Suit Upgrade](./20160615122032-1.jpg)
 
 <figcaption>Praetor Suit Upgrade</figcaption>
 </figure>
 
 <figure>
 
-[![Runes](./20160615122038-1.jpg)](./20160615122038-1.jpg)
+![Runes](./20160615122038-1.jpg)
 
 <figcaption>Runes</figcaption>
 </figure>
 
 <figure>
 
-[![The Data Log](./20160615122041-1.jpg)](./20160615122041-1.jpg)
+![The Data Log](./20160615122041-1.jpg)
 
 <figcaption>The Data Log</figcaption>
 </figure>
 
 <figure>
 
-[![Imp](./20160615121553-1.jpg)](./20160615121553-1.jpg)
+![Imp](./20160615121553-1.jpg)
 
 <figcaption>Imp</figcaption>
 </figure>
 
 <figure>
 
-[![Pinky](./20160615121740-1.jpg)](./20160615121740-1.jpg)
+![Pinky](./20160615121740-1.jpg)
 
 <figcaption>Pinky</figcaption>
 </figure>
 
 <figure>
 
-[![Revenant](./20160615121642-1.jpg)](./20160615121642-1.jpg)
+![Revenant](./20160615121642-1.jpg)
 
 <figcaption>Revenant</figcaption>
 </figure>
 
 <figure>
 
-[![Cacodemon](./20160615121713-1.jpg)](./20160615121713-1.jpg)
+![Cacodemon](./20160615121713-1.jpg)
 
 <figcaption>Cacodemon</figcaption>
 </figure>
 
 <figure>
 
-[![Mancubus](./20160615121651-1.jpg)](./20160615121651-1.jpg)
+![Mancubus](./20160615121651-1.jpg)
 
 <figcaption>Mancubus</figcaption>
 </figure>
 
 <figure>
 
-[![Hell Knight](./20160615121620-1.jpg)](./20160615121620-1.jpg)
+![Hell Knight](./20160615121620-1.jpg)
 
 <figcaption>Hell Knight</figcaption>
 </figure>
 
 <figure>
 
-[![Baron Of Hell](./20160615121700-1.jpg)](./20160615121700-1.jpg)
+![Baron Of Hell](./20160615121700-1.jpg)
 
 <figcaption>Baron Of Hell</figcaption>
 </figure>
 
 <figure>
 
-[![CyberDemon](./20160617100139-1.jpg)](./20160617100139-1.jpg)
+![CyberDemon](./20160617100139-1.jpg)
 
 <figcaption>CyberDemon</figcaption>
 </figure>
 
 <figure>
 
-[![Our Hero](./20160615121606-1.jpg)](./20160615121606-1.jpg)
+![Our Hero](./20160615121606-1.jpg)
 
 <figcaption>Our Hero</figcaption>
 </figure>
 
 <figure>
 
-[![BFG-9000](./20160615121751-1.jpg)](./20160615121751-1.jpg)
+![BFG-9000](./20160615121751-1.jpg)
 
 <figcaption>BFG-9000</figcaption>
 </figure>
 
 <figure>
 
-[![Super Shotgun](./20160615121728-1.jpg)](./20160615121728-1.jpg)
+![Super Shotgun](./20160615121728-1.jpg)
 
 <figcaption>Super Shotgun</figcaption>
 </figure>
 
 <figure>
 
-[![Chainsaw](./20160615121449-1.jpg)](./20160615121449-1.jpg)
+![Chainsaw](./20160615121449-1.jpg)
 
 <figcaption>Chainsaw</figcaption>
 </figure>
 
 <figure>
 
-[![Easter Egg](./20160531201334-1.jpg)](./20160531201334-1.jpg)
+![Easter Egg](./20160531201334-1.jpg)
 
 <figcaption>Easter Egg</figcaption>
 </figure>
 
 <figure>
 
-[![Doom Guy Collectibles](./20160615122235-1.jpg)](./20160615122235-1.jpg)
+![Doom Guy Collectibles](./20160615122235-1.jpg)
 
 <figcaption>Doom Guy Collectibles</figcaption>
 </figure>

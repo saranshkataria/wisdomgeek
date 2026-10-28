@@ -17,7 +17,7 @@ Getting back to the game review, I will focus on the latest and the last install
 
 Firstly, after the initial release, there were a lot of complaints regarding the PC version, but frankly, I was not too pesky and bought myself a copy of the PC version.
 
-[![My Rig](./my-rig1.png)](./my-rig1.png)
+![My Rig](./my-rig1.png)
 
 I ran it on my laptop (Lenovo Y50-70, GTX860M 4GB GDDR5, 16GB RAM) and it ran almost like a dream, though there were a few stutters but it was playable. My framerate didn’t drop below 25 but with a frame-cap of 30, I think I can live with that.
 
@@ -49,22 +49,22 @@ I kept mine locked at 30, I prefer a fixed framerate rather than a variable one,
 
 And while you are at it, here are some screenshots:
 
-The Batmobile[![Batman arkham knight batmobile](./batmanak-2015-09-06-16-30-12-50.png)](./batmanak-2015-09-06-16-30-12-50.png)
+The Batmobile![Batman arkham knight batmobile](./batmanak-2015-09-06-16-30-12-50.png)
 
-Same Old Riddler [![batman arkham knight riddler](./batmanak-2015-09-06-16-31-03-74.png)](./batmanak-2015-09-06-16-31-03-74.png)
+Same Old Riddler ![batman arkham knight riddler](./batmanak-2015-09-06-16-31-03-74.png)
 
-Tank Battle (Mandatory)[![batman arkham knight tank battle](./batmanak-2015-09-06-17-29-13-95.png)](./batmanak-2015-09-06-17-29-13-95.png)
+Tank Battle (Mandatory)![batman arkham knight tank battle](./batmanak-2015-09-06-17-29-13-95.png)
 
-Upgrades[![batman arkham knight upgrades](./batmanak-2015-09-06-17-32-22-34.png)](./batmanak-2015-09-06-17-32-22-34.png)
+Upgrades![batman arkham knight upgrades](./batmanak-2015-09-06-17-32-22-34.png)
 
 Miagani Island![batman arkham knight miagani island](./batmanak-2015-09-06-17-35-36-79.png)
 
-Grapple Into Grates[![batman arkham knight New Feature In Combat](./batmanak-2015-09-06-18-06-20-92.png)](./batmanak-2015-09-06-18-06-20-92.png)
+Grapple Into Grates![batman arkham knight New Feature In Combat](./batmanak-2015-09-06-18-06-20-92.png)
 
-Fear Multi-Takedown[![batman arkham knight Fear Takedown](./batmanak-2015-09-06-18-08-30-11.png)](./batmanak-2015-09-06-18-08-30-11.png)
+Fear Multi-Takedown![batman arkham knight Fear Takedown](./batmanak-2015-09-06-18-08-30-11.png)
 
-Surprise!!\![![batman arkham knight Surprise!!!!](./batmanak-2015-09-06-18-10-34-59.png)](./batmanak-2015-09-06-18-10-34-59.png)
+Surprise!!\!![batman arkham knight Surprise!!!!](./batmanak-2015-09-06-18-10-34-59.png)
 
-Style Bro!!\![![batman arkham knight Style Bro!!!](./batmanak-2015-09-06-18-21-48-53.png)](./batmanak-2015-09-06-18-21-48-53.png)
+Style Bro!!\!![batman arkham knight Style Bro!!!](./batmanak-2015-09-06-18-21-48-53.png)
 
 What are you doing here now? Go and play Batman Arkham Knight now\!

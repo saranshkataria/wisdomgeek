@@ -101,15 +101,6 @@ function downloadCandidates(url) {
     : [url.href];
 }
 
-function isSameUpload(link, image) {
-  return (
-    Boolean(link) &&
-    isUploadUrl(link) &&
-    isUploadUrl(image) &&
-    originalUploadPath(link) === originalUploadPath(image)
-  );
-}
-
 // Gallery thumbnails link to attachment pages such as /20160615100612_1/ or /?attachment_id=123
 function isAttachmentPage(link, image) {
   if (!link || !isSiteUrl(link) || link.pathname.startsWith("/wp-content/")) {
@@ -286,22 +277,20 @@ async function localizeImages(markdown, postDir, heroImage) {
     LINKED_IMAGE_PATTERN,
     async (match, alt, src, srcTitle, href, hrefTitle) => {
       const image = await localize(src, true);
-      let link = await localize(href, false);
       const imageUrl = resolveRemoteUrl(src);
       const linkUrl = resolveRemoteUrl(href);
-      // Attachment pages and unavailable originals of the same image link to the local copy instead
-      if (
-        !link &&
-        image &&
-        (isAttachmentPage(linkUrl, imageUrl) || isSameUpload(linkUrl, imageUrl))
-      ) {
-        link = image;
-      }
       const imageMarkdown = `!${alt}(${image ? `./${image}` : src}${srcTitle})`;
-      // Uploads that exist neither on the site nor in the archive lose their (dead) link
-      if (!link && linkUrl && isUploadUrl(linkUrl)) return imageMarkdown;
-      if (!image && !link) return match;
-      return `[${imageMarkdown}](${link ? `./${link}` : href}${hrefTitle})`;
+      // Links to uploads (usually the image's own full-size original) and to attachment
+      // pages would be dead: the build publishes only the images a post shows, at full
+      // size, so the image stands alone
+      if (
+        linkUrl &&
+        (isUploadUrl(linkUrl) || (imageUrl && isAttachmentPage(linkUrl, imageUrl)))
+      ) {
+        return imageMarkdown;
+      }
+      if (!image) return match;
+      return `[${imageMarkdown}](${href}${hrefTitle})`;
     }
   );
   content = await replaceAsync(

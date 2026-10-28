@@ -14,6 +14,8 @@ interface Props {
   modDate?: Date;
   author?: string;
   keywords?: string[];
+  // false for pages without a URL of their own, such as the 404 page
+  canonical?: boolean;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -27,6 +29,7 @@ const {
   modDate,
   author = SITE_AUTHOR,
   keywords = [],
+  canonical = true,
 } = Astro.props;
 
 // The home page and its pagination ("Wisdom Geek - Page 2") already lead with the
@@ -125,7 +128,7 @@ const structuredData =
 />
 
 <!-- Canonical URL -->
-<link rel="canonical" href={canonicalURL} />
+{canonical && <link rel="canonical" href={canonicalURL} />}
 
 <!-- Primary Meta Tags -->
 <title>{pageTitle}</title>
