@@ -27,6 +27,39 @@ export function decodeHtmlEntities(text: string): string {
 	return text.replace(/&[#\w]+;/g, (entity) => entities[entity] || entity);
 }
 
+// Words in a post card excerpt, as on the live site
+const EXCERPT_WORDS = 50;
+
+// Plain-text excerpt of a post's Markdown for post cards, like WordPress builds
+// it: code blocks and images are left out, and only regular whitespace splits
+// words, so words joined by a non-breaking space count as one
+export function getExcerpt(markdown: string | undefined): string | undefined {
+	if (!markdown) return undefined;
+
+	// Inline code is kept verbatim, so set it aside before removing Markdown syntax
+	const codeSpans: string[] = [];
+	const text = markdown
+		.replace(/^ {0,3}(`{3,}|~{3,})[^\n]*\n[\s\S]*?^ {0,3}\1[ \t]*$/gm, ' ')
+		.replace(/<!--[\s\S]*?-->/g, ' ')
+		.replace(/(`+)(?!`)([\s\S]*?[^`])\1(?!`)/g, (_, _ticks, code: string) => {
+			codeSpans.push(code.trim());
+			return `\u0000${codeSpans.length - 1}\u0000`;
+		})
+		.replace(/!\[(?:[^[\]]|\[[^[\]]*\])*\]\([^)]*\)/g, ' ')
+		.replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
+		.replace(/<[^>]+>/g, ' ')
+		.replace(/^ {0,3}(?:#{1,6}|>|[-*+]|\d+\.)[ \t]+/gm, '')
+		.replace(/^\|?[ \t]*:?-{3,}[\s|:-]*$/gm, ' ')
+		.replace(/(?<!\\)\|/g, ' ')
+		.replace(/(?<!\\)(?:\*\*|__|\*|_|~~)/g, '')
+		.replace(/\\([\\`*_{}[\]()#+\-.!|<>~])/g, '$1')
+		.replace(/\u0000(\d+)\u0000/g, (_, index: string) => codeSpans[Number(index)]);
+
+	const words = decodeHtmlEntities(text).split(/[ \t\r\n]+/).filter(Boolean);
+	if (words.length === 0) return undefined;
+	return words.length > EXCERPT_WORDS ? `${words.slice(0, EXCERPT_WORDS).join(' ')}...` : words.join(' ');
+}
+
 // Helper function to convert category name to slug
 export function categoryToSlug(category: string): string {
 	return category.toLowerCase().replace(/\s+/g, '-');
