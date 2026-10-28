@@ -1,5 +1,4 @@
 ---
-import AuthorBio from '../components/AuthorBio.astro';
 import BaseHead from '../components/BaseHead.astro';
 import PageLayout from '../components/PageLayout.astro';
 ---
@@ -9,72 +8,40 @@ import PageLayout from '../components/PageLayout.astro';
 	<head>
 		<BaseHead title="About this website" description="Some information and context about Wisdom Geek, how it came into existence and why we do what we do" />
 		<style>
-			.about-section {
-				margin-bottom: 2.5em;
-			}
-
-			.about-section h1 {
+			.about h1 {
 				font-size: 2rem;
 				margin: 0 0 1em 0;
 				color: rgb(var(--black));
 			}
 
-			.about-section h2 {
+			.about h2 {
 				font-size: 1.4rem;
-				margin: 0 0 0.75em 0;
+				margin: 1.5em 0 0.75em 0;
 				color: rgb(var(--black));
 			}
 
-			.about-section p {
+			.about p {
 				color: rgb(var(--gray-dark));
 				font-size: 1.05rem;
 				line-height: 1.7;
 				margin: 0 0 1em 0;
 			}
-
-			.contact-box {
-				padding: 1.5em;
-				background: var(--surface-muted);
-				border-radius: 12px;
-			}
-
-			.contact-box p {
-				margin: 0;
-				color: rgb(var(--gray-dark));
-				font-size: 1rem;
-			}
-
-			.contact-box a {
-				color: var(--accent);
-				text-decoration: none;
-			}
-
-			.contact-box a:hover {
-				text-decoration: underline;
-			}
 		</style>
 	</head>
 	<body>
 		<PageLayout>
-			<section>
-				<div class="about-section">
-					<h1>About</h1>
-					<p>
-						Wisdom Geek is a blog focused on sharing knowledge. The posts mainly will be technical and there will be some philosophy involved as well but the main purpose is to share knowledge learned through life experiences and put it out for the world to learn from. We are an open-minded community with a passion to share and learn. Thus the idea of "Knowledge, open-sourced."
-					</p>
-				</div>
+			<article class="about">
+				<h1>About</h1>
+				<p>
+					Wisdom Geek is a blog focused on sharing knowledge. The posts mainly will be technical and there will be some philosophy involved as well but the main purpose is to share knowledge learned through life experiences and put it out for the world to learn from. We are an open-minded community with a passion to share and learn. Thus the idea of “Knowledge, open-sourced.”
+				</p>
 
-				<div class="about-section">
-					<AuthorBio />
-				</div>
-
-				<div class="about-section">
-					<h2>Get in Touch</h2>
-					<div class="contact-box">
-						<p>Have feedback or want to get in touch? Reach out at <a href="mailto:saransh@wisdomgeek.com">saransh@wisdomgeek.com</a></p>
-					</div>
-				</div>
-			</section>
+				<h2>About Saransh Kataria</h2>
+				<p>
+					Born in Delhi, India, Saransh Kataria is the brain behind Wisdom Geek. Currently, Saransh is a software developer at a reputed firm in Seattle, Washington and he likes playing with new technologies to explore different possibilities. He holds an engineering degree in Computer Science. He also shares his passion for sharing knowledge as the community lead at <a href="https://www.facebook.com/groups/DevCDelhiNCR/" target="_blank" rel="noopener noreferrer">Facebook Developer Circle Delhi, NCR</a> which is a developer community in Delhi, India.
+				</p>
+				<p>If you have any suggestions or feedback, you can reach him via email at <em>saransh[at]wisdomgeek.com</em>.</p>
+			</article>
 		</PageLayout>
 	</body>
 </html>

@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import FormattedDate from './FormattedDate.astro';
-import { categoryToSlug, decodeHtmlEntities } from '../lib/utils';
+import { categoryToSlug, decodeHtmlEntities, getExcerpt } from '../lib/utils';
 import { SITE_AUTHOR } from '../consts';
 import authors from '../config/authors.json';
 
@@ -17,6 +17,7 @@ const { posts } = Astro.props;
 		posts.map((post) => {
 			const displayAuthor = post.data.author || SITE_AUTHOR;
 			const authorData = authors.find((a) => a.name === displayAuthor);
+			const excerpt = getExcerpt(post.body) ?? decodeHtmlEntities(post.data.description ?? '');
 			return (
 				<li>
 					<article class="post-card">
@@ -47,9 +48,7 @@ const { posts } = Astro.props;
 								</svg>
 								<FormattedDate date={post.data.pubDate} />
 							</p>
-							{post.data.description && (
-								<p class="post-card-description">{decodeHtmlEntities(post.data.description)}</p>
-							)}
+							{excerpt && <p class="post-card-description">{excerpt}</p>}
 							{post.data.categories && post.data.categories.length > 0 && (
 								<a href={`/${categoryToSlug(post.data.categories[0])}/`} class="post-card-category">
 									{post.data.categories[0]}
@@ -182,10 +181,6 @@ const { posts } = Astro.props;
 		color: rgb(var(--gray-dark));
 		font-size: 0.95rem;
 		line-height: 1.55;
-		display: -webkit-box;
-		-webkit-line-clamp: 4;
-		-webkit-box-orient: vertical;
-		overflow: hidden;
 	}
 
 	.post-card-category {
