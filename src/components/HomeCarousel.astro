@@ -264,7 +264,7 @@ const slides = posts.slice(0, 4);
 		margin: 0;
 		color: white;
 		font-size: 2rem;
-		font-weight: 700;
+		font-weight: 800;
 		line-height: 1.2;
 		text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 	}
@@ -421,6 +421,17 @@ const slides = posts.slice(0, 4);
 		background: var(--dot);
 	}
 
+	/* Once the sidebar moves below, the carousel reaches the page's 19px
+	   padding, too narrow for the arrows' 22px overhang */
+	@media (max-width: 960px) {
+		.carousel-arrow-prev {
+			left: 4px;
+		}
+		.carousel-arrow-next {
+			right: 4px;
+		}
+	}
+
 	@media (max-width: 720px) {
 		.carousel-card-overlay {
 			padding: 1em 1.25em;
@@ -434,12 +445,6 @@ const slides = posts.slice(0, 4);
 		.carousel-arrow {
 			width: 36px;
 			height: 52px;
-		}
-		.carousel-arrow-prev {
-			left: 4px;
-		}
-		.carousel-arrow-next {
-			right: 4px;
 		}
 		.carousel-meta-row {
 			gap: 0.5em;
