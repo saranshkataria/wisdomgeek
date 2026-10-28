@@ -9,7 +9,7 @@ import logo from "../assets/logo.png";
 <header>
   <div class="header-inner">
     <a href="/" class="logo" aria-label="Wisdom Geek Home">
-      <Image src={logo} alt="" width={48} height={48} densities={[1, 2]} loading="eager" />
+      <Image src={logo} alt="" width={60} height={60} densities={[1, 2]} loading="eager" />
       <span class="logo-text">{SITE_TITLE}</span>
     </a>
 
@@ -88,12 +88,13 @@ import logo from "../assets/logo.png";
       z-index: 100;
     }
 
-    /* Keeps anchor targets and keyboard focus clear of the 64px header */
+    /* Keeps anchor targets and keyboard focus clear of the 81px header */
     :global(html) {
-      scroll-padding-top: calc(64px + 1rem);
+      scroll-padding-top: calc(81px + 1rem);
     }
   }
 
+  /* 81px tall with a 60px logo, as on the live site */
   .header-inner {
     max-width: 1200px;
     margin: 0 auto;
@@ -101,7 +102,7 @@ import logo from "../assets/logo.png";
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 64px;
+    height: 81px;
   }
 
   .logo {
@@ -189,16 +190,29 @@ import logo from "../assets/logo.png";
     background-color: rgba(var(--gray-light), 0.5);
   }
 
-  @media (max-width: 860px) {
+  /* The full header needs 997px, and the width media queries see includes
+     a classic scrollbar (up to 17px), so below 1024px a compact 64px bar
+     with a 48px logo and a menu button takes its place */
+  @media (max-width: 1023px) {
+    .header-inner {
+      height: 64px;
+    }
+
+    .logo img {
+      width: 48px;
+      height: 48px;
+    }
+
     .menu-toggle {
       display: flex;
       align-items: center;
     }
 
+    /* Opens right below the header, whatever its height */
     nav {
       display: none;
       position: absolute;
-      top: 64px;
+      top: 100%;
       left: 0;
       right: 0;
       background: var(--surface);
