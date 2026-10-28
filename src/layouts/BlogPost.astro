@@ -479,5 +479,44 @@ const encodedTitle = encodeURIComponent(title);
         }
       </article>
     </PageLayout>
+
+    <script>
+      // Copy buttons for code blocks; created here so they only exist when they can work
+      const icons =
+        '<svg class="icon-copy" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg>' +
+        '<svg class="icon-check" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>';
+
+      if (navigator.clipboard) {
+        for (const block of document.querySelectorAll(".code-block")) {
+          const code = block.querySelector("pre code");
+          const bar = block.querySelector(".code-bar");
+          if (!code || !bar) continue;
+
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "code-copy";
+          button.setAttribute("aria-label", "Copy");
+          button.innerHTML = icons;
+
+          let resetTimer: number | undefined;
+          button.addEventListener("click", async () => {
+            try {
+              await navigator.clipboard.writeText(code.textContent ?? "");
+            } catch {
+              return;
+            }
+            button.dataset.copied = "";
+            button.setAttribute("aria-label", "Copied");
+            clearTimeout(resetTimer);
+            resetTimer = window.setTimeout(() => {
+              delete button.dataset.copied;
+              button.setAttribute("aria-label", "Copy");
+            }, 2000);
+          });
+
+          bar.append(button);
+        }
+      }
+    </script>
   </body>
 </html>

@@ -9,6 +9,8 @@
 	--accent-dark: #000d8a;
 	/* Accent used as a background behind white text; same in both themes */
 	--accent-strong: #2337ff;
+	/* Text links, as on the WordPress site */
+	--link: #0d42a2;
 	--black: 15, 18, 25;
 	--gray: 96, 115, 159;
 	--gray-light: 229, 233, 240;
@@ -29,6 +31,7 @@
 :root[data-theme="dark"] {
 	--accent: #8c9bff;
 	--accent-dark: #c3cbff;
+	--link: #8c9bff;
 	--black: 236, 239, 244;
 	--gray: 148, 163, 196;
 	--gray-light: 46, 53, 70;
@@ -108,10 +111,10 @@ b {
 	font-weight: 600;
 }
 a {
-	color: var(--accent);
+	color: var(--link);
 }
 a:hover {
-	color: var(--accent);
+	color: var(--link);
 }
 p {
 	margin-bottom: 1em;
@@ -128,6 +131,31 @@ input {
 }
 table {
 	width: 100%;
+	margin-bottom: 2rem;
+	border-collapse: collapse;
+	font-size: 0.75em;
+	line-height: 1.6;
+}
+th,
+td {
+	padding: 5px 10px;
+	border: 1px solid rgb(var(--gray-light));
+}
+th {
+	padding-block: 10px;
+	font-weight: 600;
+	text-align: left;
+}
+/* Markdown tables need a header row, so tables imported without one have an empty row */
+thead tr:not(:has(> :not(:empty))) {
+	display: none;
+}
+@media (max-width: 720px) {
+	/* Wide tables scroll inside the content instead of widening the page */
+	table {
+		display: block;
+		overflow-x: auto;
+	}
 }
 img {
 	max-width: 100%;
@@ -138,23 +166,123 @@ img {
 :root[data-theme="dark"] img {
 	background-color: #fff;
 }
+code,
+pre,
+.code-lang,
+.code-copy {
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
 code {
 	padding: 2px 5px;
 	background-color: rgb(var(--gray-light));
 	border-radius: 2px;
+	font-size: 0.85em;
 }
 pre {
-	padding: 1.5em;
+	padding: 1em;
 	border-radius: 8px;
+	font-size: 0.8em;
+	line-height: 1.5;
 }
 pre > code {
 	all: unset;
 }
+/* Code blocks are wrapped by the Shiki transformer in astro.config.mjs; the
+   top bar (dots and copy button) and the language label sit outside the
+   scrolling pre */
+.code-block {
+	margin: 1em 0;
+	border-radius: 8px;
+	/* Background of the dark-plus Shiki theme, behind the bar and label */
+	background-color: #1e1e1e;
+}
+.code-bar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	min-height: 2rem;
+	padding: 0.5rem 0.5rem 0 1rem;
+}
+.code-block > pre {
+	margin: 0;
+}
+.code-block:has(.code-lang) > pre {
+	padding-bottom: 0.5em;
+}
+.code-lang {
+	display: block;
+	padding: 0 1rem 0.5rem;
+	color: #c7c7c7;
+	font-size: 0.75rem;
+	line-height: 1.5;
+	text-align: right;
+	/* Keep the label out of manually selected code */
+	user-select: none;
+}
+/* Added to the bar by the script in BlogPost.astro */
+.code-copy {
+	display: flex;
+	align-items: center;
+	gap: 0.375rem;
+	min-width: 2rem;
+	height: 2rem;
+	padding: 0 0.5rem;
+	border: none;
+	border-radius: 6px;
+	background-color: transparent;
+	color: #d4d4d4;
+	font-size: 0.75rem;
+	cursor: pointer;
+	opacity: 0.2;
+	transition: opacity 0.15s ease;
+}
+.code-copy:hover {
+	background-color: #333;
+}
+.code-block:hover .code-copy,
+.code-copy:focus-visible,
+.code-copy[data-copied] {
+	opacity: 1;
+}
+.code-copy:focus-visible {
+	outline: 2px solid currentColor;
+	outline-offset: 2px;
+}
+.code-copy svg {
+	flex-shrink: 0;
+}
+.code-copy .icon-check,
+.code-copy[data-copied] .icon-copy {
+	display: none;
+}
+.code-copy[data-copied] .icon-check {
+	display: block;
+}
+/* Show the "Copied" state as text too */
+.code-copy[data-copied]::before {
+	content: attr(aria-label);
+}
+@media (hover: none) {
+	.code-copy {
+		opacity: 1;
+	}
+}
 blockquote {
-	border-left: 4px solid var(--accent);
-	padding: 0 0 0 20px;
-	margin: 0px;
-	font-size: 1.333em;
+	position: relative;
+	margin: 0;
+	padding-left: 2.5em;
+	color: rgb(var(--black));
+	font-style: italic;
+}
+/* Large quote mark, as on the WordPress site; decorative, so it has empty alt text */
+blockquote::before {
+	content: "\201C";
+	content: "\201C" / "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: rgb(var(--gray));
+	font: normal 700 3em/1 Georgia, serif;
 }
 hr {
 	border: none;
