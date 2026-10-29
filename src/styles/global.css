@@ -167,6 +167,16 @@ img {
 :root[data-theme="dark"] img {
 	background-color: #fff;
 }
+/* Video embeds span the content width. Iframes don't keep their proportions
+   when resized, so the 16:9 shape comes from aspect-ratio (YouTube's player
+   letterboxes videos of other shapes). Vimeo's embed sizes itself inline */
+.prose iframe {
+	display: block;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 16 / 9;
+	margin: 0 0 2em;
+}
 code,
 pre,
 .code-lang,
