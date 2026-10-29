@@ -107,14 +107,21 @@ const encodedTitle = encodeURIComponent(title);
         margin-bottom: 0;
       }
 
-      /* Hero image with overlay */
+      /* Hero image with the title on top, stacked in one grid cell: the hero keeps the
+         image's shape, and grows (the image covering it) when a long title needs more
+         room, e.g. on phones or with wide banner images */
       .hero-card-image {
         position: relative;
+        display: grid;
+      }
+      .hero-card-image > * {
+        grid-area: 1 / 1;
       }
       .hero-card-image img {
         display: block;
         width: 100%;
-        height: auto;
+        height: 100%;
+        object-fit: cover;
       }
       /* Darkens the whole image: on phones the title reaches the top of the image */
       .hero-card-image::after {
@@ -125,12 +132,9 @@ const encodedTitle = encodeURIComponent(title);
         pointer-events: none;
       }
 
-      /* Overlay content on image */
+      /* Overlay content at the bottom of the image */
       .hero-overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        align-self: end;
         padding: 1.5em;
         z-index: 1;
       }

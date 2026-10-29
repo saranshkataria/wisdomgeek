@@ -63,16 +63,18 @@ const { posts } = Astro.props;
 </ul>
 
 <style>
+	/* 30px between cards, as on the live site */
 	.post-grid {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
-		gap: 2rem;
+		gap: 30px;
 		list-style: none;
 		margin: 0;
 		padding: 0;
 	}
 
 	.post-card {
+		box-sizing: border-box;
 		background: var(--surface-muted);
 		border-radius: 20px;
 		padding: 1.25em;
