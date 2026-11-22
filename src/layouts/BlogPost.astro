@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import { getImage, Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import AuthorBio from "../components/AuthorBio.astro";
 import BaseHead from "../components/BaseHead.astro";
@@ -72,6 +72,11 @@ const showUpdatedDate =
 const currentUrl = Astro.url.href;
 const encodedUrl = encodeURIComponent(currentUrl);
 const encodedTitle = encodeURIComponent(title);
+
+// Search result thumbnail: Pagefind's UI shows it in a 16:9 box at most 108px wide
+// (see search.astro), so a copy of the hero at twice that rather than the 920px image
+const searchThumbnail =
+  heroImage && (await getImage({ src: heroImage, width: 224, height: 126, format: "webp" }));
 ---
 
 <html lang="en">
@@ -418,15 +423,15 @@ const encodedTitle = encodeURIComponent(title);
   <body>
     <PageLayout>
       <Breadcrumbs crumbs={breadcrumbs} />
-      <article>
+      <article data-pagefind-body>
         <div class="post-header-card">
         {heroImage ? (
           <div class="hero-card-image-wrapper">
             <div class="hero-card-image">
-              <Image width={920} height={518} src={heroImage} alt="" />
+              <Image width={920} height={518} src={heroImage} alt="" data-pagefind-meta={searchThumbnail && `image:${searchThumbnail.src}`} />
               <div class="hero-overlay">
-                <h1>{title}</h1>
-                <div class="share-row">
+                <h1 data-pagefind-meta="title">{title}</h1>
+                <div class="share-row" data-pagefind-ignore="all">
                   <a href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`} target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Share on X">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                   </a>
@@ -445,12 +450,12 @@ const encodedTitle = encodeURIComponent(title);
           </div>
         ) : (
           <div class="post-card-no-image">
-            <h1>{title}</h1>
+            <h1 data-pagefind-meta="title">{title}</h1>
           </div>
         )}
 
         <!-- Avatar + meta row on gray panel -->
-        <div class="post-meta-area">
+        <div class="post-meta-area" data-pagefind-ignore="all">
           <div class="avatar-row">
             {authorData?.avatar ? (
               <img class="author-avatar" src={authorData.avatar} alt={displayAuthor} />
@@ -497,7 +502,7 @@ const encodedTitle = encodeURIComponent(title);
         <!-- Previous/Next Navigation -->
         {
           (prevPost || nextPost) && (
-            <nav class="post-navigation" aria-label="Previous and next posts">
+            <nav class="post-navigation" aria-label="Previous and next posts" data-pagefind-ignore="all">
               {prevPost && (
                 <a href={`/${prevPost.id}/`} class="prev" rel="prev">
                   <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3l-9 9 9 9" /></svg>
@@ -517,7 +522,7 @@ const encodedTitle = encodeURIComponent(title);
         <!-- Related Posts -->
         {
           relatedPosts && relatedPosts.length > 0 && (
-            <section class="related-posts">
+            <section class="related-posts" data-pagefind-ignore="all">
               <h3>You may also like...</h3>
               <div class="related-posts-grid">
                 {relatedPosts.map((relatedPost) => (

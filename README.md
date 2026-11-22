@@ -15,7 +15,7 @@ Run from the repository root:
 | :--------------------- | :-------------------------------------------------------- |
 | `yarn install`         | Install dependencies                                      |
 | `yarn dev`             | Start the dev server at http://localhost:4321             |
-| `yarn build`           | Build the static site to `dist/`                          |
+| `yarn build`           | Build the static site and its search index to `dist/`     |
 | `yarn preview`         | Serve the `dist/` build locally                           |
 | `yarn fetch-wordpress` | Regenerate posts from WordPress (see [Content](#content)) |
 
@@ -36,6 +36,21 @@ Frontmatter fields:
 - `categories`: optional; the post's category names.
 - `categoryHierarchy`: optional; the post's category path, top level first. Category archive pages are built from it.
 
+## Search
+
+Search is static: Pagefind indexes the built pages at the end of `yarn build`, and visitors' browsers download only the parts of the index a search needs. No search service is involved.
+
+- `src/integrations/pagefind.mjs`, a small Astro integration, runs Pagefind's Node API over `dist/` in the `astro:build:done` hook and writes the index, with Pagefind's UI, to `dist/pagefind/`. The build log says how many pages it indexed.
+- Only posts are indexed, and only their content. The post layout (`BlogPost.astro` and its components) marks the post with `data-pagefind-body`, gives each result the post's title and a 224×126 copy of its hero image as thumbnail (`data-pagefind-meta`), and marks the share buttons, meta row, tags, author bio, Previous/Next links and related posts with `data-pagefind-ignore`. The sidebar and code block language labels (added in `astro.config.mjs`) are ignored too.
+- `/search/` (`src/pages/search.astro`) shows Pagefind's default UI in the site's fonts and colors. `?q=<term>` fills in the box and runs the search, and follows what's typed, so searches can be shared. The page is `noindex` and not in the sitemap.
+- The search box at the top of the sidebar (a plain form, so it works without JavaScript) and the search icon in the header lead there. The home page forwards WordPress's search links, `/?s=<term>`, to `/search/?q=<term>`.
+
+The index only exists in builds, so search doesn't work in `yarn dev` (the search page says so). To try it locally, build the site and serve it, then open `/search/` on the preview server:
+
+```sh
+yarn build && yarn preview
+```
+
 ## Project structure
 
 ```text
@@ -50,6 +65,8 @@ Frontmatter fields:
     ├── consts.ts           # site title, description, URL, author, social links
     ├── content/            # generated posts (see Content)
     ├── content.config.ts   # blog collection and frontmatter schema
+    ├── integrations/
+    │   └── pagefind.mjs    # search index, built after the site (see Search)
     ├── layouts/
     │   └── BlogPost.astro  # post layout
     ├── lib/utils.ts        # category and HTML-entity helpers
@@ -69,4 +86,5 @@ Routes in `src/pages/`:
 | `about.astro`                 | `/about/`                 | About                                                     |
 | `contact.astro`               | `/contact/`               | Contact                                                   |
 | `privacy-policy.astro`        | `/privacy-policy/`        | Privacy policy                                            |
+| `search.astro`                | `/search/`                | Search (see [Search](#search))                            |
 | `rss.xml.js`                  | `/rss.xml`                | RSS feed                                                  |

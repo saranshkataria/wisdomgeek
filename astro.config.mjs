@@ -5,6 +5,7 @@ import sitemap from "@astrojs/sitemap";
 import { defineConfig } from "astro/config";
 import fs from "node:fs";
 import path from "node:path";
+import pagefind from "./src/integrations/pagefind.mjs";
 
 // Build a map of URLs to lastmod dates from content frontmatter
 function getLastModDates() {
@@ -131,7 +132,7 @@ const codeBlockWrapper = {
     root.children[0] = h("div", { class: "code-block" }, [
       h("div", { class: "code-bar" }, [dots]),
       pre,
-      ...(label ? [h("span", { class: "code-lang" }, [{ type: "text", value: label }])] : []),
+      ...(label ? [h("span", { class: "code-lang", dataPagefindIgnore: "" }, [{ type: "text", value: label }])] : []),
     ]);
   },
 };
@@ -145,6 +146,8 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap({
+      // The search page is noindex
+      filter: (page) => new URL(page).pathname !== "/search/",
       serialize(item) {
         // Extract path from full URL
         const url = new URL(item.url);
@@ -161,6 +164,7 @@ export default defineConfig({
     }),
     // Runs after the sitemap integration, which writes the index it copies
     legacySitemapPaths(),
+    pagefind(),
   ],
   markdown: {
     shikiConfig: {

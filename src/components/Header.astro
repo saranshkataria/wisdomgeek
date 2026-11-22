@@ -49,6 +49,9 @@ import logo from "../assets/logo.png";
         <a href={SOCIAL_LINKS.twitter} target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
           <svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         </a>
+        <a href="/search/" aria-label="Search">
+          <svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </a>
         <ThemeToggle />
       </div>
     </nav>
@@ -190,10 +193,11 @@ import logo from "../assets/logo.png";
     background-color: rgba(var(--gray-light), 0.5);
   }
 
-  /* The full header needs 997px, and the width media queries see includes
-     a classic scrollbar (up to 17px), so below 1024px a compact 64px bar
-     with a 48px logo and a menu button takes its place */
-  @media (max-width: 1023px) {
+  /* The full header needs 1039px, and the width media queries see includes
+     a classic scrollbar (up to 17px), so below 1081px (where it also stops
+     being sticky) a compact 64px bar with a 48px logo and a menu button
+     takes its place */
+  @media (max-width: 1080px) {
     .header-inner {
       height: 64px;
     }
@@ -252,9 +256,10 @@ import logo from "../assets/logo.png";
     }
   }
 
-  /* On tablets the menu is a panel under the menu button, its right edge in
-     line with the button's, instead of the phone menu's full-width sheet */
-  @media (min-width: 721px) and (max-width: 1023px) {
+  /* On tablets and small laptops the menu is a panel under the menu button,
+     its right edge in line with the button's, instead of the phone menu's
+     full-width sheet */
+  @media (min-width: 721px) and (max-width: 1080px) {
     nav {
       left: auto;
       right: 1.5em;

@@ -12,7 +12,7 @@ const fbHref = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
 const xHref = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`;
 ---
 
-<div class="share-buttons">
+<div class="share-buttons" data-pagefind-ignore="all">
 	<a
 		class="share-button share-button-facebook"
 		href={fbHref}

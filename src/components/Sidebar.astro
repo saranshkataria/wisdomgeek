@@ -26,9 +26,25 @@ const categoryLinks = (post: CollectionEntry<'blog'>) =>
 		const path = post.data.categoryPaths?.[i];
 		return path ? [{ name, href: `/${path}/` }] : [];
 	});
+
+// The search page has its own search box
+const showSearch = Astro.url.pathname.replace(/\/$/, '') !== '/search';
 ---
 
-<aside class="sidebar">
+{/* Ignored by Pagefind: for a post without a hero image, it would otherwise use the
+    first image after the title as the result image, possibly a thumbnail from here */}
+<aside class="sidebar" data-pagefind-ignore="all">
+	{/* Search box, as on the live site; a plain form, so it works without JavaScript */}
+	{showSearch && (
+		<form class="sidebar-search" action="/search/" method="get" role="search">
+			<label>
+				<span class="sr-only">Search</span>
+				<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" /></svg>
+				<input type="search" name="q" placeholder="To search type and hit enter" enterkeyhint="search" />
+			</label>
+		</form>
+	)}
+
 	<!-- Recent Posts -->
 	<div class="sidebar-section">
 		<h3>Recent Posts</h3>
@@ -152,6 +168,49 @@ const categoryLinks = (post: CollectionEntry<'blog'>) =>
 
 	.sidebar-section {
 		margin-bottom: 40px;
+	}
+
+	.sidebar-search {
+		margin-bottom: 40px;
+	}
+
+	.sidebar-search label {
+		position: relative;
+		display: block;
+	}
+
+	.sidebar-search svg {
+		position: absolute;
+		top: 50%;
+		left: 12px;
+		transform: translateY(-50%);
+		color: rgb(var(--gray));
+		pointer-events: none;
+	}
+
+	/* 14px like the rest of the sidebar (and the live search box) */
+	.sidebar-search input {
+		box-sizing: border-box;
+		width: 100%;
+		margin: 0;
+		padding: 8px 12px 8px 36px;
+		border: 1px solid rgb(var(--gray-light));
+		border-radius: 8px;
+		background-color: var(--surface);
+		color: rgb(var(--gray-dark));
+		font: inherit;
+		font-size: 0.875rem;
+		line-height: 1.6;
+		appearance: none;
+	}
+
+	.sidebar-search input::placeholder {
+		color: rgb(var(--gray));
+		opacity: 1;
+	}
+
+	.sidebar-search input:focus {
+		border-color: var(--accent);
 	}
 
 	/* The title sits on a thin rule that starts at the column's border: "─ Categories ───" */
@@ -343,6 +402,11 @@ const categoryLinks = (post: CollectionEntry<'blog'>) =>
 
 		.sidebar-section h3::before {
 			display: none;
+		}
+
+		/* 16px, so phones don't zoom in when it gets focus */
+		.sidebar-search input {
+			font-size: 1rem;
 		}
 	}
 </style>
