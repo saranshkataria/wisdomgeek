@@ -251,4 +251,18 @@ import logo from "../assets/logo.png";
       position: relative;
     }
   }
+
+  /* On tablets the menu is a panel under the menu button, its right edge in
+     line with the button's, instead of the phone menu's full-width sheet */
+  @media (min-width: 721px) and (max-width: 1023px) {
+    nav {
+      left: auto;
+      right: 1.5em;
+      padding: 0.5em 0.5em 1em;
+      gap: 0.5em;
+      border: 1px solid rgb(var(--gray-light));
+      border-top: none;
+      border-radius: 0 0 12px 12px;
+    }
+  }
 </style>

@@ -8,16 +8,17 @@ import PageLayout from '../components/PageLayout.astro';
 	<head>
 		<BaseHead title="About this website" description="Some information and context about Wisdom Geek, how it came into existence and why we do what we do" />
 		<style>
-			/* Semi-bold, like page titles on the live site */
+			/* 36px and semi-bold, like page titles on the live site */
 			.about h1 {
-				font-size: 2rem;
+				font-size: 2.25rem;
 				font-weight: 600;
 				margin: 0 0 1em 0;
 				color: rgb(var(--black));
 			}
 
+			/* 34px, as on the live site */
 			.about h2 {
-				font-size: 1.4rem;
+				font-size: 2.125rem;
 				margin: 1.5em 0 0.75em 0;
 				color: rgb(var(--black));
 			}
@@ -27,6 +28,16 @@ import PageLayout from '../components/PageLayout.astro';
 				font-size: 1.05rem;
 				line-height: 1.7;
 				margin: 0 0 1em 0;
+			}
+
+			/* 28px and 26px on phones, as on the live site */
+			@media (max-width: 720px) {
+				.about h1 {
+					font-size: 1.75rem;
+				}
+				.about h2 {
+					font-size: 1.625rem;
+				}
 			}
 		</style>
 	</head>
