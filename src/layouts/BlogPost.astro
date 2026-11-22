@@ -138,9 +138,10 @@ const encodedTitle = encodeURIComponent(title);
         padding: 1.5em;
         z-index: 1;
       }
+      /* 42px as on the live site, in smaller steps on narrower screens (at the end) */
       .hero-overlay h1 {
         margin: 0 0 0.5em;
-        font-size: 1.6em;
+        font-size: 2.625rem;
         line-height: 1.25;
         color: white;
         font-weight: 800;
@@ -259,9 +260,10 @@ const encodedTitle = encodeURIComponent(title);
       .post-card-no-image {
         padding: 1.5em 1.25em 0;
       }
+      /* Same size as the title on the image, as on the live site */
       .post-card-no-image h1 {
         margin: 0 0 0.5em;
-        font-size: 1.6em;
+        font-size: 2.625rem;
         line-height: 1.25;
         color: rgb(var(--black));
       }
@@ -369,19 +371,31 @@ const encodedTitle = encodeURIComponent(title);
         object-fit: cover;
       }
       .related-post-content { padding: 1em; }
+      /* 17px with a 1.4 line height, as on the live site */
       .related-post-title {
         font-weight: 800;
         margin-bottom: 0.5em;
-        font-size: 0.95rem;
+        font-size: 1.0625rem;
+        line-height: 1.4;
       }
       .related-post-date {
         font-size: 0.875rem;
         color: rgb(var(--gray));
       }
 
+      /* Post title steps as on the live site: 38px up to 1080px, 32px on
+         phones and 20px below 480px */
+      @media (max-width: 1080px) {
+        .hero-overlay h1,
+        .post-card-no-image h1 {
+          font-size: 2.375rem;
+        }
+      }
+
       @media (max-width: 720px) {
-        .hero-overlay h1 {
-          font-size: 1.2em;
+        .hero-overlay h1,
+        .post-card-no-image h1 {
+          font-size: 2rem;
         }
         .hero-overlay {
           padding: 1em;
@@ -390,6 +404,13 @@ const encodedTitle = encodeURIComponent(title);
         .category-badge { margin-left: 0; }
         /* The meta row wraps on phones, where a separator would start a line */
         .meta-sep { display: none; }
+      }
+
+      @media (max-width: 479px) {
+        .hero-overlay h1,
+        .post-card-no-image h1 {
+          font-size: 1.25rem;
+        }
       }
     </style>
   </head>
