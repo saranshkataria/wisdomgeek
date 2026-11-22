@@ -5,6 +5,7 @@ import sitemap from "@astrojs/sitemap";
 import { defineConfig } from "astro/config";
 import fs from "node:fs";
 import path from "node:path";
+import pagefind from "./src/integrations/pagefind.mjs";
 
 // Build a map of URLs to lastmod dates from content frontmatter
 function getLastModDates() {
@@ -48,6 +49,26 @@ function getLastModDates() {
 }
 
 const lastModDates = getLastModDates();
+
+/**
+ * WordPress served the sitemap at /sitemap.xml and /sitemap_index.xml, where
+ * search engines and Search Console still look for it. Copies the sitemap index
+ * to both paths.
+ * @returns {import("astro").AstroIntegration}
+ */
+function legacySitemapPaths() {
+  return {
+    name: "legacy-sitemap-paths",
+    hooks: {
+      "astro:build:done": async ({ dir }) => {
+        const index = new URL("sitemap-index.xml", dir);
+        for (const name of ["sitemap.xml", "sitemap_index.xml"]) {
+          await fs.promises.copyFile(index, new URL(name, dir));
+        }
+      },
+    },
+  };
+}
 
 // Code block language labels; other languages (and plaintext) get no label
 const codeLanguageLabels = new Map([
@@ -111,7 +132,7 @@ const codeBlockWrapper = {
     root.children[0] = h("div", { class: "code-block" }, [
       h("div", { class: "code-bar" }, [dots]),
       pre,
-      ...(label ? [h("span", { class: "code-lang" }, [{ type: "text", value: label }])] : []),
+      ...(label ? [h("span", { class: "code-lang", dataPagefindIgnore: "" }, [{ type: "text", value: label }])] : []),
     ]);
   },
 };
@@ -125,6 +146,8 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap({
+      // The search page is noindex
+      filter: (page) => new URL(page).pathname !== "/search/",
       serialize(item) {
         // Extract path from full URL
         const url = new URL(item.url);
@@ -139,6 +162,9 @@ export default defineConfig({
         return item;
       },
     }),
+    // Runs after the sitemap integration, which writes the index it copies
+    legacySitemapPaths(),
+    pagefind(),
   ],
   markdown: {
     shikiConfig: {

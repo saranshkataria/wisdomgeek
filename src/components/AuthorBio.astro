@@ -11,7 +11,7 @@ const author = authors.find((a) => a.name === authorName);
 ---
 
 {author && (
-  <div class="author-bio-card">
+  <div class="author-bio-card" data-pagefind-ignore="all">
     {author.avatar ? (
       <img class="author-bio-avatar" src={author.avatar} alt={author.name} />
     ) : (

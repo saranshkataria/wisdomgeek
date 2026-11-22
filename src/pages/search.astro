@@ -1,0 +1,119 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import PageLayout from '../components/PageLayout.astro';
+import PageTitle from '../components/PageTitle.astro';
+
+// The index only exists in builds: src/integrations/pagefind.mjs writes it to
+// dist/pagefind/ at the end of `astro build`
+const { DEV } = import.meta.env;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title="Search" description="Search the posts on Wisdom Geek." />
+		{/* Search engines apply the most restrictive of BaseHead's robots tag and this one */}
+		<meta name="robots" content="noindex" />
+		{!DEV && <link rel="stylesheet" href="/pagefind/pagefind-ui.css" />}
+		<style>
+			/* Pagefind's default UI, in the site's font and theme colors */
+			.search-ui {
+				--pagefind-ui-scale: 0.9;
+				--pagefind-ui-primary: var(--accent);
+				--pagefind-ui-text: rgb(var(--gray-dark));
+				--pagefind-ui-background: var(--surface);
+				--pagefind-ui-border: rgb(var(--gray-light));
+				--pagefind-ui-tag: var(--surface-muted);
+				--pagefind-ui-border-width: 1px;
+				--pagefind-ui-border-radius: 8px;
+				--pagefind-ui-image-border-radius: 8px;
+				/* The shape of the result thumbnails, made in BlogPost.astro */
+				--pagefind-ui-image-box-ratio: 16 / 9;
+				--pagefind-ui-font: 'Roboto Slab', Georgia, serif;
+			}
+
+			/* Matched words in excerpts */
+			.search-ui :global(mark) {
+				background-color: var(--pill-hover);
+				color: inherit;
+			}
+
+			/* Readable, like the sidebar's search box */
+			.search-ui :global(.pagefind-ui__search-input::placeholder) {
+				color: rgb(var(--gray));
+				opacity: 1;
+			}
+
+			.search-note {
+				color: rgb(var(--gray-dark));
+				font-size: 1.05rem;
+				line-height: 1.7;
+			}
+		</style>
+	</head>
+	<body>
+		<PageLayout>
+			<section>
+				<PageTitle icon="search">Search</PageTitle>
+				{DEV ? (
+					<p class="search-note">
+						Search uses the index that <code>yarn build</code> creates, so it doesn't work in
+						<code>yarn dev</code>. Run <code>yarn build &amp;&amp; yarn preview</code> to try it.
+					</p>
+				) : (
+					<Fragment>
+						<div id="search" class="search-ui"></div>
+						<p id="search-status" class="sr-only" role="status"></p>
+						<noscript>
+							<p class="search-note">Search needs JavaScript, which is turned off in your browser.</p>
+						</noscript>
+					</Fragment>
+				)}
+			</section>
+		</PageLayout>
+		{!DEV && (
+			<Fragment>
+				<script is:inline src="/pagefind/pagefind-ui.js"></script>
+				<script is:inline>
+					(() => {
+						const query = new URLSearchParams(location.search).get('q') ?? '';
+						const ui = new PagefindUI({
+							element: '#search',
+							showSubResults: true,
+							// Ready to type when coming from the header's search icon
+							autofocus: !query,
+							translations: { placeholder: 'Search posts' },
+						});
+						if (query) ui.triggerSearch(query);
+
+						// Keeps ?q= in step with the box, so results can be shared
+						const input = document.querySelector('#search .pagefind-ui__search-input');
+						const updateUrl = () => {
+							const url = new URL(location.href);
+							const term = input.value.trim();
+							if (term) url.searchParams.set('q', term);
+							else url.searchParams.delete('q');
+							history.replaceState(history.state, '', url);
+						};
+						input.addEventListener('input', updateUrl);
+						// Clearing the box doesn't fire an input event
+						document
+							.querySelector('#search .pagefind-ui__search-clear')
+							.addEventListener('click', () => setTimeout(updateUrl));
+
+						// Announces the result count to screen readers, as the UI itself doesn't
+						const status = document.getElementById('search-status');
+						let timer;
+						new MutationObserver(() => {
+							clearTimeout(timer);
+							timer = setTimeout(() => {
+								const message = document.querySelector('#search .pagefind-ui__message')?.textContent ?? '';
+								if (status.textContent !== message) status.textContent = message;
+							}, 500);
+						}).observe(document.getElementById('search'), { childList: true, subtree: true, characterData: true });
+					})();
+				</script>
+			</Fragment>
+		)}
+	</body>
+</html>

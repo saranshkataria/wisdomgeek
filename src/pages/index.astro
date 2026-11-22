@@ -37,6 +37,13 @@ const page: Page = {
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		{/* WordPress's search URL, /?s=<term>, from old links: on to the search page */}
+		<script is:inline>
+			(() => {
+				const term = new URLSearchParams(location.search).get('s');
+				if (term !== null) location.replace(term ? `/search/?q=${encodeURIComponent(term)}` : '/search/');
+			})();
+		</script>
 		<style>
 			main {
 				width: 960px;
