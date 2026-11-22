@@ -213,6 +213,8 @@ const slides = posts.slice(0, 4);
 	.carousel-slide {
 		flex: 0 0 100%;
 		min-width: 0;
+		/* The title's size follows the card's width (cqi) */
+		container-type: inline-size;
 	}
 
 	.carousel-card {
@@ -260,10 +262,13 @@ const slides = posts.slice(0, 4);
 		z-index: 1;
 	}
 
+	/* 42px as on the live site (38px up to 1080px, 32px on phones), and
+	   smaller on narrower cards: the card keeps its shape, so a size that
+	   follows its width lets the longest titles fit the image at any width */
 	.carousel-card-overlay h2 {
 		margin: 0;
 		color: white;
-		font-size: 2rem;
+		font-size: min(2.625rem, 5.8cqi);
 		font-weight: 800;
 		line-height: 1.2;
 		text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
@@ -393,6 +398,25 @@ const slides = posts.slice(0, 4);
 		right: -22px;
 	}
 
+	@media (max-width: 1080px) {
+		.carousel-card-overlay h2 {
+			font-size: min(2.375rem, 5.8cqi);
+		}
+	}
+
+	/* Next to the sidebar, the carousel can be as close to the window edge as
+	   the page's 19px padding (until the window is 1268px wide, allowing for
+	   a 17px scrollbar), too close for the 22px overhang: the arrows overhang
+	   15px there, which keeps them 4px from the edge */
+	@media (min-width: 961px) and (max-width: 1268px) {
+		.carousel-arrow-prev {
+			left: -15px;
+		}
+		.carousel-arrow-next {
+			right: -15px;
+		}
+	}
+
 	/* Dots */
 	.carousel-dots {
 		display: flex;
@@ -433,11 +457,12 @@ const slides = posts.slice(0, 4);
 	}
 
 	@media (max-width: 720px) {
+		/* The bottom padding keeps the title clear of the avatar */
 		.carousel-card-overlay {
-			padding: 1em 1.25em;
+			padding: 1em 1.25em 2em;
 		}
 		.carousel-card-overlay h2 {
-			font-size: 1.15rem;
+			font-size: min(2rem, 5.8cqi);
 		}
 		.carousel-card-image :global(img) {
 			aspect-ratio: 16 / 10;
