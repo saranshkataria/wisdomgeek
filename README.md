@@ -39,7 +39,7 @@ Frontmatter fields:
 ## Project structure
 
 ```text
-├── astro.config.mjs        # site URL; MDX and sitemap integrations; code block highlighting, top bar and labels
+├── astro.config.mjs        # site URL; MDX and sitemap integrations (the sitemap index is also copied to WordPress's /sitemap.xml and /sitemap_index.xml); code block highlighting, top bar and labels
 ├── public/                 # static files served as-is: favicon, fonts, robots.txt
 ├── scripts/
 │   └── fetch-wordpress.js  # WordPress-to-Markdown import
