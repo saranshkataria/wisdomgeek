@@ -49,6 +49,26 @@ function getLastModDates() {
 
 const lastModDates = getLastModDates();
 
+/**
+ * WordPress served the sitemap at /sitemap.xml and /sitemap_index.xml, where
+ * search engines and Search Console still look for it. Copies the sitemap index
+ * to both paths.
+ * @returns {import("astro").AstroIntegration}
+ */
+function legacySitemapPaths() {
+  return {
+    name: "legacy-sitemap-paths",
+    hooks: {
+      "astro:build:done": async ({ dir }) => {
+        const index = new URL("sitemap-index.xml", dir);
+        for (const name of ["sitemap.xml", "sitemap_index.xml"]) {
+          await fs.promises.copyFile(index, new URL(name, dir));
+        }
+      },
+    },
+  };
+}
+
 // Code block language labels; other languages (and plaintext) get no label
 const codeLanguageLabels = new Map([
   ["bash", "Bash"],
@@ -139,6 +159,8 @@ export default defineConfig({
         return item;
       },
     }),
+    // Runs after the sitemap integration, which writes the index it copies
+    legacySitemapPaths(),
   ],
   markdown: {
     shikiConfig: {
